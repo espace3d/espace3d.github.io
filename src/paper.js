@@ -14,8 +14,8 @@ function drawRoll(Group,game,row,line,w,posx,posy) {
 				for (var i = 0; i < row; i++) {
 					e.paper[j][i] = drawSprite(0,game,"sprite_paper",0,0,w,w,0,black,0) 
 						e.paper[j][i].fwd = drawSprite(0,game,"sprite_paper",0,0,w,w,0,0,1) 
-						e.paper[j][i].fwd.animations.add('Play')
-						e.paper[j][i].fwd.animations.play('Play',1,true)
+						//e.paper[j][i].fwd.animations.add('Play')
+						//e.paper[j][i].fwd.animations.play('Play',1,true)
 
 						e.paper[j][i].fwd.x = posx-w*.52+i*(w+espacement) 
 						e.paper[j][i].fwd.y =posy+(j*(w+espacement)) 

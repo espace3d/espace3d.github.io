@@ -31,8 +31,8 @@ function drawBackground(game,group8,group7,group6,group2,group1) {
 		e.player = game.add.bitmapText(w4*3,taille*1.9,'lucky','JOJO', taille2) 
 		e.op = game.add.bitmapText(w4,taille,'lucky','OPPONENT', taille) 
 		e.opponent = game.add.bitmapText(w4,taille*1.9,'lucky','kill the game', taille2) 
-		e.hold=game.add.bitmapText(w4*3,h2-100,'lucky_black','hold', taille2) 
-		e.hold.alpha=0
+		//e.hold=game.add.bitmapText(w4*3,h2-100,'lucky_black','hold', taille2) 
+		//e.hold.alpha=0
 		//modifications des anchors
 		e.p.anchor.x=.5
 		e.p.anchor.y=.5
@@ -44,13 +44,13 @@ function drawBackground(game,group8,group7,group6,group2,group1) {
 		e.op.anchor.y=.5
 		e.opponent.anchor.x=.5
 		e.opponent.anchor.y=.5
-		e.hold.anchor.x=.5
-		e.hold.anchor.y=.5
+		//e.hold.anchor.x=.5
+		//e.hold.anchor.y=.5
 
 		//ajout des textes aux groupes
 		group2.add(e.p) 
 		group2.add(e.player) 
-		group2.add(e.hold) 
+		//group2.add(e.hold) 
 		group1.add(e.op) 
 		group1.add(e.opponent) 
 
@@ -134,8 +134,8 @@ function drawBackground(game,group8,group7,group6,group2,group1) {
 		e.tween_line_opponent_appears=game.add.tween(e.line_opponent_gauche).to({alpha:1},500,Phaser.Easing.Linear.None,true,3500)
 		e.tween_line_player_appears=game.add.tween(e.line_player_droite).to({alpha:1},500,Phaser.Easing.Linear.None,true,3500)
 		e.tween_cursor_appears=game.add.tween(e.cursor_palpitant).to({alpha:.4},500,Phaser.Easing.Linear.None,true,3500)
-		e.tween_hold_appears=game.add.tween(e.hold).to({alpha:1},1500,Phaser.Easing.Linear.None,true,4500)
-		e.tween_hold_scale=game.add.tween(e.hold.scale).to({x:2,y:2},500,Phaser.Easing.Linear.None,true,4500,-1,true);
+		//e.tween_hold_appears=game.add.tween(e.hold).to({alpha:1},1500,Phaser.Easing.Linear.None,true,4500)
+		//e.tween_hold_scale=game.add.tween(e.hold.scale).to({x:2,y:2},500,Phaser.Easing.Linear.None,true,4500,-1,true);
 
 
 		//game.time.events.add(Phaser.Timer.SECOND * 4, function() {e.line_player_droite.visible=true;e.line_opponent_gauche.visible=true;e.cursor_palpitant.visible=true}, this);
