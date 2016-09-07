@@ -20,6 +20,7 @@ var theGame = function(game){
 	//1. topOpponentGroup1 --  bandeau horizontal supérieur + nom du joueur + dénomination (player ou opponent)--> opponent
 	//2. topPlayerGroup2 -- bandeau horizontal supérieur + nom du joueur + dénomination (player ou opponent)--> player
 	//3. timerGroup3 -- timer + rond  
+	//3bis. cursorGroup3bis -- curseur en forme de rectangle	
 	//4. opponentPapers4 -- papiers de l'opponent
 	//5. playerPapers5 -- papiers du player
 	//6. opponentBackgroundGroup6 -- background sur une moitié pour l'opponent
@@ -37,6 +38,7 @@ var theGame = function(game){
 	opponentBackgroundGroup6 = null
 	playerPapers5 = null
 	opponentPapers4 = null
+	cursorGroup3bis=null
 	timerGroup3 = null
 	topPlayerGroup2=null
 	topOpponentGroup1=null
@@ -58,6 +60,7 @@ theGame.prototype = {
 		opponentBackgroundGroup6 = this.game.add.group()
 		playerPapers5 = this.game.add.group()
 		opponentPapers4 = this.game.add.group()
+		cursorGroup3bis=this.game.add.group()
 		timerGroup3 = this.game.add.group()
 		topPlayerGroup2=this.game.add.group()
 		topOpponentGroup1=this.game.add.group()
@@ -76,7 +79,7 @@ theGame.prototype = {
 		groupnull.add(spriteNumber)
 
 
-		background=drawBackground(this.game,menuPaperGroup8,playerBackgroundGroup7,opponentBackgroundGroup6,topPlayerGroup2,topOpponentGroup1)
+		background=drawBackground(this.game,menuPaperGroup8,playerBackgroundGroup7,opponentBackgroundGroup6,cursorGroup3bis,topPlayerGroup2,topOpponentGroup1)
 		paper_player = drawP(playerPapers5,this.game,w4*3,-h)
 
 		paper_opponent = drawP(opponentPapers4,this.game,w4,-h)
@@ -87,6 +90,7 @@ theGame.prototype = {
 		displacement_text(topOpponentGroup1,topPlayerGroup2,this.game)
 		displacement_background_shadow(background.table_opponent,background.table_player,topPlayerGroup2,topOpponentGroup1,this.game)
 
+
 		menuPaper=drawMenuPaper(this.menuPaper,menuPaperGroup8,this.game)
 		text=drawText(this.game,timerGroup3)
 
@@ -94,22 +98,44 @@ theGame.prototype = {
 
 	update: function(){
 		//timer 
-		//////////////////////////////////////////////////////////////////////////////////////////
-		if (this.game.input.activePointer.duration > 500 && this.game.input.activePointer.y < h2) {
-			background.p_shadow.visible=true
-			background.panimTween_shadow.resume()
-			background.panimTween.resume()
-			background.cursor_player.visible=true
-			background.cursor_player.y=this.game.input.activePointer.y
-			background.cursor_palpitant.y=this.game.input.activePointer.y
-		}
-		else
-		{
-			background.cursor_player.visible=false
-			background.p_shadow.visible=false
-			background.panimTween_shadow.pause()
-			background.panimTween.pause()
-		}
+		background.cursor_player.y=this.game.input.activePointer.y
+		background.cursor_palpitant.y=this.game.input.activePointer.y
+			//////////////////////////////////////////////////////////////////////////////////////////
+			if (this.game.input.activePointer.duration > 500 ) {
+
+				//background.cursor_player.alpha+=.0001
+
+					if (background.cursor_player.alpha <= 0.2) {
+
+						console.log("raise")
+						background.cursor_player.isRaise=true
+						console.log(background.cursor_player.isRaise)
+					} else if (background.cursor_player.alpha >= .59) {
+
+						background.cursor_player.isRaise=false	
+						console.log(background.cursor_player.isRaise)
+					}
+					if ( background.cursor_player.isRaise ) {
+						background.cursor_player.alpha +=.02
+					} else {
+						background.cursor_player.alpha -=.02
+					}
+
+					background.p_shadow.visible=true
+					background.panimTween_shadow.resume()
+					background.panimTween.resume()
+					//background.cursor_player.visible=true
+					//background.cursor_player_appears()
+			}
+			else
+			{
+				//background.cursor_player_hide()
+				//background.cursor_player.visible=false
+				background.cursor_player.alpha=0
+					background.p_shadow.visible=false
+					background.panimTween_shadow.pause()
+					background.panimTween.pause()
+			}
 
 		//if (paper_player.main.y > h2) {
 			//paper_player.main.isFalling=true

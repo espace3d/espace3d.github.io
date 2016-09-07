@@ -4,50 +4,31 @@
 //////////////////////////////////////////////////////////////////////////////////////////
 //dessins de tous les éléments du décor
 
-function drawBackground(game,group8,group7,group6,group2,group1) {
+function drawBackground(game,group8,group7,group6,group3bis,group2,group1) {
 	var e=[]
 
-	//barre supérieure qui masque la chute du papier-- groupe différent pour que le texte et le papier soit recouvert 
-	e.opponent_top=drawSprite(group1,game,"rect",0-decalage,0,w2,h*.15,0,red,1) 
-	e.player_top=drawSprite(group2,game,"rect",w2+decalage,0,w2,h*.15,0,blue,1) 
-
-	//textes du player et de l'opponent
-	//taille you
-	var taille=w*.07 
-	//taille2 JOJO
-	var taille2=w*.05 
-
-	//texte symbolisant l'ombre sous le player et dont la visibilité apparait dans update via the Game.js
-	e.p_shadow = game.add.bitmapText(w4*3+3,taille+3,'lucky','YOU', taille) 
-	e.p_shadow.alpha=.5
-	e.p_shadow.visible=false
-
-	e.p = game.add.bitmapText(w4*3,taille,'lucky','YOU', taille) 
-	e.player = game.add.bitmapText(w4*3,taille*1.9,'lucky','JOJO', taille2) 
-	e.op = game.add.bitmapText(w4,taille,'lucky','OPPONENT', taille) 
-	e.opponent = game.add.bitmapText(w4,taille*1.9,'lucky','kill the game', taille2) 
-
-	//modifications des anchors
-	e.p.anchor.x=.5
-	e.p.anchor.y=.5
-	e.p_shadow.anchor.x=.5
-	e.p_shadow.anchor.y=.5
-	e.player.anchor.x=.5
-	e.player.anchor.y=.5
-	e.op.anchor.x=.5
-	e.op.anchor.y=.5
-	e.opponent.anchor.x=.5
-	e.opponent.anchor.y=.5
-
-	//ajout des textes aux groupes
-	group2.add(e.p) 
-	group2.add(e.player) 
-	group1.add(e.op) 
-	group1.add(e.opponent) 
 
 	//curseur
-	e.cursor_player=drawSprite(group1,game,"rect",w4*3,h2,w2,w*.1,0.5,white,.2)
-	e.cursor_palpitant=drawSprite(group1,game,"cursor_palpitant",w4*3,h2,w*.05,w*.05,0.5,0,.4)
+	e.cursor_player=drawSprite(group3bis,game,"rect",w4*3,h2,w2,w*.1,0.5,white,0)
+	e.cursor_player.flag=true
+	e.cursor_player.isRaise=true	
+	//e.cursor_player_tween=game.add.tween(e.cursor_player).to({alpha:.7},1000,Phaser.Easing.Linear.None,true,0,-1)
+	//e.cursor_player_tween.yoyo(true,1000)
+	//e.cursor_player_tween.pause()
+
+	e.cursor_player_appears=function(){
+		//if (e.cursor_player.flag){
+			//e.cursor_player.flag=false
+				//e.cursor_player_tween.resume()
+		//}	
+	}
+	e.cursor_player_hide=function(){
+		//e.cursor_player.flag=true
+			//e.cursor_player_tween.pause()	
+			//e.cursor_player.alpha=0	
+	}
+
+	e.cursor_palpitant=drawSprite(group1,game,"cursor_palpitant",w4*3,h2-100,w*.05,w*.05,0.5,0,.4)
 	e.cursor_palpitant.alpha=0
 	e.cursor_palpitant_time=150
 
@@ -94,18 +75,55 @@ function drawBackground(game,group8,group7,group6,group2,group1) {
 
 	//lignes à traits tirés pour symboliser la chute imminente
 	var longeur_line=w/6
-	e.line_player_droite=drawSprite(group7,game,"line",w/6*5,h2-50,longeur_line,w*.01,0,0,1)
-	e.line_opponent_gauche=drawSprite(group6,game,"line",0,h2-50,longeur_line,w*.01,0,0,1)
+	e.line_player_droite=drawSprite(group7,game,"line",w/6*5,h2,longeur_line,w*.01,0,0,1)
+	e.line_opponent_gauche=drawSprite(group6,game,"line",0,h2,longeur_line,w*.01,0,0,1)
 	e.line_player_droite.alpha=0
 	e.line_opponent_gauche.alpha=0
 
+	//barre supérieure qui masque la chute du papier-- groupe différent pour que le texte et le papier soit recouvert 
+	e.opponent_top=drawSprite(group1,game,"rect",0-decalage,0,w2,h*.15,0,red,1) 
+	e.player_top=drawSprite(group2,game,"rect",w2+decalage,0,w2,h*.15,0,blue,1) 
+
+	//textes du player et de l'opponent
+	//taille you
+	var taille=w*.07 
+	//taille2 JOJO
+	var taille2=w*.05 
+
+	//texte symbolisant l'ombre sous le player et dont la visibilité apparait dans update via the Game.js
+	e.p_shadow = game.add.bitmapText(w4*3+3,taille+3,'lucky','YOU', taille) 
+	e.p_shadow.alpha=.5
+	e.p_shadow.visible=false
+
+	e.p = game.add.bitmapText(w4*3,taille,'lucky','YOU', taille) 
+	e.player = game.add.bitmapText(w4*3,taille*1.9,'lucky','JOJO', taille2) 
+	e.op = game.add.bitmapText(w4,taille,'lucky','OPPONENT', taille) 
+	e.opponent = game.add.bitmapText(w4,taille*1.9,'lucky','kill the game', taille2) 
+
+	//modifications des anchors
+	e.p.anchor.x=.5
+	e.p.anchor.y=.5
+	e.p_shadow.anchor.x=.5
+	e.p_shadow.anchor.y=.5
+	e.player.anchor.x=.5
+	e.player.anchor.y=.5
+	e.op.anchor.x=.5
+	e.op.anchor.y=.5
+	e.opponent.anchor.x=.5
+	e.opponent.anchor.y=.5
+
+	//ajout des textes aux groupes
+	group2.add(e.p) 
+	group2.add(e.player) 
+	group1.add(e.op) 
+	group1.add(e.opponent) 
 
 	//////////////////////////////////////////////////////////////////////////////////////////
 	//transitions
 
 	e.tween_line_opponent_appears=game.add.tween(e.line_opponent_gauche).to({alpha:1},500,Phaser.Easing.Linear.None,true,3500)
 	e.tween_line_player_appears=game.add.tween(e.line_player_droite).to({alpha:1},500,Phaser.Easing.Linear.None,true,3500)
-	e.tween_cursor_appears=game.add.tween(e.cursor_palpitant).to({alpha:.4},500,Phaser.Easing.Linear.None,true,3500)
+	e.tween_cursor_appears=game.add.tween(e.cursor_palpitant).to({alpha:.6},1500,Phaser.Easing.Linear.None,true,3500)
 	e.cursor_palpitant_tween=game.add.tween(e.cursor_palpitant.scale).to({x:1.2, y:1.2},e.cursor_palpitant_time,Phaser.Easing.Sinusoidal.In,true,5500,-1,false)
 	//////////////////////////////////////////////////////////////////////////////////////////
 	//animation du texte du joueur lorsqu'on maintient la pression appuyée
@@ -241,8 +259,8 @@ displacement_background_opponent_and_player=function(obj1,obj2,game) {
 		timedisplacement2=time_back_deplacement2,
 		xend=0,
 		yend=0,
-		nameEasing="Linear.None",
-		nameEasing2="Linear.None") 
+		nameEasing="Bounce.Out",
+		nameEasing2="Elastic.Out") 
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////

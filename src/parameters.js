@@ -41,8 +41,8 @@ var time_back_delay2=500
 var time_back_deplacement2=900
 
 //temps pour le déplacement des textes de l'opponent et du player
-var time_text_delay=time_shadow_delay2-285
-var time_text_deplacement=900
+var time_text_delay=time_shadow_delay2
+var time_text_deplacement=time_shadow_deplacement2
 
 //temps pour que le papier tombe
 //en secondes
