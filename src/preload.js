@@ -9,6 +9,7 @@ preload.prototype = {
 		this.load.setPreloadSprite(loadingBar);
 //////////////////////////////////////////////////////////////////////////////////////////
 		this.game.load.spritesheet("numbers","assets/numbers.png",100,100);
+		this.game.load.script('gray', 'https://cdn.rawgit.com/photonstorm/phaser/master/filters/Gray.js')
 		this.game.load.image("gametitle","assets/gametitle.png");
 		this.game.load.image("line","assets/line.png");
 		this.game.load.image("play","assets/play.png");

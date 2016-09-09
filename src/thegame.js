@@ -21,6 +21,7 @@ var theGame = function(game){
 	//2. topPlayerGroup2 -- bandeau horizontal supérieur + nom du joueur + dénomination (player ou opponent)--> player
 	//3. timerGroup3 -- timer + rond  
 	//3bis. cursorGroup3bis -- curseur en forme de rectangle	
+	//3tris. shadowGroup3tris
 	//4. opponentPapers4 -- papiers de l'opponent
 	//5. playerPapers5 -- papiers du player
 	//6. opponentBackgroundGroup6 -- background sur une moitié pour l'opponent
@@ -38,6 +39,7 @@ var theGame = function(game){
 	opponentBackgroundGroup6 = null
 	playerPapers5 = null
 	opponentPapers4 = null
+	shadowGroup3tris = null
 	cursorGroup3bis=null
 	timerGroup3 = null
 	topPlayerGroup2=null
@@ -60,6 +62,7 @@ theGame.prototype = {
 		opponentBackgroundGroup6 = this.game.add.group()
 		playerPapers5 = this.game.add.group()
 		opponentPapers4 = this.game.add.group()
+		shadowGroup3tris = this.game.add.group()
 		cursorGroup3bis=this.game.add.group()
 		timerGroup3 = this.game.add.group()
 		topPlayerGroup2=this.game.add.group()
@@ -79,7 +82,7 @@ theGame.prototype = {
 		groupnull.add(spriteNumber)
 
 
-		background=drawBackground(this.game,menuPaperGroup8,playerBackgroundGroup7,opponentBackgroundGroup6,cursorGroup3bis,topPlayerGroup2,topOpponentGroup1)
+		background=drawBackground(this.game,menuPaperGroup8,playerBackgroundGroup7,opponentBackgroundGroup6,shadowGroup3tris,cursorGroup3bis,topPlayerGroup2,topOpponentGroup1)
 		paper_player = drawP(playerPapers5,this.game,w4*3,-h)
 
 		paper_opponent = drawP(opponentPapers4,this.game,w4,-h)
@@ -97,13 +100,26 @@ theGame.prototype = {
 	},
 
 	update: function(){
+		//filtre en gris
+		if (playerPapers5.y > h2+h ) {
+			//paper_player.main.isOutOfMiddleTable=true;
+			background.player.filters=[background.grayfiltertop]
+				background.player_top.filters=[background.grayfiltertop]
+
+		}
+		if (opponentPapers4.y > h2+h ) {
+			//paper_player.main.isOutOfMiddleTable=true;
+			background.opponent.filters=[background.grayfiltertop]
+				background.opponent_top.filters=[background.grayfiltertop]
+
+		}
 		//timer 
 		background.cursor_player.y=this.game.input.activePointer.y
 		background.cursor_palpitant.y=this.game.input.activePointer.y
-			//////////////////////////////////////////////////////////////////////////////////////////
-			if (this.game.input.activePointer.duration > 500 ) {
 
-				//background.cursor_player.alpha+=.0001
+			//////////////////////////////////////////////////////////////////////////////////////////
+			// cursor avec pression exercée
+			if (this.game.input.activePointer.duration > 500 ) {
 
 					if (background.cursor_player.alpha <= 0.2) {
 
@@ -121,32 +137,25 @@ theGame.prototype = {
 						background.cursor_player.alpha -=.02
 					}
 
-					background.p_shadow.visible=true
+					background.text_category__player_shadow.visible=true
 					background.panimTween_shadow.resume()
 					background.panimTween.resume()
-					//background.cursor_player.visible=true
-					//background.cursor_player_appears()
 			}
 			else
 			{
-				//background.cursor_player_hide()
-				//background.cursor_player.visible=false
 				background.cursor_player.alpha=0
-					background.p_shadow.visible=false
+					background.text_category__player_shadow.visible=false
 					background.panimTween_shadow.pause()
 					background.panimTween.pause()
 			}
 
-		//if (paper_player.main.y > h2) {
-			//paper_player.main.isFalling=true
-		//} else {
-			//paper_player.main.isFalling=false
-		
-		//}
+		// temps écoulé
 		time_elapsed(this.game)
-		paper_opponent.fall(background.shadowPaperPlayer)	
-		paper_player.fall(background.shadowPaperOpponent)	
-		//shakeText(background.player,this.game)
+
+		//chute des papiers	
+		paper_opponent.opponentfall(background.cursor_palpitant_opponent,background.cursor_opponent)	
+		paper_player.fall()	
+		
 	},
 
 
