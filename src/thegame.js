@@ -96,10 +96,15 @@ theGame.prototype = {
 
 		menuPaper=drawMenuPaper(this.menuPaper,menuPaperGroup8,this.game)
 		text=drawText(this.game,timerGroup3)
+		background.cursor_player_particle_appears()
 
 	},
 
 	update: function(){
+
+		//background.cursor_player_particle.start(true, 9000, null, 200)
+
+
 		//filtre en gris
 		if (playerPapers5.y > h2+h ) {
 			//paper_player.main.isOutOfMiddleTable=true;
@@ -120,7 +125,8 @@ theGame.prototype = {
 			//////////////////////////////////////////////////////////////////////////////////////////
 			// cursor avec pression exercée
 			if (this.game.input.activePointer.duration > 500 ) {
-
+				background.cursor_player_particle.on=true
+				background.cursor_player_particle.y= background.cursor_player.y
 					if (background.cursor_player.alpha <= 0.2) {
 
 						console.log("raise")
@@ -142,11 +148,12 @@ theGame.prototype = {
 					background.panimTween.resume()
 			}
 			else
-			{
-				background.cursor_player.alpha=0
-					background.text_category__player_shadow.visible=false
-					background.panimTween_shadow.pause()
-					background.panimTween.pause()
+		{
+			background.cursor_player_particle_destroy()
+			background.cursor_player.alpha=0
+			background.text_category__player_shadow.visible=false
+			background.panimTween_shadow.pause()
+			background.panimTween.pause()
 			}
 
 		// temps écoulé

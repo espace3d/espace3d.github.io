@@ -24,7 +24,6 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 		e.cursor_opponent.flag=true
 		e.cursor_opponent.isRaise=true	
 
-
 		e.cursor_palpitant=drawSprite(group1,game,"cursor_palpitant",w4*3,h2-100,w*.05,w*.05,0.5,0,.4)
 		e.cursor_palpitant.alpha=0
 		e.cursor_palpitant_time=150
@@ -32,6 +31,36 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 		e.cursor_palpitant_opponent=drawSprite(group1,game,"cursor_palpitant",w4,h2-100,w*.05,w*.05,0.5,0,.4)
 		e.cursor_palpitant_opponent.alpha=0
 		e.cursor_palpitant_time_opponent=150
+
+	//particle pour le cursor player
+	e.cursor_player_particle_flag=true
+	e.cursor_player_particle_appears=function(){
+		e.cursor_player_particle_flag=false
+		e.cursor_player_particle = game.add.emitter(e.cursor_player.x, e.cursor_player.y, 200)
+		e.cursor_player_particle.makeParticles("particle_player")
+		e.cursor_player_particle.minParticleSpeed.setTo(-300,-300)
+		e.cursor_player_particle.maxParticleSpeed.setTo(400,400)
+		e.cursor_player_particle.setAlpha(0.5, 1)
+
+		e.cursor_player_particle.minParticleScale = .05
+		e.cursor_player_particle.maxParticleScale = .02
+		e.cursor_player_particle.minRotation = 0
+		e.cursor_player_particle.maxRotation = 0
+		e.cursor_player_particle.on=true
+		e.cursor_player_particle.start(false, 200, 15)
+		//			e.cursor_player_particle_flag_function=function(){
+		//e.cursor_player_particle_flag=true
+		//}
+		//game.time.events.add(200,e.cursor_player_particle_flag_function, this);
+		return e.cursor_player_particle
+	}
+
+	e.cursor_player_particle_destroy=function(){
+		e.cursor_player_particle.on=false
+	}
+
+
+
 
 		//à 0 pour ne pas le voir au début
 		e.fond=drawSprite(group8,game,"back",0,0,w,h,0,0,1) 
@@ -80,7 +109,6 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 		//taille3 LVL 1
 		var taille3=w*.03 
 
-
 		//texte symbolisant l'ombre sous le player et dont la visibilité apparait dans update via the Game.js
 		//player
 		e.text_category__player_shadow = game.add.bitmapText(w4*3+3,taille+3,'lucky','jojo', taille) 
@@ -89,7 +117,6 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 		e.text_category__player = game.add.bitmapText(w4*3,taille,'lucky','jojo', taille) 
 		e.text_name_player = game.add.bitmapText(w4*3,taille*1.9,'lucky','lvl 1', taille2) 
 		//e.text_level_player=game.add.bitmapText(w4*3,taille3,'lucky_black','lvl 1', taille3) 
-
 
 		//OPPONENT 
 		e.text_category__opponent = game.add.bitmapText(w4,taille,'lucky','kill the game', taille) 
