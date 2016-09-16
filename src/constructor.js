@@ -73,6 +73,22 @@ function shadealpha(
 	game.time.events.add(Phaser.Timer.SECOND * delaydisplacement3, displacement_back, this);
 }
 
+		function displacement_position (game,obj,xx,yy,time,Ease){
+				game.add.tween(obj.position).to({x:xx, y:yy},time,Phaser.Easing.Ease,true)
+
+		}
+
+		function displacement_alpha (game,obj,aa,time,Ease){
+				game.add.tween(obj).to({alpha:aa},time,Phaser.Easing.Ease,true)
+
+		}
+
+		function displacement_scale (game,obj,xs,ys,time,Ease){
+				game.add.tween(obj.scale).to({x:xs,y:ys},time,Phaser.Easing.Ease,true)
+		}
+
+
+
 //////////////////////////////////////////////////////////////////////////////////////////
 //deplacement général
 function displacement(

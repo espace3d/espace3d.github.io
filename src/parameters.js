@@ -24,6 +24,41 @@ nu.paper="9"
 // M.nameplayer = "jojo"
 // M.levelplayer = "1"
 
+//temps pour le déplacement des panneaux du background qui s'ouvre vers l'extérieur
+//|-----|   |-----|
+//|     |   |     |
+//|  @  |   |  @  | 
+//|     |   |     | 
+//|-----|   |-----|
+var time_open_panel_background=500
+
+//délai pour que les panneaux se referment
+//|-----||-----|
+//|     ||     |
+//|  @  ||  @  | 
+//|     ||     | 
+//|-----||-----|
+var delay_close_panel_background=1000
+
+//délai et temps pour que l'ombre descende vers le bas
+//idem pour les TEXTES mais qui montent vers le haut
+//|--@--||--@--|
+//|     ||     |
+//||||||||||||||    
+//||||||||||||||    
+//|-----||-----|
+var delay_shadow_fall_and_text_up=time_open_panel_background*2+delay_close_panel_background+100
+var time_shadow_fall_and_texte_up=500
+
+// délai et temps pour que les papiers tombent
+//|--@--||--@--|
+//|  x  ||  x  |
+//|  x  ||  x  | 
+//|  x  ||  x  | 
+//|-----||-----|
+
+var delay_papers_fall=delay_shadow_fall_and_text_up+time_shadow_fall_and_texte_up
+
 //////////////////////////////////////////////////////////////////////////////////////////
 //temps pour le déplacement de l'ombre de la table qui va vers le bas
 var time_shadow_delay=500
@@ -32,8 +67,6 @@ var time_shadow_deplacement=400
 var time_shadow_delay2=2000
 var time_shadow_deplacement2=400
 
-
-//temps pour le déplacement des panneaux du background qui s'ouvre vers l'extérieur
 var time_back_delay=1200
 var time_back_deplacement=500
 

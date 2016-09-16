@@ -90,7 +90,7 @@ create: function(){
 
 
 			//deplacement des background
-			displacement_background_opponent_and_player(opponentBackgroundGroup6,playerBackgroundGroup7,this.game)
+			displacement_background_opponent_and_player(opponentBackgroundGroup6,topOpponentGroup1,playerBackgroundGroup7,topPlayerGroup2,this.game)
 			displacement_text(topOpponentGroup1,topPlayerGroup2,this.game)
 			displacement_background_shadow(background.table_opponent,background.table_player,topPlayerGroup2,topOpponentGroup1,this.game)
 
