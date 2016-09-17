@@ -17,7 +17,7 @@ var theGame = function(game){
 		//////////////////////////////////////////////////////////////////////////////////////////
 		//GROUP
 		groupnull = null
-
+//0 timerGroup0 - timer deplacé dans ce groupe car il doit être devant tout le monde le groupe 3 doit être supprimé
 		//1. topOpponentGroup1 --  bandeau horizontal supérieur + nom du joueur + dénomination (player ou opponent)--> opponent
 		//2. topPlayerGroup2 -- bandeau horizontal supérieur + nom du joueur + dénomination (player ou opponent)--> player
 		//3. timerGroup3 -- timer + rond  
@@ -45,7 +45,7 @@ var theGame = function(game){
 		timerGroup3 = null
 		topPlayerGroup2=null
 		topOpponentGroup1=null
-
+timerGroup0=null
 		//////////////////////////////////////////////////////////////////////////////////////////
 }
 
@@ -68,6 +68,7 @@ create: function(){
 			timerGroup3 = this.game.add.group()
 			topPlayerGroup2=this.game.add.group()
 			topOpponentGroup1=this.game.add.group()
+			timerGroup0=this.game.add.group()
 
 			// declaration des variables via les constructor
 			number = Math.floor(Math.random()*10);
@@ -89,19 +90,31 @@ create: function(){
 			paper_opponent = drawP(opponentPapers4,this.game,w4,-h)
 
 
-			//deplacement des background
-			displacement_background_opponent_and_player(opponentBackgroundGroup6,topOpponentGroup1,playerBackgroundGroup7,topPlayerGroup2,this.game)
-			displacement_text(topOpponentGroup1,topPlayerGroup2,this.game)
-			displacement_background_shadow(background.table_opponent,background.table_player,topPlayerGroup2,topOpponentGroup1,this.game)
+
+
 
 
 			menuPaper=drawMenuPaper(this.menuPaper,menuPaperGroup8,this.game)
-			text=drawText(this.game,timerGroup3)
+			text=drawText(this.game,timerGroup0)
+			//DEPLACEMENT DES GROUPES AU DEBUT (TEXTE TOP - TIMER - SHADOW)
+			//position des textes supérieures (opponent et players) au milieu 
+			topOpponentGroup1.position.y=h2
+			topPlayerGroup2.position.y=h2
+			//position des ombres (opponent et players) en bas non visible de l'écran 
+			//shadowGroup3tris.position.y=h
+			//displacement_text(topOpponentGroup1,topPlayerGroup2,this.game)
+//position du timer
+	timerGroup0.position.y=h2-200
+	background.table_opponent.y=h
+	background.table_player.y=h
+			//deplacement des background
+			displacement_background_opponent_and_player(opponentBackgroundGroup6,topOpponentGroup1,playerBackgroundGroup7,topPlayerGroup2,this.game)
+			displacement_background_shadow(background.table_opponent,background.table_player,topPlayerGroup2,topOpponentGroup1,this.game)
+
 			background.cursor_player_particle_appears()
 
 			effect=	draweffect(this.game)
 			effect.deform_main(text.time_shadow)
-			//effect.deform_main(text.time_rond)
 
 	},
 

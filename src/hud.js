@@ -30,23 +30,23 @@ function drawText(game,Group){
 		Group.add(e.timer)
 
 		//déplacement du timer
-		e.tabledis=displacement(
+	//	e.tabledis=displacement(
 
-				Group,
-				game,
-				delaydisplacement=time_shadow_delay,
-				timedisplacement=time_shadow_deplacement,
-				xbegin=0,
-				ybegin=h-2*e.time_rond.height,
+	//			Group,
+	//			game,
+	//			delaydisplacement=time_shadow_delay,
+	//			timedisplacement=time_shadow_deplacement,
+	//			xbegin=0,
+	//			ybegin=h-2*e.time_rond.height,
 
-				//retour
-				delaydisplacement2=time_text_delay,
-				timedisplacement2=time_text_deplacement,
-				xend=0,
-				yend=10,
-				nameEasing="Linear.None",
-				nameEasing2="Elastic.Out"
-				) 
+	//			//retour
+	//			delaydisplacement2=time_text_delay,
+	//			timedisplacement2=time_text_deplacement,
+	//			xend=0,
+	//			yend=10,
+	//			nameEasing="Linear.None",
+	//			nameEasing2="Elastic.Out"
+	//			) 
 
 		return e
 }
