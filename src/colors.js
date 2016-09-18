@@ -5,4 +5,5 @@ var blue=0xff4f4f
 var black=0x002000
 var grey=0x151515
 var white=0xFFFFFF
+var jaune=0xFFFF00
 var green=0x3AB7A9

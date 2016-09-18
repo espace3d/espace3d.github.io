@@ -67,29 +67,30 @@ var time_shadow_up_and_texte_up=500
 //|  x  ||  x  | 
 //|-----||-----|
 
-//var time_paper_fall=delay_shadow_up_and_text_up+time_shadow_fall_and_texte_up
+var delay_paper_fall=delay_shadow_up_and_text_up+time_shadow_up_and_texte_up+200
 
 //////////////////////////////////////////////////////////////////////////////////////////
 //temps pour le déplacement de l'ombre de la table qui va vers le bas
-var time_shadow_delay=500
-var time_shadow_deplacement=400
-
-var time_shadow_delay2=2000
-var time_shadow_deplacement2=400
-
-var time_back_delay=1200
-var time_back_deplacement=500
-
-var time_back_delay2=500
-var time_back_deplacement2=900
-
-//temps pour le déplacement des textes de l'opponent et du player
-var time_text_delay=time_shadow_delay2
-var time_text_deplacement=time_shadow_deplacement2
-
-//temps pour que le papier tombe
-//en secondes
-var time_paper_fall=time_text_delay/1000+time_text_deplacement/1000+.9
+//var time_shadow_delay=500
+//var time_shadow_deplacement=400
+//
+//var time_shadow_delay2=2000
+//var time_shadow_deplacement2=400
+//
+//var time_back_delay=1200
+//var time_back_deplacement=500
+//
+//var time_back_delay2=500
+//var time_back_deplacement2=900
+//
+////temps pour le déplacement des textes de l'opponent et du player
+//var time_text_delay=time_shadow_delay2
+//var time_text_deplacement=time_shadow_deplacement2
+//
+////temps pour que le papier tombe
+////en secondes
+////var time_paper_fall=time_text_delay/1000+time_text_deplacement/1000+.9
+//var time_paper_fall=5000
 
 // M.number={}
 // M.number.level=10 --!!! doit toujours etre pair
