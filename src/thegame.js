@@ -108,9 +108,9 @@ theGame.prototype = {
 	},
 
 	update: function(){
-
 		//filtre en gris
 		if (playerPapers5.y > h2+h ) {
+			console.log("gray")
 			background.player.filters=[background.grayfiltertop]
 			background.player_top.filters=[background.grayfiltertop]
 
