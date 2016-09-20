@@ -128,10 +128,10 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 
 	//texte symbolisant l'ombre sous le player et dont la visibilité apparait dans update via the Game.js
 	//player
-	e.text_name_player_shadow = game.add.bitmapText(w4*3+3,taille+3,'lucky','jojo', taille) 
+	e.text_name_player_shadow = game.add.bitmapText(w4*3+3,taille+3,'lucky','dev', taille) 
 	e.text_name_player_shadow.alpha=.5
 	e.text_name_player_shadow.visible=false
-	e.text_name_player = game.add.bitmapText(w4*3,taille,'lucky','jojo', taille) 
+	e.text_name_player = game.add.bitmapText(w4*3,taille,'lucky','dev', taille) 
 	e.text_level_player = game.add.bitmapText(w4*3,taille*1.9,'lucky','lvl ', taille2) 
 	e.text_level_number_player=game.add.bitmapText(w4*3+30,taille*1.9,'lucky','1', taille2) 
 	e.text_level_number_player.tint=jaune
