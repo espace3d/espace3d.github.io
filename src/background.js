@@ -139,7 +139,7 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 	//OPPONENT 
 	e.text_name_opponent = game.add.bitmapText(w4,taille,'lucky','kill the game', taille) 
 	e.text_level_opponent = game.add.bitmapText(w4,taille*1.9,'lucky','lvl ', taille2) 
-	e.text_level_number_opponent=game.add.bitmapText(w4+30,taille*1.9,'lucky','4', taille2) 
+	e.text_level_number_opponent=game.add.bitmapText(w4+30,taille*1.9,'lucky','5', taille2) 
 	e.text_level_number_opponent.tint=jaune
 
 	//modifications des anchors
