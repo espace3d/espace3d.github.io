@@ -52,6 +52,10 @@ var theGame = function(game){
 theGame.prototype = {
 	create: function(){
 
+
+//demarrage de physic
+		this.game.physics.startSystem(Phaser.Physics.P2JS)
+
 		//ORDRE DES GROUPES ICI
 		//group null sert pour cacher les éléments du canevas original
 
