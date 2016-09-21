@@ -54,7 +54,9 @@ theGame.prototype = {
 
 
 //demarrage de physic
+		this.game.world.setBounds(0,-2000,16000,12000)
 		this.game.physics.startSystem(Phaser.Physics.P2JS)
+		//this.game.physics.p2.gravity.y=200
 
 		//ORDRE DES GROUPES ICI
 		//group null sert pour cacher les éléments du canevas original
@@ -108,6 +110,9 @@ theGame.prototype = {
 
 		//EFFECT SUR LE TIMER
 		effect.deform_main(text.time_shadow)
+		this.game.physics.p2.enable(paper_player.main)
+		paper_player.main.body.setZeroVelocity()
+		paper_player.main.body.fixedRotation = true
 
 	},
 
@@ -164,7 +169,7 @@ theGame.prototype = {
 
 		//chute des papiers	
 		paper_opponent.opponentfall(background.cursor_palpitant_opponent,background.cursor_opponent,background.cursor_opponent_particle)	
-		paper_player.fall()	
+		paper_player.fall(paper_player.main)	
 
 	},
 
