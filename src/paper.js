@@ -6,7 +6,7 @@
 function drawRoll(Group,game,row,line,w,posx,posy) {
 
 	//espacement entre les papiers
-	var espacement=0
+	//var espacement=0
 	var e=[] 
 
 	//e.main.body.setZeroDamping()
@@ -14,17 +14,21 @@ function drawRoll(Group,game,row,line,w,posx,posy) {
 	for (var j = 0; j < line; j++) {
 		e.paper[j] = [] 
 		for (var i = 0; i < row; i++) {
-			e.paper[j][i] = drawSprite(0,game,"sprite_paper",0,0,2*w,w/6.1,0,black,.3) 
-			e.paper[j][i].fwd = drawSprite(0,game,"sprite_paper",0,0,2*w,w/6.1,0,0,1) 
+			e.paper[j][i] = game.add.sprite(0,0,"sprite_paper")
+			e.paper[j][i].alpha=.1
+			e.paper[j][i].fwd = game.add.sprite(0,0,"sprite_paper")
+
+			//e.paper[j][i] = drawSprite(0,game,"sprite_paper",0,0,w,w,black,.3) 
+			//e.paper[j][i].fwd = drawSprite(0,game,"sprite_paper",0,0,w,w,0,0,1) 
 
 			//e.paper[j][i].fwd.animations.add('Play')
 			//e.paper[j][i].fwd.animations.play('Play',1,true)
 
 			e.paper[j][i].fwd.x = 0
-			e.paper[j][i].fwd.y =0+(j*(w/6.1+espacement)) 
+			e.paper[j][i].fwd.y =j*w 
 
 			e.paper[j][i].x = 0
-			e.paper[j][i].y =0+(j*(w/6.1+espacement)) 
+			e.paper[j][i].y =j*w 
 
 			// ajout des childs au parent >>e.main
 			Group.add(e.paper[j][i]) 
@@ -32,9 +36,11 @@ function drawRoll(Group,game,row,line,w,posx,posy) {
 		} 
 	} 
 
-	e.main=drawSprite(Group,game,"rect",posx-w*.5,posy,w,w*9,0,black,.5) 
+	e.main=game.add.sprite(posx-w*.5,posy,"rect_invisible")
+	//e.main=drawSprite(Group,game,"rect",posx-w*.5,posy,w,w*9,0,black,.5) 
 	e.main.isOutOfMiddleTable=false 
 	e.main.inputEnabled=true 
+	Group.add(e.main) 
 
 
 	for (var j = 0; j < line; j++) {

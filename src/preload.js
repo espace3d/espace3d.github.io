@@ -11,7 +11,7 @@ preload.prototype = {
 		//spritesheet
 		this.game.load.spritesheet("numbers","assets/numbers.png",100,100);
 		this.game.load.spritesheet("iconpaper","assets/iconpaper.png",100,100,2);
-		this.game.load.spritesheet("sprite_paper","assets/paper.png",100,100,8);
+		this.game.load.spritesheet("sprite_paper","assets/paper.png",105,105,8);
 
 		//script
 		this.game.load.script('gray', 'https://cdn.rawgit.com/photonstorm/phaser/master/filters/Gray.js')
