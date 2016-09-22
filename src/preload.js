@@ -33,6 +33,7 @@ preload.prototype = {
 		this.game.load.image("paper","assets/paper.png");
 		this.game.load.image("stripe","assets/stripe.png");
 		this.game.load.image("rect","assets/rect.png");
+		this.game.load.image("rect_invisible","assets/rect_invisible.png");
 		this.game.load.image("cursor_palpitant","assets/cursor_palpitant.png");
 
 		//font bitmapFont

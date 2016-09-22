@@ -14,17 +14,17 @@ function drawRoll(Group,game,row,line,w,posx,posy) {
 	for (var j = 0; j < line; j++) {
 		e.paper[j] = [] 
 		for (var i = 0; i < row; i++) {
-			e.paper[j][i] = drawSprite(0,game,"sprite_paper",0,0,w,w,0,black,.3) 
-			e.paper[j][i].fwd = drawSprite(0,game,"sprite_paper",0,0,w,w,0,0,1) 
+			e.paper[j][i] = drawSprite(0,game,"sprite_paper",0,0,2*w,w/6.1,0,black,.3) 
+			e.paper[j][i].fwd = drawSprite(0,game,"sprite_paper",0,0,2*w,w/6.1,0,0,1) 
 
 			//e.paper[j][i].fwd.animations.add('Play')
 			//e.paper[j][i].fwd.animations.play('Play',1,true)
 
-			e.paper[j][i].fwd.x = posx-w*.52+i*(w+espacement) 
-			e.paper[j][i].fwd.y =posy+(j*(w+espacement)) 
+			e.paper[j][i].fwd.x = 0
+			e.paper[j][i].fwd.y =0+(j*(w/6.1+espacement)) 
 
-			e.paper[j][i].x = posx-w*.5+i*(w+espacement) 
-			e.paper[j][i].y =posy+(j*(w+espacement)) 
+			e.paper[j][i].x = 0
+			e.paper[j][i].y =0+(j*(w/6.1+espacement)) 
 
 			// ajout des childs au parent >>e.main
 			Group.add(e.paper[j][i]) 
@@ -32,7 +32,7 @@ function drawRoll(Group,game,row,line,w,posx,posy) {
 		} 
 	} 
 
-	e.main=drawSprite(Group,game,"rect",posx-w*.5,posy,w,w*9,0,black,.1) 
+	e.main=drawSprite(Group,game,"rect",posx-w*.5,posy,w,w*9,0,black,.5) 
 	e.main.isOutOfMiddleTable=false 
 	e.main.inputEnabled=true 
 
@@ -40,8 +40,8 @@ function drawRoll(Group,game,row,line,w,posx,posy) {
 	for (var j = 0; j < line; j++) {
 		for (var i = 0; i < row; i++) {
 
-			//e.main.addChild(e.paper[j][i])
-			//e.main.addChild(e.paper[j][i].fwd)
+			e.main.addChild(e.paper[j][i])
+			e.main.addChild(e.paper[j][i].fwd)
 		}
 	}
 	//pour remettre le e.main.isFalling true et permettre ainsi la chute des papiers
