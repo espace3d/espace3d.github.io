@@ -54,8 +54,7 @@ theGame.prototype = {
 
 
 //demarrage de physic
-		this.game.world.setBounds(0,-2000,16000,12000)
-		this.game.physics.startSystem(Phaser.Physics.P2JS)
+		this.game.physics.startSystem(Phaser.Physics.ARCADE)
 		//this.game.physics.p2.gravity.y=200
 
 		//ORDRE DES GROUPES ICI
@@ -110,9 +109,9 @@ theGame.prototype = {
 
 		//EFFECT SUR LE TIMER
 		effect.deform_main(text.time_shadow)
-		this.game.physics.p2.enable(paper_player.main)
-		paper_player.main.body.setZeroVelocity()
-		paper_player.main.body.fixedRotation = true
+		this.game.physics.enable(paper_player.main, Phaser.Physics.ARCADE)
+		//paper_player.main.body.setZeroVelocity()
+		//paper_player.main.body.fixedRotation = true
 
 	},
 

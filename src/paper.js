@@ -32,7 +32,7 @@ function drawRoll(Group,game,row,line,w,posx,posy) {
 		} 
 	} 
 
-	e.main=drawSprite(Group,game,"rect",posx-w*.5,posy,w,w*9,0,black,1) 
+	e.main=drawSprite(Group,game,"rect",posx-w*.5,posy,w,w*9,0,black,.1) 
 	e.main.isOutOfMiddleTable=false 
 	e.main.inputEnabled=true 
 
@@ -40,8 +40,8 @@ function drawRoll(Group,game,row,line,w,posx,posy) {
 	for (var j = 0; j < line; j++) {
 		for (var i = 0; i < row; i++) {
 
-			e.main.addChild(e.paper[j][i])
-			e.main.addChild(e.paper[j][i].fwd)
+			//e.main.addChild(e.paper[j][i])
+			//e.main.addChild(e.paper[j][i].fwd)
 		}
 	}
 	//pour remettre le e.main.isFalling true et permettre ainsi la chute des papiers
@@ -133,13 +133,14 @@ function drawRoll(Group,game,row,line,w,posx,posy) {
 	}
 
 	e.fall = function(obj) {
-		obj.body.setZeroVelocity()
+		//obj.body.setZeroVelocity()
 		if (obj.isFalling) {
 			//obj.body.setZeroVelocity()
 			if (game.input.activePointer.isDown) {
+				obj.body.velocity.y=0
 			} else {	 
 				//pour faire descendre les papiers
-				obj.body.moveDown(400);
+				obj.body.velocity.y= 400;
 				//Group.y+=9 	
 
 				//pour secouer les papiers sur l'horizontale et mimer la chute
