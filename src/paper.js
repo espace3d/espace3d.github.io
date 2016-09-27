@@ -6,32 +6,47 @@
 function drawRoll(Group,game,row,line,w,posx,posy) {
 
 	//espacement entre les papiers
-	var espacement=0
+	//var espacement=0
 	var e=[] 
+
+	//e.main.body.setZeroDamping()
 	e.paper=[] 
 	for (var j = 0; j < line; j++) {
 		e.paper[j] = [] 
 		for (var i = 0; i < row; i++) {
-			e.paper[j][i] = drawSprite(0,game,"sprite_paper",0,0,w,w,0,black,0) 
-			e.paper[j][i].fwd = drawSprite(0,game,"sprite_paper",0,0,w,w,0,0,1) 
+			e.paper[j][i] = game.add.sprite(0,0,"sprite_paper")
+			e.paper[j][i].alpha=.1
+			e.paper[j][i].fwd = game.add.sprite(0,0,"sprite_paper")
 
 			//e.paper[j][i].fwd.animations.add('Play')
 			//e.paper[j][i].fwd.animations.play('Play',1,true)
 
-			e.paper[j][i].fwd.x = posx-w*.52+i*(w+espacement) 
-			e.paper[j][i].fwd.y =posy+(j*(w+espacement)) 
+			e.paper[j][i].fwd.x = 0
+			e.paper[j][i].fwd.y =j*w 
 
-			e.paper[j][i].x = posx-w*.5+i*(w+espacement) 
-			e.paper[j][i].y =posy+(j*(w+espacement)) 
+			e.paper[j][i].x = 0
+			e.paper[j][i].y =j*w 
 
+			// ajout des childs au parent >>e.main
 			Group.add(e.paper[j][i]) 
 			Group.add(e.paper[j][i].fwd) 
 		} 
 	} 
-	e.main=drawSprite(Group,game,"rect",posx-w*.5,posy,w,w*9,0,black,0) 
-	e.main.isOutOfMiddleTable=false 
 
+	e.main=game.add.sprite(posx-w*.5,posy,"rect_invisible")
+	e.main.isOutOfMiddleTable=false 
 	e.main.inputEnabled=true 
+	e.main.isFalling=false
+	Group.add(e.main) 
+
+	//ajout aux groupes
+	for (var j = 0; j < line; j++) {
+		for (var i = 0; i < row; i++) {
+
+			e.main.addChild(e.paper[j][i])
+			e.main.addChild(e.paper[j][i].fwd)
+		}
+	}
 
 	//pour remettre le e.main.isFalling true et permettre ainsi la chute des papiers
 	e.timer=game.time.events.add(delay_paper_fall,function(){e.main.isFalling=true})
@@ -44,97 +59,157 @@ function drawRoll(Group,game,row,line,w,posx,posy) {
 	var current_point=1
 	var points_chute = {}
 
-	points_chute[1]=Math.round((game.rnd.between(40,80)*9))
-	points_chute[2]=Math.round((game.rnd.between(90,140)*9))
-	points_chute[3]=Math.round((game.rnd.between(140,155)*9))
-	points_chute[4]=Math.round((game.rnd.between(155,160)*9))
-
+	for (var i = 0; i < 100; i++) {
+		points_chute[i]=Math.round(game.rnd.between(10,1500))
+	};
 
 	//temps pour que le e.main.isFalling soit remis à true et que les papiers tombent à nouveau
 	var time_chute = {}
+	var min_time_chute=150
+	var max_time_chute=1500
+	for (var i = 0; i < 100; i++) {
 
-	time_chute[1]=game.rnd.between(200,300)
-	time_chute[2]=game.rnd.between(300,9000)
-	time_chute[3]=game.rnd.between(700,4000)
-	time_chute[4]=game.rnd.between(8000,9000)
-
+		time_chute[i]=game.rnd.between(min_time_chute,max_time_chute)
+	}
 
 	//function pour incrementer le current_point
 	var choose_current_point = function(){
 		current_point = current_point + 1
-		if (current_point > 4){
+		if (current_point > points_chute.length) {
 			current_point = 1
 		}
-		console.log("current_point")
 	}
 
-
-	var reset_e_main_is_falling = function(){
-		e.main.isFalling = true
-	}
 
 	//OPPONENT
 	//on teste que le drapeau 'e.main.isFalling' soit à true et on fait descendres le groupe
-	// si le group == points_chute alors il s'arrete
+	// si e.main == points_chute alors il s'arrete
 	// ensuite on lance un timer.performwithdelay pour remettre le drapeau e.main.isFalling à true
-	// attention que le group.y doit etre égal à un multiple équivalent au nombre de la chute  
-	e.opponentfall = function(obj,curso,parti) {
-		console.log(Group.y)
-		if (e.main.isFalling) {
-			Group.y+=9 	
-		}
+
+	/**
+	 * curso =  curseur 
+	 * curso_rect =  curseur rectangle 
+	 * parti =  particle
+	 */
+	//OPPONENT
+	var count = 0
+	e.opponentfall = function(_paper_opponent_main,_background_line_collision,curso,curso_rect,parti) {
+		if (e.main.isFalling){
+
+			//pour faire descendre les papiers
+			_paper_opponent_main.body.velocity.y= 400;
+
+			//collision 
+			for (var i = 0; i < _background_line_collision.length; i++) {
+				game.physics.arcade.collide(_paper_opponent_main,_background_line_collision[i],e.opponentfall_subfunction,null,this) 
+			};
+
+			e.opponentfall_subfunction=function(obj1,obj2){
+				obj1.body.velocity.y=400 	
+				//pour ne pas lancer la function plus de 2x
+				if (!obj2.isTouch){
+					obj2.isTouch=true
+					count++
+					console.log(count,"touch")
+
+					if (count ==_background_line_collision.length){
+						//ici mettre l'action lorsque le joueur valide l'action
+						parti.on
+						curso_rect.alpha =.8
+						curso_rect.y = h2 + game.rnd.between(-100,100)
+						e.main.isFalling=false
+
+						// curseur avec pression exercée
+						//ici si le temps est validé 
+
+					} else if(time_chute[current_point] > max_time_chute-400 && current_point!=1 ){ 
+						curso.y = h2 + game.rnd.between(-100,100)
+						parti.on=true
+						if (curso_rect.alpha <= 0.2) {
+							curso_rect.isRaise=true
+						} else if (curso_rect.alpha >= .59) {
+							curso_rect.isRaise=false	
+						}
+						if ( curso_rect.isRaise ) {
+							curso_rect.alpha +=.02
+						} else {
+							curso_rect.alpha -=.02
+						}
+						//sinon rien
+					} else {
+						parti.on=false
+						curso_rect.alpha=0
+					}
+				}
 
 
-		if (Group.y == points_chute[current_point]){
-			obj.y=h2+game.rnd.between(-100,100)
-			console.log(points_chute[current_point], "cii")
-			e.main.isFalling =false
-			choose_current_point()
-			console.log(current_point,"current_point")
-			game.time.events.loop(time_chute[current_point], reset_e_main_is_falling, this)
-			console.log(time_chute[current_point])
-			Group.y+=9 	
-		}
+				//positionnnent des curseurs à l'endroit du point touché
+				//delay pour que le drapreau du papier soit remis à true
+				game.time.events.add(time_chute[current_point],() => e.hide_and_destroy_physics(obj2), this)
+				// chute du papier
+				obj1.body.velocity.y=0 	
+				choose_current_point()
 
-		// curseur avec pression exercée
-		if(time_chute[current_point] > 500){ 
-			parti.on=true
-			if (curso.alpha <= 0.2) {
+				//callback 
+				e.hide_and_destroy_physics=function(obj2){
+					obj2.body.enable=false
 
-				console.log("raise")
-				curso.isRaise=true
-			} else if (curso.alpha >= .59) {
-
-				curso.isRaise=false	
+				}
 			}
-			if ( curso.isRaise ) {
-				curso.alpha +=.02
-			} else {
-				curso.alpha -=.02
-			}
 
-		}
-		else
-		{
-			parti.on=false
-			curso.alpha=0
+
+
+
 		}
 	}
 
-	e.fall = function() {
-		if (e.main.isFalling) {
+	//PLAYER
+	e.fall = function(obj,_background) {
+		if (obj.isFalling) {
 			if (game.input.activePointer.isDown) {
+				obj.body.velocity.y=0
+				// cursor avec pression exercée
+				if (game.input.activePointer.duration > 500 && game.time.now > delay_paper_fall+delay_paper_fall*.5 ) {
+					_background.cursor_player_particle.on=true
+					_background.cursor_player_particle.y= _background.cursor_player.y
+
+					_background.text_name_player_shadow.visible=true
+					_background.panimTween_shadow.resume()
+					_background.panimTween.resume()
+
+					if (_background.cursor_player.alpha <= 0.2) {
+						_background.cursor_player.isRaise=true
+					} else if (_background.cursor_player.alpha >= .59) {
+						_background.cursor_player.isRaise=false	
+					}
+					if ( _background.cursor_player.isRaise ) {
+						_background.cursor_player.alpha +=.02
+					} else {
+						_background.cursor_player.alpha -=.02
+					}
+
+				}
+				else
+				{
+					//_background.cursor_player_particle_destroy()
+					_background.cursor_player.alpha=0
+					_background.text_name_player_shadow.visible=false
+					_background.panimTween_shadow.pause()
+					_background.panimTween.pause()
+					_background.cursor_player_particle.on=false
+
+				}
 			} else {	 
 				//pour faire descendre les papiers
-				Group.y+=9 	
-
-				//pour secouer les papiers sur l'horizontale et mimer la chute
-				//Group.x=Group.x+game.rnd.between(-.2,.2)
+				obj.body.velocity.y= 400;
+				_background.cursor_player_particle.on=false
+				_background.panimTween_shadow.pause()
+				_background.panimTween.pause()
 			} 
 		}
 	}
-	return e 
-} 
+	return e
+}
 
 //////////////////////////////////////////////////////////////////////////////////////////
 //fonction finale qui dessine le rouleau avec les papiers + papier général

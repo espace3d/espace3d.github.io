@@ -32,52 +32,33 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 	e.cursor_palpitant_opponent.alpha=0
 	e.cursor_palpitant_time_opponent=150
 
-	//particle pour le cursor player
-	e.cursor_player_particle_flag=true
-	e.cursor_player_particle_appears=function(){
-		e.cursor_player_particle = game.add.emitter(e.cursor_player.x, e.cursor_player.y, 200)
-		e.cursor_player_particle.makeParticles("particle_player")
-		e.cursor_player_particle.minParticleSpeed.setTo(-300,-300)
-		e.cursor_player_particle.maxParticleSpeed.setTo(400,400)
-		e.cursor_player_particle.setAlpha(0.5, .9)
+	e.cursor_player_particle = game.add.emitter(e.cursor_player.x, e.cursor_player.y, 200)
+	e.cursor_player_particle.makeParticles("particle_player")
+	e.cursor_player_particle.minParticleSpeed.setTo(-300,-300)
+	e.cursor_player_particle.maxParticleSpeed.setTo(400,400)
+	e.cursor_player_particle.setAlpha(0.5, .9)
 
-		e.cursor_player_particle.minParticleScale = .5
-		e.cursor_player_particle.maxParticleScale = .2
-		e.cursor_player_particle.minRotation = 0
-		e.cursor_player_particle.maxRotation = 0
-		e.cursor_player_particle.on=true
-		e.cursor_player_particle.start(false, 350, 19)
-		return e.cursor_player_particle
-	}
-
-	e.cursor_player_particle_appears()
-
-	e.cursor_player_particle_destroy=function(){
-		e.cursor_player_particle.on=false
-	}
+	e.cursor_player_particle.minParticleScale = .5
+	e.cursor_player_particle.maxParticleScale = .2
+	e.cursor_player_particle.minRotation = 0
+	e.cursor_player_particle.maxRotation = 0
+	e.cursor_player_particle.on=false
+	e.cursor_player_particle.start(true, 350, 19)
 
 	e.cursor_opponent_particle_flag=true
-	e.cursor_opponent_particle_appears=function(){
-		e.cursor_opponent_particle = game.add.emitter(e.cursor_opponent.x, e.cursor_opponent.y, 200)
-		e.cursor_opponent_particle.makeParticles("particle_opponent")
-		e.cursor_opponent_particle.minParticleSpeed.setTo(-300,-300)
-		e.cursor_opponent_particle.maxParticleSpeed.setTo(400,400)
-		e.cursor_opponent_particle.setAlpha(0.5, .9)
+	e.cursor_opponent_particle = game.add.emitter(e.cursor_opponent.x, e.cursor_opponent.y, 200)
+	e.cursor_opponent_particle.makeParticles("particle_opponent")
+	e.cursor_opponent_particle.minParticleSpeed.setTo(-300,-300)
+	e.cursor_opponent_particle.maxParticleSpeed.setTo(400,400)
+	e.cursor_opponent_particle.setAlpha(0.5, .9)
 
-		e.cursor_opponent_particle.minParticleScale = .5
-		e.cursor_opponent_particle.maxParticleScale = .2
-		e.cursor_opponent_particle.minRotation = 0
-		e.cursor_opponent_particle.maxRotation = 0
-		e.cursor_opponent_particle.on=true
-		e.cursor_opponent_particle.start(false, 350, 19)
-		return e.cursor_opponent_particle
-	}
+	e.cursor_opponent_particle.minParticleScale = .5
+	e.cursor_opponent_particle.maxParticleScale = .2
+	e.cursor_opponent_particle.minRotation = 0
+	e.cursor_opponent_particle.maxRotation = 0
+	e.cursor_opponent_particle.on=false
+	e.cursor_opponent_particle.start(true, 350, 19)
 
-	e.cursor_opponent_particle_appears()
-
-	e.cursor_opponent_particle_destroy=function(){
-		e.cursor_opponent_particle.on=false
-	}
 	//à 0 pour ne pas le voir au début
 	e.fond=drawSprite(group8,game,"back",0,0,w,h,0,0,1) 
 
@@ -118,6 +99,16 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 	e.opponent_top=drawSprite(group1,game,"rect",0-decalage,0,w2,h*.15,0,red,1) 
 	e.player_top=drawSprite(group2,game,"rect",w2+decalage,0,w2,h*.15,0,blue,1) 
 
+	//line de collision avec le paper opponent
+	e.line_collision_opponent=[]
+
+	for (var j = 0; j < 5; j++) {
+		e.line_collision_opponent[j]=game.add.sprite(0,game.rnd.integerInRange(h2,(h+h2)),"line_collision")
+		e.line_collision_opponent[j].isTouch=false
+
+		e.line_collision_opponent[j].alpha=.1
+	}
+
 	//textes du player et de l'opponent
 	//taille you
 	var taille=w*.07 
@@ -128,19 +119,39 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 
 	//texte symbolisant l'ombre sous le player et dont la visibilité apparait dans update via the Game.js
 	//player
-	e.text_name_player_shadow = game.add.bitmapText(w4*3+3,taille+3,'lucky','jojo', taille) 
+	e.text_name_player_shadow = game.add.bitmapText(w4*3+3,py1+3,'lucky','dev', taille) 
 	e.text_name_player_shadow.alpha=.5
 	e.text_name_player_shadow.visible=false
-	e.text_name_player = game.add.bitmapText(w4*3,taille,'lucky','jojo', taille) 
-	e.text_level_player = game.add.bitmapText(w4*3,taille*1.9,'lucky','lvl ', taille2) 
-	e.text_level_number_player=game.add.bitmapText(w4*3+30,taille*1.9,'lucky','1', taille2) 
+	e.text_name_player = game.add.bitmapText(w4*3,py1,'lucky','dev', taille) 
+	e.text_level_player = game.add.bitmapText(w4*3,py3,'lucky','lvl ', taille2) 
+	e.text_level_player.alpha=0
+	e.text_level_number_player=game.add.bitmapText(w4*3+30,py3,'lucky','1', taille2) 
 	e.text_level_number_player.tint=jaune
+	e.text_level_number_player.alpha=0
+
+	e.text_win_player = game.add.bitmapText(w4*3,h2,'lucky','win', taille) 
+	e.text_win_player.tint=jaune
+	e.text_win_player.visible=false
+
+	e.text_loose_player = game.add.bitmapText(w4*3,h2,'lucky','loose', taille) 
+	e.text_loose_player.tint=jaune
+	e.text_loose_player.visible=false
 
 	//OPPONENT 
-	e.text_name_opponent = game.add.bitmapText(w4,taille,'lucky','kill the game', taille) 
-	e.text_level_opponent = game.add.bitmapText(w4,taille*1.9,'lucky','lvl ', taille2) 
-	e.text_level_number_opponent=game.add.bitmapText(w4+30,taille*1.9,'lucky','4', taille2) 
+	e.text_name_opponent = game.add.bitmapText(w4,py1,'lucky','kill the game', taille) 
+	e.text_level_opponent = game.add.bitmapText(w4,py3,'lucky','lvl ', taille2) 
+	e.text_level_opponent.alpha=0
+	e.text_level_number_opponent=game.add.bitmapText(w4+30,py3,'lucky','5', taille2) 
 	e.text_level_number_opponent.tint=jaune
+	e.text_level_number_opponent.alpha=0
+
+	e.text_win_opponent = game.add.bitmapText(w4,h2,'lucky','win', taille) 
+	e.text_win_opponent.tint=jaune
+	e.text_win_opponent.visible=false
+
+	e.text_loose_opponent = game.add.bitmapText(w4,h2,'lucky','loose', taille) 
+	e.text_loose_opponent.tint=jaune
+	e.text_loose_opponent.visible=false
 
 	//modifications des anchors
 	e.text_name_player.anchor.x=.5
@@ -151,12 +162,21 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 	e.text_level_player.anchor.y=.5
 	e.text_level_number_player.anchor.x=.5
 	e.text_level_number_player.anchor.y=.5
+	e.text_win_player.anchor.x=.5
+	e.text_win_player.anchor.y=.5
+	e.text_loose_player.anchor.x=.5
+	e.text_loose_player.anchor.y=.5
+
 	e.text_name_opponent.anchor.x=.5
 	e.text_name_opponent.anchor.y=.5
 	e.text_level_opponent.anchor.x=.5
 	e.text_level_opponent.anchor.y=.5
 	e.text_level_number_opponent.anchor.x=.5
 	e.text_level_number_opponent.anchor.y=.5
+	e.text_win_opponent.anchor.x=.5
+	e.text_win_opponent.anchor.y=.5
+	e.text_loose_opponent.anchor.x=.5
+	e.text_loose_opponent.anchor.y=.5
 
 	//ajout des textes aux groupes
 	group2.add(e.text_name_player) 
@@ -171,6 +191,10 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 	//////////////////////////////////////////////////////////////////////////////////////////
 	//TRANSITIONS
 	//ligne à traits tirés apparaissant pour signifier le mileu de la table
+	e.tween_level_and_number_player1=game.add.tween(e.text_level_player).to({alpha:1},500,Phaser.Easing.Linear.None,true,delay_paper_fall)
+	e.tween_level_and_number_player2=game.add.tween(e.text_level_number_player).to({alpha:1},500,Phaser.Easing.Linear.None,true,delay_paper_fall)
+	e.tween_level_and_number_opponent1=game.add.tween(e.text_level_opponent).to({alpha:1},500,Phaser.Easing.Linear.None,true,delay_paper_fall)
+	e.tween_level_and_number_opponent2=game.add.tween(e.text_level_number_opponent).to({alpha:1},500,Phaser.Easing.Linear.None,true,delay_paper_fall)
 	e.tween_line_opponent_appears=game.add.tween(e.line_opponent_gauche).to({alpha:1},500,Phaser.Easing.Linear.None,true,3500)
 	e.tween_line_player_appears=game.add.tween(e.line_player_droite).to({alpha:1},500,Phaser.Easing.Linear.None,true,3500)
 	e.tween_cursor_appears=game.add.tween(e.cursor_palpitant).to({alpha:.6},1500,Phaser.Easing.Linear.None,true,3500)
@@ -181,6 +205,8 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 	//animation du texte du joueur lorsqu'on maintient la pression appuyée
 	e.panimTween=game.add.tween(e.text_name_player.scale).to({x:2, y:2},150,Phaser.Easing.Sinusoidal.In,true,0,-1,true)
 	e.panimTween_shadow=game.add.tween(e.text_name_player_shadow.scale).to({x:2.1, y:2.1},155,Phaser.Easing.Sinusoidal.In,true,0,-1,true)
+	e.panimTween.pause()
+	e.panimTween_shadow.pause()
 	return e
 }
 
