@@ -30,6 +30,7 @@ preload.prototype = {
 		this.game.load.image("particle_player","assets/particle_player.png");
 		this.game.load.image("particle_opponent","assets/particle_opponent.png");
 		this.game.load.image("division","assets/division.png");
+		this.game.load.image("line_collision","assets/line_collision.png");
 		this.game.load.image("paper","assets/paper.png");
 		this.game.load.image("stripe","assets/stripe.png");
 		this.game.load.image("rect","assets/rect.png");
@@ -40,7 +41,7 @@ preload.prototype = {
 		this.game.load.bitmapFont('lucky_black','fonts/font_black.png', 'fonts/font_black.fnt');
 		this.game.load.bitmapFont('lucky','fonts/font.png', 'fonts/font.fnt');
 	},
-  	create: function(){
+	create: function(){
 		this.game.state.start("GameTitle");
 	}
 }

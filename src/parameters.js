@@ -15,7 +15,7 @@ dim.paper="105";
 //////////////////////////////////////////////////////////////////////////////////////////
 //number
 var nu={}
-nu.paper="9"
+nu.paper="8"
 // var M={}
 // M.W=display.contentWidth
 // M.W2=display.contentWidth*.5

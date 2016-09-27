@@ -53,9 +53,8 @@ theGame.prototype = {
 	create: function(){
 
 
-//demarrage de physic
+		//demarrage de physic
 		this.game.physics.startSystem(Phaser.Physics.ARCADE)
-		//this.game.physics.p2.gravity.y=200
 
 		//ORDRE DES GROUPES ICI
 		//group null sert pour cacher les éléments du canevas original
@@ -109,7 +108,16 @@ theGame.prototype = {
 
 		//EFFECT SUR LE TIMER
 		effect.deform_main(text.time_shadow)
+
+
+		//enable physics body
 		this.game.physics.enable(paper_player.main, Phaser.Physics.ARCADE)
+		this.game.physics.enable(paper_opponent.main, Phaser.Physics.ARCADE)
+		for (var i = 0; i < background.line_collision_opponent.length; i++) {
+			this.game.physics.enable(background.line_collision_opponent[i], Phaser.Physics.ARCADE)
+			background.line_collision_opponent[i].body.immovable = true 
+		};
+
 		//paper_player.main.body.setZeroVelocity()
 		//paper_player.main.body.fixedRotation = true
 
@@ -117,18 +125,28 @@ theGame.prototype = {
 
 	update: function(){
 		//filtre en gris
-		if (playerPapers5.y > h2+h ) {
-			console.log("gray")
+		if (paper_player.main.body.y > h2 ) {
+			background.text_loose_player.visible=true
+
+			if (background.text_win_player.visible==false){
+			background.text_win_opponent.visible=true
+
+			}					
 			background.player.filters=[background.grayfiltertop]
 			background.player_top.filters=[background.grayfiltertop]
-
 		}
-		if (opponentPapers4.y > h2+h ) {
-			//paper_player.main.isOutOfMiddleTable=true;
+
+		if (paper_opponent.main.body.y > h2 ) {
+			background.text_loose_opponent.visible=true
+
+			if (background.text_win_opponent.visible==false){
+				background.text_win_player.visible=true
+
+			}					
 			background.opponent.filters=[background.grayfiltertop]
 			background.opponent_top.filters=[background.grayfiltertop]
-
 		}
+
 		//timer 
 		background.cursor_player.y=this.game.input.activePointer.y
 		background.cursor_palpitant.y=this.game.input.activePointer.y
@@ -167,7 +185,7 @@ theGame.prototype = {
 		time_elapsed(this.game)
 
 		//chute des papiers	
-		paper_opponent.opponentfall(background.cursor_palpitant_opponent,background.cursor_opponent,background.cursor_opponent_particle)	
+		paper_opponent.opponentfall(paper_opponent.main,background.line_collision_opponent,background.cursor_palpitant_opponent,background.cursor_opponent,background.cursor_opponent_particle)	
 		paper_player.fall(paper_player.main)	
 
 	},
