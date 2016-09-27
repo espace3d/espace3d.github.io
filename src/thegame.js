@@ -13,6 +13,8 @@ var theGame = function(game){
 	paper_player = null;
 	paper_opponent = null;
 	effect= null
+	little_roll_player=null
+	little_roll_opponent=null
 
 	//////////////////////////////////////////////////////////////////////////////////////////
 	//GROUP
@@ -94,6 +96,9 @@ theGame.prototype = {
 		menuPaper=drawMenuPaper(this.menuPaper,menuPaperGroup8,this.game)
 		text=drawText(this.game,timerGroup0)
 		effect=	draweffect(this.game)
+		little_roll_player=draw_little_roll(this.game,timerGroup0,w4*3,py2)
+		little_roll_opponent=draw_little_roll(this.game,timerGroup0,w4,py2)
+
 
 		//DEPLACEMENT DES GROUPES AU DEBUT (TEXTE TOP - TIMER - SHADOW)
 		topOpponentGroup1.position.y=h2
@@ -153,40 +158,13 @@ theGame.prototype = {
 		background.cursor_opponent.y=background.cursor_palpitant_opponent.y
 		background.cursor_opponent_particle.y=background.cursor_palpitant_opponent.y
 
-		// cursor avec pression exercée
-		if (this.game.input.activePointer.duration > 500 && this.game.time.now > delay_paper_fall+delay_paper_fall*.5 ) {
-			background.cursor_player_particle.on=true
-			background.cursor_player_particle.y= background.cursor_player.y
-			if (background.cursor_player.alpha <= 0.2) {
-				background.cursor_player.isRaise=true
-			} else if (background.cursor_player.alpha >= .59) {
-				background.cursor_player.isRaise=false	
-			}
-			if ( background.cursor_player.isRaise ) {
-				background.cursor_player.alpha +=.02
-			} else {
-				background.cursor_player.alpha -=.02
-			}
-
-			background.text_name_player_shadow.visible=true
-			background.panimTween_shadow.resume()
-			background.panimTween.resume()
-		}
-		else
-		{
-			background.cursor_player_particle_destroy()
-			background.cursor_player.alpha=0
-			background.text_name_player_shadow.visible=false
-			background.panimTween_shadow.pause()
-			background.panimTween.pause()
-		}
 
 		// temps écoulé
 		time_elapsed(this.game)
 
 		//chute des papiers	
 		paper_opponent.opponentfall(paper_opponent.main,background.line_collision_opponent,background.cursor_palpitant_opponent,background.cursor_opponent,background.cursor_opponent_particle)	
-		paper_player.fall(paper_player.main)	
+		paper_player.fall(paper_player.main,background)	
 
 	},
 

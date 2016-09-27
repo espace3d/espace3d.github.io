@@ -164,13 +164,47 @@ function drawRoll(Group,game,row,line,w,posx,posy) {
 	}
 
 	//PLAYER
-	e.fall = function(obj) {
+	e.fall = function(obj,_background) {
 		if (obj.isFalling) {
 			if (game.input.activePointer.isDown) {
 				obj.body.velocity.y=0
+				// cursor avec pression exercée
+				if (game.input.activePointer.duration > 500 && game.time.now > delay_paper_fall+delay_paper_fall*.5 ) {
+					_background.cursor_player_particle.on=true
+					_background.cursor_player_particle.y= _background.cursor_player.y
+
+					_background.text_name_player_shadow.visible=true
+					_background.panimTween_shadow.resume()
+					_background.panimTween.resume()
+
+					if (_background.cursor_player.alpha <= 0.2) {
+						_background.cursor_player.isRaise=true
+					} else if (_background.cursor_player.alpha >= .59) {
+						_background.cursor_player.isRaise=false	
+					}
+					if ( _background.cursor_player.isRaise ) {
+						_background.cursor_player.alpha +=.02
+					} else {
+						_background.cursor_player.alpha -=.02
+					}
+
+				}
+				else
+				{
+					//_background.cursor_player_particle_destroy()
+					_background.cursor_player.alpha=0
+					_background.text_name_player_shadow.visible=false
+					_background.panimTween_shadow.pause()
+					_background.panimTween.pause()
+					_background.cursor_player_particle.on=false
+
+				}
 			} else {	 
 				//pour faire descendre les papiers
 				obj.body.velocity.y= 400;
+				_background.cursor_player_particle.on=false
+				_background.panimTween_shadow.pause()
+				_background.panimTween.pause()
 			} 
 		}
 	}
