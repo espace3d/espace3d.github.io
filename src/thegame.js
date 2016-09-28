@@ -126,7 +126,11 @@ theGame.prototype = {
 		//paper_player.main.body.setZeroVelocity()
 		//paper_player.main.body.fixedRotation = true
 
+// ajout d'un boutton au timer pour permettre le plein écran
+		this.game.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;
 	},
+
+
 
 	update: function(){
 		//filtre en gris
@@ -158,6 +162,16 @@ theGame.prototype = {
 		background.cursor_opponent.y=background.cursor_palpitant_opponent.y
 		background.cursor_opponent_particle.y=background.cursor_palpitant_opponent.y
 
+		text.time_shadow.events.onInputDown.add(gofull, this);
+
+	function gofull(){
+
+		if (this.game.scale.isFullScreen) {
+			this.game.scale.stopFullScreen();
+		} else {
+			this.game.scale.startFullScreen(false);
+		}
+	}
 
 		// temps écoulé
 		time_elapsed(this.game)
