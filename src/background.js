@@ -207,6 +207,19 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 	e.panimTween_shadow=game.add.tween(e.text_name_player_shadow.scale).to({x:2.1, y:2.1},155,Phaser.Easing.Sinusoidal.In,true,0,-1,true)
 	e.panimTween.pause()
 	e.panimTween_shadow.pause()
+
+//	e.check_winner=function(stoptween,fonction,obj){
+//		console.log("stoptween")
+//		//if (e.text_win_player && e.text_loose_opponent) {
+//			//stoptween
+//			//fonction
+//		//}
+//		//else if (e.text_loose_player && e.text_win_opponent){
+//			stoptween
+//			fonction(obj)
+//		//}
+//	}
+
 	return e
 }
 

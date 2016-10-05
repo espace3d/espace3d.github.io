@@ -95,7 +95,7 @@ theGame.prototype = {
 		paper_opponent = drawP(opponentPapers4,this.game,w4,-h)
 		menuPaper=drawMenuPaper(this.menuPaper,menuPaperGroup8,this.game)
 		text=drawText(this.game,timerGroup0)
-		effect=	draweffect(this.game)
+		effect=draweffect(this.game)
 		little_roll_player=draw_little_roll(this.game,timerGroup0,w4*3,py2)
 		little_roll_opponent=draw_little_roll(this.game,timerGroup0,w4,py2)
 
@@ -112,8 +112,13 @@ theGame.prototype = {
 		displacement_background_shadow(background.table_opponent,background.table_player,topPlayerGroup2,topOpponentGroup1,timerGroup0,this.game)
 
 		//EFFECT SUR LE TIMER
+		//this.game.time.events.loop(500,() => effect.deform_text(text.timer),this);
+		//this.game.time.events.loop(200,() => effect.deform_main(text.time_shadow),this);
+		effect.deform_text(text.timer)
 		effect.deform_main(text.time_shadow)
 
+
+		//this.game.effect.deform_main(text.time_shadow)
 
 		//enable physics body
 		this.game.physics.enable(paper_player.main, Phaser.Physics.ARCADE)
@@ -126,7 +131,7 @@ theGame.prototype = {
 		//paper_player.main.body.setZeroVelocity()
 		//paper_player.main.body.fixedRotation = true
 
-// ajout d'un boutton au timer pour permettre le plein écran
+		// ajout d'un boutton au timer pour permettre le plein écran
 		this.game.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;
 	},
 
@@ -138,7 +143,7 @@ theGame.prototype = {
 			background.text_loose_player.visible=true
 
 			if (background.text_win_player.visible==false){
-			background.text_win_opponent.visible=true
+				background.text_win_opponent.visible=true
 
 			}					
 			background.player.filters=[background.grayfiltertop]
@@ -156,22 +161,35 @@ theGame.prototype = {
 			background.opponent_top.filters=[background.grayfiltertop]
 		}
 
-		//timer 
-		background.cursor_player.y=this.game.input.activePointer.y
-		background.cursor_palpitant.y=this.game.input.activePointer.y
-		background.cursor_opponent.y=background.cursor_palpitant_opponent.y
-		background.cursor_opponent_particle.y=background.cursor_palpitant_opponent.y
-
-		text.time_shadow.events.onInputDown.add(gofull, this);
-
-	function gofull(){
-
-		if (this.game.scale.isFullScreen) {
-			this.game.scale.stopFullScreen();
-		} else {
-			this.game.scale.startFullScreen(false);
+		function check_winner(){
+			if (background.text_win_player.visible && background.text_loose_opponent.visible) {
+			console.log("stoptween")
+				effect.deform_main_tween.pause()
+				effect.disappears_timer(text.time_shadow)
+			}
+			else if (background.text_loose_player.visible && background.text_win_opponent.visible){
+			console.log("stoptween")
+				effect.deform_main_tween.pause()
+				effect.disappears_timer(text.time_shadow)
+			}
 		}
-	}
+		check_winner()
+			//timer 
+			background.cursor_player.y=this.game.input.activePointer.y
+			background.cursor_palpitant.y=this.game.input.activePointer.y
+			background.cursor_opponent.y=background.cursor_palpitant_opponent.y
+			background.cursor_opponent_particle.y=background.cursor_palpitant_opponent.y
+
+			text.time_shadow.events.onInputDown.add(gofull, this);
+
+			function gofull(){
+
+				if (this.game.scale.isFullScreen) {
+					this.game.scale.stopFullScreen();
+				} else {
+					this.game.scale.startFullScreen(false);
+				}
+			}
 
 		// temps écoulé
 		time_elapsed(this.game)
