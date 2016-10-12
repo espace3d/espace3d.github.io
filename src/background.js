@@ -4,9 +4,9 @@
 //////////////////////////////////////////////////////////////////////////////////////////
 //dessins de tous les éléments du décor
 
+var B = B || {}
 
 function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,group1) {
-	//var this={}
 
 	//////////////////////////////////////////////////////////////////////////////////////////
 	//gray filters
@@ -289,4 +289,5 @@ displacement_background_shadow=function(obj1,obj2,obj3,obj4,obj5,game) {
 	displacement_alpha(game,obj1,.8,delay_shadow_up_and_text_up,time_shadow_up_and_texte_up,"Linear.None")
 	displacement_alpha(game,obj2,.8,delay_shadow_up_and_text_up,time_shadow_up_and_texte_up,"Linear.None")
 }
+B = B || {}
 
