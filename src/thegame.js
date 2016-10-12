@@ -128,11 +128,9 @@ theGame.prototype = {
 		this.game.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;
 	},
 
-
-
 	update: function(){
 		//filtre en gris
-		if (paper_player.main.body.y > h2 ) {
+		if (paper_player.main.body.y > h2 && background.text_win_player.visible==false) {
 			background.text_loose_player.visible=true
 			if (background.text_win_player.visible==false){
 				background.text_win_opponent.visible=true
@@ -141,7 +139,7 @@ theGame.prototype = {
 			background.player_top.filters=[background.grayfiltertop]
 		}
 
-		if (paper_opponent.main.body.y > h2 ) {
+		if (paper_opponent.main.body.y > h2 && background.text_win_opponent.visible==false) {
 			background.text_loose_opponent.visible=true
 			if (background.text_win_opponent.visible==false){
 				background.text_win_player.visible=true
@@ -151,10 +149,10 @@ theGame.prototype = {
 		}
 
 		function check_winner(){
-			if (background.text_win_player.visible && background.text_loose_opponent.visible) {
-				//effect.disappears_timer(hud.time_shadow,hud.timer)
+			if (background.text_win_player.visible) {
+				effect.disappears_timer(hud.time_shadow,hud.timer)
 			}
-			else if (background.text_loose_player.visible && background.text_win_opponent.visible){
+			else if (background.text_win_opponent.visible){
 				effect.disappears_timer(hud.time_shadow,hud.timer)
 			}
 		}
