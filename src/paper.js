@@ -7,46 +7,49 @@ var P = P || {}
 
 P.draw = function(Group,game,posx,posy) {
 var speed=1200
-	var e={}
+	//var e={}
 	//parameters
-	e.paper=[] 
+	this.paper=[] 
 	for (var j = 0; j < nu.paper; j++) {
-		e.paper[j] = [] 
+		this.paper[j] = [] 
 		for (var i = 0; i < 1; i++) {
-			e.paper[j][i] = game.add.sprite(0,0,"sprite_paper")
-			e.paper[j][i].alpha=.1
-			e.paper[j][i].fwd = game.add.sprite(0,0,"sprite_paper")
-			//e.paper[j][i].fwd.animations.add('Play')
-			//e.paper[j][i].fwd.animations.play('Play',1,true)
-			e.paper[j][i].fwd.x = 0
-			e.paper[j][i].fwd.y =j*dim.paper 
-			e.paper[j][i].x = 0
-			e.paper[j][i].y =j*dim.paper 
-			// ajout des childs au parent >>e.main
-			Group.add(e.paper[j][i]) 
-			Group.add(e.paper[j][i].fwd) 
+			this.paper[j][i] = game.add.sprite(0,0,"sprite_paper")
+			this.paper[j][i].alpha=.1
+			this.paper[j][i].fwd = game.add.sprite(0,0,"sprite_paper")
+			//this.paper[j][i].fwd.animations.add('Play')
+			//this.paper[j][i].fwd.animations.play('Play',1,true)
+			this.paper[j][i].fwd.x = 0
+			this.paper[j][i].fwd.y =j*dim.paper 
+			this.paper[j][i].x = 0
+			this.paper[j][i].y =j*dim.paper 
+			// ajout des childs au parent >>this.main
+			Group.add(this.paper[j][i]) 
+			Group.add(this.paper[j][i].fwd) 
 		} 
 	} 
 
-	e.main=game.add.sprite(posx-dim.paper*.5,posy,"rect_invisible")
-	e.main.isOutOfMiddleTable=false 
-	e.main.inputEnabled=true 
-	e.main.isFalling=false
-	if (typeof e.main!== 'undefined'){ 
-		console.log("probleme")
-	} 
-	Group.add(e.main) 
+	this.main=game.add.sprite(posx-dim.paper*.5,posy,"rect_invisible")
+	this.main.isOutOfMiddleTable=false 
+	this.main.inputEnabled=true 
+	this.main.isFalling=false
+	//if (typeof this.main!== 'undefined'){ 
+		//console.log("probleme")
+	//} 
+	Group.add(this.main) 
 
 	//ajout aux groupes
 	for (var j = 0; j < nu.paper; j++) {
 		for (var i = 0; i < 1; i++) {
-			e.main.addChild(e.paper[j][i])
-			e.main.addChild(e.paper[j][i].fwd)
+			this.main.addChild(this.paper[j][i])
+			this.main.addChild(this.paper[j][i].fwd)
 		}
 	}
-	//pour remettre le e.main.isFalling true et permettre ainsi la chute des papiers
-	e.timer=game.time.events.add(delay_paper_fall,function(){e.main.isFalling=true})
+	//pour remettre le this.main.isFalling true et permettre ainsi la chute des papiers
+	this.timer=game.time.events.add(delay_paper_fall,resetflag,this)
 
+	function resetflag() {
+		this.main.isFalling=true
+	}
 	//////////////////////////////////////////////////////////////////////////////////////////
 	//FUNCTION POUR FAIRE DÉFILER LE ROULEAU DE PAPIER VERS LE BAS
 	//+ function pour faire trembler le papier sur l'horizontale pour mimer la chute
@@ -58,7 +61,7 @@ var speed=1200
 		points_chute[i]=Math.round(game.rnd.between(10,1500))
 	};
 
-	//temps pour que le e.main.isFalling soit remis à true et que les papiers tombent à nouveau
+	//temps pour que le this.main.isFalling soit remis à true et que les papiers tombent à nouveau
 	var time_chute = {}
 	var min_time_chute=150
 	var max_time_chute=1500
@@ -75,7 +78,7 @@ var speed=1200
 	}
 
 	//OPPONENT
-	//on teste que le drapeau 'e.main.isFalling' e.mainsoit à true et on fait descendres le groupe
+	//on teste que le drapeau 'this.main.isFalling' e.mainsoit à true et on fait descendres le groupe
 	// si e.main == points_chute alors il s'arrete
 	// ensuite on lance un timer.performwithdelay pour remettre le drapeau e.main.isFalling à true
 
@@ -86,16 +89,16 @@ var speed=1200
 	 */
 	//OPPONENT
 	var count = 0
-	e.opponentfall = function(_paper_opponent_main,_background_line_collision,curso,curso_rect,parti) {
+	this.opponentfall = function(_paper_opponent_main,_background_line_collision,curso,curso_rect,parti) {
 		if (_paper_opponent_main.isFalling){
 			//pour faire descendre les papiers
 			_paper_opponent_main.body.velocity.y= speed;
 			//collision 
 			for (var i = 0; i < _background_line_collision.length; i++) {
-				game.physics.arcade.collide(_paper_opponent_main,_background_line_collision[i],e.opponentfall_subfunction,null,this) 
+				game.physics.arcade.collide(_paper_opponent_main,_background_line_collision[i],this.opponentfall_subfunction,null,this) 
 			};
 
-			e.opponentfall_subfunction=function(obj1,obj2){
+			this.opponentfall_subfunction=function(obj1,obj2){
 				obj1.body.velocity.y=400 	
 				//pour ne pas lancer la function plus de 2x
 				if (!obj2.isTouch){
@@ -108,7 +111,7 @@ var speed=1200
 						parti.on
 						curso_rect.alpha =.8
 						curso_rect.y = h2 + game.rnd.between(-100,100)
-						e.main.isFalling=false
+						this.main.isFalling=false
 						// curseur avec pression exercée
 						//ici si le temps est validé 
 
@@ -134,13 +137,13 @@ var speed=1200
 
 				//positionnnent des curseurs à l'endroit du point touché
 				//delay pour que le drapreau du papier soit remis à true
-				game.time.events.add(time_chute[current_point],() => e.hide_and_destroy_physics(obj2), this)
+				game.time.events.add(time_chute[current_point],() => this.hide_and_destroy_physics(obj2), this)
 				// chute du papier
 				obj1.body.velocity.y=0 	
 				choose_current_point()
 
 				//callback 
-				e.hide_and_destroy_physics=function(obj2){
+				this.hide_and_destroy_physics=function(obj2){
 					obj2.body.enable=false
 				}
 			}
@@ -148,7 +151,7 @@ var speed=1200
 	}
 
 	//PLAYER
-	e.fall = function(_paper_player_main,_background) {
+	this.fall = function(_paper_player_main,_background) {
 		//_paper_player_main.body.velocity.y= 400;
 		if (_paper_player_main.isFalling) {
 			if (game.input.activePointer.isDown) {
@@ -191,7 +194,7 @@ var speed=1200
 			} 
 		}
 	}
-	return e
+	return this
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////

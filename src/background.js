@@ -129,12 +129,12 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 	this.text_level_number_player.tint=jaune
 	this.text_level_number_player.alpha=0
 
-	this.text_win_player = game.add.bitmapText(w4*3,h2,'lucky','win', taille) 
-	this.text_win_player.tint=jaune
+	this.text_win_player = game.add.bitmapText(w4*3,h2-taille+taille*.5,'lucky_black','win', taille) 
+	//this.text_win_player.tint=jaune
 	this.text_win_player.visible=false
 
-	this.text_loose_player = game.add.bitmapText(w4*3,h2,'lucky','loose', taille) 
-	this.text_loose_player.tint=jaune
+	this.text_loose_player = game.add.bitmapText(w4*3,h2-taille+taille*.5,'lucky_black','loose', taille) 
+	//this.text_loose_player.tint=jaune
 	this.text_loose_player.visible=false
 
 	//OPPONENT 
@@ -145,12 +145,12 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 	this.text_level_number_opponent.tint=jaune
 	this.text_level_number_opponent.alpha=0
 
-	this.text_win_opponent = game.add.bitmapText(w4,h2,'lucky','win', taille) 
-	this.text_win_opponent.tint=jaune
+	this.text_win_opponent = game.add.bitmapText(w4,h2-taille+taille*.5,'lucky_black','win', taille) 
+	//this.text_win_opponent.tint=jaune
 	this.text_win_opponent.visible=false
 
-	this.text_loose_opponent = game.add.bitmapText(w4,h2,'lucky','loose', taille) 
-	this.text_loose_opponent.tint=jaune
+	this.text_loose_opponent = game.add.bitmapText(w4,h2-taille+taille*.5,'lucky_black','loose', taille) 
+	//this.text_loose_opponent.tint=jaune
 	this.text_loose_opponent.visible=false
 
 	//modifications des anchors
@@ -189,7 +189,7 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 	group1.add(this.text_level_number_opponent) 
 
 	//////////////////////////////////////////////////////////////////////////////////////////
-	//TRANSITIONS
+	//TRANSITIONS}
 	//ligne à traits tirés apparaissant pour signifier le mileu de la table
 	this.tween_level_and_number_player1=game.add.tween(this.text_level_player).to({alpha:1},500,Phaser.Easing.Linear.None,true,delay_paper_fall)
 	this.tween_level_and_number_player2=game.add.tween(this.text_level_number_player).to({alpha:1},500,Phaser.Easing.Linear.None,true,delay_paper_fall)
@@ -201,6 +201,19 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 	this.tween_cursor_appears_opponent=game.add.tween(this.cursor_palpitant_opponent).to({alpha:.6},1500,Phaser.Easing.Linear.None,true,3500)
 	this.cursor_palpitant_tween=game.add.tween(this.cursor_palpitant.scale).to({x:1.2, y:1.2},this.cursor_palpitant_time,Phaser.Easing.Sinusoidal.In,true,5500,-1,false)
 	this.cursor_palpitant_tween_opponent=game.add.tween(this.cursor_palpitant_opponent.scale).to({x:1.2, y:1.2},this.cursor_palpitant_time,Phaser.Easing.Sinusoidal.In,true,5500,-1,false)
+	//animation text looser et winner lorsqu'ils apparaissent
+	this.winner_flag=true
+this.winner=function(){
+	if (this.winner_flag){
+		this.winner_flag = false
+	this.tween_winner=game.add.tween(this.text_loose_player.scale).to({x:1.5, y:1.5},800,Phaser.Easing.Elastic.In,true)
+	this.tween_looser=game.add.tween(this.text_win_opponent.scale).to({x:1.5, y:1.5},800,Phaser.Easing.Elastic.In,true)
+	}
+}
+this.looser=function(){
+
+}
+	
 	//////////////////////////////////////////////////////////////////////////////////////////
 	//animation du texte du joueur lorsqu'on maintient la pression appuyée
 	this.panimTween=game.add.tween(this.text_name_player.scale).to({x:2, y:2},150,Phaser.Easing.Sinusoidal.In,true,0,-1,true)
@@ -219,6 +232,14 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 //			fonction(obj)
 //		//}
 //	}
+
+this.displacement_background_opponent_and_player_close = function(obj1,obj2,obj3,obj4){
+	console.log("moddod")
+	displacement_position(game,obj1,0,0,0,time_close_panel_background,"Bounce.Out")
+	displacement_position(game,obj2,0,h2,0,time_close_panel_background,"Bounce.Out")
+	displacement_position(game,obj3,0,0,0,time_close_panel_background,"Bounce.Out")
+	displacement_position(game,obj4,0,h2,0,time_close_panel_background,"Bounce.Out")
+}
 
 	return this
 }
@@ -252,16 +273,17 @@ displacement_background_opponent_and_player=function(obj1,obj2,obj3,obj4,game){
 	//TIMER POUR RAMENER LES DEUX PANNEAUX VERS LE CENTRE
 	/*//CETTE FONCTION DOIT ÊTRE RATTACHÉE AU BOUTTON PLAY DANS LA SÉLECTION DES PAPIERS
 	*/
-	function back(){
-		displacement_position(game,obj1,0,0,0,time_close_panel_background,"Bounce.Out")
-		displacement_position(game,obj2,0,h2,0,time_close_panel_background,"Bounce.Out")
-		displacement_position(game,obj3,0,0,0,time_close_panel_background,"Bounce.Out")
-		displacement_position(game,obj4,0,h2,0,time_close_panel_background,"Bounce.Out")
-	}
+	//function back(){
+	//	displacement_position(game,obj1,0,0,0,time_close_panel_background,"Bounce.Out")
+	//	displacement_position(game,obj2,0,h2,0,time_close_panel_background,"Bounce.Out")
+	//	displacement_position(game,obj3,0,0,0,time_close_panel_background,"Bounce.Out")
+	//	displacement_position(game,obj4,0,h2,0,time_close_panel_background,"Bounce.Out")
+	//}
 
-	game.time.events.add(delay_close_panel_background,back,this);
+	//game.time.events.add(delay_close_panel_background,back,this);
 
 }
+
 
 //////////////////////////////////////////////////////////////////////////////////////////
 //DEPLACEMENT DE L'OMBRE DE LA TABLE POUR SYMBOLISER LA VUE QUI VA VERS LE HAUT

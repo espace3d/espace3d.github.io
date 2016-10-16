@@ -18,35 +18,35 @@ var theGame = function(game){
 	//////////////////////////////////////////////////////////////////////////////////////////
 	//GROUP
 	groupnull = null
-	//0 timerGroup0 - timer deplacé dans ce groupe car il doit être devant tout le monde le groupe 3 doit être supprimé
-	//1. topOpponentGroup1 --  bandeau horizontal supérieur + nom du joueur + dénomination (player ou opponent)--> opponent
-	//2. topPlayerGroup2 -- bandeau horizontal supérieur + nom du joueur + dénomination (player ou opponent)--> player
-	//3. timerGroup3 -- timer + rond  
-	//3bis. cursorGroup3bis -- curseur en forme de rectangle	
-	//3tris. shadowGroup3tris
-	//4. opponentPapers4 -- papiers de l'opponent
-	//5. playerPapers5 -- papiers du player
-	//6. opponentBackgroundGroup6 -- background sur une moitié pour l'opponent
-	//7. playerBackgroundGroup7 -- background sur une moitié pour le player
-	//8. menuPaperGroup8 -- menu derrière les 2 background + bords périphériques colorés du menus 
-	//9. shadowPaperGroup9 -- ombre sur le papier pour symboliser bord
+	//0 G.timerGroup0 - timer deplacé dans ce groupe car il doit être devant tout le monde le groupe 3 doit être supprimé
+	//1. G.topOpponentGroup1 --  bandeau horizontal supérieur + nom du joueur + dénomination (player ou opponent)--> opponent
+	//2. G.topPlayerGroup2 -- bandeau horizontal supérieur + nom du joueur + dénomination (player ou opponent)--> player
+	//3. G.timerGroup3 -- timer + rond  
+	//3bis. G.cursorGroup3bis -- curseur en forme de rectangle	
+	//3tris. G.shadowGroup3tris
+	//4. G.opponentPapers4 -- papiers de l'opponent
+	//5. G.playerPapers5 -- papiers du player
+	//6. G.opponentBackgroundGroup6 -- background sur une moitié pour l'opponent
+	//7. G.playerBackgroundGroup7 -- background sur une moitié pour le player
+	//8. G.menuPaperGroup8 -- menu derrière les 2 background + bords périphériques colorés du menus 
+	////9. shadowPaperGroup9 -- ombre sur le papier pour symboliser bord
 
-	fondBelowMenu = null
-	opponentTextGroup = null
-	playersGroup = null
+	//fondBelowMenu = null
+	//opponentTextGroup = null
+	//playersGroup = null
 
-	shadowPaperGroup9 = null
-	menuPaperGroup8 = null
-	playerBackgroundGroup7 = null
-	opponentBackgroundGroup6 = null
-	playerPapers5 = null
-	opponentPapers4 = null
-	shadowGroup3tris = null
-	cursorGroup3bis=null
-	timerGroup3 = null
-	topPlayerGroup2=null
-	topOpponentGroup1=null
-	timerGroup0=null
+	//shadowPaperGroup9 = null
+	//G.menuPaperGroup8 = null
+	////G.playerBackgroundGroup7 = null
+	//G.opponentBackgroundGroup6 = null
+	//G.playerPapers5 = null
+	//G.opponentPapers4 = null
+	//G.shadowGroup3tris = null
+	//G.cursorGroup3bis=null
+	//G.timerGroup3 = null
+	//G.topPlayerGroup2=null
+	//G.topOpponentGroup1=null
+	//G.timerGroup0=null
 	//////////////////////////////////////////////////////////////////////////////////////////
 }
 
@@ -62,18 +62,18 @@ theGame.prototype = {
 
 		groupnull = this.game.add.group();
 
-		shadowPaperGroup9 = this.game.add.group()
-		menuPaperGroup8 = this.game.add.group()
-		playerBackgroundGroup7 = this.game.add.group()
-		opponentBackgroundGroup6 = this.game.add.group()
-		playerPapers5 = this.game.add.group()
-		opponentPapers4 = this.game.add.group()
-		shadowGroup3tris = this.game.add.group()
-		cursorGroup3bis=this.game.add.group()
-		timerGroup3 = this.game.add.group()
-		topPlayerGroup2=this.game.add.group()
-		topOpponentGroup1=this.game.add.group()
-		timerGroup0=this.game.add.group()
+		//shadowPaperGroup9 = this.game.add.group()
+		G.menuPaperGroup8 = this.game.add.group()
+		G.playerBackgroundGroup7 = this.game.add.group()
+		G.opponentBackgroundGroup6 = this.game.add.group()
+		G.playerPapers5 = this.game.add.group()
+		G.opponentPapers4 = this.game.add.group()
+		G.shadowGroup3tris = this.game.add.group()
+		G.cursorGroup3bis=this.game.add.group()
+		G.timerGroup3 = this.game.add.group()
+		G.topPlayerGroup2=this.game.add.group()
+		G.topOpponentGroup1=this.game.add.group()
+		G.timerGroup0=this.game.add.group()
 
 		// DECLARATION DES VARIABLES ( canevas initial ) 
 		number = Math.floor(Math.random()*10);
@@ -89,28 +89,28 @@ theGame.prototype = {
 		groupnull.add(spriteNumber)
 
 		// DECLARATION DES VARIABLES MY GAME
-		background=drawBackground(this.game,menuPaperGroup8,playerBackgroundGroup7,opponentBackgroundGroup6,shadowGroup3tris,cursorGroup3bis,topPlayerGroup2,topOpponentGroup1)
-		paper_opponent = P.draw(opponentPapers4,this.game,w4,-h)
-		paper_player = P.draw(playerPapers5,this.game,w4*3,-h)
+		background=drawBackground(this.game,G.menuPaperGroup8,G.playerBackgroundGroup7,G.opponentBackgroundGroup6,G.shadowGroup3tris,G.cursorGroup3bis,G.topPlayerGroup2,G.topOpponentGroup1)
+		paper_opponent = new P.draw(G.opponentPapers4,this.game,w4,-h)
+		paper_player = new P.draw(G.playerPapers5,this.game,w4*3,-h)
 		console.log(paper_player)
 		console.log(paper_opponent)
-		menuPaper=drawMenuPaper(this.menuPaper,menuPaperGroup8,this.game)
-		hud=drawHud(this.game,timerGroup0)
+		menuPaper=new M.drawMenuPaper(this.menuPaper,G.menuPaperGroup8,this.game)
+		hud=drawHud(this.game,G.timerGroup0)
 		effect=draweffect(this.game)
-		little_roll_player=draw_little_roll(this.game,timerGroup0,w4*3,py2)
-		little_roll_opponent=draw_little_roll(this.game,timerGroup0,w4,py2)
+		little_roll_player=draw_little_roll(this.game,G.timerGroup0,w4*3,py2)
+		little_roll_opponent=draw_little_roll(this.game,G.timerGroup0,w4,py2)
 
 
 		//DEPLACEMENT DES GROUPES AU DEBUT (TEXTE TOP - TIMER - SHADOW)
-		topOpponentGroup1.position.y=h2
-		topPlayerGroup2.position.y=h2
-		timerGroup0.position.y=h2-200
+		G.topOpponentGroup1.position.y=h2
+		G.topPlayerGroup2.position.y=h2
+		G.timerGroup0.position.y=h2-200
 		background.table_opponent.y=h
 		background.table_player.y=h
 
 		//DEPLACEMENT DES BACKGROUND POUR ANIMER LE JEU
-		displacement_background_opponent_and_player(opponentBackgroundGroup6,topOpponentGroup1,playerBackgroundGroup7,topPlayerGroup2,this.game)
-		displacement_background_shadow(background.table_opponent,background.table_player,topPlayerGroup2,topOpponentGroup1,timerGroup0,this.game)
+		displacement_background_opponent_and_player(G.opponentBackgroundGroup6,G.topOpponentGroup1,G.playerBackgroundGroup7,G.topPlayerGroup2,this.game)
+		displacement_background_shadow(background.table_opponent,background.table_player,G.topPlayerGroup2,G.topOpponentGroup1,G.timerGroup0,this.game)
 
 		//EFFECT SUR LE TIMER
 		effect.deform_text(hud.timer)
@@ -131,18 +131,29 @@ theGame.prototype = {
 	update: function(){
 		//filtre en gris
 		if (paper_player.main.body.y > h2 && background.text_win_player.visible==false) {
+			background.winner()
 			background.text_loose_player.visible=true
 			if (background.text_win_player.visible==false){
 				background.text_win_opponent.visible=true
+				background.cursor_player.visible=false
+				background.cursor_palpitant.visible=false
+				background.cursor_opponent.visible=false
+				background.cursor_palpitant_opponent.visible=false
+
 			}					
 			background.player.filters=[background.grayfiltertop]
 			background.player_top.filters=[background.grayfiltertop]
 		}
 
 		if (paper_opponent.main.body.y > h2 && background.text_win_opponent.visible==false) {
+			background.winner()
 			background.text_loose_opponent.visible=true
 			if (background.text_win_opponent.visible==false){
 				background.text_win_player.visible=true
+				background.cursor_player.visible=false
+				background.cursor_palpitant.visible=false
+				background.cursor_opponent.visible=false
+				background.cursor_palpitant_opponent.visible=false
 			}					
 			background.opponent.filters=[background.grayfiltertop]
 			background.opponent_top.filters=[background.grayfiltertop]
