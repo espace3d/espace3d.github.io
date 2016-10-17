@@ -46,7 +46,7 @@
      if(windowRatio < width / height){
           var height = width / windowRatio;
      }
-	game = new Phaser.Game(width, height, Phaser.AUTO, "");
+	game = new Phaser.Game(width, height, Phaser.CANVAS, "");
 	game.state.add("Boot",boot);
 	game.state.add("Preload",preload);
 	game.state.add("GameTitle",gameTitle);
