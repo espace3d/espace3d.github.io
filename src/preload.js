@@ -27,6 +27,7 @@ preload.prototype = {
 		this.game.load.image("timer","assets/timer.png");
 		this.game.load.image("play_button","assets/play_button.png");
 		this.game.load.image("back","assets/back.svg");
+		this.game.load.image("particle_winner","assets/particle_winner.png");
 		this.game.load.image("particle_player","assets/particle_player.png");
 		this.game.load.image("particle_opponent","assets/particle_opponent.png");
 		this.game.load.image("division","assets/division.png");

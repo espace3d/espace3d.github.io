@@ -53,10 +53,9 @@ var theGame = function(game){
 theGame.prototype = {
 	create: function(){
 
-
 		//demarrage de physic
 		this.game.physics.startSystem(Phaser.Physics.ARCADE)
-
+		G.drawGroup(this.game)
 		//ORDRE DES GROUPES ICI
 		//group null sert pour cacher les éléments du canevas original
 
@@ -89,16 +88,14 @@ theGame.prototype = {
 		groupnull.add(spriteNumber)
 
 		// DECLARATION DES VARIABLES MY GAME
-		background=drawBackground(this.game,G.menuPaperGroup8,G.playerBackgroundGroup7,G.opponentBackgroundGroup6,G.shadowGroup3tris,G.cursorGroup3bis,G.topPlayerGroup2,G.topOpponentGroup1)
+		background=drawBackground(this.game,G.menuPaperGroup8,G.playerBackgroundGroup7,G.opponentBackgroundGroup6,G.shadowGroup3tris,G.cursorGroup3bis,G.topPlayerGroup2,G.topOpponentGroup1,G.timerGroup0)
 		paper_opponent = new P.draw(G.opponentPapers4,this.game,w4,-h)
 		paper_player = new P.draw(G.playerPapers5,this.game,w4*3,-h)
-		console.log(paper_player)
-		console.log(paper_opponent)
 		menuPaper=new M.drawMenuPaper(this.menuPaper,G.menuPaperGroup8,this.game)
 		hud=drawHud(this.game,G.timerGroup0)
 		effect=draweffect(this.game)
-		little_roll_player=draw_little_roll(this.game,G.timerGroup0,w4*3,py2)
-		little_roll_opponent=draw_little_roll(this.game,G.timerGroup0,w4,py2)
+		little_roll_player=new R.draw_little_roll(this.game,G.timerGroup0,w4*3,py2)
+		little_roll_opponent=new R.draw_little_roll(this.game,G.timerGroup0,w4,py2)
 
 
 		//DEPLACEMENT DES GROUPES AU DEBUT (TEXTE TOP - TIMER - SHADOW)
@@ -110,7 +107,7 @@ theGame.prototype = {
 
 		//DEPLACEMENT DES BACKGROUND POUR ANIMER LE JEU
 		displacement_background_opponent_and_player(G.opponentBackgroundGroup6,G.topOpponentGroup1,G.playerBackgroundGroup7,G.topPlayerGroup2,this.game)
-		displacement_background_shadow(background.table_opponent,background.table_player,G.topPlayerGroup2,G.topOpponentGroup1,G.timerGroup0,this.game)
+		//displacement_background_shadow(background.table_opponent,background.table_player,G.topPlayerGroup2,G.topOpponentGroup1,G.timerGroup0,this.game)
 
 		//EFFECT SUR LE TIMER
 		effect.deform_text(hud.timer)

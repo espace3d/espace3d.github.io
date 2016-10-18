@@ -1,7 +1,6 @@
 var G = G || {}
 //////////////////////////////////////////////////////////////////////////////////////////
 //GROUP
-this.groupnull = null
 //0 timerGroup0 - timer deplacé dans ce groupe car il doit être devant tout le monde le groupe 3 doit être supprimé
 //1. topOpponentGroup1 --  bandeau horizontal supérieur + nom du joueur + dénomination (player ou opponent)--> opponent
 //2. topPlayerGroup2 -- bandeau horizontal supérieur + nom du joueur + dénomination (player ou opponent)--> player
@@ -14,18 +13,19 @@ this.groupnull = null
 //7. playerBackgroundGroup7 -- background sur une moitié pour le player
 //8. menuPaperGroup8 -- menu derrière les 2 background + bords périphériques colorés du menus 
 //9. shadowPaperGroup9 -- ombre sur le papier pour symboliser bord
-
-this.shadowPaperGroup9 = this.game.add.group()
-this.menuPaperGroup8 = this.game.add.group()
-this.playerBackgroundGroup7 = this.game.add.group()
-this.opponentBackgroundGroup6 = this.game.add.group()
-this.playerPapers5 = this.game.add.group()
-this.opponentPapers4 = this.game.add.group()
-this.shadowGroup3tris = this.game.add.group()
-this.cursorGroup3bis=this.game.add.group()
-this.timerGroup3 = this.game.add.group()
-this.topPlayerGroup2=this.game.add.group()
-this.topOpponentGroup1=this.game.add.group()
-this.timerGroup0=this.game.add.group()
-
+G.drawGroup=function(game){
+this.groupnull = null
+this.shadowPaperGroup9 = game.add.group()
+this.menuPaperGroup8 = game.add.group()
+this.playerBackgroundGroup7 = game.add.group()
+this.opponentBackgroundGroup6 = game.add.group()
+this.playerPapers5 = game.add.group()
+this.opponentPapers4 = game.add.group()
+this.shadowGroup3tris = game.add.group()
+this.cursorGroup3bis=game.add.group()
+this.timerGroup3 = game.add.group()
+this.topPlayerGroup2=game.add.group()
+this.topOpponentGroup1=game.add.group()
+this.timerGroup0=game.add.group()
+}
 G = G || {}

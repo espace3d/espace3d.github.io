@@ -50,7 +50,7 @@ var delay_open_panel_background=900
 //|  @  ||  @  | 
 //|     ||     | 
 //|-----||-----|
-var delay_close_panel_background=time_open_panel_background+delay_open_panel_background
+//var delay_close_panel_background=time_open_panel_background+delay_open_panel_background
 var time_close_panel_background=time_open_panel_background
 
 //délai et temps pour que l'ombre descende vers le bas
@@ -60,7 +60,8 @@ var time_close_panel_background=time_open_panel_background
 //||||||||||||||    
 //||||||||||||||    
 //|-----||-----|
-var delay_shadow_up_and_text_up=time_open_panel_background+delay_open_panel_background+time_close_panel_background+delay_close_panel_background;
+var delay_shadow_up_and_text_up=time_open_panel_background+delay_open_panel_background+time_close_panel_background
+//var delay_shadow_up_and_text_up=time_open_panel_background+delay_open_panel_background+time_close_panel_background+delay_close_panel_background;
 var time_shadow_up_and_texte_up=500
 
 // délai et temps pour que les papiers tombent
@@ -70,7 +71,8 @@ var time_shadow_up_and_texte_up=500
 //|  x  ||  x  | 
 //|-----||-----|
 
-var delay_paper_fall=delay_shadow_up_and_text_up+time_shadow_up_and_texte_up+200
+//var delay_paper_fall=delay_shadow_up_and_text_up+time_shadow_up_and_texte_up+200
+var delay_paper_fall=time_close_panel_background+time_shadow_up_and_texte_up+200
 
 //////////////////////////////////////////////////////////////////////////////////////////
 //temps pour le déplacement de l'ombre de la table qui va vers le bas

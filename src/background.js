@@ -2,7 +2,6 @@
 //background.js
 //this.for background
 //////////////////////////////////////////////////////////////////////////////////////////
-//dessins de tous les éléments du décor
 
 var B = B || {}
 
@@ -58,6 +57,19 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 	this.cursor_opponent_particle.maxRotation = 0
 	this.cursor_opponent_particle.on=false
 	this.cursor_opponent_particle.start(true, 350, 19)
+
+	this.cursor_winner_particle = game.add.emitter(this.cursor_player.x, this.cursor_player.y, 200)
+	this.cursor_winner_particle.makeParticles("particle_winner")
+	this.cursor_winner_particle.minParticleSpeed.setTo(-400,-400)
+	this.cursor_winner_particle.maxParticleSpeed.setTo(500,500)
+	this.cursor_winner_particle.setAlpha(0.6, .9)
+
+	this.cursor_winner_particle.minParticleScale = 1.9
+	this.cursor_winner_particle.maxParticleScale = .9
+	this.cursor_winner_particle.minRotation = 0
+	this.cursor_winner_particle.maxRotation = 0
+	this.cursor_winner_particle.on=false
+	this.cursor_winner_particle.start(true, 300, 19)
 
 	//à 0 pour ne pas le voir au début
 	this.fond=drawSprite(group8,game,"back",0,0,w,h,0,0,1) 
@@ -132,11 +144,12 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 	this.text_win_player = game.add.bitmapText(w4*3,h2-taille+taille*.5,'lucky_black','win', taille) 
 	//this.text_win_player.tint=jaune
 	this.text_win_player.visible=false
+this.text_win_player.alpha=0
 
 	this.text_loose_player = game.add.bitmapText(w4*3,h2-taille+taille*.5,'lucky_black','loose', taille) 
 	//this.text_loose_player.tint=jaune
 	this.text_loose_player.visible=false
-
+this.text_loose_player.alpha=0
 	//OPPONENT 
 	this.text_name_opponent = game.add.bitmapText(w4,py1,'lucky','kill the game', taille) 
 	this.text_level_opponent = game.add.bitmapText(w4,py3,'lucky','lvl ', taille2) 
@@ -148,10 +161,12 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 	this.text_win_opponent = game.add.bitmapText(w4,h2-taille+taille*.5,'lucky_black','win', taille) 
 	//this.text_win_opponent.tint=jaune
 	this.text_win_opponent.visible=false
+	this.text_win_opponent.alpha=0
 
 	this.text_loose_opponent = game.add.bitmapText(w4,h2-taille+taille*.5,'lucky_black','loose', taille) 
 	//this.text_loose_opponent.tint=jaune
 	this.text_loose_opponent.visible=false
+	this.text_loose_opponent.alpha=0
 
 	//modifications des anchors
 	this.text_name_player.anchor.x=.5
@@ -188,32 +203,48 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 	group1.add(this.text_name_opponent) 
 	group1.add(this.text_level_number_opponent) 
 
+	this.tween_level_and_number_opponent4=game.add.tween(little_roll_opponent).to({alpha:.9},500,Phaser.Easing.Linear.None,true,delay_paper_fall)
+
 	//////////////////////////////////////////////////////////////////////////////////////////
 	//TRANSITIONS}
 	//ligne à traits tirés apparaissant pour signifier le mileu de la table
-	this.tween_level_and_number_player1=game.add.tween(this.text_level_player).to({alpha:1},500,Phaser.Easing.Linear.None,true,delay_paper_fall)
-	this.tween_level_and_number_player2=game.add.tween(this.text_level_number_player).to({alpha:1},500,Phaser.Easing.Linear.None,true,delay_paper_fall)
-	this.tween_level_and_number_opponent1=game.add.tween(this.text_level_opponent).to({alpha:1},500,Phaser.Easing.Linear.None,true,delay_paper_fall)
-	this.tween_level_and_number_opponent2=game.add.tween(this.text_level_number_opponent).to({alpha:1},500,Phaser.Easing.Linear.None,true,delay_paper_fall)
-	this.tween_line_opponent_appears=game.add.tween(this.line_opponent_gauche).to({alpha:1},500,Phaser.Easing.Linear.None,true,3500)
-	this.tween_line_player_appears=game.add.tween(this.line_player_droite).to({alpha:1},500,Phaser.Easing.Linear.None,true,3500)
-	this.tween_cursor_appears=game.add.tween(this.cursor_palpitant).to({alpha:.6},1500,Phaser.Easing.Linear.None,true,3500)
-	this.tween_cursor_appears_opponent=game.add.tween(this.cursor_palpitant_opponent).to({alpha:.6},1500,Phaser.Easing.Linear.None,true,3500)
-	this.cursor_palpitant_tween=game.add.tween(this.cursor_palpitant.scale).to({x:1.2, y:1.2},this.cursor_palpitant_time,Phaser.Easing.Sinusoidal.In,true,5500,-1,false)
-	this.cursor_palpitant_tween_opponent=game.add.tween(this.cursor_palpitant_opponent.scale).to({x:1.2, y:1.2},this.cursor_palpitant_time,Phaser.Easing.Sinusoidal.In,true,5500,-1,false)
+	this.tween_begin_game=function(){
+
+		this.tween_level_and_number_player1=game.add.tween(this.text_level_player).to({alpha:1},500,Phaser.Easing.Linear.None,true,delay_paper_fall)
+		this.tween_level_and_number_player2=game.add.tween(this.text_level_number_player).to({alpha:1},500,Phaser.Easing.Linear.None,true,delay_paper_fall)
+		this.tween_level_and_number_opponent1=game.add.tween(this.text_level_opponent).to({alpha:1},500,Phaser.Easing.Linear.None,true,delay_paper_fall)
+		this.tween_level_and_number_opponent2=game.add.tween(this.text_level_number_opponent).to({alpha:1},500,Phaser.Easing.Linear.None,true,delay_paper_fall)
+		this.tween_roll_opponent=game.add.tween(little_roll_opponent.main).to({alpha:1},500,Phaser.Easing.Linear.None,true,delay_paper_fall-300)
+		this.tween_roll_player=game.add.tween(little_roll_player.main).to({alpha:1},500,Phaser.Easing.Linear.None,true,delay_paper_fall-300)
+		this.tween_line_opponent_appears=game.add.tween(this.line_opponent_gauche).to({alpha:1},500,Phaser.Easing.Linear.None,true,delay_paper_fall)
+		this.tween_line_player_appears=game.add.tween(this.line_player_droite).to({alpha:1},500,Phaser.Easing.Linear.None,true,delay_paper_fall)
+		this.tween_cursor_appears=game.add.tween(this.cursor_palpitant).to({alpha:.6},1500,Phaser.Easing.Linear.None,true,delay_paper_fall)
+		this.tween_cursor_appears_opponent=game.add.tween(this.cursor_palpitant_opponent).to({alpha:.6},1500,Phaser.Easing.Linear.None,true,delay_paper_fall)
+		this.cursor_palpitant_tween=game.add.tween(this.cursor_palpitant.scale).to({x:1.2, y:1.2},this.cursor_palpitant_time,Phaser.Easing.Sinusoidal.In,true,delay_paper_fall,-1,false)
+		this.cursor_palpitant_tween_opponent=game.add.tween(this.cursor_palpitant_opponent.scale).to({x:1.2, y:1.2},this.cursor_palpitant_time,Phaser.Easing.Sinusoidal.In,true,delay_paper_fall,-1,false)
+	}
 	//animation text looser et winner lorsqu'ils apparaissent
 	this.winner_flag=true
-this.winner=function(){
-	if (this.winner_flag){
-		this.winner_flag = false
-	this.tween_winner=game.add.tween(this.text_loose_player.scale).to({x:1.5, y:1.5},800,Phaser.Easing.Elastic.In,true)
-	this.tween_looser=game.add.tween(this.text_win_opponent.scale).to({x:1.5, y:1.5},800,Phaser.Easing.Elastic.In,true)
-	}
-}
-this.looser=function(){
+	this.winner=function(){
+		if (this.winner_flag){
+			this.winner_flag = false
+			this.tween_winner_alpha=game.add.tween(this.text_loose_player).to({alpha:1},100,Phaser.Easing.Elastic.Out,true,600)
+			this.tween_winner=game.add.tween(this.text_loose_player.scale).to({x:1.5, y:1.5},1800,Phaser.Easing.Elastic.Out,true,900)
+			this.tween_looser_alpha=game.add.tween(this.text_win_opponent).to({alpha:1},100,Phaser.Easing.Elastic.Out,true,600)
+			this.tween_looser=game.add.tween(this.text_win_opponent.scale).to({x:2.5, y:2.5},1800,Phaser.Easing.Elastic.Out,true,900)
+		game.time.events.add(1200,particle_winner,this)
 
-}
-	
+		function particle_winner() {
+			this.cursor_winner_particle.y=this.text_win_opponent.y
+			this.cursor_winner_particle.x=this.text_win_opponent.x
+			this.cursor_winner_particle.on=true
+		}
+		}
+	}
+	this.looser=function(){
+
+	}
+
 	//////////////////////////////////////////////////////////////////////////////////////////
 	//animation du texte du joueur lorsqu'on maintient la pression appuyée
 	this.panimTween=game.add.tween(this.text_name_player.scale).to({x:2, y:2},150,Phaser.Easing.Sinusoidal.In,true,0,-1,true)
@@ -221,26 +252,57 @@ this.looser=function(){
 	this.panimTween.pause()
 	this.panimTween_shadow.pause()
 
-//	e.check_winner=function(stoptween,fonction,obj){
-//		console.log("stoptween")
-//		//if (this.text_win_player && this.text_loose_opponent) {
-//			//stoptween
-//			//fonction
-//		//}
-//		//else if (this.text_loose_player && this.text_win_opponent){
-//			stoptween
-//			fonction(obj)
-//		//}
-//	}
+	//////////////////////////////////////////////////////////////////////////////////////////
+	//FERMETURE DES 2 PANNEAUX + ENCHAINEMENTS OMBRE POUR SYMBOLISER LA PERSPECTIVE ET DES TEXTES QUI APPARAISSENT
+	//obj1 est l'opponent
+	//obj2 est le player
+	//obj3 est le texte supérieur de l'opponent
+	//obj4 est le texte supérieur du player
 
-this.displacement_background_opponent_and_player_close = function(obj1,obj2,obj3,obj4){
-	console.log("moddod")
-	displacement_position(game,obj1,0,0,0,time_close_panel_background,"Bounce.Out")
-	displacement_position(game,obj2,0,h2,0,time_close_panel_background,"Bounce.Out")
-	displacement_position(game,obj3,0,0,0,time_close_panel_background,"Bounce.Out")
-	displacement_position(game,obj4,0,h2,0,time_close_panel_background,"Bounce.Out")
-}
+	this.displacement_background_opponent_and_player_close = function(obj1,obj2,obj3,obj4,obj5,obj6,obj7){
 
+		game.time.events.add(delay_paper_fall,resetflag,this)
+
+		function resetflag() {
+			paper_player.main.isFalling=true
+		}
+
+		displacement_position(game,obj1,0,0,0,time_close_panel_background,"Bounce.Out")
+		displacement_position(game,obj2,0,h2,0,time_close_panel_background,"Bounce.Out")
+		displacement_position(game,obj3,0,0,0,time_close_panel_background,"Bounce.Out")
+		displacement_position(game,obj4,0,h2,0,time_close_panel_background,"Bounce.Out")
+
+		//function displacement_background_shadow() {
+		//////////////////////////////////////////////////////////////////////////////////////////
+		//DEPLACEMENT DE L'OMBRE DE LA TABLE POUR SYMBOLISER LA VUE QUI VA VERS LE HAUT
+		//obj1 est l'opponent
+		//obj2 est le player
+		//obj3 est le texte de l'opponent
+		//obj4 est le texte du player
+		//obj 5 est le timer
+		// les times sont renseignés dans parameters
+		//|--@--||--@--|
+		//|     ||     |
+		//||||||||||||||    
+		//||||||||||||||    
+		//|-----||-----|
+		game.time.events.add(time_close_panel_background,next_tween,this)
+
+		function next_tween() {
+			//texte qui apparaissent
+			this.tween_begin_game()
+			//déplacement de l'ombre
+			displacement_position(game,obj5,0,h2,0,time_shadow_up_and_texte_up,"Linear.None")
+			displacement_position(game,obj6,w2,h2,0,time_shadow_up_and_texte_up,"Linear.None")
+			displacement_position(game,obj4,0,0,0,time_shadow_up_and_texte_up,"Linear.None")
+			displacement_position(game,obj2,0,0,0,time_shadow_up_and_texte_up,"Linear.None")
+			displacement_position(game,obj7,0,0,0,time_shadow_up_and_texte_up,"Linear.None")
+			//modification de l'alpha pour symboliser la perspective
+			displacement_alpha(game,obj5,.8,0,time_shadow_up_and_texte_up,"Linear.None")
+			displacement_alpha(game,obj6,.8,0,time_shadow_up_and_texte_up,"Linear.None")
+			console.log("shadow")
+		}
+	}
 	return this
 }
 
@@ -269,47 +331,8 @@ displacement_background_opponent_and_player=function(obj1,obj2,obj3,obj4,game){
 	displacement_position(game,obj2,-w,h2,delay_open_panel_background,time_open_panel_background,"Bounce.out")
 	displacement_position(game,obj3,w,0,delay_open_panel_background,time_open_panel_background,"Bounce.out")
 	displacement_position(game,obj4,w,h2,delay_open_panel_background,time_open_panel_background,"Bounce.out")
-
-	//TIMER POUR RAMENER LES DEUX PANNEAUX VERS LE CENTRE
-	/*//CETTE FONCTION DOIT ÊTRE RATTACHÉE AU BOUTTON PLAY DANS LA SÉLECTION DES PAPIERS
-	*/
-	//function back(){
-	//	displacement_position(game,obj1,0,0,0,time_close_panel_background,"Bounce.Out")
-	//	displacement_position(game,obj2,0,h2,0,time_close_panel_background,"Bounce.Out")
-	//	displacement_position(game,obj3,0,0,0,time_close_panel_background,"Bounce.Out")
-	//	displacement_position(game,obj4,0,h2,0,time_close_panel_background,"Bounce.Out")
-	//}
-
-	//game.time.events.add(delay_close_panel_background,back,this);
-
 }
 
 
-//////////////////////////////////////////////////////////////////////////////////////////
-//DEPLACEMENT DE L'OMBRE DE LA TABLE POUR SYMBOLISER LA VUE QUI VA VERS LE HAUT
-//obj1 est l'opponent
-//obj2 est le player
-//obj3 est le texte de l'opponent
-//obj4 est le texte du player
-//obj 5 est le timer
-// les times sont renseignés dans parameters
-//|--@--||--@--|
-//|     ||     |
-//||||||||||||||    
-//||||||||||||||    
-//|-----||-----|
-
-displacement_background_shadow=function(obj1,obj2,obj3,obj4,obj5,game) {
-
-	displacement_position(game,obj1,0,h2,delay_shadow_up_and_text_up,time_shadow_up_and_texte_up,"Linear.None")
-	displacement_position(game,obj2,w2,h2,delay_shadow_up_and_text_up,time_shadow_up_and_texte_up,"Linear.None")
-	displacement_position(game,obj3,0,0,delay_shadow_up_and_text_up,time_shadow_up_and_texte_up,"Linear.None")
-	displacement_position(game,obj4,0,0,delay_shadow_up_and_text_up,time_shadow_up_and_texte_up,"Linear.None")
-	displacement_position(game,obj5,0,0,delay_shadow_up_and_text_up,time_shadow_up_and_texte_up,"Linear.None")
-
-	//modification de l'alpha pour symboliser la perspective
-	displacement_alpha(game,obj1,.8,delay_shadow_up_and_text_up,time_shadow_up_and_texte_up,"Linear.None")
-	displacement_alpha(game,obj2,.8,delay_shadow_up_and_text_up,time_shadow_up_and_texte_up,"Linear.None")
-}
 B = B || {}
 

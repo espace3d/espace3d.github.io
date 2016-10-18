@@ -38,7 +38,8 @@ function draw_Grid(e,Group,game,row,line,espacement,wi,he,posx,posy) {
 	Group.add(this.button_play)
 
 	function closepanel(){
-		background.displacement_background_opponent_and_player_close(G.opponentBackgroundGroup6,G.topOpponentGroup1,G.playerBackgroundGroup7,G.topPlayerGroup2,this.game)
+		//displacement_background_shadow(background.table_opponent,background.table_player,G.topPlayerGroup2,G.topOpponentGroup1,G.timerGroup0,this.game)
+		background.displacement_background_opponent_and_player_close(G.opponentBackgroundGroup6,G.topOpponentGroup1,G.playerBackgroundGroup7,G.topPlayerGroup2,background.table_opponent, background.table_player,G.timerGroup0,this.game)
 	}
 
 	return this

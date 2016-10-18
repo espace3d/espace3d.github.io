@@ -45,7 +45,7 @@ var speed=1200
 		}
 	}
 	//pour remettre le this.main.isFalling true et permettre ainsi la chute des papiers
-	this.timer=game.time.events.add(delay_paper_fall,resetflag,this)
+	//this.timer=game.time.events.add(delay_paper_fall,resetflag,this)
 
 	function resetflag() {
 		this.main.isFalling=true
