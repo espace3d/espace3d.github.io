@@ -32,6 +32,7 @@ var speed=1200
 	this.main.isOutOfMiddleTable=false 
 	this.main.inputEnabled=true 
 	this.main.isFalling=false
+	//this.main.body.immovable=true
 	//if (typeof this.main!== 'undefined'){ 
 		//console.log("probleme")
 	//} 
@@ -92,6 +93,7 @@ var speed=1200
 	this.opponentfall = function(_paper_opponent_main,_background_line_collision,curso,curso_rect,parti) {
 		if (_paper_opponent_main.isFalling){
 			//pour faire descendre les papiers
+			//_paper_opponent_main.body.velocity.y= speed;
 			_paper_opponent_main.body.velocity.y= speed;
 			//collision 
 			for (var i = 0; i < _background_line_collision.length; i++) {
@@ -155,6 +157,8 @@ var speed=1200
 		//_paper_player_main.body.velocity.y= 400;
 		if (_paper_player_main.isFalling) {
 			if (game.input.activePointer.isDown) {
+				_paper_player_main.body.allowGravity=false
+				_paper_player_main.body.gravity.y=0
 				_paper_player_main.body.velocity.y=0
 				// cursor avec pression exercée
 				if (game.input.activePointer.duration > 500 && game.time.now > delay_paper_fall+delay_paper_fall*.5 ) {
@@ -187,7 +191,9 @@ var speed=1200
 				}
 			} else {	 
 				//pour faire descendre les papiers
-				_paper_player_main.body.velocity.y= speed;
+				_paper_player_main.body.allowGravity=true
+				_paper_player_main.body.gravity.y=3800
+				//_paper_player_main.body.velocity.y= speed;
 				_background.cursor_player_particle.on=false
 				_background.panimTween_shadow.pause()
 				_background.panimTween.pause()

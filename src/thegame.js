@@ -120,12 +120,25 @@ theGame.prototype = {
 			this.game.physics.enable(background.line_collision_opponent[i], Phaser.Physics.ARCADE)
 			background.line_collision_opponent[i].body.immovable = true 
 		};
+		this.game.physics.enable(background.text_position_player, Phaser.Physics.ARCADE)
+		this.game.physics.enable(background.line_position, Phaser.Physics.ARCADE)
+		paper_player.main.body.allowGravity=false
+		//this.game.physics.arcade.gravity.y=200
 
 		// ajout d'un boutton au timer pour permettre le plein écran
 		this.game.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;
+		//background.timer_line_position=game.time.events.add(4000, () => background.line_fall(background.line_position,background.text_position_player,paper_player.main))
 	},
 
 	update: function(){
+		//TODO
+		// test texte qui descend
+		background.line_fall(background.line_position,background.text_position_player,paper_player.main) 
+		//background.text_position_player.body.velocity.y+=8
+		//background.line_position.y=background.text_position_player.y
+		//background.text_position_player.text=Math.round(background.text_position_player.y)
+
+
 		//filtre en gris
 		if (paper_player.main.body.y > h2 && background.text_win_player.visible==false) {
 			background.winner()

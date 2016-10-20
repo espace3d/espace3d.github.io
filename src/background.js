@@ -141,15 +141,60 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 	this.text_level_number_player.tint=jaune
 	this.text_level_number_player.alpha=0
 
+	//texte + line qui descend et indique la position du papier 
+	this.text_position_player = game.add.bitmapText(w4*3,0,'lucky','', taille) 
+	this.text_position_player.anchor.x =.5
+	this.text_position_player.anchor.y =.5
+	group2.add(this.text_position_player) 
+	this.line_position=game.add.sprite(w4*3,0,"line_position") 
+	group7.add(this.line_position)
+	this.line_position.anchor.y=1
+	this.text_position_player.isFalling=false
+
+	this.line_fall = function(_line_position,_text_position,_paper_player_main) {
+		if (_text_position.isFalling){
+			//pour faire descendre les papiers
+			_text_position.body.gravity.y=882
+
+			_text_position.body.bounce.y=.5
+			_line_position.y=_text_position.y
+			_text_position.text=Math.round(_text_position.y)
+			//_paper_player_main.body.bounce.y=2
+			_paper_player_main.body.immovable=true
+			//collision 
+			game.physics.arcade.collide(_text_position,_paper_player_main)
+		};
+
+		this.line_fall_change_flag=function(){
+			console.log("collideé")
+			_text_position.body.gravity.y=582
+
+			_text_position.body.bounce.y=1
+			//_text_position.body.gravity.y=0
+			//_text_position.body.velocity.y=0
+			//_line_position.body.velocity.y=0
+
+			_text_position.isFalling=false
+		}
+
+	}
+	var delay2=delay_paper_fall+5800
+	game.time.events.add(delay2,change_line_flag,this)
+
+	function change_line_flag() {
+	this.text_position_player.isFalling=true
+	}
+
 	this.text_win_player = game.add.bitmapText(w4*3,h2-taille+taille*.5,'lucky_black','win', taille) 
 	//this.text_win_player.tint=jaune
 	this.text_win_player.visible=false
-this.text_win_player.alpha=0
+	this.text_win_player.alpha=0
+
 
 	this.text_loose_player = game.add.bitmapText(w4*3,h2-taille+taille*.5,'lucky_black','loose', taille) 
 	//this.text_loose_player.tint=jaune
 	this.text_loose_player.visible=false
-this.text_loose_player.alpha=0
+	this.text_loose_player.alpha=0
 	//OPPONENT 
 	this.text_name_opponent = game.add.bitmapText(w4,py1,'lucky','kill the game', taille) 
 	this.text_level_opponent = game.add.bitmapText(w4,py3,'lucky','lvl ', taille2) 
@@ -232,13 +277,13 @@ this.text_loose_player.alpha=0
 			this.tween_winner=game.add.tween(this.text_loose_player.scale).to({x:1.5, y:1.5},1800,Phaser.Easing.Elastic.Out,true,900)
 			this.tween_looser_alpha=game.add.tween(this.text_win_opponent).to({alpha:1},100,Phaser.Easing.Elastic.Out,true,600)
 			this.tween_looser=game.add.tween(this.text_win_opponent.scale).to({x:2.5, y:2.5},1800,Phaser.Easing.Elastic.Out,true,900)
-		game.time.events.add(1200,particle_winner,this)
+			game.time.events.add(1200,particle_winner,this)
 
-		function particle_winner() {
-			this.cursor_winner_particle.y=this.text_win_opponent.y
-			this.cursor_winner_particle.x=this.text_win_opponent.x
-			this.cursor_winner_particle.on=true
-		}
+			function particle_winner() {
+				this.cursor_winner_particle.y=this.text_win_opponent.y
+				this.cursor_winner_particle.x=this.text_win_opponent.x
+				this.cursor_winner_particle.on=true
+			}
 		}
 	}
 	this.looser=function(){
