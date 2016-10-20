@@ -154,9 +154,9 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 	this.line_fall = function(_line_position,_text_position,_paper_player_main) {
 		if (_text_position.isFalling){
 			//pour faire descendre les papiers
-			_text_position.body.gravity.y=882
+			//_text_position.body.gravity.y=882
 
-			_text_position.body.bounce.y=.5
+			//_text_position.body.bounce.y=.5
 			_line_position.y=_text_position.y
 			_text_position.text=Math.round(_text_position.y)
 			//_paper_player_main.body.bounce.y=2

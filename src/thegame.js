@@ -128,6 +128,22 @@ theGame.prototype = {
 		// ajout d'un boutton au timer pour permettre le plein écran
 		this.game.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;
 		//background.timer_line_position=game.time.events.add(4000, () => background.line_fall(background.line_position,background.text_position_player,paper_player.main))
+		background.text_position_player.body.gravity.y=1282
+		background.text_position_player.body.bounce.y=.2
+		background.text_position_player.body.allowGravity=false
+
+		game.time.events.add(delay_paper_fall+5800,allow_line_position,this)
+
+		function allow_line_position() {
+			background.text_position_player.body.allowGravity=true
+		}
+
+		game.time.events.add(delay_paper_fall+10800,stop_line_position,this)
+
+		function stop_line_position() {
+			console.log("stop")
+			background.text_position_player.body.moves=false
+		}
 	},
 
 	update: function(){

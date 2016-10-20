@@ -2,7 +2,8 @@ var gameTitle = function(game){}
 
 gameTitle.prototype = {
   	create: function(){
-		var backgroundGameTitle=drawSprite(0,this.game,"rect",0,0,w,h,0,blue,1)
+		//var backgroundGameTitle=drawSprite(0,this.game,"rect",0,0,w,h,0,blue,1)
+		var backgroundGameTitle=game.add.sprite(0,0,"panel_roll")
 		var playButton = this.game.add.button(w2,h2+100,"play",this.playTheGame,this);
 		playButton.anchor.setTo(0.5,0.5)
 		this.game.add.tween(playButton.scale).to({x:0.9, y:0.9},450,Phaser.Easing.Sinusoidal.In,true,0,-1,true)

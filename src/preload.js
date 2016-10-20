@@ -22,6 +22,7 @@ preload.prototype = {
 		this.game.load.image("play","assets/play.png");
 		this.game.load.image("higher","assets/higher.png");
 		this.game.load.image("lower","assets/lower.png");
+		this.game.load.image("panel_roll","assets/panel_roll.png");
 		this.game.load.image("gameover","assets/gameover.png");
 		this.game.load.image("timer_white","assets/timer_white.png");
 		this.game.load.image("timer","assets/timer.png");
