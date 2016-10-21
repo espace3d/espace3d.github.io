@@ -60,16 +60,16 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 
 	this.cursor_winner_particle = game.add.emitter(this.cursor_player.x, this.cursor_player.y, 200)
 	this.cursor_winner_particle.makeParticles("particle_winner")
-	this.cursor_winner_particle.minParticleSpeed.setTo(-400,-400)
-	this.cursor_winner_particle.maxParticleSpeed.setTo(500,500)
-	this.cursor_winner_particle.setAlpha(0.6, .9)
+	this.cursor_winner_particle.minParticleSpeed.setTo(-200,-200)
+	this.cursor_winner_particle.maxParticleSpeed.setTo(200,200)
+	this.cursor_winner_particle.setAlpha(1,.1)
 
 	this.cursor_winner_particle.minParticleScale = 1.9
 	this.cursor_winner_particle.maxParticleScale = .9
 	this.cursor_winner_particle.minRotation = 0
 	this.cursor_winner_particle.maxRotation = 0
 	this.cursor_winner_particle.on=false
-	this.cursor_winner_particle.start(true, 300, 19)
+	this.cursor_winner_particle.start(true, 800, 19)
 
 	//à 0 pour ne pas le voir au début
 	this.fond=drawSprite(group8,game,"back",0,0,w,h,0,0,1) 
@@ -191,10 +191,10 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 	this.text_win_player.alpha=0
 
 
-	this.text_loose_player = game.add.bitmapText(w4*3,h2-taille+taille*.5,'lucky_black','loose', taille) 
+	//this.text_loose_player = game.add.bitmapText(w4*3,h2-taille+taille*.5,'lucky_black','loose', taille) 
 	//this.text_loose_player.tint=jaune
-	this.text_loose_player.visible=false
-	this.text_loose_player.alpha=0
+	//this.text_loose_player.visible=false
+	//this.text_loose_player.alpha=0
 	//OPPONENT 
 	this.text_name_opponent = game.add.bitmapText(w4,py1,'lucky','kill the game', taille) 
 	this.text_level_opponent = game.add.bitmapText(w4,py3,'lucky','lvl ', taille2) 
@@ -208,10 +208,10 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 	this.text_win_opponent.visible=false
 	this.text_win_opponent.alpha=0
 
-	this.text_loose_opponent = game.add.bitmapText(w4,h2-taille+taille*.5,'lucky_black','loose', taille) 
+	//this.text_loose_opponent = game.add.bitmapText(w4,h2-taille+taille*.5,'lucky_black','loose', taille) 
 	//this.text_loose_opponent.tint=jaune
-	this.text_loose_opponent.visible=false
-	this.text_loose_opponent.alpha=0
+	//this.text_loose_opponent.visible=false
+	//this.text_loose_opponent.alpha=0
 
 	//modifications des anchors
 	this.text_name_player.anchor.x=.5
@@ -224,8 +224,8 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 	this.text_level_number_player.anchor.y=.5
 	this.text_win_player.anchor.x=.5
 	this.text_win_player.anchor.y=.5
-	this.text_loose_player.anchor.x=.5
-	this.text_loose_player.anchor.y=.5
+	//this.text_loose_player.anchor.x=.5
+	//this.text_loose_player.anchor.y=.5
 
 	this.text_name_opponent.anchor.x=.5
 	this.text_name_opponent.anchor.y=.5
@@ -235,8 +235,8 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 	this.text_level_number_opponent.anchor.y=.5
 	this.text_win_opponent.anchor.x=.5
 	this.text_win_opponent.anchor.y=.5
-	this.text_loose_opponent.anchor.x=.5
-	this.text_loose_opponent.anchor.y=.5
+	//this.text_loose_opponent.anchor.x=.5
+	//this.text_loose_opponent.anchor.y=.5
 
 	//ajout des textes aux groupes
 	group2.add(this.text_name_player) 
@@ -273,8 +273,8 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 	this.winner=function(){
 		if (this.winner_flag){
 			this.winner_flag = false
-			this.tween_winner_alpha=game.add.tween(this.text_loose_player).to({alpha:1},100,Phaser.Easing.Elastic.Out,true,600)
-			this.tween_winner=game.add.tween(this.text_loose_player.scale).to({x:1.5, y:1.5},1800,Phaser.Easing.Elastic.Out,true,900)
+			//this.tween_winner_alpha=game.add.tween(this.text_loose_player).to({alpha:1},100,Phaser.Easing.Elastic.Out,true,600)
+			//this.tween_winner=game.add.tween(this.text_loose_player.scale).to({x:1.5, y:1.5},1800,Phaser.Easing.Elastic.Out,true,900)
 			this.tween_looser_alpha=game.add.tween(this.text_win_opponent).to({alpha:1},100,Phaser.Easing.Elastic.Out,true,600)
 			this.tween_looser=game.add.tween(this.text_win_opponent.scale).to({x:2.5, y:2.5},1800,Phaser.Easing.Elastic.Out,true,900)
 			game.time.events.add(1200,particle_winner,this)

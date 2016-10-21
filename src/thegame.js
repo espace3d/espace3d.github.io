@@ -107,8 +107,6 @@ theGame.prototype = {
 
 		//DEPLACEMENT DES BACKGROUND POUR ANIMER LE JEU
 		displacement_background_opponent_and_player(G.opponentBackgroundGroup6,G.topOpponentGroup1,G.playerBackgroundGroup7,G.topPlayerGroup2,this.game)
-		//displacement_background_shadow(background.table_opponent,background.table_player,G.topPlayerGroup2,G.topOpponentGroup1,G.timerGroup0,this.game)
-
 		//EFFECT SUR LE TIMER
 		effect.deform_text(hud.timer)
 		effect.deform_main(hud.time_shadow)
@@ -127,7 +125,8 @@ theGame.prototype = {
 
 		// ajout d'un boutton au timer pour permettre le plein écran
 		this.game.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;
-		//background.timer_line_position=game.time.events.add(4000, () => background.line_fall(background.line_position,background.text_position_player,paper_player.main))
+
+		//ligne qui descend gravity
 		background.text_position_player.body.gravity.y=1282
 		background.text_position_player.body.bounce.y=.2
 		background.text_position_player.body.allowGravity=false
@@ -150,15 +149,10 @@ theGame.prototype = {
 		//TODO
 		// test texte qui descend
 		background.line_fall(background.line_position,background.text_position_player,paper_player.main) 
-		//background.text_position_player.body.velocity.y+=8
-		//background.line_position.y=background.text_position_player.y
-		//background.text_position_player.text=Math.round(background.text_position_player.y)
-
 
 		//filtre en gris
 		if (paper_player.main.body.y > h2 && background.text_win_player.visible==false) {
 			background.winner()
-			background.text_loose_player.visible=true
 			if (background.text_win_player.visible==false){
 				background.text_win_opponent.visible=true
 				background.cursor_player.visible=false
@@ -173,7 +167,6 @@ theGame.prototype = {
 
 		if (paper_opponent.main.body.y > h2 && background.text_win_opponent.visible==false) {
 			background.winner()
-			background.text_loose_opponent.visible=true
 			if (background.text_win_opponent.visible==false){
 				background.text_win_player.visible=true
 				background.cursor_player.visible=false
