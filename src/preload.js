@@ -41,6 +41,9 @@ preload.prototype = {
 		this.game.load.image("rect_invisible","assets/rect_invisible.png");
 		this.game.load.image("roll","assets/roll.png");
 		this.game.load.image("cursor_palpitant","assets/cursor_palpitant.png");
+		this.game.load.image("roll_deroll","assets/roll_deroll.png");
+		this.game.load.image("paper_h","assets/paper_h.png");
+		this.game.load.image("roll_deroll","assets/roll_deroll.png");
 
 		//font bitmapFont
 		this.game.load.bitmapFont('lucky_black','fonts/font_black.png', 'fonts/font_black.fnt');

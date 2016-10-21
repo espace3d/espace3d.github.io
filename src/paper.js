@@ -192,7 +192,7 @@ var speed=1200
 			} else {	 
 				//pour faire descendre les papiers
 				_paper_player_main.body.allowGravity=true
-				_paper_player_main.body.gravity.y=3800
+				_paper_player_main.body.gravity.y=2800
 				//_paper_player_main.body.velocity.y= speed;
 				_background.cursor_player_particle.on=false
 				_background.panimTween_shadow.pause()
