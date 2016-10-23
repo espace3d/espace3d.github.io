@@ -1,8 +1,12 @@
 //var red=0x7BCEE8
-var red=0x9DC4CB
+var red=0xDFD5BC
+
 //var red=0x25a7ba
 //var red=0xff4f4f
-var blue=0xed5555
+var blue=0x9DC4CB
+//bonne couleur rouge
+//var blue=0xed5555
+
 //var blue=0xff99bf
 //var blue=0xFFC14D
 //var blue=0xff4f4f
