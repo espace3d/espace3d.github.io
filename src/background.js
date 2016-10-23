@@ -98,7 +98,7 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 
 	//ombre pour symboliser la table
 	this.table_player=drawSprite(group3tris,game,"rect",w2,h2,w2,h2,0,black,.2) 
-	this.table_opponent=drawSprite(group3tris,game,"rect",0,h2,w2,h2,0,black,.2) 
+	this.table_opponent=drawSprite(group3tris,game,"rect",0,h2,w2,h2,0,black,.1) 
 
 	//lignes à traits tirés pour symboliser la chute imminente
 	var longeur_line=w/6
@@ -132,10 +132,12 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 	//texte symbolisant l'ombre sous le player et dont la visibilité apparait dans update via the Game.js
 	//player
 	this.text_name_player_shadow = game.add.bitmapText(w4*3+3,py1+3,'lucky','dev', taille) 
+	this.text_name_player_shadow.tint=grey
 	this.text_name_player_shadow.alpha=.5
 	this.text_name_player_shadow.visible=false
 	this.text_name_player = game.add.bitmapText(w4*3,py1,'lucky','dev', taille) 
 	this.text_level_player = game.add.bitmapText(w4*3,py3,'lucky','lvl ', taille2) 
+	this.text_name_player.tint=grey
 	this.text_level_player.alpha=0
 	this.text_level_number_player=game.add.bitmapText(w4*3+30,py3,'lucky','1', taille2) 
 	this.text_level_number_player.tint=jaune
@@ -186,6 +188,7 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 	}
 
 	this.text_win_player = game.add.bitmapText(w4*3,h2-taille+taille*.5,'lucky_black','win', taille) 
+	this.text_win_player.tint=grey
 	//this.text_win_player.tint=jaune
 	this.text_win_player.visible=false
 	this.text_win_player.alpha=0
@@ -197,6 +200,7 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 	//this.text_loose_player.alpha=0
 	//OPPONENT 
 	this.text_name_opponent = game.add.bitmapText(w4,py1,'lucky','kill the game', taille) 
+	this.text_name_opponent.tint=grey
 	this.text_level_opponent = game.add.bitmapText(w4,py3,'lucky','lvl ', taille2) 
 	this.text_level_opponent.alpha=0
 	this.text_level_number_opponent=game.add.bitmapText(w4+30,py3,'lucky','5', taille2) 
@@ -207,7 +211,7 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 	//this.text_win_opponent.tint=jaune
 	this.text_win_opponent.visible=false
 	this.text_win_opponent.alpha=0
-
+	this.text_win_opponent.tint=grey
 	//this.text_loose_opponent = game.add.bitmapText(w4,h2-taille+taille*.5,'lucky_black','loose', taille) 
 	//this.text_loose_opponent.tint=jaune
 	//this.text_loose_opponent.visible=false

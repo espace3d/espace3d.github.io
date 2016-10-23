@@ -2,7 +2,7 @@ var gameTitle = function(game){}
 
 gameTitle.prototype = {
 	create: function(){
-		var backgroundGameTitle=drawSprite(0,this.game,"rect",0,0,w,h,0,blue,1)
+		var backgroundGameTitle=drawSprite(0,this.game,"rect",0,0,w,h,0,blueG,1)
 		//var backgroundGameTitle=game.add.sprite(0,0,"panel_roll")
 
 		//rouleau de papiers qui se déroule
@@ -21,7 +21,7 @@ gameTitle.prototype = {
 			} 
 			//fond qui cache le rouleau et fait croire au déroulement
 			this.cache=game.add.sprite(-200,-10,"rect")
-			this.cache.tint=blue
+			this.cache.tint=blueG
 			this.cache.width=w+400
 			this.cache.height=120
 			Group.add(this.cache) 
@@ -39,15 +39,20 @@ gameTitle.prototype = {
 
 		var roll_paper_deroll_group=game.add.group()
 var roll_paper_deroll_group2=game.add.group()
-		var roll_1 = new roll_paper_deroll(roll_paper_deroll_group,-30,700,-5,800)
-		var roll_2 = new roll_paper_deroll(roll_paper_deroll_group2,0,100,20,500)
+		var roll_1 = new roll_paper_deroll(roll_paper_deroll_group,-30,h2-50,0,800)
+		//var roll_2 = new roll_paper_deroll(roll_paper_deroll_group2,0,100,20,500)
 
 
-			var playButton = this.game.add.button(w2,h2+100,"play",this.playTheGame,this);
-			playButton.anchor.setTo(0.5,0.5)
-			this.game.add.tween(playButton.scale).to({x:0.9, y:0.9},450,Phaser.Easing.Sinusoidal.In,true,0,-1,true)
+			var play_button = this.game.add.button(w2,h2+120,"play",this.playTheGame,this);
+			play_button.anchor.setTo(0.5,0.5)
+			this.game.add.tween(play_button.scale).to({x:0.9, y:0.9},450,Phaser.Easing.Sinusoidal.In,true,0,-1,true)
 
-			var textTitleGame = this.game.add.bitmapText(w2,h2,'lucky','papermania', w*.15) 
+			var rank_button = this.game.add.button(w2,h2+190,"rank",this.playTheGame,this);
+			rank_button.anchor.setTo(0.5,0.5)
+			//this.game.add.tween(rank_button.scale).to({x:0.9, y:0.9},450,Phaser.Easing.Sinusoidal.In,true,0,-1,true)
+
+			//var textTitleGame = this.game.add.bitmapText(w2,h2,'lucky_black','papermania', w*.16) 
+			var textTitleGame = this.game.add.sprite(w2,h2,'papermania') 
 			pseudoAnchorX(textTitleGame)
 			pseudoAnchorY(textTitleGame)
 		},

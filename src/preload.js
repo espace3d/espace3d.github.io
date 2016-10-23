@@ -19,6 +19,7 @@ preload.prototype = {
 		//images
 		this.game.load.image("gametitle","assets/gametitle.png");
 		this.game.load.image("line","assets/line.png");
+		this.game.load.image("rank","assets/rank.png");
 		this.game.load.image("play","assets/play.png");
 		this.game.load.image("higher","assets/higher.png");
 		this.game.load.image("lower","assets/lower.png");
@@ -27,7 +28,7 @@ preload.prototype = {
 		this.game.load.image("timer_white","assets/timer_white.png");
 		this.game.load.image("timer","assets/timer.png");
 		this.game.load.image("play_button","assets/play_button.png");
-		this.game.load.image("back","assets/back.svg");
+		this.game.load.image("back","assets/back.png");
 		this.game.load.image("particle_winner","assets/particle_winner.png");
 		this.game.load.image("particle_player","assets/particle_player.png");
 		this.game.load.image("particle_opponent","assets/particle_opponent.png");
@@ -44,6 +45,7 @@ preload.prototype = {
 		this.game.load.image("roll_deroll","assets/roll_deroll.png");
 		this.game.load.image("paper_h","assets/paper_h.png");
 		this.game.load.image("roll_deroll","assets/roll_deroll.png");
+		this.game.load.image("papermania","assets/papermania.png");
 
 		//font bitmapFont
 		this.game.load.bitmapFont('lucky_black','fonts/font_black.png', 'fonts/font_black.fnt');

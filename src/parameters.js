@@ -60,7 +60,7 @@ var time_close_panel_background=time_open_panel_background
 //||||||||||||||    
 //||||||||||||||    
 //|-----||-----|
-var delay_shadow_up_and_text_up=time_open_panel_background+delay_open_panel_background+time_close_panel_background
+var delay_shadow_up_and_text_up=time_open_panel_background+delay_open_panel_background+time_close_panel_background+10
 //var delay_shadow_up_and_text_up=time_open_panel_background+delay_open_panel_background+time_close_panel_background+delay_close_panel_background;
 var time_shadow_up_and_texte_up=500
 
