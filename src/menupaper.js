@@ -17,7 +17,7 @@ function draw_Grid(e,Group,game,row,line,espacement,wi,he,posx,posy) {
 			this.paper_select[j][i] = drawSprite(Group,game,"iconpaper",0,0,wi,he,0,white,1) 
 			this.paper_select[j][i].x = posx+side+wi*i+espacement*i
 			this.paper_select[j][i].y =posy+h*.4+(j*(wi+espacement))-wi*2 
-			this.paper_select[j][i].visible = true
+			this.paper_select[j][i].visible = false
 			this.paper_select[j][i].filters=[this.grayfiltertop] 
 
 			//icone
@@ -26,14 +26,14 @@ function draw_Grid(e,Group,game,row,line,espacement,wi,he,posx,posy) {
 			this.paper_select[j][i].main.y =posy+h*.4+(j*(wi+espacement))-wi*2 
 			this.paper_select[j][i].main.animations.add('derolp')
 			this.paper_select[j][i].main.animations.play('derolp',1,true)
-			this.paper_select[j][i].main.visible = true 
+			this.paper_select[j][i].main.visible = false 
 
 			Group.add(this.paper_select[j][i]) 
 			Group.add(this.paper_select[j][i].main) 
 		}
 	}
 
-	this.button_play=game.add.button(w4*3,h*.7,"play_button",closepanel,this)
+	this.button_play=game.add.button(w4*3.3,h*.85,"play_button",closepanel,this)
 	this.button_play.anchor.setTo(.5,.5)
 	Group.add(this.button_play)
 

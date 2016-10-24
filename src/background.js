@@ -72,7 +72,9 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 	this.cursor_winner_particle.start(true, 800, 19)
 
 	//à 0 pour ne pas le voir au début
-	this.fond=drawSprite(group8,game,"back",0,0,w,h,0,0,1) 
+	this.fond=game.add.sprite(0,0,"back")
+       group8.add(this.fond)	
+	//this.fond=drawSprite(group8,game,"back",0,0,w,h,0,0,1) 
 
 	//épaisseur des bordures pour le menu avec les différents papiers
 	var epaisseur_fond=25
