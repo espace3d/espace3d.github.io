@@ -1,4 +1,5 @@
 var theGame = function(game){
+	grey_check=null,
 	spriteNumber = null;
 	number = 0;
 	workingButtons = true;
@@ -53,6 +54,7 @@ var theGame = function(game){
 theGame.prototype = {
 	create: function(){
 
+		this.game.time.advancedTiming = true;
 		//demarrage de physic
 		this.game.physics.startSystem(Phaser.Physics.ARCADE)
 		G.drawGroup(this.game)
@@ -113,14 +115,16 @@ theGame.prototype = {
 
 		//enable physics body
 		this.game.physics.enable(paper_player.main, Phaser.Physics.ARCADE)
+		this.game.physics.enable(paper_player.check_fall_end, Phaser.Physics.ARCADE)
 		this.game.physics.enable(paper_opponent.main, Phaser.Physics.ARCADE)
+		this.game.physics.enable(paper_opponent.check_fall_end, Phaser.Physics.ARCADE)
 		for (var i = 0; i < background.line_collision_opponent.length; i++) {
 			this.game.physics.enable(background.line_collision_opponent[i], Phaser.Physics.ARCADE)
 			background.line_collision_opponent[i].body.immovable = true 
 		};
 		this.game.physics.enable(background.text_position_player, Phaser.Physics.ARCADE)
 		this.game.physics.enable(background.line_position, Phaser.Physics.ARCADE)
-		paper_player.main.body.allowGravity=false
+		//paper_player.main.body.allowGravity=false
 		//this.game.physics.arcade.gravity.y=200
 
 		// ajout d'un boutton au timer pour permettre le plein écran
@@ -149,6 +153,7 @@ theGame.prototype = {
 		//TODO
 		// test texte qui descend
 		background.line_fall(background.line_position,background.text_position_player,paper_player.main) 
+		this.game.physics.arcade.collide(paper_player.main,paper_player.check_fall_end,grey_check)
 
 		//filtre en gris
 		if (paper_player.main.body.y > h2 && background.text_win_player.visible==false) {
@@ -195,6 +200,12 @@ theGame.prototype = {
 		//plein écran
 		hud.time_shadow.events.onInputDown.add(gofull, this);
 
+		function grey_check(obj1,obj2){
+			console.log("colldide")
+			obj2.body.enable=false
+			background.player.filters=[background.grayfiltertop]
+		}
+
 		function gofull(){
 
 			if (this.game.scale.isFullScreen) {
@@ -212,6 +223,7 @@ theGame.prototype = {
 		paper_opponent.opponentfall(paper_opponent.main,background.line_collision_opponent,background.cursor_palpitant_opponent,background.cursor_opponent,background.cursor_opponent_particle)	
 
 	},
+
 
 
 	clickedHigher: function(){
@@ -252,5 +264,9 @@ theGame.prototype = {
 			number = spriteNumber.frame;
 		}	
 	},
+	render: function(){
 
+		game.debug.text(game.time.fps, 2, 14, "#00ff00");
+
+	}
 }

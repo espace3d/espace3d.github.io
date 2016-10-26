@@ -6,7 +6,7 @@
 var P = P || {}
 
 P.draw = function(Group,game,posx,posy) {
-var speed=1200
+	var speed=1200
 	//var e={}
 	//parameters
 	this.paper=[] 
@@ -34,7 +34,7 @@ var speed=1200
 	this.main.isFalling=false
 	//this.main.body.immovable=true
 	//if (typeof this.main!== 'undefined'){ 
-		//console.log("probleme")
+	//console.log("probleme")
 	//} 
 	Group.add(this.main) 
 
@@ -45,6 +45,8 @@ var speed=1200
 			this.main.addChild(this.paper[j][i].fwd)
 		}
 	}
+	this.check_fall_end=game.add.sprite(posx-100,h2,'rect')
+
 	//pour remettre le this.main.isFalling true et permettre ainsi la chute des papiers
 	//this.timer=game.time.events.add(delay_paper_fall,resetflag,this)
 
@@ -83,11 +85,11 @@ var speed=1200
 	// si e.main == points_chute alors il s'arrete
 	// ensuite on lance un timer.performwithdelay pour remettre le drapeau e.main.isFalling à true
 
-	/**
-	 * curso =  curseur 
-	 * curso_rect =  curseur rectangle 
-	 * parti =  particle
-	 */
+		/**
+		 * curso =  curseur 
+		 * curso_rect =  curseur rectangle 
+		 * parti =  particle
+		 */
 	//OPPONENT
 	var count = 0
 	this.opponentfall = function(_paper_opponent_main,_background_line_collision,curso,curso_rect,parti) {
@@ -200,6 +202,35 @@ var speed=1200
 			} 
 		}
 	}
+//	this.filters_grey_check = function(){
+//
+//		if (_paper_player.main.body.y > h2 && background.text_win_player.visible==false) {
+//			background.winner()
+//			if (background.text_win_player.visible==false){
+//				background.text_win_opponent.visible=true
+//				background.cursor_player.visible=false
+//				background.cursor_palpitant.visible=false
+//				background.cursor_opponent.visible=false
+//				background.cursor_palpitant_opponent.visible=false
+//
+//			}					
+//			background.player.filters=[background.grayfiltertop]
+//			background.player_top.filters=[background.grayfiltertop]
+//		}
+//
+//		if (paper_opponent.main.body.y > h2 && background.text_win_opponent.visible==false) {
+//			background.winner()
+//			if (background.text_win_opponent.visible==false){
+//				background.text_win_player.visible=true
+//				background.cursor_player.visible=false
+//				background.cursor_palpitant.visible=false
+//				background.cursor_opponent.visible=false
+//				background.cursor_palpitant_opponent.visible=false
+//			}					
+//			background.opponent.filters=[background.grayfiltertop]
+//			background.opponent_top.filters=[background.grayfiltertop]
+//		}
+//	}
 	return this
 }
 

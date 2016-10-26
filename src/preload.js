@@ -33,7 +33,6 @@ preload.prototype = {
 		this.game.load.image("particle_player","assets/particle_player.png");
 		this.game.load.image("particle_opponent","assets/particle_opponent.png");
 		this.game.load.image("line_position","assets/line_position.png");
-		this.game.load.image("line_division","assets/line_division.png");
 		this.game.load.image("division","assets/division.png");
 		this.game.load.image("line_collision","assets/line_collision.png");
 		this.game.load.image("paper","assets/paper.png");
