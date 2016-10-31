@@ -22,6 +22,7 @@ P.draw = function(Group,game,posx,posy) {
 			this.paper[j][i].fwd.y =j*dim.paper 
 			this.paper[j][i].x = 0
 			this.paper[j][i].y =j*dim.paper 
+
 			// ajout des childs au parent >>this.main
 			Group.add(this.paper[j][i]) 
 			Group.add(this.paper[j][i].fwd) 
@@ -32,10 +33,6 @@ P.draw = function(Group,game,posx,posy) {
 	this.main.isOutOfMiddleTable=false 
 	this.main.inputEnabled=true 
 	this.main.isFalling=false
-	//this.main.body.immovable=true
-	//if (typeof this.main!== 'undefined'){ 
-	//console.log("probleme")
-	//} 
 	Group.add(this.main) 
 
 	//ajout aux groupes
@@ -45,9 +42,8 @@ P.draw = function(Group,game,posx,posy) {
 			this.main.addChild(this.paper[j][i].fwd)
 		}
 	}
-	this.check_fall_end=game.add.sprite(posx-100,h2,'rect')
-
 	//pour remettre le this.main.isFalling true et permettre ainsi la chute des papiers
+	//TODO
 	//this.timer=game.time.events.add(delay_paper_fall,resetflag,this)
 
 	function resetflag() {
@@ -61,7 +57,7 @@ P.draw = function(Group,game,posx,posy) {
 	var points_chute = {}
 
 	for (var i = 0; i < 100; i++) {
-		points_chute[i]=Math.round(game.rnd.between(10,1500))
+		//points_chute[i]=Math.round(game.rnd.between(10,1800))
 	};
 
 	//temps pour que le this.main.isFalling soit remis à true et que les papiers tombent à nouveau
@@ -85,11 +81,11 @@ P.draw = function(Group,game,posx,posy) {
 	// si e.main == points_chute alors il s'arrete
 	// ensuite on lance un timer.performwithdelay pour remettre le drapeau e.main.isFalling à true
 
-		/**
-		 * curso =  curseur 
-		 * curso_rect =  curseur rectangle 
-		 * parti =  particle
-		 */
+	/**
+	 * curso =  curseur 
+	 * curso_rect =  curseur rectangle 
+	 * parti =  particle
+	 */
 	//OPPONENT
 	var count = 0
 	this.opponentfall = function(_paper_opponent_main,_background_line_collision,curso,curso_rect,parti) {
@@ -202,35 +198,35 @@ P.draw = function(Group,game,posx,posy) {
 			} 
 		}
 	}
-//	this.filters_grey_check = function(){
-//
-//		if (_paper_player.main.body.y > h2 && background.text_win_player.visible==false) {
-//			background.winner()
-//			if (background.text_win_player.visible==false){
-//				background.text_win_opponent.visible=true
-//				background.cursor_player.visible=false
-//				background.cursor_palpitant.visible=false
-//				background.cursor_opponent.visible=false
-//				background.cursor_palpitant_opponent.visible=false
-//
-//			}					
-//			background.player.filters=[background.grayfiltertop]
-//			background.player_top.filters=[background.grayfiltertop]
-//		}
-//
-//		if (paper_opponent.main.body.y > h2 && background.text_win_opponent.visible==false) {
-//			background.winner()
-//			if (background.text_win_opponent.visible==false){
-//				background.text_win_player.visible=true
-//				background.cursor_player.visible=false
-//				background.cursor_palpitant.visible=false
-//				background.cursor_opponent.visible=false
-//				background.cursor_palpitant_opponent.visible=false
-//			}					
-//			background.opponent.filters=[background.grayfiltertop]
-//			background.opponent_top.filters=[background.grayfiltertop]
-//		}
-//	}
+	//	this.filters_grey_check = function(){
+	//
+	//		if (_paper_player.main.body.y > h2 && background.text_win_player.visible==false) {
+	//			background.winner()
+	//			if (background.text_win_player.visible==false){
+	//				background.text_win_opponent.visible=true
+	//				background.cursor_player.visible=false
+	//				background.cursor_palpitant.visible=false
+	//				background.cursor_opponent.visible=false
+	//				background.cursor_palpitant_opponent.visible=false
+	//
+	//			}					
+	//			background.player.filters=[background.grayfiltertop]
+	//			background.player_top.filters=[background.grayfiltertop]
+	//		}
+	//
+	//		if (paper_opponent.main.body.y > h2 && background.text_win_opponent.visible==false) {
+	//			background.winner()
+	//			if (background.text_win_opponent.visible==false){
+	//				background.text_win_player.visible=true
+	//				background.cursor_player.visible=false
+	//				background.cursor_palpitant.visible=false
+	//				background.cursor_opponent.visible=false
+	//				background.cursor_palpitant_opponent.visible=false
+	//			}					
+	//			background.opponent.filters=[background.grayfiltertop]
+	//			background.opponent_top.filters=[background.grayfiltertop]
+	//		}
+	//	}
 	return this
 }
 

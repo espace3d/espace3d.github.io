@@ -62,7 +62,7 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 	this.cursor_winner_particle.makeParticles("particle_winner")
 	this.cursor_winner_particle.minParticleSpeed.setTo(-200,-200)
 	this.cursor_winner_particle.maxParticleSpeed.setTo(200,200)
-	this.cursor_winner_particle.setAlpha(1,.1)
+	this.cursor_winner_particle.setAlpha(1,.8)
 
 	this.cursor_winner_particle.minParticleScale = 1.9
 	this.cursor_winner_particle.maxParticleScale = .9
@@ -113,11 +113,21 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 	this.opponent_top=drawSprite(group1,game,"rect",0-decalage,0,w2,h*.15,0,red,1) 
 	this.player_top=drawSprite(group2,game,"rect",w2+decalage,0,w2,h*.15,0,blue,1) 
 
+
+
+
+	//barre inférieure pour tester la collision avec le papier opponent et player
+
+	this.check_fall_end=game.add.sprite(0,2*h,'test_line')
+
+
+
 	//line de collision avec le paper opponent
 	this.line_collision_opponent=[]
 
 	for (var j = 0; j < 5; j++) {
-		this.line_collision_opponent[j]=game.add.sprite(0,game.rnd.integerInRange(h2,(h+h2)),"line_collision")
+		this.line_collision_opponent[j]=game.add.sprite(0,game.rnd.integerInRange(h2,(h+h2+100)),"line_collision")
+		//this.line_collision_opponent[j]=game.add.sprite(0,game.rnd.integerInRange(h*2,h*4),"line_collision")
 		this.line_collision_opponent[j].isTouch=false
 
 		this.line_collision_opponent[j].alpha=.1
@@ -133,13 +143,11 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 
 	//texte symbolisant l'ombre sous le player et dont la visibilité apparait dans update via the Game.js
 	//player
-	this.text_name_player_shadow = game.add.bitmapText(w4*3+3,py1+3,'lucky','dev', taille) 
-	this.text_name_player_shadow.tint=grey
+	this.text_name_player_shadow = game.add.bitmapText(w4*3+3,py1+3,'lucky_grey','dev', taille) 
 	this.text_name_player_shadow.alpha=.5
 	this.text_name_player_shadow.visible=false
-	this.text_name_player = game.add.bitmapText(w4*3,py1,'lucky','dev', taille) 
+	this.text_name_player = game.add.bitmapText(w4*3,py1,'lucky_grey','dev', taille) 
 	this.text_level_player = game.add.bitmapText(w4*3,py3,'lucky','lvl ', taille2) 
-	this.text_name_player.tint=grey
 	this.text_level_player.alpha=0
 	this.text_level_number_player=game.add.bitmapText(w4*3+30,py3,'lucky','1', taille2) 
 	this.text_level_number_player.tint=jaune
@@ -150,20 +158,25 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 	this.text_position_player.anchor.x =.5
 	this.text_position_player.anchor.y =.5
 	group2.add(this.text_position_player) 
-	this.line_position=game.add.sprite(w4*3,0,"line_position") 
-	group7.add(this.line_position)
-	this.line_position.anchor.y=1
+	this.line_position_player=game.add.sprite(w4*3,0,"line_position") 
+	group7.add(this.line_position_player)
+	this.line_position_player.anchor.y=1
 	this.text_position_player.isFalling=false
+
+	this.text_position_opponent = game.add.bitmapText(w4*3,0,'lucky','', taille) 
+	this.text_position_opponent.anchor.x =.5
+	this.text_position_opponent.anchor.y =.5
+	group2.add(this.text_position_opponent) 
+	this.line_position_opponent=game.add.sprite(w4,0,"line_position") 
+	group7.add(this.line_position_opponent)
+	this.line_position_opponent.anchor.y=1
+	this.text_position_opponent.isFalling=false
 
 	this.line_fall = function(_line_position,_text_position,_paper_player_main) {
 		if (_text_position.isFalling){
 			//pour faire descendre les papiers
-			//_text_position.body.gravity.y=882
-
-			//_text_position.body.bounce.y=.5
 			_line_position.y=_text_position.y
 			_text_position.text=Math.round(_text_position.y)
-			//_paper_player_main.body.bounce.y=2
 			_paper_player_main.body.immovable=true
 			//collision 
 			game.physics.arcade.collide(_text_position,_paper_player_main)
@@ -189,9 +202,7 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 	this.text_position_player.isFalling=true
 	}
 
-	this.text_win_player = game.add.bitmapText(w4*3,h2-taille+taille*.5,'lucky_black','win', taille) 
-	this.text_win_player.tint=grey
-	//this.text_win_player.tint=jaune
+	this.text_win_player = game.add.bitmapText(w4*3,h2-taille+taille*.5,'lucky_grey','win', taille) 
 	this.text_win_player.visible=false
 	this.text_win_player.alpha=0
 
@@ -201,19 +212,17 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 	//this.text_loose_player.visible=false
 	//this.text_loose_player.alpha=0
 	//OPPONENT 
-	this.text_name_opponent = game.add.bitmapText(w4,py1,'lucky','kill the game', taille) 
-	this.text_name_opponent.tint=grey
+	this.text_name_opponent = game.add.bitmapText(w4,py1,'lucky_grey','kill the game', taille) 
 	this.text_level_opponent = game.add.bitmapText(w4,py3,'lucky','lvl ', taille2) 
 	this.text_level_opponent.alpha=0
 	this.text_level_number_opponent=game.add.bitmapText(w4+30,py3,'lucky','5', taille2) 
 	this.text_level_number_opponent.tint=jaune
 	this.text_level_number_opponent.alpha=0
 
-	this.text_win_opponent = game.add.bitmapText(w4,h2-taille+taille*.5,'lucky_black','win', taille) 
+	this.text_win_opponent = game.add.bitmapText(w4,h2-taille+taille*.5,'lucky_grey','win', taille) 
 	//this.text_win_opponent.tint=jaune
 	this.text_win_opponent.visible=false
 	this.text_win_opponent.alpha=0
-	this.text_win_opponent.tint=grey
 	//this.text_loose_opponent = game.add.bitmapText(w4,h2-taille+taille*.5,'lucky_black','loose', taille) 
 	//this.text_loose_opponent.tint=jaune
 	//this.text_loose_opponent.visible=false
@@ -279,8 +288,6 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 	this.winner=function(){
 		if (this.winner_flag){
 			this.winner_flag = false
-			//this.tween_winner_alpha=game.add.tween(this.text_loose_player).to({alpha:1},100,Phaser.Easing.Elastic.Out,true,600)
-			//this.tween_winner=game.add.tween(this.text_loose_player.scale).to({x:1.5, y:1.5},1800,Phaser.Easing.Elastic.Out,true,900)
 			this.tween_looser_alpha=game.add.tween(this.text_win_opponent).to({alpha:1},100,Phaser.Easing.Elastic.Out,true,600)
 			this.tween_looser=game.add.tween(this.text_win_opponent.scale).to({x:2.5, y:2.5},1800,Phaser.Easing.Elastic.Out,true,900)
 			game.time.events.add(1200,particle_winner,this)
@@ -315,6 +322,7 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 		game.time.events.add(delay_paper_fall,resetflag,this)
 
 		function resetflag() {
+			paper_opponent.main.isFalling=true
 			paper_player.main.isFalling=true
 		}
 

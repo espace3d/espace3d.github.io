@@ -114,16 +114,16 @@ theGame.prototype = {
 		effect.deform_main(hud.time_shadow)
 
 		//enable physics body
+		this.game.physics.enable(background.check_fall_end, Phaser.Physics.ARCADE)
 		this.game.physics.enable(paper_player.main, Phaser.Physics.ARCADE)
-		this.game.physics.enable(paper_player.check_fall_end, Phaser.Physics.ARCADE)
 		this.game.physics.enable(paper_opponent.main, Phaser.Physics.ARCADE)
-		this.game.physics.enable(paper_opponent.check_fall_end, Phaser.Physics.ARCADE)
 		for (var i = 0; i < background.line_collision_opponent.length; i++) {
 			this.game.physics.enable(background.line_collision_opponent[i], Phaser.Physics.ARCADE)
 			background.line_collision_opponent[i].body.immovable = true 
 		};
 		this.game.physics.enable(background.text_position_player, Phaser.Physics.ARCADE)
-		this.game.physics.enable(background.line_position, Phaser.Physics.ARCADE)
+		this.game.physics.enable(background.line_position_player, Phaser.Physics.ARCADE)
+		this.game.physics.enable(background.line_position_opponent, Phaser.Physics.ARCADE)
 		//paper_player.main.body.allowGravity=false
 		//this.game.physics.arcade.gravity.y=200
 
@@ -152,36 +152,38 @@ theGame.prototype = {
 	update: function(){
 		//TODO
 		// test texte qui descend
-		background.line_fall(background.line_position,background.text_position_player,paper_player.main) 
-		this.game.physics.arcade.collide(paper_player.main,paper_player.check_fall_end,grey_check)
+		background.line_fall(background.line_position_player,background.text_position_player,paper_player.main) 
+		background.line_fall(background.line_position_opponent,background.text_position_opponent,paper_opponent.main) 
+		this.game.physics.arcade.collide(paper_player.main,background.check_fall_end,grey_check)
+		this.game.physics.arcade.collide(paper_opponent.main,background.check_fall_end,grey_check)
 
 		//filtre en gris
-		if (paper_player.main.body.y > h2 && background.text_win_player.visible==false) {
-			background.winner()
-			if (background.text_win_player.visible==false){
-				background.text_win_opponent.visible=true
-				background.cursor_player.visible=false
-				background.cursor_palpitant.visible=false
-				background.cursor_opponent.visible=false
-				background.cursor_palpitant_opponent.visible=false
+		//if (paper_player.main.body.y > h2 && background.text_win_player.visible==false) {
+		//	background.winner()
+		//	if (background.text_win_player.visible==false){
+		//		background.text_win_opponent.visible=true
+		//		background.cursor_player.visible=false
+		//		background.cursor_palpitant.visible=false
+		//		background.cursor_opponent.visible=false
+		//		background.cursor_palpitant_opponent.visible=false
 
-			}					
-			background.player.filters=[background.grayfiltertop]
-			background.player_top.filters=[background.grayfiltertop]
-		}
+		//	}					
+		//	background.player.filters=[background.grayfiltertop]
+		//	background.player_top.filters=[background.grayfiltertop]
+		//}
 
-		if (paper_opponent.main.body.y > h2 && background.text_win_opponent.visible==false) {
-			background.winner()
-			if (background.text_win_opponent.visible==false){
-				background.text_win_player.visible=true
-				background.cursor_player.visible=false
-				background.cursor_palpitant.visible=false
-				background.cursor_opponent.visible=false
-				background.cursor_palpitant_opponent.visible=false
-			}					
-			background.opponent.filters=[background.grayfiltertop]
-			background.opponent_top.filters=[background.grayfiltertop]
-		}
+		//if (paper_opponent.main.body.y > h2 && background.text_win_opponent.visible==false) {
+		//	background.winner()
+		//	if (background.text_win_opponent.visible==false){
+		//		background.text_win_player.visible=true
+		//		background.cursor_player.visible=false
+		//		background.cursor_palpitant.visible=false
+		//		background.cursor_opponent.visible=false
+		//		background.cursor_palpitant_opponent.visible=false
+		//	}					
+		//	background.opponent.filters=[background.grayfiltertop]
+		//	background.opponent_top.filters=[background.grayfiltertop]
+		//}
 
 		function check_winner(){
 			if (background.text_win_player.visible) {
@@ -203,7 +205,14 @@ theGame.prototype = {
 		function grey_check(obj1,obj2){
 			console.log("colldide")
 			obj2.body.enable=false
-			background.player.filters=[background.grayfiltertop]
+			background.winner()
+			//background.player.filters=[background.grayfiltertop]
+			background.text_win_opponent.visible=true
+			background.cursor_player.visible=false
+			background.cursor_palpitant.visible=false
+			background.cursor_opponent.visible=false
+			background.cursor_palpitant_opponent.visible=false
+			//effect.disappears_timer(hud.time_shadow,hud.timer)
 		}
 
 		function gofull(){
@@ -216,7 +225,7 @@ theGame.prototype = {
 		}
 
 		// temps écoulé
-		time_elapsed(this.game)
+		//time_elapsed(this.game)
 
 		//chute des papiers	
 		paper_player.fall(paper_player.main,background)	

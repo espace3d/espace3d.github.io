@@ -44,10 +44,12 @@ preload.prototype = {
 		this.game.load.image("roll_deroll","assets/roll_deroll.png");
 		this.game.load.image("paper_h","assets/paper_h.png");
 		this.game.load.image("roll_deroll","assets/roll_deroll.png");
+		this.game.load.image("test_line","assets/test_line.png");
 		this.game.load.image("papermania","assets/papermania.png");
 
 		//font bitmapFont
 		this.game.load.bitmapFont('lucky_black','fonts/font_black.png', 'fonts/font_black.fnt');
+		this.game.load.bitmapFont('lucky_grey','fonts/font_grey.png', 'fonts/font_grey.fnt');
 		this.game.load.bitmapFont('lucky','fonts/font.png', 'fonts/font.fnt');
 	},
 	create: function(){
