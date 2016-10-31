@@ -8,8 +8,9 @@ var B = B || {}
 function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,group1) {
 
 	//////////////////////////////////////////////////////////////////////////////////////////
+	//pour permettre ou non la FERMETURE des PANNEAUX
+	this.flag_close=false
 	//gray filters
-
 	this.grayfiltertop = game.add.filter('Gray') ; this.grayfiltertop.gray=1
 	this.grayfilternull = game.add.filter('Gray') ; this.grayfilternull.gray=0
 
@@ -316,7 +317,7 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 	//obj2 est le player
 	//obj3 est le texte supérieur de l'opponent
 	//obj4 est le texte supérieur du player
-
+//obj8 timer_
 	this.displacement_background_opponent_and_player_close = function(obj1,obj2,obj3,obj4,obj5,obj6,obj7){
 
 		game.time.events.add(delay_paper_fall,resetflag,this)
@@ -330,6 +331,7 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 		displacement_position(game,obj2,0,h2,0,time_close_panel_background,"Bounce.Out")
 		displacement_position(game,obj3,0,0,0,time_close_panel_background,"Bounce.Out")
 		displacement_position(game,obj4,0,h2,0,time_close_panel_background,"Bounce.Out")
+
 
 		//function displacement_background_shadow() {
 		//////////////////////////////////////////////////////////////////////////////////////////
@@ -347,7 +349,12 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 		//|-----||-----|
 		game.time.events.add(time_close_panel_background,next_tween,this)
 
-		function next_tween() {
+/**
+*obj 6 = ombre table	
+*obj 4 = texte player	
+*obj 7 timer
+*/
+			function next_tween() {
 			//texte qui apparaissent
 			this.tween_begin_game()
 			//déplacement de l'ombre
@@ -362,6 +369,8 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 			console.log("shadow")
 		}
 	}
+	
+
 	return this
 }
 
@@ -383,8 +392,26 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 //|  @  |   |  @  | 
 //|     |   |     | 
 //|-----|   |-----|
+/**
+*obj 7 timer_group
+*obj8 TIMER
+*/
 
-displacement_background_opponent_and_player=function(obj1,obj2,obj3,obj4,game){
+displacement_background_opponent_and_player=function(obj1,obj2,obj3,obj4,obj7,obj8,game){
+
+	function move_timer_for_chooce(){	
+		var tween_move_timer_for_chooce=game.add.tween(obj7).to({x:0,y:0},time_open_panel_background,Phaser.Easing.Linear.None,1000)
+			
+			//displacement_position(game,obj7,0,0,delay_open_panel_background,time_open_panel_background,"Linear.None",1000)
+		tween_move_timer_for_chooce.onComplete.add(next,this)
+		// pour cacher le timer et le mettre en pause
+		function next(){
+		obj8.turn_chooce()
+			obj8.flag=false
+			obj8.timer.visible=false
+		}
+	}
+	move_timer_for_chooce()
 
 	displacement_position(game,obj1,-w,0,delay_open_panel_background,time_open_panel_background,"Bounce.out")
 	displacement_position(game,obj2,-w,h2,delay_open_panel_background,time_open_panel_background,"Bounce.out")

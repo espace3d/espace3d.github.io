@@ -45,6 +45,8 @@ preload.prototype = {
 		this.game.load.image("paper_h","assets/paper_h.png");
 		this.game.load.image("roll_deroll","assets/roll_deroll.png");
 		this.game.load.image("test_line","assets/test_line.png");
+		this.game.load.image('spiral','assets/spiral.png');
+		this.game.load.image('roll_turn','assets/roll_turn.png');
 		this.game.load.image("papermania","assets/papermania.png");
 
 		//font bitmapFont

@@ -94,7 +94,8 @@ theGame.prototype = {
 		paper_opponent = new P.draw(G.opponentPapers4,this.game,w4,-h)
 		paper_player = new P.draw(G.playerPapers5,this.game,w4*3,-h)
 		menuPaper=new M.drawMenuPaper(this.menuPaper,G.menuPaperGroup8,this.game)
-		hud=drawHud(this.game,G.timerGroup0)
+		hud=new Timer(this.game,G.timerGroup0)
+		console.log(hud.visible,"hduidud")
 		effect=draweffect(this.game)
 		little_roll_player=new R.draw_little_roll(this.game,G.timerGroup0,w4*3,py2)
 		little_roll_opponent=new R.draw_little_roll(this.game,G.timerGroup0,w4,py2)
@@ -108,7 +109,7 @@ theGame.prototype = {
 		background.table_player.y=h
 
 		//DEPLACEMENT DES BACKGROUND POUR ANIMER LE JEU
-		displacement_background_opponent_and_player(G.opponentBackgroundGroup6,G.topOpponentGroup1,G.playerBackgroundGroup7,G.topPlayerGroup2,this.game)
+		displacement_background_opponent_and_player(G.opponentBackgroundGroup6,G.topOpponentGroup1,G.playerBackgroundGroup7,G.topPlayerGroup2,G.timerGroup0,hud,this.game)
 		//EFFECT SUR LE TIMER
 		effect.deform_text(hud.timer)
 		effect.deform_main(hud.time_shadow)
