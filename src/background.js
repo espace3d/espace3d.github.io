@@ -399,24 +399,26 @@ function drawBackground(game,group8,group7,group6,group3tris,group3bis,group2,gr
 
 displacement_background_opponent_and_player=function(obj1,obj2,obj3,obj4,obj7,obj8,game){
 
+	displacement_position(game,obj1,-w,0,delay_open_panel_background,time_open_panel_background,"Bounce.out")
+	displacement_position(game,obj2,-w,h2,delay_open_panel_background,time_open_panel_background,"Bounce.out")
+	displacement_position(game,obj3,w,0,delay_open_panel_background,time_open_panel_background,"Bounce.out")
+
+	displacement_position(game,obj4,w,h2,delay_open_panel_background,time_open_panel_background,"Bounce.out")
+//deplace le timer du bas vers le milieu et rend la roulette visible et actionne la roulette pour le hasard
 	function move_timer_for_chooce(){	
-		var tween_move_timer_for_chooce=game.add.tween(obj7).to({x:0,y:0},time_open_panel_background,Phaser.Easing.Linear.None,1000)
-			
-			//displacement_position(game,obj7,0,0,delay_open_panel_background,time_open_panel_background,"Linear.None",1000)
+		var delay_for_chooce=delay_open_panel_background+time_open_panel_background
+		console.log(delay_for_chooce,"delay_for_chooce")
+		var tween_move_timer_for_chooce=game.add.tween(obj7).to({x:0,y:0},time_open_panel_background,Phaser.Easing.Linear.None,true,delay_for_chooce)
 		tween_move_timer_for_chooce.onComplete.add(next,this)
 		// pour cacher le timer et le mettre en pause
 		function next(){
-		obj8.turn_chooce()
+			console.log("ici")
+			obj8.turn_chooce()
 			obj8.flag=false
 			obj8.timer.visible=false
 		}
 	}
 	move_timer_for_chooce()
-
-	displacement_position(game,obj1,-w,0,delay_open_panel_background,time_open_panel_background,"Bounce.out")
-	displacement_position(game,obj2,-w,h2,delay_open_panel_background,time_open_panel_background,"Bounce.out")
-	displacement_position(game,obj3,w,0,delay_open_panel_background,time_open_panel_background,"Bounce.out")
-	displacement_position(game,obj4,w,h2,delay_open_panel_background,time_open_panel_background,"Bounce.out")
 }
 
 

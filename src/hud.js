@@ -38,13 +38,13 @@ Timer = function(game,Group){
 	this.angle_array=[220,320,140,150,160,70,80,110,1020,930]
 	this.angular = this.angle_array[Math.floor(game.rnd.between(1,this.angle_array.length-1))];
 
-
 	Phaser.Sprite.call(this,game,w2,h2,'roll_turn')
 	this.anchor.x=.5
 	this.anchor.y=.5
 
 	//cache au debut	
 	this.visible=false
+	this.alpha=0
 	this.spiral.visible=false
 	//ajout aux groupes
 	this.Group.add(this.timer)
@@ -61,6 +61,7 @@ Timer.prototype.turn_chooce = function() {
 
 	this.visible=true
 	this.spiral.visible=true
+	this.tween_main=game.add.tween(this).to({alpha:1},900,Phaser.Easing.Linear.None,true,0)
 	this.tween=game.add.tween(this).to({angle:this.angular},1000,Phaser.Easing.Circular.Out,true,1000)
 	this.tween_spiral=game.add.tween(this.spiral).to({angle:this.angular},1000,Phaser.Easing.Circular.Out,true,1000)
 	this.tween.onComplete.add(check_angle,this)
@@ -73,12 +74,10 @@ Timer.prototype.turn_chooce = function() {
 
 		function move_timer(){
 			var tween=game.add.tween(this.Group).to({x:0,y:h2-150},1000,Phaser.Easing.Linear.None,true)
-tween.onComplete.add(next,this)
-function next(){
-background.flag_close=true
-}
-
-
+			tween.onComplete.add(next,this)
+			function next(){
+				background.flag_close=true
+			}
 		}
 
 		this.flag=true

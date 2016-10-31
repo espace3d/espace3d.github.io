@@ -136,18 +136,7 @@ theGame.prototype = {
 		background.text_position_player.body.bounce.y=.2
 		background.text_position_player.body.allowGravity=false
 
-		game.time.events.add(delay_paper_fall+5800,allow_line_position,this)
 
-		function allow_line_position() {
-			background.text_position_player.body.allowGravity=true
-		}
-
-		game.time.events.add(delay_paper_fall+10800,stop_line_position,this)
-
-		function stop_line_position() {
-			console.log("stop")
-			background.text_position_player.body.moves=false
-		}
 	},
 
 	update: function(){
@@ -157,34 +146,6 @@ theGame.prototype = {
 		background.line_fall(background.line_position_opponent,background.text_position_opponent,paper_opponent.main) 
 		this.game.physics.arcade.collide(paper_player.main,background.check_fall_end,grey_check)
 		this.game.physics.arcade.collide(paper_opponent.main,background.check_fall_end,grey_check)
-
-		//filtre en gris
-		//if (paper_player.main.body.y > h2 && background.text_win_player.visible==false) {
-		//	background.winner()
-		//	if (background.text_win_player.visible==false){
-		//		background.text_win_opponent.visible=true
-		//		background.cursor_player.visible=false
-		//		background.cursor_palpitant.visible=false
-		//		background.cursor_opponent.visible=false
-		//		background.cursor_palpitant_opponent.visible=false
-
-		//	}					
-		//	background.player.filters=[background.grayfiltertop]
-		//	background.player_top.filters=[background.grayfiltertop]
-		//}
-
-		//if (paper_opponent.main.body.y > h2 && background.text_win_opponent.visible==false) {
-		//	background.winner()
-		//	if (background.text_win_opponent.visible==false){
-		//		background.text_win_player.visible=true
-		//		background.cursor_player.visible=false
-		//		background.cursor_palpitant.visible=false
-		//		background.cursor_opponent.visible=false
-		//		background.cursor_palpitant_opponent.visible=false
-		//	}					
-		//	background.opponent.filters=[background.grayfiltertop]
-		//	background.opponent_top.filters=[background.grayfiltertop]
-		//}
 
 		function check_winner(){
 			if (background.text_win_player.visible) {
@@ -208,6 +169,15 @@ theGame.prototype = {
 			obj2.body.enable=false
 			background.winner()
 			//background.player.filters=[background.grayfiltertop]
+			//pour faire descendre le texte qui donne la position du papier tombé
+			background.text_position_player.body.allowGravity=true
+			game.time.events.add(5000,stop_line_position,this)
+
+			function stop_line_position() {
+				console.log("stop")
+				background.text_position_player.body.moves=false
+			}
+
 			background.text_win_opponent.visible=true
 			background.cursor_player.visible=false
 			background.cursor_palpitant.visible=false
