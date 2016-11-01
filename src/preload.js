@@ -28,6 +28,7 @@ preload.prototype = {
 		this.game.load.image("timer_white","assets/timer_white.png");
 		this.game.load.image("timer","assets/timer.png");
 		this.game.load.image("play_button","assets/play_button.png");
+		this.game.load.image("menu_back","assets/menu_back.png");
 		this.game.load.image("back","assets/back.png");
 		this.game.load.image("particle_winner","assets/particle_winner.png");
 		this.game.load.image("particle_player","assets/particle_player.png");

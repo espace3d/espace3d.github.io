@@ -35,7 +35,7 @@ Timer = function(game,Group){
 	this.spiral.anchor.x=.5
 	this.spiral.anchor.y=.5
 	this.spiral.alpha=1
-	this.angle_array=[220,320,140,150,160,70,80,110,1020,930]
+	this.angle_array=[820,920,740,850,760,700,800,910,1020,930]
 	this.angular = this.angle_array[Math.floor(game.rnd.between(1,this.angle_array.length-1))];
 
 	Phaser.Sprite.call(this,game,w2,h2,'roll_turn')
@@ -68,6 +68,72 @@ Timer.prototype.turn_chooce = function() {
 	this.tween_spiral2=game.add.tween(this.spiral).to({alpha:0},1000,Phaser.Easing.Linear.None,true,1000)
 
 	function check_angle() {
+		this.flag=true
+		this.timer.visible=true
+		//met en surbrillance les bodures du joueur choisi
+		if (this.angle < 90 && this.angle > -90){
+			console.log("winner")
+			background.alpha=0
+			this.tween0=game.add.tween(menuPaper.fond).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,0)
+
+			background.border_player_droit.alpha=0
+			background.border_player_droit.tint=white
+			this.tween1=game.add.tween(background.border_player_droit).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,0)
+
+			background.border_player_gauche.alpha=0
+			background.border_player_gauche.tint=white
+			this.tween2=game.add.tween(background.border_player_gauche).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,0)
+
+			background.border_player_superieur.alpha=0
+			background.border_player_superieur.tint=white
+			this.tween3=game.add.tween(background.border_player_superieur).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,0)
+
+			background.border_player_inferieur.alpha=0
+			background.border_player_inferieur.tint=white
+			this.tween4=game.add.tween(background.border_player_inferieur).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,0)
+			this.tween4.onComplete.add(next,this)
+
+			function next(){
+			background.border_player_superieur.tint=background.color_player
+			background.border_player_inferieur.tint=background.color_player
+			background.border_player_gauche.tint=background.color_player
+			background.border_player_droit.tint=background.color_player
+
+			}
+
+		} else{
+			console.log("looser")
+
+			background.alpha=0
+			this.tween0=game.add.tween(menuPaper.fond).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,0)
+
+			background.border_opponent_droit.alpha=0
+			background.border_opponent_droit.tint=white
+			this.tween1=game.add.tween(background.border_opponent_droit).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,0)
+
+			background.border_opponent_gauche.alpha=0
+			background.border_opponent_gauche.tint=white
+			this.tween2=game.add.tween(background.border_opponent_gauche).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,0)
+
+			background.border_opponent_superieur.alpha=0
+			background.border_opponent_superieur.tint=white
+			this.tween3=game.add.tween(background.border_opponent_superieur).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,0)
+
+			background.border_opponent_inferieur.alpha=0
+			background.border_opponent_inferieur.tint=white
+			this.tween4=game.add.tween(background.border_opponent_inferieur).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,0)
+			this.tween4.onComplete.add(next,this)
+
+			function next(){
+			background.border_opponent_superieur.tint=background.color_opponent
+			background.border_opponent_inferieur.tint=background.color_opponent
+			background.border_opponent_gauche.tint=background.color_opponent
+			background.border_opponent_droit.tint=background.color_opponent
+			}
+		}
+
+
+
 		//retabli le timer et fait disparaitre la roulette 
 		this.tween_hide=game.add.tween(this).to({alpha:0},200,Phaser.Easing.Linear.None,true)
 		this.tween_hide.onComplete.add(move_timer,this)
@@ -77,18 +143,10 @@ Timer.prototype.turn_chooce = function() {
 			tween.onComplete.add(next,this)
 			function next(){
 				background.flag_close=true
+
 			}
 		}
 
-		this.flag=true
-		this.timer.visible=true
-
-		if (this.angle < 90 && this.angle > -90){
-			console.log("winner")
-
-		} else{
-			console.log("looser")
-		}
 	}
 }
 

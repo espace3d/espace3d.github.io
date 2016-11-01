@@ -15,7 +15,7 @@ var theGame = function(game){
 	effect= null
 	little_roll_player=null
 	little_roll_opponent=null
-
+	tw=null
 	//////////////////////////////////////////////////////////////////////////////////////////
 	//GROUP
 	groupnull = null
@@ -90,16 +90,16 @@ theGame.prototype = {
 		groupnull.add(spriteNumber)
 
 		// DECLARATION DES VARIABLES MY GAME
-		background=drawBackground(this.game,G.menuPaperGroup8,G.playerBackgroundGroup7,G.opponentBackgroundGroup6,G.shadowGroup3tris,G.cursorGroup3bis,G.topPlayerGroup2,G.topOpponentGroup1,G.timerGroup0)
+		menuPaper=new Menu(this.game,G.menuPaperGroup8)
+		background=new draw_background(this.game)
 		paper_opponent = new P.draw(G.opponentPapers4,this.game,w4,-h)
 		paper_player = new P.draw(G.playerPapers5,this.game,w4*3,-h)
-		menuPaper=new M.drawMenuPaper(this.menuPaper,G.menuPaperGroup8,this.game)
 		hud=new Timer(this.game,G.timerGroup0)
 		console.log(hud.visible,"hduidud")
 		effect=draweffect(this.game)
 		little_roll_player=new R.draw_little_roll(this.game,G.timerGroup0,w4*3,py2)
 		little_roll_opponent=new R.draw_little_roll(this.game,G.timerGroup0,w4,py2)
-
+		tw=new init_transitions(this.game)
 
 		//DEPLACEMENT DES GROUPES AU DEBUT (TEXTE TOP - TIMER - SHADOW)
 		G.topOpponentGroup1.position.y=h2
@@ -109,7 +109,7 @@ theGame.prototype = {
 		background.table_player.y=h
 
 		//DEPLACEMENT DES BACKGROUND POUR ANIMER LE JEU
-		displacement_background_opponent_and_player(G.opponentBackgroundGroup6,G.topOpponentGroup1,G.playerBackgroundGroup7,G.topPlayerGroup2,G.timerGroup0,hud,this.game)
+		tw.displacement_background_opponent_and_player()
 		//EFFECT SUR LE TIMER
 		effect.deform_text(hud.timer)
 		effect.deform_main(hud.time_shadow)
@@ -132,8 +132,9 @@ theGame.prototype = {
 		this.game.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;
 
 		//ligne qui descend gravity
-		background.text_position_player.body.gravity.y=1282
+		background.text_position_player.body.gravity.y=800
 		background.text_position_player.body.bounce.y=.2
+		background.line_position_player.body.allowGravity=false
 		background.text_position_player.body.allowGravity=false
 
 
@@ -142,8 +143,8 @@ theGame.prototype = {
 	update: function(){
 		//TODO
 		// test texte qui descend
-		background.line_fall(background.line_position_player,background.text_position_player,paper_player.main) 
-		background.line_fall(background.line_position_opponent,background.text_position_opponent,paper_opponent.main) 
+		background.line_fall(background.check_fall_end,background.line_position_player,background.text_position_player,paper_player.main) 
+		//background.line_fall(background.check_fall_end,background.text_position_opponent,paper_opponent.main) 
 		this.game.physics.arcade.collide(paper_player.main,background.check_fall_end,grey_check)
 		this.game.physics.arcade.collide(paper_opponent.main,background.check_fall_end,grey_check)
 
@@ -170,7 +171,7 @@ theGame.prototype = {
 			background.winner()
 			//background.player.filters=[background.grayfiltertop]
 			//pour faire descendre le texte qui donne la position du papier tombé
-			background.text_position_player.body.allowGravity=true
+			//background.text_position_player.body.allowGravity=true
 			game.time.events.add(5000,stop_line_position,this)
 
 			function stop_line_position() {
