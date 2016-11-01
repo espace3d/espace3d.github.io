@@ -147,11 +147,11 @@ draw_background = function(game){
 
 	//textes du player et de l'opponent
 	//taille you
-	var taille=w*.07 
+	var taille=w*.05 
 	//taille2 JOJO
 	var taille2=w*.05 
 	//taille3 LVL 1
-	var taille3=w*.03 
+	var taille3=w*.010 
 
 	//texte symbolisant l'ombre sous le player et dont la visibilité apparait dans update via the Game.js
 	//player

@@ -74,23 +74,23 @@ Timer.prototype.turn_chooce = function() {
 		if (this.angle < 90 && this.angle > -90){
 			console.log("winner")
 			background.alpha=0
-			this.tween0=game.add.tween(menuPaper.fond).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,0)
+			this.tween0=game.add.tween(menuPaper.fond).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,1100)
 
 			background.border_player_droit.alpha=0
 			background.border_player_droit.tint=white
-			this.tween1=game.add.tween(background.border_player_droit).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,0)
+			this.tween1=game.add.tween(background.border_player_droit).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,200)
 
 			background.border_player_gauche.alpha=0
 			background.border_player_gauche.tint=white
-			this.tween2=game.add.tween(background.border_player_gauche).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,0)
+			this.tween2=game.add.tween(background.border_player_gauche).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,200)
 
 			background.border_player_superieur.alpha=0
 			background.border_player_superieur.tint=white
-			this.tween3=game.add.tween(background.border_player_superieur).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,0)
+			this.tween3=game.add.tween(background.border_player_superieur).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,200)
 
 			background.border_player_inferieur.alpha=0
 			background.border_player_inferieur.tint=white
-			this.tween4=game.add.tween(background.border_player_inferieur).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,0)
+			this.tween4=game.add.tween(background.border_player_inferieur).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,200)
 			this.tween4.onComplete.add(next,this)
 
 			function next(){
@@ -105,23 +105,23 @@ Timer.prototype.turn_chooce = function() {
 			console.log("looser")
 
 			background.alpha=0
-			this.tween0=game.add.tween(menuPaper.fond).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,0)
+			this.tween0=game.add.tween(menuPaper.fond).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,1100)
 
 			background.border_opponent_droit.alpha=0
 			background.border_opponent_droit.tint=white
-			this.tween1=game.add.tween(background.border_opponent_droit).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,0)
+			this.tween1=game.add.tween(background.border_opponent_droit).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,200)
 
 			background.border_opponent_gauche.alpha=0
 			background.border_opponent_gauche.tint=white
-			this.tween2=game.add.tween(background.border_opponent_gauche).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,0)
+			this.tween2=game.add.tween(background.border_opponent_gauche).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,200)
 
 			background.border_opponent_superieur.alpha=0
 			background.border_opponent_superieur.tint=white
-			this.tween3=game.add.tween(background.border_opponent_superieur).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,0)
+			this.tween3=game.add.tween(background.border_opponent_superieur).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,200)
 
 			background.border_opponent_inferieur.alpha=0
 			background.border_opponent_inferieur.tint=white
-			this.tween4=game.add.tween(background.border_opponent_inferieur).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,0)
+			this.tween4=game.add.tween(background.border_opponent_inferieur).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,200)
 			this.tween4.onComplete.add(next,this)
 
 			function next(){
@@ -139,7 +139,7 @@ Timer.prototype.turn_chooce = function() {
 		this.tween_hide.onComplete.add(move_timer,this)
 
 		function move_timer(){
-			var tween=game.add.tween(this.Group).to({x:0,y:h2-150},1000,Phaser.Easing.Linear.None,true)
+			var tween=game.add.tween(this.Group).to({x:0,y:h2-150},300,Phaser.Easing.Linear.None,true)
 			tween.onComplete.add(next,this)
 			function next(){
 				background.flag_close=true

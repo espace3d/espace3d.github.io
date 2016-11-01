@@ -47,7 +47,6 @@ init_transitions = function(game){
 
 init_transitions.prototype.displacement_background_opponent_and_player=function(){
 
-	console.log(this.g0,"g6666")
 	displacement_position(game,this.g6,-w,0,delay_open_panel_background,time_open_panel_background,"Bounce.out")
 	displacement_position(game,this.g1,-w,h2,delay_open_panel_background,time_open_panel_background,"Bounce.out")
 	displacement_position(game,this.g7,w,0,delay_open_panel_background,time_open_panel_background,"Bounce.out")
@@ -57,7 +56,7 @@ init_transitions.prototype.displacement_background_opponent_and_player=function(
 	this.move_timer_for_chooce=function(){	
 		var delay_for_chooce=delay_open_panel_background+time_open_panel_background
 		console.log(this.g0,"ttt")
-		this.tween_move_timer_for_chooce=game.add.tween(this.g0).to({x:0,y:0},time_open_panel_background,Phaser.Easing.Linear.None,true,delay_for_chooce)
+		this.tween_move_timer_for_chooce=game.add.tween(this.g0).to({x:0,y:0},time_open_panel_background-200,Phaser.Easing.Linear.None,true,delay_for_chooce)
 		//console.log(this.tween_move_timer_for_chooce, "tww")
 		this.tween_move_timer_for_chooce.onComplete.add(next,this)
 
@@ -122,9 +121,6 @@ init_transitions.prototype.displacement_background_opponent_and_player_close = f
 		//modification de l'alpha pour symboliser la perspective
 		displacement_alpha(game,background.table_opponent,.8,0,time_shadow_up_and_texte_up,"Linear.None")
 		displacement_alpha(game,background.table_player,.8,0,time_shadow_up_and_texte_up,"Linear.None")
-
-
-
 	}
 }
 
