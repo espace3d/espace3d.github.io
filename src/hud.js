@@ -35,7 +35,7 @@ Timer = function(game,Group){
 	this.spiral.anchor.x=.5
 	this.spiral.anchor.y=.5
 	this.spiral.alpha=1
-	this.angle_array=[820,920,740,850,760,700,800,910,1020,930]
+	this.angle_array=[2820,2920,2740,2850,2760,1700,2800,2910,2020,2930]
 	this.angular = this.angle_array[Math.floor(game.rnd.between(1,this.angle_array.length-1))];
 
 	Phaser.Sprite.call(this,game,w2,h2,'roll_turn')
