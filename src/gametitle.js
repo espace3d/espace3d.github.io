@@ -39,7 +39,7 @@ gameTitle.prototype = {
 
 		var roll_paper_deroll_group=game.add.group()
 var roll_paper_deroll_group2=game.add.group()
-		var roll_1 = new roll_paper_deroll(roll_paper_deroll_group,-30,h2-50,0,800)
+		var roll_1 = new roll_paper_deroll(roll_paper_deroll_group,-30,h2-55,0,800)
 		//var roll_2 = new roll_paper_deroll(roll_paper_deroll_group2,0,100,20,500)
 
 
