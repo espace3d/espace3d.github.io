@@ -21,7 +21,7 @@ draw_background = function(game){
 	this.g0=G.timerGroup0
 
 	this.color_player=blue
-	this.color_opponent=beige
+	this.color_opponent=rose
 
 	//fond du background
 	Phaser.Sprite.call(this,game,0,0,'back')
@@ -119,8 +119,9 @@ draw_background = function(game){
 	this.player.inputEnabled=true
 
 	//ombre pour symboliser la table
-	this.table_player=drawSprite(this.g3tris,game,"rect",w2,h2,w2,h2,0,black,.2) 
-	this.table_opponent=drawSprite(this.g3tris,game,"rect",0,h2,w2,h2,0,black,.1) 
+	this.table_player=drawSprite(this.g3tris,game,"rect",w2,h2,w2,h2,0,black,.5) 
+	//this.table_opponent_cache=drawSprite(this.g3tris,game,"rect",0,0,w2,h,0,red,.5) 
+	this.table_opponent=drawSprite(this.g3tris,game,"rect",0,h2,w2,h2,0,black,.5) 
 
 	//lignes à traits tirés pour symboliser la chute imminente
 	var longeur_line=w/6
@@ -155,11 +156,11 @@ draw_background = function(game){
 
 	//texte symbolisant l'ombre sous le player et dont la visibilité apparait dans update via the Game.js
 	//player
-	this.text_name_player_shadow = game.add.bitmapText(w4*3+3,py1+3,'lucky_grey','dev', taille) 
+	this.text_name_player_shadow = game.add.bitmapText(w4*3+3,py1+3,'lucky_black','dev', taille) 
 	this.text_name_player_shadow.alpha=.5
 	this.text_name_player_shadow.visible=false
-	this.text_name_player = game.add.bitmapText(w4*3,py1,'lucky_grey','dev', taille) 
-	this.text_level_player = game.add.bitmapText(w4*3,py3,'lucky','lvl ', taille2) 
+	this.text_name_player = game.add.bitmapText(w4*3,py1,'lucky_black','dev', taille) 
+	this.text_level_player = game.add.bitmapText(w4*3,py3,'lucky_black','lvl ', taille2) 
 	this.text_level_player.alpha=0
 	this.text_level_number_player=game.add.bitmapText(w4*3+30,py3,'lucky','1', taille2) 
 	this.text_level_number_player.tint=jaune
@@ -191,7 +192,7 @@ draw_background = function(game){
 	this.text_win_player.visible=false
 	this.text_win_player.alpha=0
 	//OPPONENT 
-	this.text_name_opponent = game.add.bitmapText(w4,py1,'lucky_grey','kill the game', taille) 
+	this.text_name_opponent = game.add.bitmapText(w4,py1,'lucky','kill the game', taille) 
 	this.text_level_opponent = game.add.bitmapText(w4,py3,'lucky','lvl ', taille2) 
 	this.text_level_opponent.alpha=0
 	this.text_level_number_opponent=game.add.bitmapText(w4+30,py3,'lucky','5', taille2) 

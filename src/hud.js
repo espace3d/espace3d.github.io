@@ -19,7 +19,7 @@ Timer = function(game,Group){
 
 	function updateCounter() {
 		if (this.flag){
-			if (timer_value == 0) {
+			if (timer_value == 0) {00
 			}
 			else {
 				timer_value--
@@ -42,7 +42,7 @@ Timer = function(game,Group){
 	this.anchor.x=.5
 	this.anchor.y=.5
 
-	//cache au debut	
+	//cache au debut	0
 	this.visible=false
 	this.alpha=0
 	this.spiral.visible=false

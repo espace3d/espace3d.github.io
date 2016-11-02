@@ -14,13 +14,15 @@ P.draw = function(Group,game,posx,posy) {
 		this.paper[j] = [] 
 		for (var i = 0; i < 1; i++) {
 			this.paper[j][i] = game.add.sprite(0,0,"sprite_paper")
-			this.paper[j][i].alpha=.1
+			this.paper[j][i].tint=black
+
+			this.paper[j][i].alpha=.4
 			this.paper[j][i].fwd = game.add.sprite(0,0,"sprite_paper")
 			//this.paper[j][i].fwd.animations.add('Play')
 			//this.paper[j][i].fwd.animations.play('Play',1,true)
 			this.paper[j][i].fwd.x = 0
 			this.paper[j][i].fwd.y =j*dim.paper 
-			this.paper[j][i].x = 0
+			this.paper[j][i].x = 5
 			this.paper[j][i].y =j*dim.paper 
 
 			// ajout des childs au parent >>this.main
