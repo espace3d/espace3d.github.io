@@ -64,7 +64,7 @@ init_transitions.prototype.displacement_background_opponent_and_player=function(
 		function next(){
 			hud.turn_chooce()
 			hud.flag=false
-			hud.timer.visible=false
+			hud.timer_text.visible=false
 		}
 	}
 	this.move_timer_for_chooce()

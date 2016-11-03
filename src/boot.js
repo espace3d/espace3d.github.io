@@ -8,9 +8,12 @@ boot.prototype = {
 	
 	},
   	create: function(){
-		this.game.scale.pageAlignHorizontally = true;
-		this.game.scale.pageAlignVertically = true;
-          this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-		this.game.state.start("Preload");
+		this.scale.fullScreenScaleMode = Phaser.ScaleManager.SHOW_ALL;
+		this.scale.pageAlignHorizontally = true;
+		this.scale.pageAlignVertically = true;
+		this.scale.setShowAll();
+		this.scale.refresh()
+		this.state.start("Preload");
 	}
+
 }

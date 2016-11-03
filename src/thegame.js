@@ -111,7 +111,7 @@ theGame.prototype = {
 		//DEPLACEMENT DES BACKGROUND POUR ANIMER LE JEU
 		tw.displacement_background_opponent_and_player()
 		//EFFECT SUR LE TIMER
-		effect.deform_text(hud.timer)
+		effect.deform_text(hud.timer_text)
 		effect.deform_main(hud.time_shadow)
 
 		//enable physics body

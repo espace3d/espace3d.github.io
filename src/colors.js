@@ -30,7 +30,7 @@ var grey=0x373535
 var white=0xFFFFFF
 var jaune=red
 var green=0x3AB7A9
-var blueG=0x9dc4cb
+var blueG=0xCFC8B5
 //var blueG=0x7BCEE8
 var rose=0x4D4842
 var blue=0xCFC8B5
@@ -39,3 +39,11 @@ var blue=0xCFC8B5
 //var blue=0xC09D7D//rouge et bleu
 //var blue=0xACCFD1
 //var rose=0xE87F79
+
+
+
+
+
+
+
+//var blueG=0x9dc4cb
