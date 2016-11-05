@@ -114,8 +114,8 @@ draw_background = function(game){
 	this.border_opponent_inferieur=drawSprite(this.g8,game,"rect",0-epaisseur_fond,h-epaisseur_fond_large,w2,epaisseur_fond_large,0,this.color_opponent,1) 
 
 	//this.background de l'opponent et du player
-	this.opponent=drawSprite(this.g6,game,"rect",0-decalage,0,w2,h,0,this.color_opponent,1) 
-	this.player=drawSprite(this.g7,game,"rect",w2+decalage,0,w2,h,0,this.color_player,1) 
+	this.opponent=drawSprite(this.g6,game,"rect",0-decalage,0,w2,h+200,0,this.color_opponent,1) 
+	this.player=drawSprite(this.g7,game,"rect",w2+decalage,0,w2,h+200,0,this.color_player,1) 
 	this.player.inputEnabled=true
 
 	//ombre pour symboliser la table
