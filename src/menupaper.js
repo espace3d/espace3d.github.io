@@ -9,6 +9,8 @@ Menu = function(game,Group){
 	this.Group=Group
 
 	this.fond=game.add.sprite(0,0,'menu_back')
+	this.fond.width=w
+	this.fond.height=h
 	this.fond.alpha=1
 	this.Group.add(this.fond)
 	this.Group.add(this)

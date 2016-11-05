@@ -13,12 +13,11 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 	<meta name="apple-mobile-web-app-title" content="Phaser App">
 
-	<link rel="stylesheet" href="css/stylesheet.css" type="text/css" charset="utf-8" />
     		<script src="phaser.min.js"></script>
+    		<script src="src/boot.js"></script>
     		<script src="src/parameters.js"></script>
     		<script src="src/group.js"></script>
     		<script src="src/constructor.js"></script>
-    		<script src="src/boot.js"></script>
 		<script src="src/preload.js"></script>
 		<script src="src/colors.js"></script>
 		<script src="src/roll.js"></script>
@@ -41,19 +40,25 @@
 
 
 (function() {
-     var width = 640;
-     var height = 960;	
+     //var w = 1280;
+     //var h = 1920;	
+     var w = 640;
+     var h = 960;	
      var windowRatio = window.innerWidth / window.innerHeight;
-     if(windowRatio < width / height){
-          var height = width / windowRatio;
+     if(windowRatio < w / h){
+          h = w / windowRatio;
      }
-	game = new Phaser.Game(width, height, Phaser.CANVAS, "");
+     //if(windowRatio < h / w){
+          //w = h / windowRatio;
+     //}
+	game = new Phaser.Game(w, h, Phaser.CANVAS, "");
 	game.state.add("Boot",boot);
 	game.state.add("Preload",preload);
 	game.state.add("GameTitle",gameTitle);
 	game.state.add("TheGame",theGame);
 	game.state.add("GameOver",gameOver);
 	game.state.start("Boot");
+	return w,h
 })();    
 </script>
 
