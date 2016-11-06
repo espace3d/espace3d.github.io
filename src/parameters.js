@@ -1,7 +1,9 @@
 //////////////////////////////////////////////////////////////////////////////////////////
 //position
+var ratio_device=window.screen.width/window.screen.height
+var height_applied=640/ratio_device
 var w = 640  
-var h = 960 
+var h = height_applied 
 var w2 = w/2;
 var h2 = h/2;
 var w4 = w/4;
