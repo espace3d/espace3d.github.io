@@ -2,55 +2,47 @@
 
 <!DOCTYPE HTML>
 <html>
-<head>
-	<title>Phaser Full Screen Mobile Example</title>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="chrome=1, IE=9">
-	<meta name="format-detection" content="telephone=no">
-	<meta name="HandheldFriendly" content="true" />
-	<meta name="robots" content="noindex,nofollow" />
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-	<meta name="apple-mobile-web-app-title" content="Phaser App">
+	<head>
+		<title>Phaser Full Screen Mobile Example</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="chrome=1, IE=9">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="HandheldFriendly" content="true" />
+		<meta name="robots" content="noindex,nofollow" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="apple-mobile-web-app-title" content="Phaser App">
 
-    		<script src="phaser.min.js"></script>
-    		<script src="src/boot.js"></script>
-    		<script src="src/parameters.js"></script>
-    		<script src="src/group.js"></script>
-    		<script src="src/constructor.js"></script>
+		<script src="phaser.min.js"></script>
+		<script src="src/boot.js"></script>
+		<script src="src/parameters.js"></script>
+		<script src="src/group.js"></script>
+		<script src="src/constructor.js"></script>
 		<script src="src/preload.js"></script>
 		<script src="src/colors.js"></script>
 		<script src="src/roll.js"></script>
 		<script src="src/hud.js"></script>
 		<script src="src/gametitle.js"></script>
-    		<script src="src/background.js"></script>
+		<script src="src/background.js"></script>
 		<script src="src/paper.js"></script>
 		<script src="src/menupaper.js"></script>
-    		<script src="src/effect.js"></script>
+		<script src="src/effect.js"></script>
 		<script src="src/transitionsgroup.js"></script>
 		<script src="src/thegame.js"></script>
 		<script src="src/gameover.js"></script>	
-</head>
-<body>
+	</head>
+	<body>
 
-	<div id="game"></div>
-	<div id="orientation"></div>
+		<div id="game"></div>
+		<div id="orientation"></div>
 
-<script type="text/javascript">
+		<script type="text/javascript">
 (function() {
-     //var w = 1280;
-     //var h = 1920;	
-     var w = 640;
-     var h = 960;	
-     var windowRatio = window.innerWidth / window.innerHeight;
-     if(windowRatio < w / h){
-          h = w / windowRatio;
-     }
-     //if(windowRatio < h / w){
-          //w = h / windowRatio;
-     //}
-	game = new Phaser.Game(w, h, Phaser.CANVAS, "");
-	game.state.add("Boot",boot);
+var ratio_device=window.screen.width/window.screen.height
+var height_applied=640/ratio_device
+
+game = new Phaser.Game(640,height_applied,Phaser.CANVAS,'' )
+game.state.add("Boot",boot);
 	game.state.add("Preload",preload);
 	game.state.add("GameTitle",gameTitle);
 	game.state.add("TheGame",theGame);
@@ -59,9 +51,8 @@
 
 })();    
 
+		</script>
 
-</script>
-
-</body>
+	</body>
 </html>
 

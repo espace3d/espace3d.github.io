@@ -100,7 +100,7 @@ theGame.prototype = {
 		little_roll_player=new R.draw_little_roll(this.game,G.timerGroup0,w4*3,py2)
 		little_roll_opponent=new R.draw_little_roll(this.game,G.timerGroup0,w4,py2)
 		tw=new init_transitions(this.game)
-
+this.game.stage.backgroundColor=black
 		//DEPLACEMENT DES GROUPES AU DEBUT (TEXTE TOP - TIMER - SHADOW)
 		G.topOpponentGroup1.position.y=h2
 		G.topPlayerGroup2.position.y=h2

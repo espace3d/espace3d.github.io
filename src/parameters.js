@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////////////////////////
 //position
-var w = window.innerWidth  
-var h = window.innerHeight 
+var w = 640  
+var h = 960 
 var w2 = w/2;
 var h2 = h/2;
 var w4 = w/4;

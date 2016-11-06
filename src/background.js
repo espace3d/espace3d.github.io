@@ -119,9 +119,9 @@ draw_background = function(game){
 	this.player.inputEnabled=true
 
 	//ombre pour symboliser la table
-	this.table_player=drawSprite(this.g3tris,game,"rect",w2,h2,w2,h2,0,black,.5) 
+	this.table_player=drawSprite(this.g3tris,game,"rect",w2,h2,w2,h,0,black,.5) 
 	//this.table_opponent_cache=drawSprite(this.g3tris,game,"rect",0,0,w2,h,0,red,.5) 
-	this.table_opponent=drawSprite(this.g3tris,game,"rect",0,h2,w2,h2,0,black,.5) 
+	this.table_opponent=drawSprite(this.g3tris,game,"rect",0,h2,w2,h,0,black,.5) 
 
 	//lignes à traits tirés pour symboliser la chute imminente
 	var longeur_line=w/6
