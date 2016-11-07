@@ -22,15 +22,15 @@ gameTitle.prototype = {
 			//fond qui cache le rouleau et fait croire au déroulement
 			this.cache=game.add.sprite(-200,-10,"rect")
 			this.cache.tint=blueG
-			this.cache.width=w+400
-			this.cache.height=120
+			this.cache.width=w+800
+			this.cache.height=240
 			Group.add(this.cache) 
 
 			//rouleau qui roule
 			this.roll_deroll=game.add.sprite(-200,-10,"roll_deroll")
 			Group.add(this.roll_deroll) 
-			this.roll_tween=game.add.tween(this.roll_deroll).to({x:800},500,Phaser.Easing.Linear.None,true,delay_roll_deroll)
-			this.roll_tween2=game.add.tween(this.cache).to({x:800},500,Phaser.Easing.Linear.None,true,delay_roll_deroll)
+			this.roll_tween=game.add.tween(this.roll_deroll).to({x:w+200},500,Phaser.Easing.Linear.None,true,delay_roll_deroll)
+			this.roll_tween2=game.add.tween(this.cache).to({x:w+200},500,Phaser.Easing.Linear.None,true,delay_roll_deroll)
 			Group.x=posx
 			Group.y=posy
 			Group.angle=angle
@@ -39,7 +39,7 @@ gameTitle.prototype = {
 
 		var roll_paper_deroll_group=game.add.group()
 var roll_paper_deroll_group2=game.add.group()
-		var roll_1 = new roll_paper_deroll(roll_paper_deroll_group,-30,h2-55,0,800)
+		var roll_1 = new roll_paper_deroll(roll_paper_deroll_group,-60,h2-110,0,w+200)
 		//var roll_2 = new roll_paper_deroll(roll_paper_deroll_group2,0,100,20,500)
 
 

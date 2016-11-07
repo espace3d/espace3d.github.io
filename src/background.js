@@ -125,8 +125,8 @@ draw_background = function(game){
 
 	//lignes à traits tirés pour symboliser la chute imminente
 	var longeur_line=w/6
-	this.line_player_droite=drawSprite(this.g7,game,"line",w/6*5,h2,longeur_line,w*.01,0,0,1)
-	this.line_opponent_gauche=drawSprite(this.g6,game,"line",0,h2,longeur_line,w*.01,0,0,1)
+	this.line_player_droite=drawSprite(this.g3tris,game,"line",w/6*5,h2,longeur_line,w*.01,0,0,1)
+	this.line_opponent_gauche=drawSprite(this.g3tris,game,"line",0,h2,longeur_line,w*.01,0,0,1)
 	this.line_player_droite.alpha=0
 	this.line_opponent_gauche.alpha=0
 
