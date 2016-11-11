@@ -28,7 +28,9 @@ init_transitions = function(game){
 
 //pour faire apparaitre le rectangle qui montre que la position des papiers est lock
 init_transitions.prototype.lock_position = function(obj){
-	displacement_alpha(game,obj,.8,0,200,"Bounce.Out")
+	obj.visible=true
+	obj.alpha=.01
+	displacement_alpha(game,obj,.9,0,900,"Bounce.Out")
 	//TODO
 	//faire disparaitre l'élément après
 }

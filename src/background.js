@@ -39,7 +39,7 @@ draw_background = function(game){
 	this.grayfilternull = game.add.filter('Gray') ; this.grayfilternull.gray=0
 
 	//curseur player lorsque le joueur exerce une pression prolongée
-	this.cursor_player=drawSprite(this.g3bis,game,"rect",w4*3,h2,w2,w*.1,0.5,this.color_opponent,0)
+	this.cursor_player=drawSprite(this.g3bis,game,"rect",w4*3,h2,w2,w*.1,0.5,red,0)
 	this.cursor_player.flag=true
 	this.cursor_player.isRaise=true	
 
@@ -139,9 +139,9 @@ draw_background = function(game){
 	this.line_collision_opponent=[]
 
 	for (var j = 0; j < 5; j++) {
-		this.line_collision_opponent[j]=game.add.sprite(0,game.rnd.integerInRange(h2,(h+h2+100)),"line_collision")
+		this.line_collision_opponent[j]=game.add.sprite(0,game.rnd.integerInRange(0,h),"line_collision")
 		this.line_collision_opponent[j].isTouch=false
-		this.line_collision_opponent[j].alpha=0
+		this.line_collision_opponent[j].alpha=.4
 	}
 
 	//textes du player et de l'opponent
