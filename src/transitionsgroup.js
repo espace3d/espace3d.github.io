@@ -26,6 +26,12 @@ init_transitions = function(game){
 	//this.g2 est le texte supérieur du player
 }
 
+//pour faire apparaitre le rectangle qui montre que la position des papiers est lock
+init_transitions.prototype.lock_position = function(obj){
+	displacement_alpha(game,obj,.8,0,200,"Bounce.Out")
+	//TODO
+	//faire disparaitre l'élément après
+}
 //////////////////////////////////////////////////////////////////////////////////////////
 //DEPLACEMENT DES PANNEAUX DE BACKGROUND ET DES TEXTES SUPERIEURS
 // Les obj symbolise des groupes
@@ -104,8 +110,8 @@ init_transitions.prototype.displacement_background_opponent_and_player_close = f
 	game.time.events.add(time_close_panel_background+time_shadow_up_and_texte_up+1900,next,this)
 
 	function next(){
-		background.text_position_player.visible=true
-		background.text_position_opponent.visible=true
+		paper_player.text_position.visible=true
+		paper_opponent.text_position.visible=true
 
 	}
 

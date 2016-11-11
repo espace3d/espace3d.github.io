@@ -121,20 +121,15 @@ this.game.stage.backgroundColor=black
 			this.game.physics.enable(background.line_collision_opponent[i], Phaser.Physics.ARCADE)
 			background.line_collision_opponent[i].body.immovable = true 
 		};
-		this.game.physics.enable(background.text_position_player, Phaser.Physics.ARCADE)
-		this.game.physics.enable(background.line_position_player, Phaser.Physics.ARCADE)
-		this.game.physics.enable(background.line_position_opponent, Phaser.Physics.ARCADE)
+		//this.game.physics.enable(background.text_position_player, Phaser.Physics.ARCADE)
+		//this.game.physics.enable(background.line_position_player, Phaser.Physics.ARCADE)
+		//this.game.physics.enable(background.line_position_opponent, Phaser.Physics.ARCADE)
 		//paper_player.main.body.allowGravity=false
 		//this.game.physics.arcade.gravity.y=200
 
 		// ajout d'un boutton au timer pour permettre le plein écran
 		this.game.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;
 
-		//ligne qui descend gravity
-		background.text_position_player.body.gravity.y=800
-		background.text_position_player.body.bounce.y=.2
-		background.line_position_player.body.allowGravity=false
-		background.text_position_player.body.allowGravity=false
 
 
 	},
@@ -142,20 +137,19 @@ this.game.stage.backgroundColor=black
 	update: function(){
 		//TODO
 		// test texte qui descend
-		background.line_fall(background.check_fall_end,background.line_position_player,background.text_position_player,paper_player) 
+		//background.line_fall(background.check_fall_end,background.line_position_player,background.text_position_player,paper_player) 
 		//background.line_fall(background.check_fall_end,background.text_position_opponent,paper_opponent.main) 
-		this.game.physics.arcade.collide(paper_player,background.check_fall_end,grey_check)
-		this.game.physics.arcade.collide(paper_opponent,background.check_fall_end,grey_check)
 
-		function check_winner(){
-			if (background.text_win_player.visible) {
-				effect.disappears_timer(hud.time_shadow,hud.timer_text)
-			}
-			else if (background.text_win_opponent.visible){
-				effect.disappears_timer(hud.time_shadow,hud.timer_text)
-			}
-		}
-		check_winner()
+		//function check_winner(){
+		//	if (background.text_win_player.visible) {
+		//		effect.disappears_timer(hud.time_shadow,hud.timer_text)
+		//	}
+		//	else if (background.text_win_opponent.visible){
+		//		effect.disappears_timer(hud.time_shadow,hud.timer_text)
+		//	}
+		//}
+		//check_winner()
+
 		//timer 
 		background.cursor_player.y=this.game.input.activePointer.y
 		background.cursor_palpitant.y=this.game.input.activePointer.y
@@ -164,27 +158,27 @@ this.game.stage.backgroundColor=black
 		//plein écran
 		hud.time_shadow.events.onInputDown.add(gofull, this);
 
-		function grey_check(obj1,obj2){
-			console.log("colldide")
-			obj2.body.enable=false
-			background.winner()
-			//background.player.filters=[background.grayfiltertop]
-			//pour faire descendre le texte qui donne la position du papier tombé
-			//background.text_position_player.body.allowGravity=true
-			game.time.events.add(5000,stop_line_position,this)
-
-			function stop_line_position() {
-				console.log("stop")
-				background.text_position_player.body.moves=false
-			}
-
-			background.text_win_opponent.visible=true
-			background.cursor_player.visible=false
-			background.cursor_palpitant.visible=false
-			background.cursor_opponent.visible=false
-			background.cursor_palpitant_opponent.visible=false
-			//effect.disappears_timer(hud.time_shadow,hud.timer)
-		}
+//		function grey_check(obj1,obj2){
+//			console.log("colldide")
+//			obj2.body.enable=false
+//			background.winner()
+//			//background.player.filters=[background.grayfiltertop]
+//			//pour faire descendre le texte qui donne la position du papier tombé
+//			//background.text_position_player.body.allowGravity=true
+//			game.time.events.add(5000,stop_line_position,this)
+//
+//			function stop_line_position() {
+//				console.log("stop")
+//				background.text_position_player.body.moves=false
+//			}
+//
+//			background.text_win_opponent.visible=true
+//			background.cursor_player.visible=false
+//			background.cursor_palpitant.visible=false
+//			background.cursor_opponent.visible=false
+//			background.cursor_palpitant_opponent.visible=false
+//			//effect.disappears_timer(hud.time_shadow,hud.timer)
+//		}
 
 		function gofull(){
 

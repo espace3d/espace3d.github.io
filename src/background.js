@@ -134,8 +134,6 @@ draw_background = function(game){
 	this.opponent_top=drawSprite(this.g1,game,"rect",0-decalage,0,w2,h*.15,0,this.color_opponent,1) 
 	this.player_top=drawSprite(this.g2,game,"rect",w2+decalage,0,w2,h*.15,0,this.color_player,1) 
 
-	//barre inférieure pour tester la collision avec le papier opponent et player
-	this.check_fall_end=game.add.sprite(0,2*h,'test_line')
 
 	//line de collision avec le paper opponent
 	this.line_collision_opponent=[]
@@ -165,28 +163,28 @@ draw_background = function(game){
 	this.text_level_number_player=game.add.bitmapText(w4*3+30,py3,'lucky','1', taille2) 
 	this.text_level_number_player.tint=jaune
 	this.text_level_number_player.alpha=0
-
-	//texte + line qui descend et indique la position du papier 
-	this.text_position_player = game.add.bitmapText(w4*3,-50,'lucky','', taille) 
-	this.text_position_player.visible=false
-	this.text_position_player.anchor.x =.5
-	this.text_position_player.anchor.y =.5
-	this.g2.add(this.text_position_player) 
-	this.line_position_player=game.add.sprite(w4*3,0,"line_position") 
-	this.g7.add(this.line_position_player)
-	this.line_position_player.anchor.y=1
-	this.text_position_player.isFalling=false
-
-	this.text_position_opponent = game.add.bitmapText(w4*3,0,'lucky','', taille) 
-	this.text_position_opponent.visible=false
-	this.text_position_opponent.anchor.x =.5
-	this.text_position_opponent.anchor.y =.5
-	this.g2.add(this.text_position_opponent) 
-	this.line_position_opponent=game.add.sprite(w4,0,"line_position") 
-
-	this.g7.add(this.line_position_opponent)
-	this.line_position_opponent.anchor.y=1
-	this.text_position_opponent.isFalling=false
+//
+//	//texte + line qui descend et indique la position du papier 
+//	this.text_position_player = game.add.bitmapText(w4*3,-50,'lucky','', taille) 
+//	this.text_position_player.visible=false
+//	this.text_position_player.anchor.x =.5
+//	this.text_position_player.anchor.y =.5
+//	this.g2.add(this.text_position_player) 
+//	this.line_position_player=game.add.sprite(w4*3,0,"line_position") 
+//	this.g7.add(this.line_position_player)
+//	this.line_position_player.anchor.y=1
+//	this.text_position_player.isFalling=false
+//
+//	this.text_position_opponent = game.add.bitmapText(w4*3,0,'lucky','', taille) 
+//	this.text_position_opponent.visible=false
+//	this.text_position_opponent.anchor.x =.5
+//	this.text_position_opponent.anchor.y =.5
+//	this.g2.add(this.text_position_opponent) 
+//	this.line_position_opponent=game.add.sprite(w4,0,"line_position") 
+//
+//	this.g7.add(this.line_position_opponent)
+//	this.line_position_opponent.anchor.y=1
+//	this.text_position_opponent.isFalling=false
 
 	this.text_win_player = game.add.bitmapText(w4*3,h2-taille+taille*.5,'lucky_grey','win', taille) 
 	this.text_win_player.visible=false
@@ -244,21 +242,6 @@ draw_background = function(game){
 draw_background.prototype = Object.create(Phaser.Sprite.prototype)
 draw_background.prototype.constructor = draw_background
 
-draw_background.prototype.line_fall = function(_check_line,_line_position,_text_position,_paper_player_main) {
-	game.physics.arcade.collide(_check_line,_paper_player_main,change_line_flag)
-	if (_text_position.isFalling){
-		//pour faire descendre la ligne et les papiers
-		_line_position.y=_text_position.y
-		_text_position.text=Math.round(_text_position.y)
-		_paper_player_main.body.immovable=true
-		//collision 
-	};
-
-	function change_line_flag() {
-		_text_position.body.allowGravity=true
-		_text_position.isFalling=true
-	}
-}
 //TRANSITIONS : ligne à traits tirés apparaissant pour signifier le mileu de la table
 draw_background.prototype.tween_begin_game=function(){
 
