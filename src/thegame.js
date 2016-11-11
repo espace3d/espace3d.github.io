@@ -114,7 +114,7 @@ this.game.stage.backgroundColor=black
 		effect.deform_main(hud.time_shadow)
 
 		//enable physics body
-		this.game.physics.enable(background.check_fall_end, Phaser.Physics.ARCADE)
+		//this.game.physics.enable(background.check_fall_end, Phaser.Physics.ARCADE)
 		//this.game.physics.enable(paper_player, Phaser.Physics.ARCADE)
 		//this.game.physics.enable(paper_opponent, Phaser.Physics.ARCADE)
 		for (var i = 0; i < background.line_collision_opponent.length; i++) {
@@ -193,7 +193,6 @@ this.game.stage.backgroundColor=black
 		//time_elapsed(this.game)
 
 		//chute des papiers	
-		paper_player.fall(paper_player,background)	
 		paper_opponent.opponentfall(paper_opponent,background.line_collision_opponent,background.cursor_palpitant_opponent,background.cursor_opponent,background.cursor_opponent_particle)	
 
 	},
