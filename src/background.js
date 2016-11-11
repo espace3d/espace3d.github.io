@@ -245,7 +245,6 @@ draw_background.prototype = Object.create(Phaser.Sprite.prototype)
 draw_background.prototype.constructor = draw_background
 
 draw_background.prototype.line_fall = function(_check_line,_line_position,_text_position,_paper_player_main) {
-	console.log(_text_position.isFalling)
 	game.physics.arcade.collide(_check_line,_paper_player_main,change_line_flag)
 	if (_text_position.isFalling){
 		//pour faire descendre la ligne et les papiers
@@ -256,7 +255,6 @@ draw_background.prototype.line_fall = function(_check_line,_line_position,_text_
 	};
 
 	function change_line_flag() {
-		console.log("collsion")
 		_text_position.body.allowGravity=true
 		_text_position.isFalling=true
 	}

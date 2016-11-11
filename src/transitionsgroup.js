@@ -55,9 +55,7 @@ init_transitions.prototype.displacement_background_opponent_and_player=function(
 	//deplace le timer du bas vers le milieu et rend la roulette visible et actionne la roulette pour le hasard
 	this.move_timer_for_chooce=function(){	
 		var delay_for_chooce=delay_open_panel_background+time_open_panel_background
-		console.log(this.g0,"ttt")
 		this.tween_move_timer_for_chooce=game.add.tween(this.g0).to({x:0,y:0},time_open_panel_background-200,Phaser.Easing.Linear.None,true,delay_for_chooce)
-		//console.log(this.tween_move_timer_for_chooce, "tww")
 		this.tween_move_timer_for_chooce.onComplete.add(next,this)
 
 		// pour cacher le timer et le mettre en pause
@@ -82,8 +80,10 @@ init_transitions.prototype.displacement_background_opponent_and_player_close = f
 	game.time.events.add(delay_paper_fall,resetflag,this)
 
 	function resetflag() {
-		paper_opponent.main.isFalling=true
-		paper_player.main.isFalling=true
+		paper_opponent.isFalling=true
+		paper_player.isFalling=true
+		paper_player.body.moves=true
+		paper_opponent.body.moves=true
 	}
 
 	displacement_position(game,this.g6,0,0,0,time_close_panel_background,"Bounce.Out")

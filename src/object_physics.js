@@ -1,0 +1,12 @@
+object_physics=function(game,Group,_x,_y,im,_speed){
+	Phaser.Sprite.call(this,game,_x,_y,im)
+	//this.enableBody=true
+	game.physics.arcade.enable(this)
+	//this.body.immovable=false
+	//this.game.add.existing(this)
+	this.body.velocity.y=_speed
+	this.body.moves=false
+	Group.add(this)
+}
+object_physics.prototype=Object.create(Phaser.Sprite.prototype)
+object_physics.prototype.constructor=object_physics

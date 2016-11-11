@@ -92,10 +92,9 @@ theGame.prototype = {
 		// DECLARATION DES VARIABLES MY GAME
 		menuPaper=new Menu(this.game,G.menuPaperGroup8)
 		background=new draw_background(this.game)
-		paper_opponent = new P.draw(G.opponentPapers4,this.game,w4,-h)
-		paper_player = new P.draw(G.playerPapers5,this.game,w4*3,-h)
+		paper_opponent = new Paper(this.game,G.opponentPapers4,w4,-h)
+		paper_player = new Paper(this.game,G.playerPapers5,w4*3,-h)
 		hud=new Timer(this.game,G.timerGroup0)
-		console.log(hud.visible,"hduidud")
 		effect=draweffect(this.game)
 		little_roll_player=new R.draw_little_roll(this.game,G.timerGroup0,w4*3,py2)
 		little_roll_opponent=new R.draw_little_roll(this.game,G.timerGroup0,w4,py2)
@@ -116,8 +115,8 @@ this.game.stage.backgroundColor=black
 
 		//enable physics body
 		this.game.physics.enable(background.check_fall_end, Phaser.Physics.ARCADE)
-		this.game.physics.enable(paper_player.main, Phaser.Physics.ARCADE)
-		this.game.physics.enable(paper_opponent.main, Phaser.Physics.ARCADE)
+		//this.game.physics.enable(paper_player, Phaser.Physics.ARCADE)
+		//this.game.physics.enable(paper_opponent, Phaser.Physics.ARCADE)
 		for (var i = 0; i < background.line_collision_opponent.length; i++) {
 			this.game.physics.enable(background.line_collision_opponent[i], Phaser.Physics.ARCADE)
 			background.line_collision_opponent[i].body.immovable = true 
@@ -143,17 +142,17 @@ this.game.stage.backgroundColor=black
 	update: function(){
 		//TODO
 		// test texte qui descend
-		background.line_fall(background.check_fall_end,background.line_position_player,background.text_position_player,paper_player.main) 
+		background.line_fall(background.check_fall_end,background.line_position_player,background.text_position_player,paper_player) 
 		//background.line_fall(background.check_fall_end,background.text_position_opponent,paper_opponent.main) 
-		this.game.physics.arcade.collide(paper_player.main,background.check_fall_end,grey_check)
-		this.game.physics.arcade.collide(paper_opponent.main,background.check_fall_end,grey_check)
+		this.game.physics.arcade.collide(paper_player,background.check_fall_end,grey_check)
+		this.game.physics.arcade.collide(paper_opponent,background.check_fall_end,grey_check)
 
 		function check_winner(){
 			if (background.text_win_player.visible) {
-				effect.disappears_timer(hud.time_shadow,hud.timer)
+				effect.disappears_timer(hud.time_shadow,hud.timer_text)
 			}
 			else if (background.text_win_opponent.visible){
-				effect.disappears_timer(hud.time_shadow,hud.timer)
+				effect.disappears_timer(hud.time_shadow,hud.timer_text)
 			}
 		}
 		check_winner()
@@ -200,8 +199,8 @@ this.game.stage.backgroundColor=black
 		//time_elapsed(this.game)
 
 		//chute des papiers	
-		paper_player.fall(paper_player.main,background)	
-		paper_opponent.opponentfall(paper_opponent.main,background.line_collision_opponent,background.cursor_palpitant_opponent,background.cursor_opponent,background.cursor_opponent_particle)	
+		paper_player.fall(paper_player,background)	
+		paper_opponent.opponentfall(paper_opponent,background.line_collision_opponent,background.cursor_palpitant_opponent,background.cursor_opponent,background.cursor_opponent_particle)	
 
 	},
 
@@ -247,7 +246,7 @@ this.game.stage.backgroundColor=black
 	},
 	render: function(){
 
-		game.debug.text(game.time.fps, 2, 14, "#00ff00");
+		//game.debug.text(game.time.fps, 2, 14, "#00ff00");
 
 	}
 }

@@ -58,7 +58,6 @@ Timer.prototype.constructor = Timer
 
 //affiche la roulette désignant au hasard le choix entre le player et l'opponent
 Timer.prototype.turn_chooce = function() {
-	console.log(this)
 	this.visible=true
 	this.spiral.visible=true
 	this.tween_main=game.add.tween(this).to({alpha:1},900,Phaser.Easing.Linear.None,true,0)
@@ -69,7 +68,6 @@ Timer.prototype.turn_chooce = function() {
 
 	function wait_a_little_before_choose(){
 		this.flag=true
-		console.log(this.flag,"this.flag")
 		game.time.events.add(300,check_angle,this)
 	}
 
@@ -153,7 +151,6 @@ Timer.prototype.turn_chooce = function() {
 		this.timer_text.visible=true
 		var tween00=game.add.tween(this.Group).to({x:0,y:h2-150},300,Phaser.Easing.Linear.None,true)
 		tween00.onComplete.add( function(){background.flag_close=true},this)
-		console.log("ok")
 	}
 
 }

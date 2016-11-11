@@ -66,9 +66,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.8000001"
-     inkscape:cx="1820.1709"
-     inkscape:cy="407.62094"
+     inkscape:zoom="1.9798991"
+     inkscape:cx="317.67313"
+     inkscape:cy="1365.2455"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -1233,7 +1233,7 @@
        inkscape:export-ydpi="180" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#483737;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#241c1c;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
        x="197.7663"
        y="-252.75487"
        id="text6569"
@@ -1244,7 +1244,7 @@
          id="tspan6571"
          x="197.7663"
          y="-252.75487"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#483737;fill-opacity:1;">papermania</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#241c1c;fill-opacity:1;">papermania</tspan></text>
     <ellipse
        style="opacity:1;fill:#d38d5f;fill-opacity:1;fill-rule:nonzero;stroke:none"
        id="ellipse5202"
@@ -4679,7 +4679,7 @@
        x="197.7663"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#000000;fill-opacity:1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Little Days';-inkscape-font-specification:'Little Days';fill:#000000;fill-opacity:1"
          y="-187.04059"
          x="197.7663"
          id="tspan5127"
@@ -5240,7 +5240,7 @@
            height="67.427681"
            x="1217.2338"
            y="325.0524" /></flowRegion><flowPara
-         id="flowPara5577"></flowPara></flowRoot>    <g
+         id="flowPara5577" /></flowRoot>    <g
        id="g5679"
        transform="matrix(1.5,0,0,1.5,-376.74741,80.445698)"
        inkscape:export-xdpi="89.987534"
