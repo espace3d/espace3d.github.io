@@ -39,7 +39,7 @@ draw_background = function(game){
 	this.grayfilternull = game.add.filter('Gray') ; this.grayfilternull.gray=0
 
 	//curseur player lorsque le joueur exerce une pression prolongée
-	this.cursor_player=drawSprite(this.g3bis,game,"rect",w4*3,h2,w2,w*.1,0.5,red,0)
+	this.cursor_player=drawSprite(this.g3bis,game,"rect",w4*3,h2,w4,w*.1,0.5,red,0)
 	this.cursor_player.flag=true
 	this.cursor_player.isRaise=true	
 
@@ -160,7 +160,7 @@ draw_background = function(game){
 	this.text_name_player = game.add.bitmapText(w4*3,py1,'lucky_black','dev', taille) 
 	this.text_level_player = game.add.bitmapText(w4*3,py3,'lucky_black','lvl ', taille2) 
 	this.text_level_player.alpha=0
-	this.text_level_number_player=game.add.bitmapText(w4*3+30,py3,'lucky','1', taille2) 
+	this.text_level_number_player=game.add.bitmapText(w4*3+60,py3,'lucky','1', taille2) 
 	this.text_level_number_player.tint=jaune
 	this.text_level_number_player.alpha=0
 //
@@ -189,17 +189,19 @@ draw_background = function(game){
 	this.text_win_player = game.add.bitmapText(w4*3,h2-taille+taille*.5,'lucky_grey','win', taille) 
 	this.text_win_player.visible=false
 	this.text_win_player.alpha=0
+	this.text_win_player.tint=rose
 	//OPPONENT 
-	this.text_name_opponent = game.add.bitmapText(w4,py1,'lucky','kill the game', taille) 
+	this.text_name_opponent = game.add.bitmapText(w4,py1,'lucky_black','kill the game', taille) 
 	this.text_level_opponent = game.add.bitmapText(w4,py3,'lucky','lvl ', taille2) 
 	this.text_level_opponent.alpha=0
-	this.text_level_number_opponent=game.add.bitmapText(w4+30,py3,'lucky','5', taille2) 
+	this.text_level_number_opponent=game.add.bitmapText(w4+60,py3,'lucky','5', taille2) 
 	this.text_level_number_opponent.tint=jaune
 	this.text_level_number_opponent.alpha=0
 
 	this.text_win_opponent = game.add.bitmapText(w4,h2-taille+taille*.5,'lucky_grey','win', taille) 
 	this.text_win_opponent.visible=false
 	this.text_win_opponent.alpha=0
+	this.text_win_opponent.tint=rose
 
 	//modifications des anchors
 	this.text_name_player.anchor.x=.5

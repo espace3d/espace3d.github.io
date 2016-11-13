@@ -32,8 +32,6 @@ var jaune=red
 var green=0x3AB7A9
 var blueG=0xCFC8B5
 //var blueG=0x7BCEE8
-var rose=0x4D4842
-var blue=0xCFC8B5
 
 //var rose=0x736E6B
 //var blue=0xC09D7D//rouge et bleu
@@ -42,8 +40,15 @@ var blue=0xCFC8B5
 
 
 
+//essai 
+var blue=0x222222
+var rose=0xe23030
+
+var blueG=rose
 
 
 
+//bonnes couleurs
 
-//var blueG=0x9dc4cb
+//var rose=0x4D4842
+//var blue=0xCFC8B5
