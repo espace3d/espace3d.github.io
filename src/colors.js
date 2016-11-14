@@ -45,7 +45,7 @@ var blueG=0xCFC8B5
 var rose=0xE23030
 //var blue=0xF9F9F9	
 
-var blue=0x2B2320
+var blue=0x7c432b
 //var rose=0xF9F9F9	
 	//var precdent rose=0xe23030
 

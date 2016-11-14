@@ -67,16 +67,16 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.9798991"
-     inkscape:cx="395.37925"
-     inkscape:cy="1189.2897"
+     inkscape:cx="285.77771"
+     inkscape:cy="1169.0867"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      showguides="true"
-     inkscape:window-width="2544"
-     inkscape:window-height="1387"
+     inkscape:window-width="1904"
+     inkscape:window-height="1046"
      inkscape:window-x="0"
-     inkscape:window-y="16"
+     inkscape:window-y="18"
      inkscape:window-maximized="1"
      borderlayer="true" />
   <metadata
@@ -1252,8 +1252,8 @@
        cy="-170.5629"
        rx="17.551401"
        ry="8.1405516"
-       inkscape:export-xdpi="36.155807"
-       inkscape:export-ydpi="36.155807" />
+       inkscape:export-xdpi="72.311615"
+       inkscape:export-ydpi="72.311615" />
     <ellipse
        ry="10.101525"
        rx="50"
@@ -1261,22 +1261,22 @@
        cx="74.710571"
        id="ellipse5194"
        style="opacity:1;fill:#cccccc;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       inkscape:export-xdpi="36.155807"
-       inkscape:export-ydpi="36.155807" />
+       inkscape:export-xdpi="72.311615"
+       inkscape:export-ydpi="72.311615" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
        x="27.440491"
        y="-252.70703"
        id="text5196"
        sodipodi:linespacing="125%"
-       inkscape:export-xdpi="36.155807"
-       inkscape:export-ydpi="36.155807"><tspan
+       inkscape:export-xdpi="72.311615"
+       inkscape:export-ydpi="72.311615"><tspan
          sodipodi:role="line"
          id="tspan5198"
          x="27.440491"
          y="-252.70703"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy'">5000</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#ffffff;">5000</tspan></text>
     <rect
        y="-237.26765"
        x="81.722717"
@@ -1284,8 +1284,8 @@
        width="34.768486"
        id="rect5204"
        style="opacity:1;fill:#d38d5f;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       inkscape:export-xdpi="36.155807"
-       inkscape:export-ydpi="36.155807" />
+       inkscape:export-xdpi="72.311615"
+       inkscape:export-ydpi="72.311615" />
     <rect
        style="opacity:1;fill:#cccccc;fill-opacity:1;fill-rule:nonzero;stroke:none"
        id="rect5192"
@@ -1293,8 +1293,8 @@
        height="69.700523"
        x="24.710571"
        y="-234.74226"
-       inkscape:export-xdpi="36.155807"
-       inkscape:export-ydpi="36.155807" />
+       inkscape:export-xdpi="72.311615"
+       inkscape:export-ydpi="72.311615" />
     <ellipse
        style="opacity:1;fill:#f9f9f9;fill-opacity:1;fill-rule:nonzero;stroke:none"
        id="path5190"
@@ -1302,8 +1302,8 @@
        cy="-235.71181"
        rx="50"
        ry="10.101525"
-       inkscape:export-xdpi="36.155807"
-       inkscape:export-ydpi="36.155807" />
+       inkscape:export-xdpi="72.311615"
+       inkscape:export-ydpi="72.311615" />
     <ellipse
        ry="3.3333333"
        rx="17.5"
@@ -1311,12 +1311,12 @@
        cx="75.210571"
        id="ellipse5200"
        style="opacity:1;fill:#a05a2c;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       inkscape:export-xdpi="36.155807"
-       inkscape:export-ydpi="36.155807" />
+       inkscape:export-xdpi="72.311615"
+       inkscape:export-ydpi="72.311615" />
     <g
        style="fill:#ff6e71;fill-opacity:1"
-       inkscape:export-ydpi="36.155807"
-       inkscape:export-xdpi="36.155807"
+       inkscape:export-ydpi="72.311615"
+       inkscape:export-xdpi="72.311615"
        id="g4970-1"
        transform="matrix(0.11421392,0,0,0.10154495,49.71058,-215.99053)">
       <path
