@@ -96,14 +96,16 @@ theGame.prototype = {
 		paper_player = new Paper(this.game,G.playerPapers5,w4*3,-h)
 		hud=new Timer(this.game,G.timerGroup0)
 		effect=draweffect(this.game)
-		little_roll_player=new R.draw_little_roll(this.game,G.timerGroup0,w4*3,py2)
-		little_roll_opponent=new R.draw_little_roll(this.game,G.timerGroup0,w4,py2)
+		//TODO changer de groupe et rétablir position y
+		little_roll_player=new R.draw_little_roll(this.game,G.timerGroup0,w4*3,-650)
+		little_roll_opponent=new R.draw_little_roll(this.game,G.timerGroup0,w4,-650)
 		tw=new init_transitions(this.game)
-this.game.stage.backgroundColor=black
+		this.game.stage.backgroundColor=black
 		//DEPLACEMENT DES GROUPES AU DEBUT (TEXTE TOP - TIMER - SHADOW)
 		G.topOpponentGroup1.position.y=h2
 		G.topPlayerGroup2.position.y=h2
-		G.timerGroup0.position.y=h2-100
+		G.timerGroup0.position.y=300
+		//G.timerGroup0.position.y=h2-100
 		background.table_opponent.y=h
 		background.table_player.y=h
 

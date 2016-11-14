@@ -10,6 +10,7 @@ Timer = function(game,Group){
 	this.timer_text = game.add.bitmapText(w2,h2,'lucky',timer_value, w*.15)
 	this.flag = true
 	//decompte du temps
+	this.timer_text.text="Vs"
 	game.time.events.loop(Phaser.Timer.SECOND, updateCounter,this)
 
 		/*
