@@ -66,9 +66,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.49497478"
-     inkscape:cx="5233.2843"
-     inkscape:cy="499.90013"
+     inkscape:zoom="0.24748739"
+     inkscape:cx="3877.5407"
+     inkscape:cy="825.59574"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -5859,7 +5859,7 @@
        height="1980"
        width="640"
        id="rect5032"
-       style="opacity:1;fill:#e23030;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.55200005;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       style="opacity:1;fill:#3b2c27;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.55200005;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     <rect
        ry="3"
        rx="3"
@@ -6045,16 +6045,16 @@
        id="text5079"
        y="-758.19012"
        x="3123.667"
-       style="font-style:normal;font-weight:normal;font-size:60.23972321px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       style="font-style:normal;font-weight:normal;font-size:60.23972321px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#f9f9f9;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#ffffff;fill-opacity:1;"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#f9f9f9;fill-opacity:1;"
          y="-758.19012"
          x="3123.667"
          id="tspan5081"
          sodipodi:role="line">kill the game</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:60.23972321px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       style="font-style:normal;font-weight:normal;font-size:60.23972321px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#fe7c7f;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
        x="3745.667"
        y="-762.19012"
        id="text5083"
@@ -6065,10 +6065,10 @@
          id="tspan5085"
          x="3745.667"
          y="-762.19012"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#000000;fill-opacity:1;">kill the game</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#fe7c7f;fill-opacity:1;">kill the game</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:60.23972321px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff6e71;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       style="font-style:normal;font-weight:normal;font-size:60.23972321px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#f3f3f3;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
        x="3267.9526"
        y="-818.76154"
        id="text5087"
@@ -6079,7 +6079,7 @@
          id="tspan5089"
          x="3267.9526"
          y="-818.76154"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#ff6e71;fill-opacity:1;">lvl 1</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#f3f3f3;fill-opacity:1;">lvl 1</tspan></text>
     <g
        id="g5101"
        transform="matrix(1.5,0,0,1.5,3562.5102,522.30621)">
@@ -6240,7 +6240,7 @@
        height="1980"
        width="1280"
        id="rect5170"
-       style="opacity:1;fill:#605252;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.55200005;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       style="opacity:1;fill:#62473d;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.55200005;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     <text
        inkscape:export-ydpi="89.96138"
        inkscape:export-xdpi="89.96138"

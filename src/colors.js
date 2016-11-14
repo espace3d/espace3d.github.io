@@ -42,10 +42,10 @@ var blueG=0xCFC8B5
 
 //essai 
 //var blue=0x222222
-var rose=0xE23030
+var rose=0xe23030
 //var blue=0xF9F9F9	
 
-var blue=0x62473d
+var blue=0x3b2c27
 //var rose=0xF9F9F9	
 	//var precdent rose=0xe23030
 
