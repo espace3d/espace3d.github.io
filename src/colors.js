@@ -49,7 +49,7 @@ var blue=rose
 //var rose=0xF9F9F9	
 	//var precdent rose=0xe23030
 
-var blueG=rose
+var blueG=0x605252
 
 
 

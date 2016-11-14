@@ -25,6 +25,7 @@ draw_background = function(game){
 
 	//fond du background
 	Phaser.Sprite.call(this,game,0,0,'back')
+	this.height=h
 	//à 0 pour ne pas le voir au début
 	this.g8.add(this)
 
@@ -191,7 +192,7 @@ draw_background = function(game){
 	this.text_win_player.alpha=0
 	this.text_win_player.tint=rose
 	//OPPONENT 
-	this.text_name_opponent = game.add.bitmapText(w4,py1,'lucky_black','kill the game', taille) 
+	this.text_name_opponent = game.add.bitmapText(w4,py1,'lucky','kill the game', taille) 
 	this.text_level_opponent = game.add.bitmapText(w4,py3,'lucky','lvl ', taille2) 
 	this.text_level_opponent.alpha=0
 	this.text_level_number_opponent=game.add.bitmapText(w4+60,py3,'lucky','5', taille2) 
