@@ -39,20 +39,20 @@ gameTitle.prototype = {
 
 		var roll_paper_deroll_group=game.add.group()
 var roll_paper_deroll_group2=game.add.group()
-		var roll_1 = new roll_paper_deroll(roll_paper_deroll_group,-60,h2-110,0,w+200)
+		var roll_1 = new roll_paper_deroll(roll_paper_deroll_group,-60,h2,0,w+200)
 		//var roll_2 = new roll_paper_deroll(roll_paper_deroll_group2,0,100,20,500)
 
 
-			var play_button = this.game.add.button(w2,h2+240,"play",this.playTheGame,this);
+			var play_button = this.game.add.button(w2,h2+290,"play",this.playTheGame,this);
 			play_button.anchor.setTo(0.5,0.5)
 			this.game.add.tween(play_button.scale).to({x:0.9, y:0.9},450,Phaser.Easing.Sinusoidal.In,true,0,-1,true)
 
-			var rank_button = this.game.add.button(w2,h2+380,"rank",this.playTheGame,this);
+			var rank_button = this.game.add.button(w2,h2+426,"rank",this.playTheGame,this);
 			rank_button.anchor.setTo(0.5,0.5)
 			//this.game.add.tween(rank_button.scale).to({x:0.9, y:0.9},450,Phaser.Easing.Sinusoidal.In,true,0,-1,true)
 
 			//var textTitleGame = this.game.add.bitmapText(w2,h2,'lucky_black','papermania', w*.16) 
-			var textTitleGame = this.game.add.sprite(w2,h2,'papermania') 
+			var textTitleGame = this.game.add.sprite(w2,h2-150,'papermania') 
 			pseudoAnchorX(textTitleGame)
 			pseudoAnchorY(textTitleGame)
 		},
