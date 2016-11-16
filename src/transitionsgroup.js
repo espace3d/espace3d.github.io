@@ -26,14 +26,7 @@ init_transitions = function(game){
 	//this.g2 est le texte supérieur du player
 }
 
-//pour faire apparaitre le rectangle qui montre que la position des papiers est lock
-init_transitions.prototype.lock_position = function(obj){
-	obj.visible=true
-	obj.alpha=.01
-	displacement_alpha(game,obj,.9,0,900,"Bounce.Out")
-	//TODO
-	//faire disparaitre l'élément après
-}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 //DEPLACEMENT DES PANNEAUX DE BACKGROUND ET DES TEXTES SUPERIEURS
 // Les obj symbolise des groupes
@@ -53,6 +46,7 @@ init_transitions.prototype.lock_position = function(obj){
 //|     |   |     | 
 //|-----|   |-----|
 
+//ouverture des PANNEAUX
 init_transitions.prototype.displacement_background_opponent_and_player=function(){
 
 	displacement_position(game,this.g6,-w,0,delay_open_panel_background,time_open_panel_background,"Bounce.out")
@@ -61,20 +55,22 @@ init_transitions.prototype.displacement_background_opponent_and_player=function(
 	displacement_position(game,this.g2,w,h2,delay_open_panel_background,time_open_panel_background,"Bounce.out")
 
 	//deplace le timer du bas vers le milieu et rend la roulette visible et actionne la roulette pour le hasard
-	this.move_timer_for_chooce=function(){	
-		var delay_for_chooce=delay_open_panel_background+time_open_panel_background
-		this.tween_move_timer_for_chooce=game.add.tween(this.g0).to({x:0,y:0},time_open_panel_background-200,Phaser.Easing.Linear.None,true,delay_for_chooce)
-		this.tween_move_timer_for_chooce.onComplete.add(next,this)
-
-		// pour cacher le timer et le mettre en pause
-		function next(){
-			hud.turn_chooce()
-			hud.flag=false
-			hud.timer_text.visible=false
-		}
-	}
+	//declenchemet de la roulette hasard
 	this.move_timer_for_chooce()
 }
+
+init_transitions.prototype.move_timer_for_chooce=function(){
+	var delay_for_chooce=delay_open_panel_background+time_open_panel_background
+	this.tween_move_timer_for_chooce=game.add.tween(this.g0).to({x:0,y:0},time_open_panel_background-200,Phaser.Easing.Linear.None,true,delay_for_chooce)
+	this.tween_move_timer_for_chooce.onComplete.add(this.action_turn_chooce,this)
+}
+
+// pour cacher le timer et le mettre en pause + actionner la roulette
+init_transitions.prototype.action_turn_chooce=function(){
+	hud.turn_chooce()
+	hud.timer_text.visible=false
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 //FERMETURE DES PANNEAUX DE BACKGROUND ET DES TEXTES SUPERIEURS
 //|-----||-----|
@@ -82,56 +78,60 @@ init_transitions.prototype.displacement_background_opponent_and_player=function(
 //|  @  ||  @  | 
 //|     ||     | 
 //|-----||-----|
-
 init_transitions.prototype.displacement_background_opponent_and_player_close = function(){
 
-	game.time.events.add(delay_paper_fall,resetflag,this)
-
-	function resetflag() {
-		paper_opponent.isFalling=true
-		paper_player.isFalling=true
-		paper_player.body.moves=true
-		paper_opponent.body.moves=true
-	}
-
+	this.retardateur()
 	displacement_position(game,this.g6,0,0,0,time_close_panel_background,"Bounce.Out")
 	displacement_position(game,this.g1,0,h2,0,time_close_panel_background,"Bounce.Out")
 	displacement_position(game,this.g7,0,0,0,time_close_panel_background,"Bounce.Out")
 	displacement_position(game,this.g2,0,h2,0,time_close_panel_background,"Bounce.Out")
+}
+//retardateur
 
-
-	//////////////////////////////////////////////////////////////////////////////////////////
-	//DEPLACEMENT DE L'OMBRE DE LA TABLE POUR SYMBOLISER LA VUE QUI VA VERS LE HAUT
-	// les times sont renseignés dans parameters
-	//|--@--||--@--|
-	//|     ||     |
-	//||||||||||||||    
-	//||||||||||||||    
-	//|-----||-----|
-	game.time.events.add(time_close_panel_background,next_tween,this)
-	game.time.events.add(time_close_panel_background+time_shadow_up_and_texte_up+1900,next,this)
-
-	function next(){
-		paper_player.text_position.visible=true
-		paper_opponent.text_position.visible=true
-
-	}
-
-	function next_tween() {
-		//texte qui apparaissent
-		background.tween_begin_game()
-		//déplacement de l'ombre
-		displacement_position(game,background.table_opponent,0,h2,0,time_shadow_up_and_texte_up,"Linear.None")
-		displacement_position(game,background.table_player,w2,h2,0,time_shadow_up_and_texte_up,"Linear.None")
-		displacement_position(game,this.g2,0,0,0,time_shadow_up_and_texte_up,"Linear.None")
-		displacement_position(game,this.g1,0,0,0,time_shadow_up_and_texte_up,"Linear.None")
-		displacement_position(game,this.g0,0,0,0,time_shadow_up_and_texte_up,"Linear.None")
-		//modification de l'alpha pour symboliser la perspective
-		displacement_alpha(game,background.table_opponent,.8,0,time_shadow_up_and_texte_up,"Linear.None")
-		displacement_alpha(game,background.table_player,.8,0,time_shadow_up_and_texte_up,"Linear.None")
-	}
+init_transitions.prototype.retardateur=function(){
+	game.time.events.add(delay_paper_fall,this.resetflag,this)
+	game.time.events.add(time_close_panel_background,this.perspective,this)
+	game.time.events.add(time_close_panel_background+time_shadow_up_and_texte_up+1900,this.text_visible,this)
 }
 
+//rendre les textes permettant de mesurer la chute visible
+init_transitions.prototype.text_visible=function(){
+	paper_player.text_position.visible=true
+	paper_opponent.text_position.visible=true
+}
+
+//pour déclencher la chute des papiers
+init_transitions.prototype.resetflag=function(){
+
+	paper_opponent.isFalling=true
+	paper_player.isFalling=true
+	paper_player.body.moves=true
+	paper_opponent.body.moves=true
+}
+
+//symboliser la perspective
+init_transitions.prototype.perspective=function() {
+	//texte qui apparaissent
+	background.tween_begin_game()
+	//déplacement de l'ombre
+	displacement_position(game,background.table_opponent,0,h2,0,time_shadow_up_and_texte_up,"Linear.None")
+	displacement_position(game,background.table_player,w2,h2,0,time_shadow_up_and_texte_up,"Linear.None")
+	displacement_position(game,this.g2,0,0,0,time_shadow_up_and_texte_up,"Linear.None")
+	displacement_position(game,this.g1,0,0,0,time_shadow_up_and_texte_up,"Linear.None")
+	displacement_position(game,this.g0,0,0,0,time_shadow_up_and_texte_up,"Linear.None")
+	//modification de l'alpha pour symboliser la perspective
+	displacement_alpha(game,background.table_opponent,.8,0,time_shadow_up_and_texte_up,"Linear.None")
+	displacement_alpha(game,background.table_player,.8,0,time_shadow_up_and_texte_up,"Linear.None")
+}
+
+//pour faire apparaitre le rectangle qui montre que la position des papiers est lock
+init_transitions.prototype.lock_position = function(obj){
+	obj.visible=true
+	obj.alpha=.01
+	displacement_alpha(game,obj,.9,0,900,"Bounce.Out")
+	//TODO
+	//faire disparaitre l'élément après
+}
 
 T = T || {}
 
