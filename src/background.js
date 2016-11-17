@@ -40,12 +40,12 @@ draw_background = function(game){
 	this.grayfilternull = game.add.filter('Gray') ; this.grayfilternull.gray=0
 
 	//curseur player lorsque le joueur exerce une pression prolongée
-	this.cursor_player=drawSprite(this.g3bis,game,"rect",w4*3,h2,w4,w*.1,0.5,this.color_opponent,1)
+	this.cursor_player=drawSprite(this.g3bis,game,"rect",w4*3,h2,w4,w*.1,0.5,jaune,0)
 	this.cursor_player.flag=true
 	this.cursor_player.isRaise=true	
 
 	//curseur opponent lorsque le joueur exerce une pression prolongée
-	this.cursor_opponent=drawSprite(this.g3bis,game,"rect",w4,h2,w2,w*.1,0.5,this.color_player,0)
+	this.cursor_opponent=drawSprite(this.g3bis,game,"rect",w4,h2,w2,w*.1,0.5,jaune,0)
 	this.cursor_opponent.flag=true
 	this.cursor_opponent.isRaise=true	
 
