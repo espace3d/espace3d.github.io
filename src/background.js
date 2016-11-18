@@ -20,8 +20,8 @@ draw_background = function(game){
 	this.g1=G.topOpponentGroup1
 	this.g0=G.timerGroup0
 
-	this.color_player=blue
-	this.color_opponent=rose
+	this.color_player=brun
+	this.color_opponent=red
 
 	//fond du background
 	Phaser.Sprite.call(this,game,0,0,'back')
@@ -40,14 +40,30 @@ draw_background = function(game){
 	this.grayfilternull = game.add.filter('Gray') ; this.grayfilternull.gray=0
 
 	//curseur player lorsque le joueur exerce une pression prolongée
-	this.cursor_player=drawSprite(this.g3bis,game,"rect",w4*3,h2,w4,w*.1,0.5,jaune,0)
+	//this.cursor_player=drawSprite(this.g3bis,game,"circle",w4*3,h2,w4/3,w4/3,0.5,"none",0)
+	this.cursor_player=game.add.sprite(w4*3,h2,"circle")
+	this.g3bis.add(this.cursor_player)
+	this.cursor_player.width=w4/3
+	this.cursor_player.height=w4/3
+	this.cursor_player.anchor.x=.5
+	this.cursor_player.anchor.y=.5
+	this.cursor_player.alpha=0
+
 	this.cursor_player.flag=true
 	this.cursor_player.isRaise=true	
 
 	//curseur opponent lorsque le joueur exerce une pression prolongée
-	this.cursor_opponent=drawSprite(this.g3bis,game,"rect",w4,h2,w2,w*.1,0.5,jaune,0)
-	this.cursor_opponent.flag=true
-	this.cursor_opponent.isRaise=true	
+	this.cursor_opponent=game.add.sprite(w4,h2,"circle")
+	this.g3bis.add(this.cursor_opponent)
+	this.cursor_opponent.width=w4/3
+	this.cursor_opponent.height=w4/3
+	this.cursor_opponent.anchor.x=.5
+	this.cursor_opponent.anchor.y=.5
+	this.cursor_opponent.alpha=0
+
+//	this.cursor_opponent=drawSprite(this.g3bis,game,"rect",w4,h2,w2,w*.1,0.5,jaune,0)
+//	this.cursor_opponent.flag=true
+//	this.cursor_opponent.isRaise=true	
 
 	this.cursor_palpitant=drawSprite(this.g1,game,"cursor_palpitant",w4*3,h2-100,w*.05,w*.05,0.5,0,.4)
 	this.cursor_palpitant.alpha=0
@@ -142,7 +158,7 @@ draw_background = function(game){
 	for (var j = 0; j < 5; j++) {
 		this.line_collision_opponent[j]=game.add.sprite(0,game.rnd.integerInRange(0,h),"line_collision")
 		this.line_collision_opponent[j].isTouch=false
-		this.line_collision_opponent[j].alpha=.9
+		this.line_collision_opponent[j].alpha=0
 	}
 
 	//textes du player et de l'opponent
@@ -160,9 +176,9 @@ draw_background = function(game){
 	this.text_name_player_shadow.visible=false
 	this.text_name_player = game.add.bitmapText(w4*3,py1,'lucky','dev', taille) 
 	this.text_level_player = game.add.bitmapText(w4*3,py3,'lucky','lvl ', taille2) 
-	this.text_level_player.alpha=0
+	this.text_level_player.alpha=1
 	this.text_level_number_player=game.add.bitmapText(w4*3+60,py3,'lucky','1', taille2) 
-	this.text_level_number_player.tint=jaune
+	this.text_level_number_player.tint=rose
 	this.text_level_number_player.alpha=0
 //
 //	//texte + line qui descend et indique la position du papier 
@@ -194,13 +210,13 @@ draw_background = function(game){
 	//OPPONENT 
 	this.text_name_opponent = game.add.bitmapText(w4,py1,'lucky','kill the game', taille) 
 	this.text_level_opponent = game.add.bitmapText(w4,py3,'lucky','lvl ', taille2) 
-	this.text_level_opponent.alpha=0
+	this.text_level_opponent.alpha=1
 	this.text_level_number_opponent=game.add.bitmapText(w4+60,py3,'lucky','5', taille2) 
-	this.text_level_number_opponent.tint=jaune
-	this.text_level_number_opponent.alpha=0
+	this.text_level_number_opponent.tint=rose
+	this.text_level_number_opponent.alpha=1
 
 	this.text_win_opponent = game.add.bitmapText(w4,h2-taille+taille*.5,'lucky_grey','win', taille) 
-	this.text_win_opponent.visible=false
+		this.text_win_opponent.visible=false
 	this.text_win_opponent.alpha=0
 	this.text_win_opponent.tint=rose
 

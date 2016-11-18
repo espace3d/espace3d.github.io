@@ -10,7 +10,7 @@ Paper = function(game,Group,posx,posy){
 	this.speed=1200
 	this.flag=true
 	//temps pour que le curseur soit complétement allongé et permettre de stopper les papiers pour de bon
-	this.time_lock=1950
+	this.time_lock=950
 	this.count=0
 	this.count_opponent=0
 	//contact général qui englobe les papiers
@@ -54,7 +54,7 @@ Paper = function(game,Group,posx,posy){
 	//barre inférieure pour tester la collision avec le papier opponent et player
 	//this.check_fall_end=game.add.sprite(0,h*1.375,'test_line')
 	this.check_fall_end=game.add.sprite(posx,h*0.909,'test_line')
-	this.check_fall_end.alpha=.1
+	this.check_fall_end.alpha=0
 	this.check_fall_end.anchor.x=.5
 	game.physics.arcade.enable(this.check_fall_end)
 
@@ -143,6 +143,7 @@ Paper.prototype.stop_move=function(){
 	if (this.isFalling){	
 	console.log(background.cursor_player.x, background.cursor_player.alpha, background.cursor_player.scale.x)
 		background.cursor_player.alpha=0
+		background.cursor_player.scale.y=1
 		background.cursor_player.scale.x=1
 		background.panimTween_shadow.resume()
 		background.panimTween.resume()
@@ -158,8 +159,8 @@ Paper.prototype.stop_move=function(){
 Paper.prototype.expand_cursor_lock=function(){
 	console.log("expand_cursor_lock")
 	console.log(background.cursor_player.x, background.cursor_player.alpha)
-	this.tween=game.add.tween(background.cursor_player.scale).to({x:3},this.time_lock,Phaser.Easing.Linear.None,true,0)
-	this.tween2=game.add.tween(background.cursor_player).to({alpha:.7},this.time_lock,Phaser.Easing.Linear.None,true,0)
+	this.tween=game.add.tween(background.cursor_player.scale).to({x:3,y:3},this.time_lock,Phaser.Easing.Linear.None,true,0)
+	this.tween2=game.add.tween(background.cursor_player).to({alpha:.3},this.time_lock,Phaser.Easing.Linear.None,true,0)
 	this.tween.onComplete.add(this.lock,this)
 }
 
@@ -209,6 +210,7 @@ Paper.prototype.opponentfall=function(_paper_opponent,_background_line_collision
 	}
 	//ligne et chiffre qui tombe
 	this.fall_line()
+	this.collide_with_check_fall_end()
 }
 
 Paper.prototype.opponent_collision=function(obj1,obj2){
@@ -270,7 +272,13 @@ Paper.prototype.opponent_collision=function(obj1,obj2){
 Paper.prototype.update = function() {
 	//ligne et chiffre qui tombe
 	this.fall_line()
+	this.collide_with_check_fall_end()
 }
+
+Paper.prototype.collide_with_check_fall_end=function(){
+	this.game.physics.arcade.collide(this,this.check_fall_end,this.grey_check)
+}
+
 
 
 Paper.prototype.fall_line=function(){
@@ -278,11 +286,14 @@ Paper.prototype.fall_line=function(){
 		this.line_position.y=this.text_position.y
 		this.text_position.body.allowGravity=true
 		//this.line_position.body.allowGravity=true
+		if(this.text_position.y<h2){
 		this.text_position.text=Math.round(this.text_position.body.y)
+		}else{
+this.text_position.text="000"
+	}
 		//pour empêcher que le papier ne bouge suite à la collision
 		this.game.physics.arcade.collide(this,this.text_position,this.count_collision)
 		//TODO changer cycle de collide
-		this.game.physics.arcade.collide(this,this.check_fall_end,this.grey_check)
 	}
 }
 

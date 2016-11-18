@@ -97,8 +97,8 @@ theGame.prototype = {
 		hud=new Timer(this.game,G.timerGroup0)
 		effect=draweffect(this.game)
 		//TODO changer de groupe et rétablir position y
-		little_roll_player=new R.draw_little_roll(this.game,G.timerGroup0,w4*3,-650)
-		little_roll_opponent=new R.draw_little_roll(this.game,G.timerGroup0,w4,-650)
+		little_roll_player=new R.draw_little_roll(this.game,G.topPlayerGroup2,w4*3,140)
+		little_roll_opponent=new R.draw_little_roll(this.game,G.topOpponentGroup1,w4,140)
 		tw=new init_transitions(this.game)
 		this.game.stage.backgroundColor=black
 		//DEPLACEMENT DES GROUPES AU DEBUT (TEXTE TOP - TIMER - SHADOW)

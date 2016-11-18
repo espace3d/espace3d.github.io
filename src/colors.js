@@ -1,6 +1,6 @@
 //var red=0x7BCEE8
 //var blue=0x9DC4CB
-var red=0xff6e71
+var red=0xe23030
 var beige=0xDFD5BC
 //var rose=0xF76676
 //var rose=0xfc4349
@@ -42,7 +42,8 @@ var blueG=0xCFC8B5
 
 //essai 
 //var blue=0x222222
-var rose=0xe23030
+
+var rose=0xFF6E71
 //var blue=0xF9F9F9	
 
 var blue=0x3b2c27
@@ -50,6 +51,7 @@ var blue=0x3b2c27
 	//var precdent rose=0xe23030
 
 var blueG=blue
+var brun=blueG
 
 
 
