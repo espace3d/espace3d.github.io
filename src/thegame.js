@@ -104,7 +104,7 @@ theGame.prototype = {
 		//DEPLACEMENT DES GROUPES AU DEBUT (TEXTE TOP - TIMER - SHADOW)
 		G.topOpponentGroup1.position.y=h2
 		G.topPlayerGroup2.position.y=h2
-		G.timerGroup0.position.y=300
+		//G.timerGroup0.position.y=300
 		//G.timerGroup0.position.y=h2-100
 		background.table_opponent.y=h
 		background.table_player.y=h

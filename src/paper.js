@@ -24,6 +24,12 @@ Paper = function(game,Group,posx,posy){
 	this.line_position.anchor.y=1
 
 	var taille=w*.05
+	var taille_locked=w*.035
+	this.text_locked = game.add.bitmapText(posx,h2-300,'lucky_black','locked', taille_locked) 
+	this.text_locked.alpha=0
+	this.text_locked.anchor.x =.5
+	this.text_locked.anchor.y =.5
+	Group.add(this.text_locked) 
 	this.text_position = game.add.bitmapText(posx,0,'lucky','coucou', taille) 
 	this.text_position.visible=false
 	this.text_position.anchor.x =.5
@@ -174,6 +180,19 @@ Paper.prototype.lock=function(){
 	//animation du texte du player qui change d'échelle
 	background.panimTween_shadow.resume()
 	background.panimTween.resume()
+	this.appears_text_lock()
+}
+
+
+Paper.prototype.appears_text_lock = function() {
+	this.tween_text_locked=game.add.tween(this.text_locked).to({alpha:1},500,Phaser.Easing.Bounce.Out,true,0)
+	game.add.tween(this.text_locked.scale).to({x:2,y:2},500,Phaser.Easing.Bounce.Out,true,0)
+
+	this.tween_text_locked.onComplete.add(this.fade_text_locked,this)
+}
+Paper.prototype.fade_text_locked = function() {
+	game.add.tween(this.text_locked).to({alpha:0},100,Phaser.Easing.Bounce.Out,true,0)
+
 }
 
 //reprendre la chute
@@ -279,8 +298,6 @@ Paper.prototype.collide_with_check_fall_end=function(){
 	this.game.physics.arcade.collide(this,this.check_fall_end,this.grey_check)
 }
 
-
-
 Paper.prototype.fall_line=function(){
 	if (this.text_position.is_lached){
 		this.line_position.y=this.text_position.y
@@ -289,8 +306,8 @@ Paper.prototype.fall_line=function(){
 		if(this.text_position.y<h2){
 		this.text_position.text=Math.round(this.text_position.body.y)
 		}else{
-this.text_position.text="000"
-	}
+			this.text_position.text="000"
+		}
 		//pour empêcher que le papier ne bouge suite à la collision
 		this.game.physics.arcade.collide(this,this.text_position,this.count_collision)
 		//TODO changer cycle de collide

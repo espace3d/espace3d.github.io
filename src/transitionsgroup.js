@@ -61,7 +61,8 @@ init_transitions.prototype.displacement_background_opponent_and_player=function(
 
 init_transitions.prototype.move_timer_for_chooce=function(){
 	var delay_for_chooce=delay_open_panel_background+time_open_panel_background
-	this.tween_move_timer_for_chooce=game.add.tween(this.g0).to({x:0,y:0},time_open_panel_background-200,Phaser.Easing.Linear.None,true,delay_for_chooce)
+	//TODO cette transition n'est plus nécessaire
+	this.tween_move_timer_for_chooce=game.add.tween(this.g0).to({x:0,y:0},100,Phaser.Easing.Bounce.Out,true,delay_for_chooce)
 	this.tween_move_timer_for_chooce.onComplete.add(this.action_turn_chooce,this)
 }
 
@@ -81,16 +82,16 @@ init_transitions.prototype.action_turn_chooce=function(){
 init_transitions.prototype.displacement_background_opponent_and_player_close = function(){
 
 	this.retardateur()
-	displacement_position(game,this.g6,0,0,0,time_close_panel_background,"Bounce.Out")
-	displacement_position(game,this.g1,0,h2,0,time_close_panel_background,"Bounce.Out")
-	displacement_position(game,this.g7,0,0,0,time_close_panel_background,"Bounce.Out")
-	displacement_position(game,this.g2,0,h2,0,time_close_panel_background,"Bounce.Out")
-}
+	game.add.tween(this.g6).to({x:0,y:0},time_close_panel_background,Phaser.Easing.Bounce.Out,true,0)
+	game.add.tween(this.g1).to({x:0,y:h2},time_close_panel_background,Phaser.Easing.Bounce.Out,true,0)
+	game.add.tween(this.g7).to({x:0,y:0},time_close_panel_background,Phaser.Easing.Bounce.Out,true,0)
+	this.tween_displacement_position=game.add.tween(this.g2).to({x:0,y:h2},time_close_panel_background,Phaser.Easing.Bounce.Out,true,0)
+	this.tween_displacement_position.onComplete.add(this.perspective,this)
+	}
 //retardateur
 
 init_transitions.prototype.retardateur=function(){
 	game.time.events.add(delay_paper_fall,this.resetflag,this)
-	game.time.events.add(time_close_panel_background,this.perspective,this)
 	game.time.events.add(time_close_panel_background+time_shadow_up_and_texte_up+1900,this.text_visible,this)
 }
 
@@ -112,13 +113,14 @@ init_transitions.prototype.resetflag=function(){
 //symboliser la perspective
 init_transitions.prototype.perspective=function() {
 	//texte qui apparaissent
+	console.log("value");
 	background.tween_begin_game()
 	//déplacement de l'ombre
 	displacement_position(game,background.table_opponent,0,h2,0,time_shadow_up_and_texte_up,"Linear.None")
 	displacement_position(game,background.table_player,w2,h2,0,time_shadow_up_and_texte_up,"Linear.None")
 	displacement_position(game,this.g2,0,0,0,time_shadow_up_and_texte_up,"Linear.None")
 	displacement_position(game,this.g1,0,0,0,time_shadow_up_and_texte_up,"Linear.None")
-	displacement_position(game,this.g0,0,0,0,time_shadow_up_and_texte_up,"Linear.None")
+	displacement_position(game,this.g0,0,-300,0,time_shadow_up_and_texte_up,"Linear.None")
 	//modification de l'alpha pour symboliser la perspective
 	displacement_alpha(game,background.table_opponent,.8,0,time_shadow_up_and_texte_up,"Linear.None")
 	displacement_alpha(game,background.table_player,.8,0,time_shadow_up_and_texte_up,"Linear.None")
@@ -134,4 +136,10 @@ init_transitions.prototype.lock_position = function(obj){
 }
 
 T = T || {}
+
+
+
+
+
+
 

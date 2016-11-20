@@ -6,10 +6,10 @@ Timer = function(game,Group){
 	//group
 	this.Group=Group
 	//disque noir du timer 
-	this.time_shadow=drawSprite(this.Group,game,"timer",w2,h2,w*.255,w*.255,.5,0,.6)
+	this.time_shadow=drawSprite(this.Group,game,"timer",w2,h2+300,w*.255,w*.255,.5,0,.6)
 	this.time_shadow.inputEnabled=true
 	//texte du timer
-	this.timer_text = game.add.bitmapText(w2,h2,'lucky',this.timer_value, w*.15)
+	this.timer_text = game.add.bitmapText(w2,h2+300,'lucky',this.timer_value, w*.15)
 	//pour lancer ou non la function time_decount
 	this.flag = false
 	//afficheage de VS
@@ -18,7 +18,7 @@ Timer = function(game,Group){
 	this.winner_flag="none"
 	//time pour faire tourner la roulette
 	this.time_roulette=800
-
+this.time_roulette_alpha=200
 	// lancement de la fonction pour le décompte du temps qui ne se déclenche qu'avec le this.flag voir
 	//voir function move_time
 	game.time.events.loop(1000,this.time_decount,this)
@@ -28,7 +28,7 @@ Timer = function(game,Group){
 	this.timer_text.anchor.y=.4
 
 	//spirale pour la roulette
-	this.spiral=game.add.sprite(w2,h2,'spiral')
+	this.spiral=game.add.sprite(w2,h2+300,'spiral')
 	this.spiral.anchor.x=.5
 	this.spiral.anchor.y=.5
 	this.spiral.alpha=1
@@ -38,7 +38,7 @@ Timer = function(game,Group){
 	this.angular = this.angle_array[Math.floor(game.rnd.between(1,this.angle_array.length-1))];
 
 	//roll
-	Phaser.Sprite.call(this,game,w2,h2,'roll_turn')
+	Phaser.Sprite.call(this,game,w2,h2+300,'roll_turn')
 	this.anchor.x=.5
 	this.anchor.y=.5
 
@@ -76,7 +76,7 @@ Timer.prototype.time_decount=function(){
 Timer.prototype.turn_chooce = function() {
 	this.visible=true
 	this.spiral.visible=true
-	this.tween_main=game.add.tween(this).to({alpha:1},this.time_roulette,Phaser.Easing.Linear.None,true,0)
+	this.tween_main=game.add.tween(this).to({alpha:1},this.time_roulette_alpha,Phaser.Easing.Linear.None,true,0)
 	this.tween=game.add.tween(this).to({angle:this.angular},this.time_roulette,Phaser.Easing.Circular.Out,true,1000)
 	this.tween_spiral=game.add.tween(this.spiral).to({angle:this.angular},this.time_roulette,Phaser.Easing.Circular.Out,true,1000)
 	this.tween_spiral2=game.add.tween(this.spiral).to({alpha:0},this.time_roulette,Phaser.Easing.Linear.None,true,1000)
@@ -151,7 +151,7 @@ Timer.prototype.winner=function(){
 }
 //retardateur1
 Timer.prototype.retardateur1=function(){
-	this.winner_flag = true ? game.time.events.add(300,this.reset_color_player,this):game.time.events.add(300,this.reset_color_opponent,this)
+	this.winner_flag = true ? game.time.events.add(100,this.reset_color_player,this):game.time.events.add(100,this.reset_color_opponent,this)
 }
 
 //changement pour remettre la couleur de la bordure du player
@@ -175,7 +175,7 @@ Timer.prototype.reset_color_opponent=function(){
 
 //timer qui remonte du bas vers le milieu
 Timer.prototype.move_time=function(){
-		var tween00=game.add.tween(this.Group).to({x:0,y:h2-150},300,Phaser.Easing.Linear.None,true)
+		var tween00=game.add.tween(this.Group).to({x:0,y:h2-450},650,Phaser.Easing.Elastic.Out,true)
 	this.timer_text.text=this.timer_value
 	tween00.onComplete.add( function(){background.flag_close=true,this.flag=true,this.timer_text.visible=true
 	},this)
