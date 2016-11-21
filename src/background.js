@@ -39,6 +39,9 @@ draw_background = function(game){
 	this.grayfiltertop = game.add.filter('Gray') ; this.grayfiltertop.gray=1
 	this.grayfilternull = game.add.filter('Gray') ; this.grayfilternull.gray=0
 
+
+
+
 	//curseur player lorsque le joueur exerce une pression prolongée
 	//this.cursor_player=drawSprite(this.g3bis,game,"circle",w4*3,h2,w4/3,w4/3,0.5,"none",0)
 	this.cursor_player=game.add.sprite(w4*3,h2,"circle")
@@ -134,6 +137,7 @@ draw_background = function(game){
 	this.opponent=drawSprite(this.g6,game,"rect",0-decalage,0,w2,h+200,0,this.color_opponent,1) 
 	this.player=drawSprite(this.g7,game,"rect",w2+decalage,0,w2,h+200,0,this.color_player,1) 
 	this.player.inputEnabled=true
+
 
 	//ombre pour symboliser la table
 	this.table_player=drawSprite(this.g3tris,game,"rect",w2,h2,w2,h,0,black,.5) 
@@ -251,6 +255,21 @@ draw_background = function(game){
 	this.g1.add(this.text_name_opponent) 
 	this.g1.add(this.text_level_number_opponent) 
 
+	//flash pour signifier que la position est lockée
+	this.flash_opponent = game.add.sprite(0,0,"rect")
+	this.flash_opponent.width=w2
+	this.flash_opponent.height=h
+	this.flash_opponent.alpha=0
+	this.flash_opponent.tint=white
+	this.g1.add(this.flash_opponent)
+
+	//flash pour signifier que la position est lockée
+	this.flash_player = game.add.sprite(w2,0,"rect")
+	this.flash_player.width=w2
+	this.flash_player.height=h
+	this.flash_player.alpha=0
+	this.flash_player.tint=white
+	this.g2.add(this.flash_player)
 	//animation du texte du joueur lorsqu'on maintient la pression appuyée
 	this.panimTween=game.add.tween(this.text_name_player.scale).to({x:2, y:2},150,Phaser.Easing.Sinusoidal.In,true,0,-1,true)
 	this.panimTween_shadow=game.add.tween(this.text_name_player_shadow.scale).to({x:2.1, y:2.1},155,Phaser.Easing.Sinusoidal.In,true,0,-1,true)

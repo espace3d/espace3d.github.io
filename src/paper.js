@@ -185,13 +185,13 @@ Paper.prototype.lock=function(){
 
 
 Paper.prototype.appears_text_lock = function() {
-	this.tween_text_locked=game.add.tween(this.text_locked).to({alpha:1},500,Phaser.Easing.Bounce.Out,true,0)
-	game.add.tween(this.text_locked.scale).to({x:2,y:2},500,Phaser.Easing.Bounce.Out,true,0)
+	this.tween_text_locked=game.add.tween(background.flash_player).to({alpha:.9},150,Phaser.Easing.Bounce.Out,true,0)
+	//game.add.tween(this.text_locked.scale).to({x:2,y:2},500,Phaser.Easing.Bounce.Out,true,0)
 
 	this.tween_text_locked.onComplete.add(this.fade_text_locked,this)
 }
 Paper.prototype.fade_text_locked = function() {
-	game.add.tween(this.text_locked).to({alpha:0},100,Phaser.Easing.Bounce.Out,true,0)
+	game.add.tween(background.flash_player).to({alpha:0},200,Phaser.Easing.Bounce.In,true,0)
 
 }
 
