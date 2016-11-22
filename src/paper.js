@@ -6,9 +6,12 @@
 var P = P || {}
 
 
-Paper = function(game,Group,posx,posy){
+Paper = function(game,Group,posx,posy,name_character){
+	this.name_character=name_character
 	this.speed=1200
 	this.flag=true
+	this.flag_locked=false
+	this.flag_winner=false
 	//temps pour que le curseur soit complétement allongé et permettre de stopper les papiers pour de bon
 	this.time_lock=950
 	this.count=0
@@ -180,18 +183,31 @@ Paper.prototype.lock=function(){
 	//animation du texte du player qui change d'échelle
 	background.panimTween_shadow.resume()
 	background.panimTween.resume()
-	this.appears_text_lock()
+	this.flash_player()
 }
 
+Paper.prototype.flash_player = function() {
+if(this.name_character=="player"){
+	this.tween_text_locked=game.add.tween(background.flash_player).to({alpha:.9},150,Phaser.Easing.Bounce.Out,true,0)
+	this.tween_text_locked.onComplete.add(this.fade_player,this)
+}else{
+	this.tween_text_locked=game.add.tween(background.flash_opponent).to({alpha:.9},150,Phaser.Easing.Bounce.Out,true,0)
+	this.tween_text_locked.onComplete.add(this.fade_opponent,this)
+}
+}
 
 Paper.prototype.appears_text_lock = function() {
 	this.tween_text_locked=game.add.tween(background.flash_player).to({alpha:.9},150,Phaser.Easing.Bounce.Out,true,0)
 	//game.add.tween(this.text_locked.scale).to({x:2,y:2},500,Phaser.Easing.Bounce.Out,true,0)
 
-	this.tween_text_locked.onComplete.add(this.fade_text_locked,this)
+	this.tween_text_locked.onComplete.add(this.fade_flash,this)
 }
-Paper.prototype.fade_text_locked = function() {
+Paper.prototype.fade_player = function() {
 	game.add.tween(background.flash_player).to({alpha:0},200,Phaser.Easing.Bounce.In,true,0)
+
+}
+Paper.prototype.fade_opponent = function() {
+	game.add.tween(background.flash_opponent).to({alpha:0},200,Phaser.Easing.Bounce.In,true,0)
 
 }
 
@@ -247,6 +263,7 @@ Paper.prototype.opponent_collision=function(obj1,obj2){
 		if (obj1.count_opponent ==background.line_collision_opponent.length){
 			obj1.text_position.is_lached=true
 			//ici mettre l'action lorsque le joueur valide l'action
+			obj1.cursor_opponent_tween(this.time_lock)
 			background.cursor_opponent_particle.on
 			background.cursor_opponent.alpha =.8
 			background.cursor_opponent.y = h2 + game.rnd.between(-100,100)
@@ -257,16 +274,10 @@ Paper.prototype.opponent_collision=function(obj1,obj2){
 		} else if(obj1.time_chute[obj1.current_point] > obj1.max_time_chute-400 && obj1.current_point!=1 ){ 
 			background.cursor_palpitant_opponent.y = h2 + game.rnd.between(-100,100)
 			background.cursor_opponent_particle.on
-			if (background.cursor_opponent.alpha <= 0.2) {
-				background.cursor_opponent.isRaise=true
-			} else if (background.cursor_opponent.alpha >= .59) {
-				background.cursor_opponent.isRaise=false
-			}
-			if ( background.cursor_opponent.isRaise ) {
-				background.cursor_opponent.alpha +=.02
-			} else {
-				background.cursor_opponent.alpha -=.02
-			}
+			var value_tween=game.rnd.between(200,800)
+			this.cursor_opponent_tween(value_tween)
+
+
 			//sinon rien
 		} else {
 			background.cursor_opponent_particle.on=false
@@ -286,6 +297,24 @@ Paper.prototype.opponent_collision=function(obj1,obj2){
 		obj2.body.enable=false
 	}
 }
+
+Paper.prototype.cursor_opponent_tween = function(time_tween){
+console.log("value");
+
+	//transition opponent au niveau du curseur
+	this.tween_opponent=game.add.tween(background.cursor_opponent.scale).to({x:3,y:3},time_tween,Phaser.Easing.Linear.None,true,0)
+	this.tween2_opponent=game.add.tween(background.cursor_opponent).to({alpha:.3},time_tween,Phaser.Easing.Linear.None,true,0)
+	this.tween2_opponent.onComplete.add(this.flash)
+
+	if(time_tween < this.time_lock){
+		game.time.events.add(time_tween,this.stop_tween_cursor_opponent,this)
+	}
+}
+
+Paper.prototype.stop_tween_cursor_opponent = function() {
+	this.tween_opponent.stop()
+	this.tween2_opponent.stop()
+};
 
 //on permet la collision si le flag est à true
 Paper.prototype.update = function() {
@@ -350,7 +379,7 @@ Paper.prototype.count_collision=function(obj1){
 //collision entre la ligne de fin et pour mettre le background en gris
 Paper.prototype.grey_check = function(obj1,obj2){
 	console.log("collide")
-	obj1.text_position.is_lached=true
+	//obj1.text_position.is_lached=true
 	//pour empêcher d'autres collisions
 	//obj2.body.enable=false
 	//pour laisser le texte descendre
@@ -361,9 +390,23 @@ Paper.prototype.grey_check = function(obj1,obj2){
 	//animation avec rouleaux pour signifier le vainqueur
 }
 
-Paper.prototype.retardateur=function(){
-	game.time.events.add(1000,this.background_winner,this)
+Paper.prototype.check_if_text_position_is_lached = function() {
+if(paper.player.flag_locked && paper.opponent.flag_locked){
+	paper.player.text_position.is_lached=true
+	paper.opponent.text_position.is_lached=true
+}else if(paper.player.flag_touch_the_end && paper.opponent.flag_touch_the_end==false){
+
 }
+};
+
+Paper.prototype.retardateur=function(){
+	game.time.events.add(3000,this.background_winner,this)
+	game.time.events.add(1000,this.text_position_lached,this)
+}
+
+Paper.prototype.text_position_lached = function() {
+this.text_position.is_lached=true	
+};
 
 Paper.prototype.background_winner=function(){
 	background.winner()

@@ -92,8 +92,8 @@ theGame.prototype = {
 		// DECLARATION DES VARIABLES MY GAME
 		menuPaper=new Menu(this.game,G.menuPaperGroup8)
 		background=new draw_background(this.game)
-		paper_opponent = new Paper(this.game,G.opponentPapers4,w4,-h)
-		paper_player = new Paper(this.game,G.playerPapers5,w4*3,-h)
+		paper_opponent = new Paper(this.game,G.opponentPapers4,w4,-h,"opponent")
+		paper_player = new Paper(this.game,G.playerPapers5,w4*3,-h,"player")
 		hud=new Timer(this.game,G.timerGroup0)
 		effect=draweffect(this.game)
 		//TODO changer de groupe et rétablir position y
