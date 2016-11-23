@@ -78,8 +78,8 @@ draw_background = function(game){
 
 	this.cursor_player_particle = game.add.emitter(this.cursor_player.x, this.cursor_player.y, 200)
 	this.cursor_player_particle.makeParticles("particle_player")
-	this.cursor_player_particle.minParticleSpeed.setTo(-300,-300)
-	this.cursor_player_particle.maxParticleSpeed.setTo(400,400)
+	this.cursor_player_particle.minParticleSpeed.setTo(-600,-600)
+	this.cursor_player_particle.maxParticleSpeed.setTo(800,800)
 	this.cursor_player_particle.setAlpha(0.5, .9)
 
 	this.cursor_player_particle.minParticleScale = .5
@@ -92,8 +92,8 @@ draw_background = function(game){
 	this.cursor_opponent_particle_flag=true
 	this.cursor_opponent_particle = game.add.emitter(this.cursor_opponent.x, this.cursor_opponent.y, 200)
 	this.cursor_opponent_particle.makeParticles("particle_opponent")
-	this.cursor_opponent_particle.minParticleSpeed.setTo(-300,-300)
-	this.cursor_opponent_particle.maxParticleSpeed.setTo(400,400)
+	this.cursor_opponent_particle.minParticleSpeed.setTo(-600,-600)
+	this.cursor_opponent_particle.maxParticleSpeed.setTo(800,800)
 	this.cursor_opponent_particle.setAlpha(0.5, .9)
 
 	this.cursor_opponent_particle.minParticleScale = .5

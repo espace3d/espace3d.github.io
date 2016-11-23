@@ -40,11 +40,11 @@
 
 		<script type="text/javascript">
 (function() {
-var ratio_device=window.screen.width/window.screen.height
-var height_applied=1280/ratio_device
+	var ratio_device=window.screen.width/window.screen.height
+		var height_applied=1280/ratio_device
 
-game = new Phaser.Game(1280,height_applied,Phaser.CANVAS,'' )
-game.state.add("Boot",boot);
+		game = new Phaser.Game(1280,height_applied,Phaser.CANVAS,'' )
+		game.state.add("Boot",boot);
 	game.state.add("Preload",preload);
 	game.state.add("GameTitle",gameTitle);
 	game.state.add("TheGame",theGame);

@@ -25,6 +25,9 @@ Paper = function(game,Group,posx,posy,name_character){
 	//texte + line qui descend et indique la position du papier 
 	this.line_position=game.add.sprite(posx,-60,"line_position") 
 	this.line_position.anchor.y=1
+	//couleurs grises
+	this.color_player_gray=0x2f2f2f
+	this.color_opponent_gray=0x565656
 
 	var taille=w*.05
 	var taille_locked=w*.035
@@ -61,7 +64,6 @@ Paper = function(game,Group,posx,posy,name_character){
 	this.text_position.is_lached=false
 
 	//barre inférieure pour tester la collision avec le papier opponent et player
-	//this.check_fall_end=game.add.sprite(0,h*1.375,'test_line')
 	this.check_fall_end=game.add.sprite(posx,h*0.909,'test_line')
 	this.check_fall_end.alpha=0
 	this.check_fall_end.anchor.x=.5
@@ -69,17 +71,6 @@ Paper = function(game,Group,posx,posy,name_character){
 
 	this.events.onInputDown.add(this.stop_move,this)
 	this.events.onInputUp.add(this.move,this)
-
-	//	function stop_move(){
-	//		if (this.isFalling){	
-	//			background.panimTween_shadow.resume()
-	//			background.panimTween.resume()
-	//			background.cursor_player_particle.on=true
-	//			background.cursor_player_particle.y=game.input.y
-	//			this.body.moves=false
-	//		}
-	//	}
-
 
 	this.paper=[] 
 	for (var j = 0; j < nu.paper; j++) {
@@ -150,7 +141,7 @@ Paper.prototype.constructor=object_physics
 //arreter la chute
 Paper.prototype.stop_move=function(){
 	if (this.isFalling){	
-	console.log(background.cursor_player.x, background.cursor_player.alpha, background.cursor_player.scale.x)
+		console.log(background.cursor_player.x, background.cursor_player.alpha, background.cursor_player.scale.x)
 		background.cursor_player.alpha=0
 		background.cursor_player.scale.y=1
 		background.cursor_player.scale.x=1
@@ -183,25 +174,25 @@ Paper.prototype.lock=function(){
 	//animation du texte du player qui change d'échelle
 	background.panimTween_shadow.resume()
 	background.panimTween.resume()
-	this.flash_player()
+	this.flash()
 }
 
-Paper.prototype.flash_player = function() {
-if(this.name_character=="player"){
-	this.tween_text_locked=game.add.tween(background.flash_player).to({alpha:.9},150,Phaser.Easing.Bounce.Out,true,0)
-	this.tween_text_locked.onComplete.add(this.fade_player,this)
-}else{
-	this.tween_text_locked=game.add.tween(background.flash_opponent).to({alpha:.9},150,Phaser.Easing.Bounce.Out,true,0)
-	this.tween_text_locked.onComplete.add(this.fade_opponent,this)
-}
+Paper.prototype.flash = function() {
+	if(this.name_character=="player"){
+		this.tween_text_locked=game.add.tween(background.flash_player).to({alpha:.9},150,Phaser.Easing.Bounce.Out,true,0)
+		this.tween_text_locked.onComplete.add(this.fade_player,this)
+	}else{
+		console.log("this",this);
+		this.tween_text_locked=game.add.tween(background.flash_opponent).to({alpha:.9},150,Phaser.Easing.Bounce.Out,true,0)
+		this.tween_text_locked.onComplete.add(this.fade_opponent,this)
+	}
 }
 
 Paper.prototype.appears_text_lock = function() {
 	this.tween_text_locked=game.add.tween(background.flash_player).to({alpha:.9},150,Phaser.Easing.Bounce.Out,true,0)
-	//game.add.tween(this.text_locked.scale).to({x:2,y:2},500,Phaser.Easing.Bounce.Out,true,0)
-
 	this.tween_text_locked.onComplete.add(this.fade_flash,this)
 }
+
 Paper.prototype.fade_player = function() {
 	game.add.tween(background.flash_player).to({alpha:0},200,Phaser.Easing.Bounce.In,true,0)
 
@@ -252,7 +243,7 @@ Paper.prototype.opponent_collision=function(obj1,obj2){
 	console.log("gfkifjgfj")
 	obj1.body.velocity.y=400 	
 
-	//TODO renseiigner les vrais noms des background
+	//TODO renseigner les vrais noms des background
 	//pour ne pas lancer la function plus de 2x
 	if (!obj2.isTouch){
 		obj2.isTouch=true
@@ -263,7 +254,7 @@ Paper.prototype.opponent_collision=function(obj1,obj2){
 		if (obj1.count_opponent ==background.line_collision_opponent.length){
 			obj1.text_position.is_lached=true
 			//ici mettre l'action lorsque le joueur valide l'action
-			obj1.cursor_opponent_tween(this.time_lock)
+			obj1.cursor_opponent_tween(obj1.time_lock,this)
 			background.cursor_opponent_particle.on
 			background.cursor_opponent.alpha =.8
 			background.cursor_opponent.y = h2 + game.rnd.between(-100,100)
@@ -275,7 +266,7 @@ Paper.prototype.opponent_collision=function(obj1,obj2){
 			background.cursor_palpitant_opponent.y = h2 + game.rnd.between(-100,100)
 			background.cursor_opponent_particle.on
 			var value_tween=game.rnd.between(200,800)
-			this.cursor_opponent_tween(value_tween)
+			obj1.cursor_opponent_tween(value_tween)
 
 
 			//sinon rien
@@ -299,12 +290,10 @@ Paper.prototype.opponent_collision=function(obj1,obj2){
 }
 
 Paper.prototype.cursor_opponent_tween = function(time_tween){
-console.log("value");
-
 	//transition opponent au niveau du curseur
 	this.tween_opponent=game.add.tween(background.cursor_opponent.scale).to({x:3,y:3},time_tween,Phaser.Easing.Linear.None,true,0)
 	this.tween2_opponent=game.add.tween(background.cursor_opponent).to({alpha:.3},time_tween,Phaser.Easing.Linear.None,true,0)
-	this.tween2_opponent.onComplete.add(this.flash)
+	this.tween2_opponent.onComplete.add(this.flash,this)
 
 	if(time_tween < this.time_lock){
 		game.time.events.add(time_tween,this.stop_tween_cursor_opponent,this)
@@ -312,9 +301,10 @@ console.log("value");
 }
 
 Paper.prototype.stop_tween_cursor_opponent = function() {
+	console.log("stoptween");
 	this.tween_opponent.stop()
 	this.tween2_opponent.stop()
-};
+}
 
 //on permet la collision si le flag est à true
 Paper.prototype.update = function() {
@@ -333,7 +323,7 @@ Paper.prototype.fall_line=function(){
 		this.text_position.body.allowGravity=true
 		//this.line_position.body.allowGravity=true
 		if(this.text_position.y<h2){
-		this.text_position.text=Math.round(this.text_position.body.y)
+			this.text_position.text=Math.round(this.text_position.body.y)
 		}else{
 			this.text_position.text="000"
 		}
@@ -368,8 +358,6 @@ Paper.prototype.count_collision=function(obj1){
 		obj1.text_position.is_lached=false
 		//animation pour le vainqueur
 		obj1.retardateur()
-		//obj1.line_position.body.allowGravity=false
-		//obj1.line_position.body.moves=false
 		obj1.text_position.body.moves=false
 		obj1.text_position.body.allowGravity=false
 
@@ -379,24 +367,25 @@ Paper.prototype.count_collision=function(obj1){
 //collision entre la ligne de fin et pour mettre le background en gris
 Paper.prototype.grey_check = function(obj1,obj2){
 	console.log("collide")
-	//obj1.text_position.is_lached=true
-	//pour empêcher d'autres collisions
-	//obj2.body.enable=false
 	//pour laisser le texte descendre
 	obj1.retardateur()
-
-	background.player.filters=[background.grayfiltertop]
-	background.player_top.filters=[background.grayfiltertop]
-	//animation avec rouleaux pour signifier le vainqueur
+	//mise au gris
+	if(obj1.name_character=="player"){
+		background.player.tint=obj1.color_player_gray
+		background.player_top.tint=obj1.color_player_gray
+	}else{
+		background.opponent.tint=obj1.color_opponent_gray
+		background.opponent_top.tint=obj1.color_opponent_gray
+	}
 }
 
 Paper.prototype.check_if_text_position_is_lached = function() {
-if(paper.player.flag_locked && paper.opponent.flag_locked){
-	paper.player.text_position.is_lached=true
-	paper.opponent.text_position.is_lached=true
-}else if(paper.player.flag_touch_the_end && paper.opponent.flag_touch_the_end==false){
+	if(paper.player.flag_locked && paper.opponent.flag_locked){
+		paper.player.text_position.is_lached=true
+		paper.opponent.text_position.is_lached=true
+	}else if(paper.player.flag_touch_the_end && paper.opponent.flag_touch_the_end==false){
 
-}
+	}
 };
 
 Paper.prototype.retardateur=function(){
@@ -405,7 +394,7 @@ Paper.prototype.retardateur=function(){
 }
 
 Paper.prototype.text_position_lached = function() {
-this.text_position.is_lached=true	
+	this.text_position.is_lached=true	
 };
 
 Paper.prototype.background_winner=function(){
