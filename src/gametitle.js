@@ -2,8 +2,12 @@ var gameTitle = function(game){}
 
 gameTitle.prototype = {
 	create: function(){
-		var backgroundGameTitle=drawSprite(0,this.game,"rect",0,0,w,h,0,blueG,1)
-		//var backgroundGameTitle=game.add.sprite(0,0,"panel_roll")
+
+		//var backgroundGameTitle=drawSprite(0,this.game,"rect",0,0,w,h,0,blueG,1)
+		this.backgroundGameTitle=game.add.sprite(0,0,"game_title")
+	
+	
+			//var backgroundGameTitle=game.add.sprite(0,0,"panel_roll")
 
 		//rouleau de papiers qui se déroule
 		var roll_paper_deroll = function(Group,posx,posy,angle,delay_roll_deroll) {
@@ -19,42 +23,42 @@ gameTitle.prototype = {
 					Group.add(this.paper[j][i]) 
 				} 
 			} 
-			//fond qui cache le rouleau et fait croire au déroulement
-			this.cache=game.add.sprite(-200,-10,"rect")
-			this.cache.tint=blueG
-			this.cache.width=w+800
-			this.cache.height=240
-			Group.add(this.cache) 
-
-			//rouleau qui roule
-			this.roll_deroll=game.add.sprite(-200,-10,"roll_deroll")
-			Group.add(this.roll_deroll) 
-			this.roll_tween=game.add.tween(this.roll_deroll).to({x:w+200},500,Phaser.Easing.Linear.None,true,delay_roll_deroll)
-			this.roll_tween2=game.add.tween(this.cache).to({x:w+200},500,Phaser.Easing.Linear.None,true,delay_roll_deroll)
-			Group.x=posx
-			Group.y=posy
-			Group.angle=angle
-			return this
+//			//fond qui cache le rouleau et fait croire au déroulement
+//			this.cache=game.add.sprite(-200,-10,"rect")
+//			this.cache.tint=blueG
+//			this.cache.width=w+800
+//			this.cache.height=240
+//			Group.add(this.cache) 
+//
+//			//rouleau qui roule
+//			this.roll_deroll=game.add.sprite(-200,-10,"roll_deroll")
+//			Group.add(this.roll_deroll) 
+//			this.roll_tween=game.add.tween(this.roll_deroll).to({x:w+200},500,Phaser.Easing.Linear.None,true,delay_roll_deroll)
+//			this.roll_tween2=game.add.tween(this.cache).to({x:w+200},500,Phaser.Easing.Linear.None,true,delay_roll_deroll)
+//			Group.x=posx
+//			Group.y=posy
+//			Group.angle=angle
+//			return this
 		}
 
-		var roll_paper_deroll_group=game.add.group()
-var roll_paper_deroll_group2=game.add.group()
-		var roll_1 = new roll_paper_deroll(roll_paper_deroll_group,-60,h2,0,w+200)
+	//	var roll_paper_deroll_group=game.add.group()
+	//	var roll_paper_deroll_group2=game.add.group()
+	//	var roll_1 = new roll_paper_deroll(roll_paper_deroll_group,-60,h2,0,w+200)
 		//var roll_2 = new roll_paper_deroll(roll_paper_deroll_group2,0,100,20,500)
 
 
-			var play_button = this.game.add.button(w2,h2+290,"play",this.playTheGame,this);
+			var play_button = this.game.add.button(w2,h2+280,"play",this.playTheGame,this);
 			play_button.anchor.setTo(0.5,0.5)
-			this.game.add.tween(play_button.scale).to({x:0.9, y:0.9},450,Phaser.Easing.Sinusoidal.In,true,0,-1,true)
+			this.game.add.tween(play_button.scale).to({x:1.2, y:1.2},450,Phaser.Easing.Sinusoidal.In,true,0,-1,true)
 
-			var rank_button = this.game.add.button(w2,h2+426,"rank",this.playTheGame,this);
+			var rank_button = this.game.add.button(w2,h2+395,"rank",this.playTheGame,this);
 			rank_button.anchor.setTo(0.5,0.5)
 			//this.game.add.tween(rank_button.scale).to({x:0.9, y:0.9},450,Phaser.Easing.Sinusoidal.In,true,0,-1,true)
 
 			//var textTitleGame = this.game.add.bitmapText(w2,h2,'lucky_black','papermania', w*.16) 
-			var textTitleGame = this.game.add.sprite(w2,h2-150,'papermania') 
-			pseudoAnchorX(textTitleGame)
-			pseudoAnchorY(textTitleGame)
+			//var textTitleGame = this.game.add.sprite(w2,h2-150,'papermania') 
+			//pseudoAnchorX(textTitleGame)
+			//pseudoAnchorY(textTitleGame)
 		},
 			playTheGame: function(){
 				this.game.state.start("TheGame");

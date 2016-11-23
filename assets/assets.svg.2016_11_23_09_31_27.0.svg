@@ -66,9 +66,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35000001"
-     inkscape:cx="4801.8655"
-     inkscape:cy="1282.347"
+     inkscape:zoom="0.24748738"
+     inkscape:cx="1010.8766"
+     inkscape:cy="1699.0825"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -95,17 +95,6 @@
      inkscape:label="Calque 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <rect
-       style="opacity:1;fill:#201d1d;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.55200005;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect5142"
-       width="1280"
-       height="1980"
-       x="4500"
-       y="-927.6377"
-       rx="3"
-       ry="3"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
     <rect
        style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.55200005;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect6699"
@@ -6251,28 +6240,25 @@
        height="1980"
        width="1280"
        id="rect5170"
-       style="opacity:1;fill:#3b2c27;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.55200005;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
+       style="opacity:1;fill:#3b2c27;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.55200005;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     <text
        inkscape:export-ydpi="89.96138"
        inkscape:export-xdpi="89.96138"
        sodipodi:linespacing="125%"
        id="text5172"
-       y="68.042511"
-       x="6269.4419"
-       style="font-style:normal;font-weight:normal;font-size:175.07923889px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#f9f9f9;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
+       y="106.91637"
+       x="4676.4209"
+       style="font-style:normal;font-weight:normal;font-size:149.50447083px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#f9f9f9;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       transform="scale(1.0246807,0.97591378)"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Little Days Alt';-inkscape-font-specification:'Little Days Alt';fill:#f9f9f9;fill-opacity:1"
-         y="68.042511"
-         x="6269.4419"
+         y="106.91637"
+         x="4676.4209"
          id="tspan5174"
          sodipodi:role="line">papermania</tspan></text>
     <g
        id="g5234"
-       transform="translate(-8.5921726,-122)"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90">
+       transform="translate(-8.5921726,0)">
       <path
          style="opacity:1;fill:#f9f9f9;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.55200005;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="m 5157.6166,-107.01535 0,5.10547 c 0,-0.41759 0.3385,-0.75391 0.7598,-0.75391 l 1.4785,0 c 0.4212,0 0.7617,0.33632 0.7617,0.75391 l 0,8.49218 c 0,0.41759 -0.3405,0.75391 -0.7617,0.75391 l -1.4785,0 c -0.4213,0 -0.7598,-0.33632 -0.7598,-0.75391 l 0,11.50782 c 0,-0.41759 0.3385,-0.75391 0.7598,-0.75391 l 1.4785,0 c 0.4212,0 0.7617,0.33632 0.7617,0.75391 l 0,8.49218 c 0,0.41759 -0.3405,0.75391 -0.7617,0.75391 l -1.4785,0 c -0.4213,0 -0.7598,-0.33632 -0.7598,-0.75391 l 0,11.50782 c 0,-0.41759 0.3385,-0.75391 0.7598,-0.75391 l 1.4785,0 c 0.4212,0 0.7617,0.33632 0.7617,0.75391 l 0,8.49218 c 0,0.41759 -0.3405,0.75391 -0.7617,0.75391 l -1.4785,0 c -0.4213,0 -0.7598,-0.33632 -0.7598,-0.75391 l 0,11.50782 c 0,-0.41759 0.3385,-0.75391 0.7598,-0.75391 l 1.4785,0 c 0.4212,0 0.7617,0.33632 0.7617,0.75391 l 0,8.49218 c 0,0.41759 -0.3405,0.75391 -0.7617,0.75391 l -1.4785,0 c -0.4213,0 -0.7598,-0.33632 -0.7598,-0.75391 l 0,11.50782 c 0,-0.41759 0.3385,-0.75391 0.7598,-0.75391 l 1.4785,0 c 0.4212,0 0.7617,0.33632 0.7617,0.75391 l 0,8.49218 c 0,0.41759 -0.3405,0.75391 -0.7617,0.75391 l -1.4785,0 c -0.4213,0 -0.7598,-0.33632 -0.7598,-0.75391 l 0,6.40235 100,0 0,-6.40235 c 0,0.41759 -0.3405,0.75391 -0.7617,0.75391 l -1.4785,0 c -0.4213,0 -0.7598,-0.33632 -0.7598,-0.75391 l 0,-8.49218 c 0,-0.41759 0.3385,-0.75391 0.7598,-0.75391 l 1.4785,0 c 0.4212,0 0.7617,0.33632 0.7617,0.75391 l 0,-11.50782 c 0,0.41759 -0.3405,0.75391 -0.7617,0.75391 l -1.4785,0 c -0.4213,0 -0.7598,-0.33632 -0.7598,-0.75391 l 0,-8.49218 c 0,-0.41759 0.3385,-0.75391 0.7598,-0.75391 l 1.4785,0 c 0.4212,0 0.7617,0.33632 0.7617,0.75391 l 0,-11.50782 c 0,0.41759 -0.3405,0.75391 -0.7617,0.75391 l -1.4785,0 c -0.4213,0 -0.7598,-0.33632 -0.7598,-0.75391 l 0,-8.49218 c 0,-0.41759 0.3385,-0.75391 0.7598,-0.75391 l 1.4785,0 c 0.4212,0 0.7617,0.33632 0.7617,0.75391 l 0,-11.50782 c 0,0.41759 -0.3405,0.75391 -0.7617,0.75391 l -1.4785,0 c -0.4213,0 -0.7598,-0.33632 -0.7598,-0.75391 l 0,-8.49218 c 0,-0.41759 0.3385,-0.75391 0.7598,-0.75391 l 1.4785,0 c 0.4212,0 0.7617,0.33632 0.7617,0.75391 l 0,-11.50782 c 0,0.41759 -0.3405,0.75391 -0.7617,0.75391 l -1.4785,0 c -0.4213,0 -0.7598,-0.33632 -0.7598,-0.75391 l 0,-8.49218 c 0,-0.41759 0.3385,-0.75391 0.7598,-0.75391 l 1.4785,0 c 0.4212,0 0.7617,0.33632 0.7617,0.75391 l 0,-5.10547 -100,0 z"
@@ -6346,25 +6332,12 @@
          cy="-104.86198"
          rx="20.513325"
          ry="4.4932356" />
-      <g
-         transform="matrix(0.07955124,0,0,0.07072716,5082.2038,-62.49664)"
-         id="g5130"
-         inkscape:export-xdpi="189"
-         inkscape:export-ydpi="189"
-         style="fill:#ff6e71;fill-opacity:1">
-        <path
-           style="fill:#ff6e71;fill-opacity:1"
-           inkscape:connector-curvature="0"
-           d="m 316.722,29.761 c 66.852,0 121.053,54.202 121.053,121.041 0,110.478 -218.893,257.212 -218.893,257.212 C 218.882,408.014 0,266.569 0,150.801 0,67.584 54.202,29.761 121.041,29.761 c 40.262,0 75.827,19.745 97.841,49.976 22.017,-30.231 57.588,-49.976 97.84,-49.976 z"
-           id="path5132" />
-      </g>
     </g>
     <g
        id="g5245"
-       transform="matrix(1.4241449,0,0,1.4241449,-2137.8919,-285.15104)"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       style="fill:#e23030;fill-opacity:1">
+       transform="translate(29.640829,0)"
+       inkscape:export-xdpi="88.982338"
+       inkscape:export-ydpi="88.982338">
       <text
          inkscape:export-ydpi="88.982338"
          inkscape:export-xdpi="88.982338"
@@ -6372,9 +6345,9 @@
          id="text5176"
          y="436.16949"
          x="5080.4863"
-         style="font-style:normal;font-weight:normal;font-size:52.42310333px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#e23030;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="font-style:normal;font-weight:normal;font-size:52.42310333px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff6e71;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#e23030;fill-opacity:1"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#ff6e71;fill-opacity:1"
            y="436.16949"
            x="5080.4863"
            id="tspan5178"
@@ -6384,9 +6357,9 @@
          id="g5203"
          inkscape:export-xdpi="88.982338"
          inkscape:export-ydpi="88.982338"
-         style="fill:#e23030;fill-opacity:1">
+         style="fill:#ff6e71;fill-opacity:1">
         <path
-           style="fill:#e23030;fill-opacity:1"
+           style="fill:#ff6e71;fill-opacity:1"
            inkscape:connector-curvature="0"
            d="m 316.722,29.761 c 66.852,0 121.053,54.202 121.053,121.041 0,110.478 -218.893,257.212 -218.893,257.212 C 218.882,408.014 0,266.569 0,150.801 0,67.584 54.202,29.761 121.041,29.761 c 40.262,0 75.827,19.745 97.841,49.976 22.017,-30.231 57.588,-49.976 97.84,-49.976 z"
            id="path5205" />
@@ -6394,13 +6367,12 @@
     </g>
     <g
        id="g5252"
-       transform="matrix(1.4292839,0,0,1.4292839,-2163.703,-335.63795)"
+       transform="translate(29.956418,0)"
        inkscape:export-xdpi="90.044724"
-       inkscape:export-ydpi="90.044724"
-       style="fill:#e23030;fill-opacity:1">
+       inkscape:export-ydpi="90.044724">
       <text
          xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:46.20757294px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#e23030;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="font-style:normal;font-weight:normal;font-size:46.20757294px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff6e71;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          x="5081.5298"
          y="548.15576"
          id="text5180"
@@ -6411,9 +6383,9 @@
            id="tspan5182"
            x="5081.5298"
            y="548.15576"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#e23030;fill-opacity:1">rank</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#ff6e71;fill-opacity:1">rank</tspan></text>
       <g
-         style="fill:#e23030;fill-opacity:1"
+         style="fill:#ff6e71;fill-opacity:1"
          inkscape:export-ydpi="90.452461"
          inkscape:export-xdpi="90.452461"
          id="g5208"
@@ -6422,7 +6394,7 @@
            id="path5210"
            d="m 316.722,29.761 c 66.852,0 121.053,54.202 121.053,121.041 0,110.478 -218.893,257.212 -218.893,257.212 C 218.882,408.014 0,266.569 0,150.801 0,67.584 54.202,29.761 121.041,29.761 c 40.262,0 75.827,19.745 97.841,49.976 22.017,-30.231 57.588,-49.976 97.84,-49.976 z"
            inkscape:connector-curvature="0"
-           style="fill:#e23030;fill-opacity:1" />
+           style="fill:#ff6e71;fill-opacity:1" />
       </g>
     </g>
     <circle
@@ -6450,37 +6422,5 @@
        y="-1106.5248"
        inkscape:export-xdpi="43.856129"
        inkscape:export-ydpi="43.856129" />
-    <g
-       inkscape:export-ydpi="90"
-       inkscape:export-xdpi="90"
-       transform="matrix(1.4241449,0,0,1.4241449,-3234.7287,-250.86494)"
-       id="g5112"
-       style="fill:#ffffff">
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:93.03289032px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         x="5597.208"
-         y="252.69287"
-         id="text5114"
-         sodipodi:linespacing="125%"
-         inkscape:export-xdpi="88.982338"
-         inkscape:export-ydpi="88.982338"><tspan
-           sodipodi:role="line"
-           id="tspan5116"
-           x="5597.208"
-           y="252.69287"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#ffffff;fill-opacity:1">papermania</tspan></text>
-    </g>
-    <rect
-       style="opacity:1;fill:#000000;fill-opacity:0;fill-rule:nonzero;stroke:none;stroke-width:1.55200005;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect5140"
-       width="1280"
-       height="1980"
-       x="4500"
-       y="-927.6377"
-       rx="3"
-       ry="3"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
   </g>
 </svg>
