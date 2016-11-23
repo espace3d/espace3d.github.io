@@ -5,7 +5,7 @@ gameTitle.prototype = {
 
 		//var backgroundGameTitle=drawSprite(0,this.game,"rect",0,0,w,h,0,blueG,1)
 		this.backgroundGameTitle=game.add.sprite(0,0,"game_title")
-	
+		this.backgroundGameTitle.height=h	
 	
 			//var backgroundGameTitle=game.add.sprite(0,0,"panel_roll")
 
@@ -47,11 +47,11 @@ gameTitle.prototype = {
 		//var roll_2 = new roll_paper_deroll(roll_paper_deroll_group2,0,100,20,500)
 
 
-			var play_button = this.game.add.button(w2,h2+280,"play",this.playTheGame,this);
+			var play_button = this.game.add.button(w2,h2+245,"play",this.playTheGame,this);
 			play_button.anchor.setTo(0.5,0.5)
 			this.game.add.tween(play_button.scale).to({x:1.2, y:1.2},450,Phaser.Easing.Sinusoidal.In,true,0,-1,true)
 
-			var rank_button = this.game.add.button(w2,h2+395,"rank",this.playTheGame,this);
+			var rank_button = this.game.add.button(w2,h2+355,"rank",this.playTheGame,this);
 			rank_button.anchor.setTo(0.5,0.5)
 			//this.game.add.tween(rank_button.scale).to({x:0.9, y:0.9},450,Phaser.Easing.Sinusoidal.In,true,0,-1,true)
 

@@ -8,7 +8,7 @@ var P = P || {}
 
 Paper = function(game,Group,posx,posy,name_character){
 	this.name_character=name_character
-	this.speed=1200
+	this.speed=1800
 	this.grey=false
 	this.flag=true
 	this.flag_wait_to_design_winner=false
@@ -61,7 +61,7 @@ Paper = function(game,Group,posx,posy,name_character){
 	this.text_position.is_lached=false
 
 	//barre inférieure pour tester la collision avec le papier opponent et player
-	this.check_fall_end=game.add.sprite(posx,h*0.909,'test_line')
+	this.check_fall_end=game.add.sprite(posx,1800,'test_line')
 	this.check_fall_end.alpha=0
 	this.check_fall_end.anchor.x=.5
 	game.physics.arcade.enable(this.check_fall_end)
@@ -198,6 +198,7 @@ Paper.prototype.fade_player = function() {
 
 Paper.prototype.fade_opponent = function() {
 	game.add.tween(background.flash_opponent).to({alpha:0},200,Phaser.Easing.Bounce.In,true,0)
+	background.cursor_opponent.visible=false
 }
 
 //reprendre la chute
@@ -256,7 +257,6 @@ Paper.prototype.opponent_collision=function(obj1,obj2){
 			//ici si le temps est validé 
 		} else if(obj1.time_chute[obj1.current_point] < obj1.max_time_chute && obj1.current_point!=1 ){ 
 			obj1.cursor_opponent_tween(obj1.time_chute[obj1.current_point])
-			console.log("value222");
 			background.cursor_opponent_particle.on=true
 			background.cursor_opponent.alpha =.8
 			background.cursor_opponent.y = h2 + game.rnd.between(-100,100)
