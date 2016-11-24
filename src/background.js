@@ -36,8 +36,8 @@ draw_background = function(game){
 	this.winner_flag=true
 
 	//gray filters
-	this.grayfiltertop = game.add.filter('Gray') ; this.grayfiltertop.gray=1
-	this.grayfilternull = game.add.filter('Gray') ; this.grayfilternull.gray=0
+	//this.grayfiltertop = game.add.filter('Gray') ; this.grayfiltertop.gray=1
+	//this.grayfilternull = game.add.filter('Gray') ; this.grayfilternull.gray=0
 
 
 
