@@ -61,7 +61,8 @@ Paper = function(game,Group,posx,posy,name_character){
 	this.text_position.is_lached=false
 
 	//barre inférieure pour tester la collision avec le papier opponent et player
-	this.check_fall_end=game.add.sprite(posx,h_end,'test_line')
+	this.pos_end=this.height+h2
+	this.check_fall_end=game.add.sprite(posx,this.pos_end,'test_line')
 	this.check_fall_end.alpha=1
 	this.check_fall_end.anchor.x=.5
 	game.physics.arcade.enable(this.check_fall_end)
