@@ -70,7 +70,7 @@ draw_background = function(game){
 
 	this.cursor_palpitant=drawSprite(this.g1,game,"cursor_palpitant",w4*3,h2-100,w*.05,w*.05,0.5,0,.4)
 	this.cursor_palpitant.alpha=0
-	this.cursor_palpitant_time=150
+	this.cursor_palpitant_time=250
 
 	this.cursor_palpitant_opponent=drawSprite(this.g1,game,"cursor_palpitant",w4,h2-100,w*.05,w*.05,0.5,0,.4)
 	this.cursor_palpitant_opponent.alpha=0
