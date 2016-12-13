@@ -27,6 +27,7 @@ draw_background = function(game){
 	Phaser.Sprite.call(this,game,0,0,'back')
 	this.height=h
 	//à 0 pour ne pas le voir au début
+	this.alpha=0
 	this.g8.add(this)
 
 	//pour permettre ou non la FERMETURE des PANNEAUX

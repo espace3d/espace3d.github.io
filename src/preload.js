@@ -14,9 +14,13 @@ preload.prototype = {
 		this.game.load.spritesheet("sprite_paper","assets/paper.png",210,210,8);
 
 		//script
-		this.game.load.script('gray', 'https://cdn.rawgit.com/photonstorm/phaser/master/filters/Gray.js')
+		//this.game.load.script('gray', 'https://cdn.rawgit.com/photonstorm/phaser/master/filters/Gray.js')
 
 		//images
+		this.game.load.image("roll_turn_faster","assets/roll_turn_faster.png");
+		this.game.load.image("repere","assets/repere.png");
+		this.game.load.image("button_paper_select1","assets/button_paper_select1.png");
+		this.game.load.image("roll_paper_menu_select","assets/roll_paper_menu_select.png");
 		this.game.load.image("game_title","assets/game_title.png");
 		this.game.load.image("gametitle","assets/gametitle.png");
 		this.game.load.image("line","assets/line.png");

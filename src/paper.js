@@ -6,7 +6,7 @@
 var P = P || {}
 
 
-Paper = function(game,Group,posx,posy,name_character){
+Paper = function(game,group,posx,posy,name_character){
 	this.name_character=name_character
 	this.speed=1800
 	this.grey=false
@@ -14,26 +14,31 @@ Paper = function(game,Group,posx,posy,name_character){
 	this.flag_wait_to_design_winner=false
 	this.flag_winner=false
 	this.flag_flash=true
+	this.group=group
 	this.flash_grey=true
 	//temps pour que le curseur soit complétement allongé et permettre de stopper les papiers pour de bon
 	this.time_lock=950
 	this.count=0
 	this.count_opponent=0
 	//contact général qui englobe les papiers
-	object_physics.call(this,game,Group,posx-dim.paper*.5,posy,"rect_invisible",this.speed)
+	object_physics.call(this,game,this.group,0,0,"rect_invisible",this.speed)
+	this.anchor.x=.5
+	this.anchor.y=.5
+	//this.group.pivot.x=this.width*.5
 	this.isOutOfMiddleTable=false
 	this.inputEnabled=true
 	this.isFalling=false
-
+	this.tint=red
 	//texte + line qui descend et indique la position du papier 
-	this.line_position=game.add.sprite(posx,-60,"line_position") 
+	this.line_position=game.add.sprite(0,-60,"line_position") 
 	this.line_position.anchor.y=1
+	this.line_position.anchor.x=.5
 	//couleurs grises
 	this.color_player_gray=0x2f2f2f
 	this.color_opponent_gray=0x565656
 
 	var taille=w*.05
-	this.text_position = game.add.bitmapText(posx,0,'lucky','0', taille) 
+	this.text_position = game.add.bitmapText(0,0,'lucky','0', taille) 
 	this.text_position.visible=false
 	this.text_position.anchor.x =.5
 	this.text_position.anchor.y =.5
@@ -44,7 +49,7 @@ Paper = function(game,Group,posx,posy,name_character){
 	//this.text_position.body.velocity.y=this.speed
 	//this.text_position.body.moves=false
 
-	//TODO mettre line_position dans le même groupe que text_position
+	//TODO mettre line_position dans le même this.groupe que text_position
 	//paramètres de gravité sur text_position
 	//this.line_position.body.gravity.y=800
 	//this.line_position.body.bounce.y=.4
@@ -53,8 +58,11 @@ Paper = function(game,Group,posx,posy,name_character){
 	this.text_position.body.bounce.y=.4
 	this.text_position.body.allowGravity=false
 
-	Group.add(this.text_position) 
-	Group.add(this.line_position) 
+	this.tween_reset_scale=[]
+	this.tween_scale_effect=[]
+
+	this.group.add(this.text_position) 
+	this.group.add(this.line_position) 
 
 	//this.text_position.addChild(this.line_position)
 	//drapeau qui interagit avec check_fall_end et action_stop_paper  
@@ -62,7 +70,7 @@ Paper = function(game,Group,posx,posy,name_character){
 
 	//barre inférieure pour tester la collision avec le papier opponent et player
 	this.pos_end=this.height+h2
-	this.check_fall_end=game.add.sprite(posx,this.pos_end,'test_line')
+	this.check_fall_end=game.add.sprite(0,this.pos_end,'test_line')
 	this.check_fall_end.alpha=0
 	this.check_fall_end.anchor.x=.5
 	game.physics.arcade.enable(this.check_fall_end)
@@ -77,18 +85,17 @@ Paper = function(game,Group,posx,posy,name_character){
 			this.paper[j][i] = game.add.sprite(0,0,"sprite_paper")
 			this.paper[j][i].tint=black
 
-			this.paper[j][i].alpha=.2
+			this.paper[j][i].alpha=.4
 			this.paper[j][i].fwd = game.add.sprite(0,0,"sprite_paper")
 			//this.paper[j][i].fwd.animations.add('Play')
 			//this.paper[j][i].fwd.animations.play('Play',1,true)
+			this.paper[j][i].fwd.anchor.x = .5
 			this.paper[j][i].fwd.x = 0
-			this.paper[j][i].fwd.y =j*dim.paper 
-			this.paper[j][i].x = 2
-			this.paper[j][i].y =j*dim.paper 
-
-			// ajout des childs au parent >>this.main
-			Group.add(this.paper[j][i]) 
-			Group.add(this.paper[j][i].fwd) 
+			this.paper[j][i].fwd.y =-840+j*dim.paper 
+			this.paper[j][i].anchor.x = .5
+			this.paper[j][i].x = 9
+			this.paper[j][i].y =-840+j*dim.paper 
+			this.paper[j][i].fwd.alpha=1
 		} 
 	} 
 
@@ -132,13 +139,22 @@ Paper = function(game,Group,posx,posy,name_character){
 			this.current_point = 1
 		}
 	}
+	this.group.x=posx
+	this.group.y=posy
+	this.group.pivot.y=840
+
+	this.group.pivot.x=0
+
+	this.cercle=game.add.sprite(0,0,'particle_opponent')
 }
 Paper.prototype = Object.create(object_physics.prototype) 
 Paper.prototype.constructor=object_physics
 
+
 //arreter la chute
 Paper.prototype.stop_move=function(){
 	if (this.isFalling){	
+		this.scale_effect()
 		background.cursor_player.alpha=0
 		background.cursor_player.scale.y=1
 		background.cursor_player.scale.x=1
@@ -150,6 +166,21 @@ Paper.prototype.stop_move=function(){
 		this.body.moves=false
 		this.expand_cursor_lock()
 	}
+}
+
+Paper.prototype.scale_effect = function() {
+	console.log("scale_effect")
+	this.tween_scale_effect=game.add.tween(this).to({x:this.x,y:this.y+9},100,Phaser.Easing.Linear.None,true,0)
+
+	//	console.log("scale_effect")
+	//		for (var i = 0; i < nu.paper; i++) {
+	//	this.tween_scale_effect[i]=game.add.tween(this.paper[i][0].fwd.scale).to({x:.96,y:.96},100,Phaser.Easing.Linear.None,true,0)
+	this.tween_scale_effect.onComplete.add(this.reset_scale,this)
+	//}
+}
+
+Paper.prototype.reset_scale = function() {
+	game.add.tween(this).to({x:this.x,y:this.y-9},100,Phaser.Easing.Elastic.In,true,0)
 }
 
 //étendre le curseyr de lock
@@ -362,23 +393,23 @@ Paper.prototype.count_collision=function(obj1){
 
 //collision entre la ligne de fin et pour mettre le background en gris
 Paper.prototype.grey_check = function(obj1,obj2){
-		console.log("collide")
-		//pour laisser le texte descendre
-		//mise au gris
-		if(obj1.name_character=="player"){
-			background.player.tint=obj1.color_player_gray
-			background.player_top.tint=obj1.color_player_gray
-			game.time.events.add(100,function(){paper_player.text_position.is_lached=true})
-			obj1.grey=true
-			//game.time.events.add(8000,obj1.retardateur,obj1)
-		}else{
-			background.opponent.tint=obj1.color_opponent_gray
-			background.opponent_top.tint=obj1.color_opponent_gray
-			game.time.events.add(100,function(){paper_opponent.text_position.is_lached=true})
-			paper_opponent.grey=true
-			//game.time.events.add(8000,paper_opponent.retardateur)
-		}
-	
+	console.log("collide")
+	//pour laisser le texte descendre
+	//mise au gris
+	if(obj1.name_character=="player"){
+		background.player.tint=obj1.color_player_gray
+		background.player_top.tint=obj1.color_player_gray
+		game.time.events.add(100,function(){paper_player.text_position.is_lached=true})
+		obj1.grey=true
+		//game.time.events.add(8000,obj1.retardateur,obj1)
+	}else{
+		background.opponent.tint=obj1.color_opponent_gray
+		background.opponent_top.tint=obj1.color_opponent_gray
+		game.time.events.add(100,function(){paper_opponent.text_position.is_lached=true})
+		paper_opponent.grey=true
+		//game.time.events.add(8000,paper_opponent.retardateur)
+	}
+
 }
 
 Paper.prototype.retardateur=function(){

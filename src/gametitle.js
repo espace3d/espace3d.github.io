@@ -2,8 +2,7 @@ var gameTitle = function(game){}
 
 gameTitle.prototype = {
 	create: function(){
-
-		//var backgroundGameTitle=drawSprite(0,this.game,"rect",0,0,w,h,0,blueG,1)
+		this.flag=true
 		this.backgroundGameTitle=game.add.sprite(0,0,"game_title")
 		this.backgroundGameTitle.height=h	
 	
@@ -23,6 +22,7 @@ gameTitle.prototype = {
 					Group.add(this.paper[j][i]) 
 				} 
 			} 
+
 //			//fond qui cache le rouleau et fait croire au déroulement
 //			this.cache=game.add.sprite(-200,-10,"rect")
 //			this.cache.tint=blueG
@@ -46,10 +46,9 @@ gameTitle.prototype = {
 	//	var roll_1 = new roll_paper_deroll(roll_paper_deroll_group,-60,h2,0,w+200)
 		//var roll_2 = new roll_paper_deroll(roll_paper_deroll_group2,0,100,20,500)
 
-
-			var play_button = this.game.add.button(w2,h2+245,"play",this.playTheGame,this);
-			play_button.anchor.setTo(0.5,0.5)
-			this.game.add.tween(play_button.scale).to({x:1.2, y:1.2},450,Phaser.Easing.Sinusoidal.In,true,0,-1,true)
+			this.play_button = this.game.add.button(w2,h2+245,"play",this.playTheGame,this);
+			this.play_button.anchor.setTo(0.5,0.5)
+			this.game.add.tween(this.play_button.scale).to({x:1.2, y:1.2},450,Phaser.Easing.Sinusoidal.In,true,0,-1,true)
 
 			var rank_button = this.game.add.button(w2,h2+355,"rank",this.playTheGame,this);
 			rank_button.anchor.setTo(0.5,0.5)
@@ -59,8 +58,13 @@ gameTitle.prototype = {
 			//var textTitleGame = this.game.add.sprite(w2,h2-150,'papermania') 
 			//pseudoAnchorX(textTitleGame)
 			//pseudoAnchorY(textTitleGame)
-		},
-			playTheGame: function(){
-				this.game.state.start("TheGame");
-			}
 	}
+}
+
+gameTitle.prototype.playTheGame=function(){
+	if (this.flag) {
+		this.flag=false
+		this.game.state.start("TheGame");
+
+	}
+}

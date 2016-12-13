@@ -37,7 +37,7 @@ var blueG=0xCFC8B5
 //var blue=0xC09D7D//rouge et bleu
 //var blue=0xACCFD1
 //var rose=0xE87F79
-
+var color_menu=0x201D1D
 
 
 //essai 
