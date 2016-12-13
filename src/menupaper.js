@@ -16,7 +16,7 @@ Menu = function(game,Group,id){
 	this.id=id
 	this.fond=game.add.sprite(0,0,'menu_back')
 	this.fond.alpha=0
-	this.fond.height=height_applied
+	this.fond.height=h
 	this.Group.add(this.fond)
 	this.Group.add(this)
 	this.sub_group_coupons=game.add.group()
