@@ -9,6 +9,7 @@ var M = M || {}
 Menu = function(game,Group,id){
 
 	Phaser.Sprite.call(this,game,0,0,'menu_back')
+	this.height=h
 	this.alpha=1
 	this.Group=Group
 
