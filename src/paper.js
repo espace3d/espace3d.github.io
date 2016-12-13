@@ -58,8 +58,6 @@ Paper = function(game,group,posx,posy,name_character){
 	this.text_position.body.bounce.y=.4
 	this.text_position.body.allowGravity=false
 
-	this.tween_reset_scale=[]
-	this.tween_scale_effect=[]
 
 	this.group.add(this.text_position) 
 	this.group.add(this.line_position) 
@@ -145,7 +143,6 @@ Paper = function(game,group,posx,posy,name_character){
 
 	this.group.pivot.x=0
 
-	this.cercle=game.add.sprite(0,0,'particle_opponent')
 }
 Paper.prototype = Object.create(object_physics.prototype) 
 Paper.prototype.constructor=object_physics
@@ -154,7 +151,6 @@ Paper.prototype.constructor=object_physics
 //arreter la chute
 Paper.prototype.stop_move=function(){
 	if (this.isFalling){	
-		this.scale_effect()
 		background.cursor_player.alpha=0
 		background.cursor_player.scale.y=1
 		background.cursor_player.scale.x=1
@@ -168,20 +164,6 @@ Paper.prototype.stop_move=function(){
 	}
 }
 
-Paper.prototype.scale_effect = function() {
-	console.log("scale_effect")
-	this.tween_scale_effect=game.add.tween(this).to({x:this.x,y:this.y+9},100,Phaser.Easing.Linear.None,true,0)
-
-	//	console.log("scale_effect")
-	//		for (var i = 0; i < nu.paper; i++) {
-	//	this.tween_scale_effect[i]=game.add.tween(this.paper[i][0].fwd.scale).to({x:.96,y:.96},100,Phaser.Easing.Linear.None,true,0)
-	this.tween_scale_effect.onComplete.add(this.reset_scale,this)
-	//}
-}
-
-Paper.prototype.reset_scale = function() {
-	game.add.tween(this).to({x:this.x,y:this.y-9},100,Phaser.Easing.Elastic.In,true,0)
-}
 
 //étendre le curseyr de lock
 Paper.prototype.expand_cursor_lock=function(){

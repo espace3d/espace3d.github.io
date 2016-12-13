@@ -35,15 +35,16 @@ Menu = function(game,Group,id){
 	for (var i = 0; i < this.row; i++) {
 		//icone grises
 		this.button_paper_select[i] = game.add.sprite(0,0,'button_paper_select1') 
-		this.button_paper_select[i].x = this.posx-110
+		this.button_paper_select[i].x = this.posx-160
 		this.button_paper_select[i].y = this.posy+310+i*this.distance_in_height_between_button
 		this.button_paper_select[i].visible = false
 		this.button_paper_select[i].alpha = 0
+		//this.button_paper_select = this.game.add.button(w2,h2+245,"play",this.playTheGame,this);
 
 
 		//icone
 		this.button_paper_select[i].main = game.add.sprite(0,0,'button_paper_select1') 
-		this.button_paper_select[i].main.x = this.posx-110
+		this.button_paper_select[i].main.x = this.posx-160
 		this.button_paper_select[i].main.y =this.posy+310+i*this.distance_in_height_between_button
 		this.button_paper_select[i].main.visible = false 
 		this.button_paper_select[i].main.alpha = 0 
@@ -61,6 +62,20 @@ Menu = function(game,Group,id){
 	Group.add(this.button_play)
 
 	//coupons de papiers sous le rouleau
+	this.paper_gray=[]
+	for (var i = 0;i < nu.paper; i++) {
+		this.paper_gray[i]=game.add.sprite(this.posx,this.posy,'sprite_paper_gray')
+		//this.paper_gray[i].x=this.posx+105
+		//this.paper_gray[i].y=this.posy+550+i*100	
+		this.paper_gray[i].x=this.posx-50
+		this.paper_gray[i].y=this.posy-150+i*100	
+		//this.paper_gray[i].y=this.posy+550+i*100	
+		this.paper_gray[i].width=100
+		this.paper_gray[i].height=100
+		this.sub_group_coupons.add(this.paper_gray[i])
+	}
+	this.paper_gray[7].frame=3
+
 	this.paper=[]
 	for (var i = 0;i < nu.paper; i++) {
 		this.paper[i]=game.add.sprite(this.posx,this.posy,'sprite_paper')
@@ -74,6 +89,7 @@ Menu = function(game,Group,id){
 		this.sub_group_coupons.add(this.paper[i])
 	}
 	this.paper[7].frame=3
+	this.paper[7].alpha=.2
 	this.sub_group.add(this.sub_group_coupons)
 
 	//masque pour cacher les papiers pedant la chute
@@ -126,8 +142,8 @@ Menu.prototype = Object.create(Phaser.Sprite.prototype)
 Menu.prototype.constructor = Menu
 
 Menu.prototype.deroll_paper = function() {
-	this.tween_agite_roll=game.add.tween(this.roll_paper_turn_faster).to({alpha:1},500,Phaser.Easing.Linear.None,true,0,-1)
-	this.tween_agite_roll.yoyo(true, 500)
+	this.tween_agite_roll=game.add.tween(this.roll_paper_turn_faster).to({alpha:1},100,Phaser.Easing.Linear.None,true,0,-1)
+	this.tween_agite_roll.yoyo(true, 100)
 	this.tween_fall_paper=game.add.tween(this.sub_group_coupons).to({x:0,y:this.posy+700},1200,Phaser.Easing.Bounce.Out,true,0)
 	this.tween_fall_paper.onComplete.add(this.stop_agite_roll,this)
 }
@@ -145,7 +161,7 @@ Menu.prototype.closepanel=function(){
 }
 
 Menu.prototype.move_roll_paper = function() {
-	this.tween_move_roll_paper=game.add.tween(this.sub_group).to({x:105,y:this.posy},500,Phaser.Easing.Linear.None,true,0)
+	this.tween_move_roll_paper=game.add.tween(this.sub_group).to({x:105,y:this.posy},100,Phaser.Easing.Linear.None,true,0)
 	this.tween_move_roll_paper.onComplete.add(this.show_button_if_player_chooce,this)
 }
 

@@ -11,6 +11,7 @@ preload.prototype = {
 		//spritesheet
 		this.game.load.spritesheet("numbers","assets/numbers.png",100,100);
 		this.game.load.spritesheet("iconpaper","assets/iconpaper.png",65,76,1);
+		this.game.load.spritesheet("sprite_paper_gray","assets/paper_gray.png",210,210,8);
 		this.game.load.spritesheet("sprite_paper","assets/paper.png",210,210,8);
 
 		//script
