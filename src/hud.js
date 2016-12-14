@@ -121,7 +121,8 @@ Timer.prototype.looser=function(){
 	background.border_opponent_inferieur.tint=white
 	this.tween4=game.add.tween(background.border_opponent_inferieur).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,200)
 	this.tween4.onComplete.add(this.retardateur1,this)
-
+menuPaper_opponent.move_roll_paper()
+menuPaper.anim_repere()
 }
 
 //player choisi
@@ -147,7 +148,8 @@ Timer.prototype.winner=function(){
 	background.border_player_inferieur.tint=white
 	this.tween4=game.add.tween(background.border_player_inferieur).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,200)
 	this.tween4.onComplete.add(this.retardateur1,this)
-
+menuPaper.move_roll_paper()
+menuPaper_opponent.anim_repere()
 }
 //retardateur1
 Timer.prototype.retardateur1=function(){

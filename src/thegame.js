@@ -33,7 +33,7 @@ theGame.prototype = {
 		//group null sert pour cacher les éléments du canevas original
 
 		groupnull = this.game.add.group();
-groupnull.alpha=.1
+		groupnull.alpha=0
 
 		// DECLARATION DES VARIABLES ( canevas initial ) 
 		number = Math.floor(Math.random()*10);

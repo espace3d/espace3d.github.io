@@ -8,21 +8,17 @@ Menu = function(game,Group,id,posx,posy){
 	this.posy=posy
 	this.Group=Group
 	this.id=id
-
-	Phaser.Sprite.call(this,game,this.posx,this.posy,'heart')
-	//this.height=h
-	//this.alpha=0
-	this.x=this.posx-175
-	this.y=this.posy+140
-
-	//opponent ou player
-	this.Group.add(this)
 	this.sub_group_coupons=game.add.group()
 	this.sub_group=game.add.group()
-
-	//this.distance_in_height_between_button=10
 	this.distance_in_height_between_button=155
 	this.row=nu.paper
+
+	//coeur
+	Phaser.Sprite.call(this,game,this.posx,this.posy,'heart')
+	this.x=this.posx-175
+	this.y=this.posy+140
+	this.Group.add(this)
+
 
 	//boutton pour sélectionner le paper
 	this.button_paper_select=[] 
@@ -46,7 +42,7 @@ Menu = function(game,Group,id,posx,posy){
 	}
 
 	//boutton play
-	this.button_play=game.add.button(w4*3.3,h*.85,"play_button",this.closepanel,this)
+	this.button_play=game.add.button(this.posx,h*.85,"play_button",this.closepanel,this)
 	this.button_play.anchor.setTo(.5,.5)
 	this.button_play.visible=false
 	this.button_play.alpha=0
@@ -107,24 +103,16 @@ Menu = function(game,Group,id,posx,posy){
 	this.sub_group.add(this.repere_for_end_of_roll)
 	this.Group.add(this.sub_group)
 
-	//compteur de coeur
-//	this.heart = game.add.sprite(this.posx-175,this.posy+160,"heart")
-//	this.heart.flag=true
-//	this.heart.anchor.x=.5
-//	this.heart.anchor.y=.5
-//	this.heart.alpha=1
-//	this.heart.visible=true
-//	this.Group.add(this.heart)
-
+	//score à coté du coeur
 	this.amount_of_heart_paper=game.add.bitmapText(this.posx,this.posy+120,'lucky',100,80)
-
 	this.amount_of_heart_paper.anchor.x=.5
 	this.amount_of_heart_paper.text="2000"
 	this.Group.add(this.amount_of_heart_paper)
 
 	//deplacement des rouleaux au milieu
 	game.time.events.add(1600,this.deroll_paper,this)
-	game.time.events.add(5000,this.move_roll_paper,this)
+	//TODO mettre ici une condition en fonction du player choisi
+	//game.time.events.add(5000,this.move_roll_paper,this)
 }
 
 Menu.prototype = Object.create(Phaser.Sprite.prototype)
@@ -134,16 +122,16 @@ Menu.prototype.deroll_paper = function() {
 	this.tween_agite_roll=game.add.tween(this.roll_paper_turn_faster).to({alpha:1},100,Phaser.Easing.Linear.None,true,0,-1)
 	this.tween_agite_roll.yoyo(true, 100)
 	this.tween_fall_paper=game.add.tween(this.sub_group_coupons).to({x:0,y:this.posy+700},1200,Phaser.Easing.Bounce.Out,true,0)
-	this.tween_fall_paper.onComplete.add(this.stop_agite_roll,this)
+	this.tween_fall_paper.onComplete.add(this.stop_turn_roll_paper,this)
 }
 
-Menu.prototype.stop_agite_roll = function() {
+Menu.prototype.stop_turn_roll_paper = function() {
 	this.tween_agite_roll.pause()	
 	this.roll_paper_turn_faster.alpha=0
 }
 
 Menu.prototype.closepanel=function(){
-	if (background.flag_close){
+	if (background.flag_close && menuPaper_opponent.button_play.visible==false){
 		tw.displacement_background_opponent_and_player_close()
 	}
 }
