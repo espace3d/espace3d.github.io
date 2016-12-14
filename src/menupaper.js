@@ -1,25 +1,21 @@
-//todo : renseigner paper roll au milieu
-
-
 //////////////////////////////////////////////////////////////////////////////////////////
 //menupaper
 var M = M || {}
 //////////////////////////////////////////////////////////////////////////////////////////
 
-Menu = function(game,Group,id){
-
-	Phaser.Sprite.call(this,game,0,0,'menu_back')
-	this.height=h
-	this.alpha=1
+Menu = function(game,Group,id,posx,posy){
+	this.posx=posx
+	this.posy=posy
 	this.Group=Group
+	this.id=id
+
+	Phaser.Sprite.call(this,game,this.posx,this.posy,'heart')
+	//this.height=h
+	//this.alpha=0
+	this.x=this.posx-175
+	this.y=this.posy+140
 
 	//opponent ou player
-	this.id=id
-	this.fond=game.add.sprite(0,0,'menu_back')
-	this.fond.alpha=0
-	this.fond.height=h
-	console.log("h",h);
-	this.Group.add(this.fond)
 	this.Group.add(this)
 	this.sub_group_coupons=game.add.group()
 	this.sub_group=game.add.group()
@@ -27,8 +23,6 @@ Menu = function(game,Group,id){
 	//this.distance_in_height_between_button=10
 	this.distance_in_height_between_button=155
 	this.row=nu.paper
-	this.posx=w4*3
-	this.posy=0
 
 	//boutton pour sélectionner le paper
 	this.button_paper_select=[] 
@@ -39,8 +33,6 @@ Menu = function(game,Group,id){
 		this.button_paper_select[i].y = this.posy+310+i*this.distance_in_height_between_button
 		this.button_paper_select[i].visible = false
 		this.button_paper_select[i].alpha = 0
-		//this.button_paper_select = this.game.add.button(w2,h2+245,"play",this.playTheGame,this);
-
 
 		//icone
 		this.button_paper_select[i].main = game.add.sprite(0,0,'button_paper_select1') 
@@ -51,7 +43,6 @@ Menu = function(game,Group,id){
 
 		Group.add(this.button_paper_select[i]) 
 		Group.add(this.button_paper_select[i].main) 
-
 	}
 
 	//boutton play
@@ -65,31 +56,25 @@ Menu = function(game,Group,id){
 	this.paper_gray=[]
 	for (var i = 0;i < nu.paper; i++) {
 		this.paper_gray[i]=game.add.sprite(this.posx,this.posy,'sprite_paper_gray')
-		//this.paper_gray[i].x=this.posx+105
-		//this.paper_gray[i].y=this.posy+550+i*100	
 		this.paper_gray[i].x=this.posx-50
 		this.paper_gray[i].y=this.posy-150+i*100	
-		//this.paper_gray[i].y=this.posy+550+i*100	
 		this.paper_gray[i].width=100
 		this.paper_gray[i].height=100
 		this.sub_group_coupons.add(this.paper_gray[i])
 	}
-	this.paper_gray[7].frame=3
+	this.paper_gray[7].frame=0
 
 	this.paper=[]
 	for (var i = 0;i < nu.paper; i++) {
 		this.paper[i]=game.add.sprite(this.posx,this.posy,'sprite_paper')
-		//this.paper[i].x=this.posx+105
-		//this.paper[i].y=this.posy+550+i*100	
 		this.paper[i].x=this.posx-50
 		this.paper[i].y=this.posy-150+i*100	
-		//this.paper[i].y=this.posy+550+i*100	
 		this.paper[i].width=100
 		this.paper[i].height=100
 		this.sub_group_coupons.add(this.paper[i])
 	}
-	this.paper[7].frame=3
-	this.paper[7].alpha=.2
+	this.paper[7].frame=0
+	this.paper[7].alpha=0
 	this.sub_group.add(this.sub_group_coupons)
 
 	//masque pour cacher les papiers pedant la chute
@@ -103,6 +88,7 @@ Menu = function(game,Group,id){
 
 	//rouleau de papier
 	this.roll_paper=game.add.sprite(this.posx,this.posy+420,'roll_paper_menu_select')
+	console.log("value",this.roll_paper.x);
 	this.roll_paper.anchor.x=.5
 	this.sub_group.add(this.roll_paper)
 
@@ -113,30 +99,33 @@ Menu = function(game,Group,id){
 	this.sub_group.add(this.roll_paper_turn_faster)
 
 	//repere pour le dernier rouleau
-	this.repere_for_end_of_roll = game.add.sprite(960,1300,"repere")
+	this.repere_for_end_of_roll = game.add.sprite(this.posx,this.posy+1300,"repere")
 	this.repere_for_end_of_roll.anchor.x=.5
 	this.repere_for_end_of_roll.anchor.y=.5
 	this.repere_for_end_of_roll.alpha=0
 
 	this.sub_group.add(this.repere_for_end_of_roll)
-
 	this.Group.add(this.sub_group)
 
 	//compteur de coeur
+//	this.heart = game.add.sprite(this.posx-175,this.posy+160,"heart")
+//	this.heart.flag=true
+//	this.heart.anchor.x=.5
+//	this.heart.anchor.y=.5
+//	this.heart.alpha=1
+//	this.heart.visible=true
+//	this.Group.add(this.heart)
 
 	this.amount_of_heart_paper=game.add.bitmapText(this.posx,this.posy+120,'lucky',100,80)
+
 	this.amount_of_heart_paper.anchor.x=.5
 	this.amount_of_heart_paper.text="2000"
 	this.Group.add(this.amount_of_heart_paper)
 
 	//deplacement des rouleaux au milieu
-	game.time.events.add(3000,this.deroll_paper,this)
+	game.time.events.add(1600,this.deroll_paper,this)
 	game.time.events.add(5000,this.move_roll_paper,this)
 }
-
-
-//time
-
 
 Menu.prototype = Object.create(Phaser.Sprite.prototype)
 Menu.prototype.constructor = Menu
@@ -152,7 +141,6 @@ Menu.prototype.stop_agite_roll = function() {
 	this.tween_agite_roll.pause()	
 	this.roll_paper_turn_faster.alpha=0
 }
-
 
 Menu.prototype.closepanel=function(){
 	if (background.flag_close){

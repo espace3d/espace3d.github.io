@@ -103,7 +103,7 @@ Timer.prototype.looser=function(){
 	console.log("looser")
 	this.winner_flag=false
 	background.alpha=0
-	game.add.tween(menuPaper.fond).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,1100)
+	//game.add.tween(menuPaper.fond).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,1100)
 
 	background.border_opponent_droit.alpha=0
 	background.border_opponent_droit.tint=white
@@ -129,7 +129,7 @@ Timer.prototype.winner=function(){
 	this.winner_flag=true
 	console.log("winner")
 	background.alpha=0
-	game.add.tween(menuPaper.fond).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,1100)
+	//game.add.tween(menuPaper.fond).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,1100)
 
 	background.border_player_droit.alpha=0
 	background.border_player_droit.tint=white

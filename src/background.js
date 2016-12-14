@@ -7,7 +7,7 @@ var B = B || {}
 
 draw_background = function(game){
 
-	this.g9=G.shadowPaperGroup9 
+	this.g10=G.fond_menu_Group10 
 	this.g8=G.menuPaperGroup8 
 	this.g7=G.playerBackgroundGroup7 
 	this.g6=G.opponentBackgroundGroup6 
@@ -40,7 +40,9 @@ draw_background = function(game){
 	//this.grayfiltertop = game.add.filter('Gray') ; this.grayfiltertop.gray=1
 	//this.grayfilternull = game.add.filter('Gray') ; this.grayfilternull.gray=0
 
-
+	this.fond_menu=game.add.sprite(0,0,'menu_back')
+	this.fond_menu.height=h
+	this.g10.add(this.fond_menu)
 
 
 	//curseur player lorsque le joueur exerce une pression prolongée

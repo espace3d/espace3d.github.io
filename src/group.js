@@ -15,7 +15,8 @@ var G = G || {}
 //9. shadowPaperGroup9 -- ombre sur le papier pour symboliser bord
 G.drawGroup=function(game){
 this.groupnull = null
-this.shadowPaperGroup9 = game.add.group()
+this.fond_menu_Group10 = game.add.group()
+this.menuPaperGroup9 = game.add.group()
 this.menuPaperGroup8 = game.add.group()
 this.playerBackgroundGroup7 = game.add.group()
 this.opponentBackgroundGroup6 = game.add.group()

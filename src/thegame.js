@@ -7,6 +7,7 @@ var theGame = function(game){
 	score = 0;
 	background = null;
 	menuPaper=null;
+	menuPaper_opponent=null;
 	s=null;
 	time=null;
 	hud=null;
@@ -19,36 +20,6 @@ var theGame = function(game){
 	//////////////////////////////////////////////////////////////////////////////////////////
 	//GROUP
 	groupnull = null
-	//0 G.timerGroup0 - timer deplacé dans ce groupe car il doit être devant tout le monde le groupe 3 doit être supprimé
-	//1. G.topOpponentGroup1 --  bandeau horizontal supérieur + nom du joueur + dénomination (player ou opponent)--> opponent
-	//2. G.topPlayerGroup2 -- bandeau horizontal supérieur + nom du joueur + dénomination (player ou opponent)--> player
-	//3. G.timerGroup3 -- timer + rond  
-	//3bis. G.cursorGroup3bis -- curseur en forme de rectangle	
-	//3tris. G.shadowGroup3tris
-	//4. G.opponentPapers4 -- papiers de l'opponent
-	//5. G.playerPapers5 -- papiers du player
-	//6. G.opponentBackgroundGroup6 -- background sur une moitié pour l'opponent
-	//7. G.playerBackgroundGroup7 -- background sur une moitié pour le player
-	//8. G.menuPaperGroup8 -- menu derrière les 2 background + bords périphériques colorés du menus 
-	////9. shadowPaperGroup9 -- ombre sur le papier pour symboliser bord
-
-	//fondBelowMenu = null
-	//opponentTextGroup = null
-	//playersGroup = null
-
-	//shadowPaperGroup9 = null
-	//G.menuPaperGroup8 = null
-	////G.playerBackgroundGroup7 = null
-	//G.opponentBackgroundGroup6 = null
-	//G.playerPapers5 = null
-	//G.opponentPapers4 = null
-	//G.shadowGroup3tris = null
-	//G.cursorGroup3bis=null
-	//G.timerGroup3 = null
-	//G.topPlayerGroup2=null
-	//G.topOpponentGroup1=null
-	//G.timerGroup0=null
-	//////////////////////////////////////////////////////////////////////////////////////////
 }
 
 theGame.prototype = {
@@ -62,19 +33,7 @@ theGame.prototype = {
 		//group null sert pour cacher les éléments du canevas original
 
 		groupnull = this.game.add.group();
-
-		//shadowPaperGroup9 = this.game.add.group()
-		G.menuPaperGroup8 = this.game.add.group()
-		G.playerBackgroundGroup7 = this.game.add.group()
-		G.opponentBackgroundGroup6 = this.game.add.group()
-		G.playerPapers5 = this.game.add.group()
-		G.opponentPapers4 = this.game.add.group()
-		G.shadowGroup3tris = this.game.add.group()
-		G.cursorGroup3bis=this.game.add.group()
-		G.timerGroup3 = this.game.add.group()
-		G.topPlayerGroup2=this.game.add.group()
-		G.topOpponentGroup1=this.game.add.group()
-		G.timerGroup0=this.game.add.group()
+groupnull.alpha=.1
 
 		// DECLARATION DES VARIABLES ( canevas initial ) 
 		number = Math.floor(Math.random()*10);
@@ -90,7 +49,8 @@ theGame.prototype = {
 		groupnull.add(spriteNumber)
 
 		// DECLARATION DES VARIABLES MY GAME
-		menuPaper=new Menu(this.game,G.menuPaperGroup8)
+		menuPaper_opponent=new Menu(this.game,G.menuPaperGroup9,"opponent",w4,0)
+		menuPaper=new Menu(this.game,G.menuPaperGroup8,"player",w4*3,0)
 		background=new draw_background(this.game)
 		paper_player = new Paper(this.game,G.playerPapers5,w4*3,-h,"player")
 		paper_opponent = new Paper(this.game,G.opponentPapers4,w4,-h,"opponent")
