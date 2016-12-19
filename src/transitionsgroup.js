@@ -61,7 +61,7 @@ init_transitions.prototype.displacement_background_opponent_and_player=function(
 
 init_transitions.prototype.move_timer_for_chooce=function(){
 	var delay_for_chooce=delay_open_panel_background+time_open_panel_background
-	//TODO cette transition n'est plus nécessaire
+	//TODO cette transition n'est plus nécessaire seul compte l'action oncomplete
 	this.tween_move_timer_for_chooce=game.add.tween(this.g0).to({x:0,y:0},100,Phaser.Easing.Bounce.Out,true,delay_for_chooce)
 	this.tween_move_timer_for_chooce.onComplete.add(this.action_turn_chooce,this)
 }

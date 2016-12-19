@@ -23,6 +23,19 @@
    inkscape:export-ydpi="45">
   <defs
      id="defs4636">
+    <pattern
+       inkscape:isstock="true"
+       inkscape:stockid="Wavy white"
+       id="Wavywhite"
+       height="5.1805778"
+       width="30.066020"
+       patternUnits="userSpaceOnUse"
+       inkscape:collect="always">
+      <path
+         id="path6445"
+         d="M 7.597,0.061 C 5.079,-0.187 2.656,0.302 -0.01,1.788 L -0.01,3.061 C 2.773,1.431 5.173,1.052 7.472,1.280 C 9.770,1.508 11.969,2.361 14.253,3.218 C 18.820,4.931 23.804,6.676 30.066,3.061 L 30.062,1.788 C 23.622,5.497 19.246,3.770 14.691,2.061 C 12.413,1.207 10.115,0.311 7.597,0.061 z "
+         style="fill:white;stroke:none;" />
+    </pattern>
     <radialGradient
        inkscape:collect="always"
        xlink:href="#linearGradient20147"
@@ -66,9 +79,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.18242527"
-     inkscape:cx="1119.3584"
-     inkscape:cy="-2311.8722"
+     inkscape:zoom="0.51597658"
+     inkscape:cx="3630.9055"
+     inkscape:cy="974.89075"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -115,8 +128,8 @@
        y="581.29083"
        rx="3"
        ry="3"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
+       inkscape:export-xdpi="89.713417"
+       inkscape:export-ydpi="89.713417" />
     <rect
        style="opacity:1;fill:#201d1d;fill-opacity:1;fill-rule:nonzero;stroke:#f5f5f5;stroke-width:2.13303995;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect4742"
@@ -5408,8 +5421,8 @@
        id="g6701"
        transform="translate(112.48004,93.09033)"
        style="fill:#ffffff;fill-opacity:1"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90">
+       inkscape:export-xdpi="89.713417"
+       inkscape:export-ydpi="89.713417">
       <rect
          transform="matrix(0.71412042,-0.70002287,0.70002287,0.71412042,0,0)"
          rx="3"
@@ -6271,5 +6284,51 @@
          inkscape:connector-curvature="0"
          style="fill:#ff6e71;fill-opacity:1" />
     </g>
+    <g
+       style="stroke-width:0.03432478;stroke-miterlimit:4;stroke-dasharray:none"
+       transform="matrix(10.874712,0,0,10.874712,-2545.9824,-850.2795)"
+       id="g5114"
+       inkscape:export-xdpi="89.713417"
+       inkscape:export-ydpi="89.713417">
+      <text
+         sodipodi:linespacing="125%"
+         id="text5116"
+         y="134.13225"
+         x="401.62634"
+         style="font-style:normal;font-weight:normal;font-size:24.87750816px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffff00;fill-opacity:1;stroke:none;stroke-width:0.03432478;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         xml:space="preserve"
+         transform="matrix(0.99964113,0.02678828,-0.02678828,0.99964113,0,0)"
+         inkscape:transform-center-x="28.284271"
+         inkscape:transform-center-y="8.0812204"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.54844284px;font-family:Purisa;-inkscape-font-specification:Purisa;fill:#f9f9f9;stroke-width:0.03432478;stroke-miterlimit:4;stroke-dasharray:none"
+           y="134.13225"
+           x="401.62634"
+           id="tspan5118"
+           sodipodi:role="line" /></text>
+      <ellipse
+         style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#f5f5f5;stroke-width:0.03432478;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="ellipse5120"
+         cx="405.01294"
+         cy="139.0029"
+         rx="10.913571"
+         ry="10.360986" />
+    </g>
+    <rect
+       style="opacity:0.328;fill:url(#Wavywhite);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.50801146;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect5093"
+       width="638.492"
+       height="1918.4919"
+       x="1600.754"
+       y="3523.0925"
+       inkscape:export-xdpi="90.211479"
+       inkscape:export-ydpi="90.211479" />
+    <circle
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       cy="-113.7341"
+       cx="4368.5308"
+       id="circle6640"
+       style="fill:#ff3a3a;fill-opacity:0.27739725;fill-rule:evenodd;stroke:#ffffff;stroke-width:2.10028744;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       r="23.949856" />
   </g>
 </svg>

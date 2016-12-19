@@ -1,3 +1,5 @@
+//TODO:déplacer le text LVL vers la gauche ainsi que le numéro du level pour que ce soit centré
+
 //////////////////////////////////////////////////////////////////////////////////////////
 //background.js
 //this.for background
@@ -9,6 +11,8 @@ draw_background = function(game){
 
 	this.g10=G.fond_menu_Group10 
 	this.g8=G.menuPaperGroup8 
+	this.g12=G.contour_opponentGroup9 
+	this.g11=G.contour_playerGroup9 
 	this.g7=G.playerBackgroundGroup7 
 	this.g6=G.opponentBackgroundGroup6 
 	this.g5=G.playerPapers5 
@@ -125,6 +129,7 @@ draw_background = function(game){
 	// decalage pour avoir une division marquée au centre et pour voir le background du menu en dessous
 	var decalage=epaisseur_fond*.1	
 
+
 	//différents fond pour le cadre constituant le menu de sélection des papiers
 	this.border_player_gauche=drawSprite(this.g8,game,"rect",w2+decalage,0,epaisseur_fond,h,0,this.color_player,1) 
 	this.border_player_droit=drawSprite(this.g8,game,"rect",w-epaisseur_fond,0,epaisseur_fond,h,0,this.color_player,1) 
@@ -135,6 +140,17 @@ draw_background = function(game){
 	this.border_opponent_droit=drawSprite(this.g8,game,"rect",w2-(epaisseur_fond+decalage),0,epaisseur_fond,h,0,this.color_opponent,1) 
 	this.border_opponent_superieur=drawSprite(this.g8,game,"rect",0-epaisseur_fond,0,w2,epaisseur_fond,0,this.color_opponent,1) 
 	this.border_opponent_inferieur=drawSprite(this.g8,game,"rect",0-epaisseur_fond,h-epaisseur_fond_large,w2,epaisseur_fond_large,0,this.color_opponent,1) 
+
+	//différents fond blanc pour le cadre constituant le menu de sélection des papiers
+	this.border_player_gauche_white=drawSprite(this.g11,game,"rect",w2+decalage,0,epaisseur_fond,h,0,white,1) 
+	this.border_player_droit_white=drawSprite(this.g11,game,"rect",w-epaisseur_fond,0,epaisseur_fond,h,0,white,1) 
+	this.border_player_superieur_white=drawSprite(this.g11,game,"rect",w2+epaisseur_fond,0,w2,epaisseur_fond,0,white,1) 
+	this.border_player_inferieur_white=drawSprite(this.g11,game,"rect",w2+epaisseur_fond,h-epaisseur_fond_large,w2,epaisseur_fond_large,0,white,1) 
+
+	this.border_opponent_gauche_white=drawSprite(this.g12,game,"rect",0,0,epaisseur_fond,h,0,white,1) 
+	this.border_opponent_droit_white=drawSprite(this.g12,game,"rect",w2-(epaisseur_fond+decalage),0,epaisseur_fond,h,0,white,1) 
+	//this.border_opponent_superieur_white=drawSprite(this.g12,game,"rect",0-epaisseur_fond,0,w2,epaisseur_fond,0,white,1) 
+	this.border_opponent_inferieur_white=drawSprite(this.g12,game,"rect",0-epaisseur_fond,h-epaisseur_fond_large,w2,epaisseur_fond_large,0,white,1) 
 
 	//this.background de l'opponent et du player
 	this.opponent=drawSprite(this.g6,game,"rect",0-decalage,0,w2,h+200,0,this.color_opponent,1) 
@@ -163,7 +179,7 @@ draw_background = function(game){
 	this.line_collision_opponent=[]
 
 	for (var j = 0; j < 5; j++) {
-		//this.line_collision_opponent[j]=game.add.sprite(1000,game.rnd.integerInRange(h2+300,h),"line_collision")
+		//this.line_collision_opponent[j]=game.add.spricbv60179te(1000,game.rnd.integerInRange(h2+300,h),"line_collision")
 		this.line_collision_opponent[j]=game.add.sprite(0,game.rnd.integerInRange(0,h),"line_collision")
 		this.line_collision_opponent[j].isTouch=false
 		this.line_collision_opponent[j].alpha=0
@@ -185,7 +201,8 @@ draw_background = function(game){
 	this.text_name_player = game.add.bitmapText(w4*3,py1,'lucky','dev', taille) 
 	this.text_level_player = game.add.bitmapText(w4*3,py3,'lucky','lvl ', taille2) 
 	this.text_level_player.alpha=1
-	this.text_level_number_player=game.add.bitmapText(w4*3+60,py3,'lucky','1', taille2) 
+	this.text_level_number_player=game.add.bitmapText(w4*3+80,py3,'lucky',parameter.level_number_player, taille2) 
+	this.text_level_number_player.anchor.x=0
 	this.text_level_number_player.tint=rose
 	this.text_level_number_player.alpha=0
 	//
@@ -218,7 +235,8 @@ draw_background = function(game){
 	this.text_name_opponent = game.add.bitmapText(w4,py1,'lucky','kill the game', taille) 
 	this.text_level_opponent = game.add.bitmapText(w4,py3,'lucky','lvl ', taille2) 
 	this.text_level_opponent.alpha=1
-	this.text_level_number_opponent=game.add.bitmapText(w4+60,py3,'lucky','5', taille2) 
+	this.text_level_number_opponent=game.add.bitmapText(w4+80,py3,'lucky',parameter.level_number_opponent, taille2) 
+	this.text_level_number_opponent.anchor.x=0
 	this.text_level_number_opponent.tint=rose
 	this.text_level_number_opponent.alpha=1
 
@@ -285,8 +303,10 @@ draw_background.prototype.tween_begin_game=function(){
 	this.tween_level_and_number_player2=game.add.tween(this.text_level_number_player).to({alpha:1},500,Phaser.Easing.Linear.None,true,delay_paper_fall)
 	this.tween_level_and_number_opponent1=game.add.tween(this.text_level_opponent).to({alpha:1},500,Phaser.Easing.Linear.None,true,delay_paper_fall)
 	this.tween_level_and_number_opponent2=game.add.tween(this.text_level_number_opponent).to({alpha:1},500,Phaser.Easing.Linear.None,true,delay_paper_fall)
-	this.tween_roll_opponent=game.add.tween(little_roll_opponent.main).to({alpha:1},500,Phaser.Easing.Linear.None,true,delay_paper_fall-300)
-	this.tween_roll_player=game.add.tween(little_roll_player.main).to({alpha:1},500,Phaser.Easing.Linear.None,true,delay_paper_fall-300)
+	this.tween_roll_opponent=game.add.tween(little_roll_opponent).to({alpha:1},500,Phaser.Easing.Linear.None,true,delay_paper_fall-300)
+	this.tween_roll_player=game.add.tween(little_roll_player).to({alpha:1},500,Phaser.Easing.Linear.None,true,delay_paper_fall-300)
+	this.tween_roll_opponent=game.add.tween(little_roll_opponent.heart).to({alpha:1},500,Phaser.Easing.Linear.None,true,delay_paper_fall-300)
+	this.tween_roll_player=game.add.tween(little_roll_player.heart).to({alpha:1},500,Phaser.Easing.Linear.None,true,delay_paper_fall-300)
 	this.tween_line_opponent_appears=game.add.tween(this.line_opponent_gauche).to({alpha:1},500,Phaser.Easing.Linear.None,true,delay_paper_fall)
 	this.tween_line_player_appears=game.add.tween(this.line_player_droite).to({alpha:1},500,Phaser.Easing.Linear.None,true,delay_paper_fall)
 	this.tween_cursor_appears=game.add.tween(this.cursor_palpitant).to({alpha:.6},1500,Phaser.Easing.Linear.None,true,delay_paper_fall)

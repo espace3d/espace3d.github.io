@@ -8,6 +8,7 @@ var theGame = function(game){
 	background = null;
 	menuPaper=null;
 	menuPaper_opponent=null;
+	parameter=null;
 	s=null;
 	time=null;
 	hud=null;
@@ -47,8 +48,12 @@ theGame.prototype = {
 		groupnull.add(lowerButton)
 		groupnull.add(higherButton)
 		groupnull.add(spriteNumber)
+		//pour régler l'alpha des contours plus tard dans hud.js
+		G.contour_opponentGroup9.alpha=0
+		G.contour_playerGroup9.alpha=0
 
 		// DECLARATION DES VARIABLES MY GAME
+		parameter=new param()
 		menuPaper_opponent=new Menu(this.game,G.menuPaperGroup9,"opponent",w4,0)
 		menuPaper=new Menu(this.game,G.menuPaperGroup8,"player",w4*3,0)
 		background=new draw_background(this.game)
@@ -57,8 +62,8 @@ theGame.prototype = {
 		hud=new Timer(this.game,G.timerGroup0)
 		effect=draweffect(this.game)
 		//TODO changer de groupe et rétablir position y
-		little_roll_player=new R.draw_little_roll(this.game,G.topPlayerGroup2,w4*3,140)
-		little_roll_opponent=new R.draw_little_roll(this.game,G.topOpponentGroup1,w4,140)
+		little_roll_player=new Roll(this.game,G.topPlayerGroup2,w4*3,160,"player")
+		little_roll_opponent=new Roll(this.game,G.topOpponentGroup1,w4,160,"opponent")
 		tw=new init_transitions(this.game)
 		this.game.stage.backgroundColor=black
 		//DEPLACEMENT DES GROUPES AU DEBUT (TEXTE TOP - TIMER - SHADOW)

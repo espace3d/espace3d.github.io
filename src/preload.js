@@ -18,6 +18,7 @@ preload.prototype = {
 		//this.game.load.script('gray', 'https://cdn.rawgit.com/photonstorm/phaser/master/filters/Gray.js')
 
 		//images
+		this.game.load.image("white","assets/white.png");
 		this.game.load.image("heart","assets/heart.png");
 		this.game.load.image("roll_turn_faster","assets/roll_turn_faster.png");
 		this.game.load.image("repere","assets/repere.png");

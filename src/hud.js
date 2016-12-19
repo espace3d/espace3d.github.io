@@ -1,8 +1,13 @@
+//TODO:this.angle_array
+
 //////////////////////////////////////////////////////////////////////////////////////////
 //huds.js
 Timer = function(game,Group){
+	this.flag_for_update_check_white_side=false
 	//variable pour stocker le temps
 	this.timer_value="40"
+	//temps pour que la hachure fasse un éclat brillant
+	this.time_eclat=400
 	//group
 	this.Group=Group
 	//disque noir du timer 
@@ -18,7 +23,7 @@ Timer = function(game,Group){
 	this.winner_flag="none"
 	//time pour faire tourner la roulette
 	this.time_roulette=800
-this.time_roulette_alpha=200
+	this.time_roulette_alpha=200
 	// lancement de la fonction pour le décompte du temps qui ne se déclenche qu'avec le this.flag voir
 	//voir function move_time
 	game.time.events.loop(1000,this.time_decount,this)
@@ -26,14 +31,15 @@ this.time_roulette_alpha=200
 	//modifications des anchors
 	this.timer_text.anchor.x=.5
 	this.timer_text.anchor.y=.4
-
+	
 	//spirale pour la roulette
 	this.spiral=game.add.sprite(w2,h2+300,'spiral')
 	this.spiral.anchor.x=.5
 	this.spiral.anchor.y=.5
 	this.spiral.alpha=1
 	//table pour les différents angles aléatoires
-	this.angle_array=[2820,2920,2740,2850,2760,1700,2800,2910,2020,2930]
+	this.angle_array=[2820,2930]
+	//this.angle_array=[2820,2920,2740,2850,2760,1700,2800,2910,2020,2930]
 	//formule pour définir aléatoirement l'angle
 	this.angular = this.angle_array[Math.floor(game.rnd.between(1,this.angle_array.length-1))];
 
@@ -74,6 +80,7 @@ Timer.prototype.time_decount=function(){
 
 //affiche la roulette désignant au hasard le choix entre le player et l'opponent
 Timer.prototype.turn_chooce = function() {
+	this.flag_for_update_check_white_side=true
 	this.visible=true
 	this.spiral.visible=true
 	this.tween_main=game.add.tween(this).to({alpha:1},this.time_roulette_alpha,Phaser.Easing.Linear.None,true,0)
@@ -90,6 +97,8 @@ Timer.prototype.retardateur2=function(){
 
 //vérifier l'angle du rouleau
 Timer.prototype.check_angle=function(){
+
+	this.flag_for_update_check_white_side=false
 	if (this.angle < 90 && this.angle > -90){
 		this.winner()
 	} else{
@@ -97,90 +106,100 @@ Timer.prototype.check_angle=function(){
 	}
 }
 
+//animer le coté player ou opponent en fonction de la roulette de hasard
+Timer.prototype.update = function() {
+	if(this.flag_for_update_check_white_side){
+		if (this.angle < 90 && this.angle > -90){
+			this.light_player()
+		} else{
+			this.light_opponent()
+		}
+	}
+}
+
+Timer.prototype.light_player = function() {
+menuPaper.white.visible=true	
+menuPaper_opponent.white.visible=false	
+}
+Timer.prototype.light_opponent = function() {
+menuPaper.white.visible=false	
+menuPaper_opponent.white.visible=true	
+	
+}
+
+
 //opponent choisi
 Timer.prototype.looser=function(){
-
 	console.log("looser")
 	this.winner_flag=false
-	background.alpha=0
-	//game.add.tween(menuPaper.fond).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,1100)
-
-	background.border_opponent_droit.alpha=0
-	background.border_opponent_droit.tint=white
-	game.add.tween(background.border_opponent_droit).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,200)
-
-	background.border_opponent_gauche.alpha=0
-	background.border_opponent_gauche.tint=white
-	game.add.tween(background.border_opponent_gauche).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,200)
-
-	background.border_opponent_superieur.alpha=0
-	background.border_opponent_superieur.tint=white
-	game.add.tween(background.border_opponent_superieur).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,200)
-
-	background.border_opponent_inferieur.alpha=0
-	background.border_opponent_inferieur.tint=white
-	this.tween4=game.add.tween(background.border_opponent_inferieur).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,200)
-	this.tween4.onComplete.add(this.retardateur1,this)
-menuPaper_opponent.move_roll_paper()
-menuPaper.anim_repere()
+	this.tween_eclat_opponent=game.add.tween(G.contour_opponentGroup9).to({alpha:1},this.time_eclat,Phaser.Easing.Bounce.Out,true,200)
+	this.tween_eclat_opponent.onComplete.add(this.next_looser,this)
 }
 
-//player choisi
+Timer.prototype.next_looser = function() {
+	this.tween_eclat_opponent_next=game.add.tween(G.contour_opponentGroup9).to({alpha:0},200,Phaser.Easing.Bounce.In,true,0)
+	this.tween_eclat_opponent_next.onComplete.add(this.retardateur1,this)
+	menuPaper_opponent.move_roll_paper()
+	menuPaper.anim_repere()
+}
+
 Timer.prototype.winner=function(){
 	this.winner_flag=true
-	console.log("winner")
-	background.alpha=0
-	//game.add.tween(menuPaper.fond).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,1100)
-
-	background.border_player_droit.alpha=0
-	background.border_player_droit.tint=white
-	game.add.tween(background.border_player_droit).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,200)
-
-	background.border_player_gauche.alpha=0
-	background.border_player_gauche.tint=white
-	game.add.tween(background.border_player_gauche).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,200)
-
-	background.border_player_superieur.alpha=0
-	background.border_player_superieur.tint=white
-	game.add.tween(background.border_player_superieur).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,200)
-
-	background.border_player_inferieur.alpha=0
-	background.border_player_inferieur.tint=white
-	this.tween4=game.add.tween(background.border_player_inferieur).to({alpha:1},900,Phaser.Easing.Bounce.Out,true,200)
-	this.tween4.onComplete.add(this.retardateur1,this)
-menuPaper.move_roll_paper()
-menuPaper_opponent.anim_repere()
+	console.log("value");
+	this.tween_eclat_player=game.add.tween(G.contour_playerGroup9).to({alpha:1},this.time_eclat,Phaser.Easing.Bounce.Out,true,200)
+	this.tween_eclat_player.onComplete.add(this.next_winner,this)
 }
+
+Timer.prototype.next_winner = function() {
+	this.tween_eclat_player_next=game.add.tween(G.contour_playerGroup9).to({alpha:0},200,Phaser.Easing.Bounce.In,true,0)
+	this.tween_eclat_player_next.onComplete.add(this.retardateur1,this)
+	menuPaper.move_roll_paper()
+	menuPaper_opponent.anim_repere()
+}
+	
 //retardateur1
 Timer.prototype.retardateur1=function(){
-	this.winner_flag = true ? game.time.events.add(100,this.reset_color_player,this):game.time.events.add(100,this.reset_color_opponent,this)
+	this.tween_hide=game.add.tween(this).to({alpha:0},100,Phaser.Easing.Linear.None,true)
+	this.move_time()
+	//this.winner_flag = true ? game.time.events.add(100,this.reset_color_player,this):game.time.events.add(100,this.reset_color_opponent,this)
 }
 
+//PLUS NECESSAIRE
 //changement pour remettre la couleur de la bordure du player
 Timer.prototype.reset_color_player=function(){
 	background.border_player_superieur.tint=background.color_player
 	background.border_player_inferieur.tint=background.color_player
 	background.border_player_gauche.tint=background.color_player
 	background.border_player_droit.tint=background.color_player
-	this.tween_hide=game.add.tween(this).to({alpha:0},200,Phaser.Easing.Linear.None,true)
-	this.tween_hide.onComplete.add(this.move_time,this)
+	this.tween_hide=game.add.tween(this).to({alpha:0},100,Phaser.Easing.Linear.None,true)
+	this.move_time()
+	//this.tween_hide.onComplete.add(this.move_time,this)
 }
+
+//PLUS NECESSAIRE
 //changement pour remettre la couleur de la bordure de l'opponent
 Timer.prototype.reset_color_opponent=function(){
 	background.border_opponent_superieur.tint=background.color_opponent
 	background.border_opponent_inferieur.tint=background.color_opponent
 	background.border_opponent_gauche.tint=background.color_opponent
 	background.border_opponent_droit.tint=background.color_opponent
-	this.tween_hide=game.add.tween(this).to({alpha:0},200,Phaser.Easing.Linear.None,true)
-	this.tween_hide.onComplete.add(this.move_time,this)
+	this.tween_hide=game.add.tween(this).to({alpha:0},100,Phaser.Easing.Linear.None,true)
+	this.move_time()
+	//this.tween_hide.onComplete.add(this.move_time,this)
 }
 
-//timer qui remonte du bas vers le milieu
+//timer qui va du milieu vers le bas
+//attention delay ajouté via reveal_text()
 Timer.prototype.move_time=function(){
-		var tween00=game.add.tween(this.Group).to({x:0,y:h2-450},650,Phaser.Easing.Elastic.Out,true)
-	this.timer_text.text=this.timer_value
-	tween00.onComplete.add( function(){background.flag_close=true,this.flag=true,this.timer_text.visible=true
+	game.time.events.add(150,this.reveal_text,this)
+	this.tween00=game.add.tween(this.Group).to({x:0,y:h2-450},400,Phaser.Easing.Elastic.Out,true)
+	this.tween00.onComplete.add( function(){background.flag_close=true,this.flag=true
 	},this)
+}
+
+Timer.prototype.reveal_text = function() {
+	this.timer_text.visible=true
+	this.timer_text.text=this.timer_value
 }
 
 

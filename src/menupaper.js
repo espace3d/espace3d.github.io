@@ -4,6 +4,7 @@ var M = M || {}
 //////////////////////////////////////////////////////////////////////////////////////////
 
 Menu = function(game,Group,id,posx,posy){
+
 	this.posx=posx
 	this.posy=posy
 	this.Group=Group
@@ -17,18 +18,21 @@ Menu = function(game,Group,id,posx,posy){
 	Phaser.Sprite.call(this,game,this.posx,this.posy,'heart')
 	this.x=this.posx-175
 	this.y=this.posy+140
+	this.anchor.x=.5
+	this.anchor.y=.5
 	this.Group.add(this)
-
-
+	this.tween_agite_heart_flag=true
 	//boutton pour sélectionner le paper
 	this.button_paper_select=[] 
 	for (var i = 0; i < this.row; i++) {
 		//icone grises
-		this.button_paper_select[i] = game.add.sprite(0,0,'button_paper_select1') 
+		this.button_paper_select[i] = game.add.button(0,0,'button_paper_select1',(but) => this.rearrange_table_number_of_sort_paper(but.id),this) 
 		this.button_paper_select[i].x = this.posx-160
 		this.button_paper_select[i].y = this.posy+310+i*this.distance_in_height_between_button
 		this.button_paper_select[i].visible = false
+		this.button_paper_select[i].id=i
 		this.button_paper_select[i].alpha = 0
+		this.button_paper_select[i].gray=false
 
 		//icone
 		this.button_paper_select[i].main = game.add.sprite(0,0,'button_paper_select1') 
@@ -36,11 +40,24 @@ Menu = function(game,Group,id,posx,posy){
 		this.button_paper_select[i].main.y =this.posy+310+i*this.distance_in_height_between_button
 		this.button_paper_select[i].main.visible = false 
 		this.button_paper_select[i].main.alpha = 0 
+		this.button_paper_select[i].main.gray = false
+		this.button_paper_select[i].main.actionned = false
+		this.button_paper_select[i].main.id=i
+
+		this.button_paper_select[i].quantity_paper = game.add.bitmapText(this.posx-220,this.posy+360+i*this.distance_in_height_between_button,"lucky",100)
+		this.button_paper_select[i].quantity_paper.text="2000"
+		this.button_paper_select[i].quantity_paper.anchor.x=.5
+		this.button_paper_select[i].quantity_paper.anchor.y=.5
+		this.button_paper_select[i].quantity_paper.visible=false
+		Group.add(this.button_paper_select[i].quantity_paper)
 
 		Group.add(this.button_paper_select[i]) 
 		Group.add(this.button_paper_select[i].main) 
 	}
 
+	this.action_on_click=function(){
+		console.log(this.button_paper_select.id)
+	}
 	//boutton play
 	this.button_play=game.add.button(this.posx,h*.85,"play_button",this.closepanel,this)
 	this.button_play.anchor.setTo(.5,.5)
@@ -65,6 +82,8 @@ Menu = function(game,Group,id,posx,posy){
 		this.paper[i]=game.add.sprite(this.posx,this.posy,'sprite_paper')
 		this.paper[i].x=this.posx-50
 		this.paper[i].y=this.posy-150+i*100	
+//		this.paper[i].anchor.x=.5
+		//this.paper[i].anchor.y=.5
 		this.paper[i].width=100
 		this.paper[i].height=100
 		this.sub_group_coupons.add(this.paper[i])
@@ -81,6 +100,14 @@ Menu = function(game,Group,id,posx,posy){
 	this.mask_for_paper.width=130
 	this.mask_for_paper.height=900
 	this.sub_group.add(this.mask_for_paper)
+
+	this.white=game.add.sprite(this.posx,this.posy+h2,"white")
+	this.white.alpha=.6
+	this.white.anchor.x=.5
+	this.white.anchor.y=.5
+	this.white.width=w2
+	this.white.height=h
+	this.white.visible=false
 
 	//rouleau de papier
 	this.roll_paper=game.add.sprite(this.posx,this.posy+420,'roll_paper_menu_select')
@@ -102,23 +129,37 @@ Menu = function(game,Group,id,posx,posy){
 
 	this.sub_group.add(this.repere_for_end_of_roll)
 	this.Group.add(this.sub_group)
-
+	this.Group.add(this.white)
 	//score à coté du coeur
 	this.amount_of_heart_paper=game.add.bitmapText(this.posx,this.posy+120,'lucky',100,80)
 	this.amount_of_heart_paper.anchor.x=.5
-	this.amount_of_heart_paper.text="2000"
+	if (this.id=="opponent"){
+		this.amount_of_heart_paper.text=parameter.number_heart_opponent
+	} else if(this.id=="player"){
+		this.amount_of_heart_paper.text=parameter.number_heart_player	
+	}
+
 	this.Group.add(this.amount_of_heart_paper)
 
 	//deplacement des rouleaux au milieu
 	game.time.events.add(1600,this.deroll_paper,this)
 	//TODO mettre ici une condition en fonction du player choisi
 	//game.time.events.add(5000,this.move_roll_paper,this)
+	//stock nombre papiers
+	this.init_table_number_of_sort_paper_player()
 }
 
 Menu.prototype = Object.create(Phaser.Sprite.prototype)
 Menu.prototype.constructor = Menu
 
+Menu.prototype.action_on_click = function() {
+	console.log('msg')	
+}
+
+
+
 Menu.prototype.deroll_paper = function() {
+
 	this.tween_agite_roll=game.add.tween(this.roll_paper_turn_faster).to({alpha:1},100,Phaser.Easing.Linear.None,true,0,-1)
 	this.tween_agite_roll.yoyo(true, 100)
 	this.tween_fall_paper=game.add.tween(this.sub_group_coupons).to({x:0,y:this.posy+700},1200,Phaser.Easing.Bounce.Out,true,0)
@@ -128,15 +169,19 @@ Menu.prototype.deroll_paper = function() {
 Menu.prototype.stop_turn_roll_paper = function() {
 	this.tween_agite_roll.pause()	
 	this.roll_paper_turn_faster.alpha=0
+	console.log(menuPaper.button_paper_select[2],"ggg");
 }
 
 Menu.prototype.closepanel=function(){
 	if (background.flag_close && menuPaper_opponent.button_play.visible==false){
 		tw.displacement_background_opponent_and_player_close()
+		this.valide_chooce()
 	}
 }
 
 Menu.prototype.move_roll_paper = function() {
+	menuPaper.white.visible=false
+	menuPaper_opponent.white.visible=false
 	this.tween_move_roll_paper=game.add.tween(this.sub_group).to({x:105,y:this.posy},100,Phaser.Easing.Linear.None,true,0)
 	this.tween_move_roll_paper.onComplete.add(this.show_button_if_player_chooce,this)
 }
@@ -144,10 +189,12 @@ Menu.prototype.move_roll_paper = function() {
 Menu.prototype.show_button_if_player_chooce = function() {
 	for (var i = 0; i < this.row; i++) {
 		this.button_paper_select[i].visible=true
+		this.button_paper_select[i].quantity_paper.visible=true
 		game.add.tween(this.button_paper_select[i]).to({alpha:1},500,Phaser.Easing.Linear.None,true,0)
 	}	
 	this.button_play.visible=true
-	game.add.tween(this.button_play).to({alpha:1},500,Phaser.Easing.Linear.None,true,0)
+	this.tween_button_play=game.add.tween(this.button_play).to({alpha:1},500,Phaser.Easing.Linear.None,true,0)
+	//this.tween_button_play.onComplete.add(hud.move_time)
 	this.anim_repere()
 }
 
@@ -155,6 +202,66 @@ Menu.prototype.anim_repere = function() {
 	game.add.tween(this.repere_for_end_of_roll).to({alpha:1},500,Phaser.Easing.Linear.None,true,0)
 	game.add.tween(this.repere_for_end_of_roll.scale).to({x:1.5,y:1.5},500,Phaser.Easing.Linear.None,true,0,-1)
 
+}
+
+//reduire le nombre de coeur en fonction du boutton choisi	
+Menu.prototype.rearrange_table_number_of_sort_paper = function(nombre) {
+	if (this.id=="player"){
+	this.paper[7].frame=nombre
+	this.paper[7].alpha=1
+		menuPaper_opponent.paper[7].alpha=1
+		menuPaper_opponent.paper[7].frame=this.paper[7].frame
+
+	parameter.number_heart_player=-1*parameter.value_paper_level[nombre]+parameter.value_heart_player_during_operations
+
+	}
+	this.init_table_number_of_sort_paper_player()
+}
+
+
+
+//stock nombre papiers et réinitialisation du nombre de papiers
+Menu.prototype.init_table_number_of_sort_paper_player = function(){
+	parameter.value_heart_player_during_operations=parameter.value_heart_player
+	parameter.number_of_sort_paper_player=[]
+	for (var i = 1; i < nu.paper; i++) {
+		parameter.number_of_sort_paper_player[i]=Math.floor(parameter.number_heart_player/parameter.value_paper_level[i+1])
+	}
+	this.modif_heart_at_top()
+	this.agite_heart()
+}
+
+Menu.prototype.agite_heart = function() {
+	if (this.tween_agite_heart_flag) {
+		this.tween_agite_heart_flag=false
+		this.tween_agite_heart=game.add.tween(this.scale).to({x:this.scale.x+1,y:this.scale.y+1},100,Phaser.Easing.Linear.None,true,0)
+		this.tween_agite_end_coupons=game.add.tween(this.paper[7]).to({x:this.scale.x+1,y:this.scale.y+1},100,Phaser.Easing.Linear.None,true,0)
+		this.tween_agite_end_coupons.yoyo(100,true)
+		this.tween_agite_heart.yoyo(100,true)	
+		this.tween_agite_heart.onComplete.add(this.resetflag_agite_heart,this)
+
+	}
+}
+
+
+Menu.prototype.resetflag_agite_heart = function() {
+this.tween_agite_heart_flag=true	
+}
+
+
+//lorsqu'on valide le choix pour décompter le nombre de coeur
+Menu.prototype.modif_heart_at_top = function() {
+	if (this.id=="opponent"){
+		this.amount_of_heart_paper.text=parameter.number_heart_opponent
+	} else if(this.id=="player"){
+		this.amount_of_heart_paper.text=parameter.number_heart_player	
+	}
+}
+
+//lorsqu'on valide le choix pour décompter le nombre de coeur
+Menu.prototype.valide_chooce = function() {
+	parameter.number_heart_player=parameter.value_heart_player_during_operations	
+	parameter.number_heart_opponent=parameter.value_heart_opponent_during_operations	
 }
 
 M = M || {}
