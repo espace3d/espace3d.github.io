@@ -1,3 +1,5 @@
+//TODO:this_close_panel
+
 //////////////////////////////////////////////////////////////////////////////////////////
 //menupaper
 var M = M || {}
@@ -68,7 +70,7 @@ Menu = function(game,Group,id,posx,posy){
 	//coupons de papiers sous le rouleau
 	this.paper_gray=[]
 	for (var i = 0;i < nu.paper; i++) {
-		this.paper_gray[i]=game.add.sprite(this.posx,this.posy,'sprite_paper_gray')
+		this.paper_gray[i]=game.add.sprite(this.posx-50,this.posy-150+i*100,'sprite_paper_gray')
 		this.paper_gray[i].x=this.posx-50
 		this.paper_gray[i].y=this.posy-150+i*100	
 		this.paper_gray[i].width=100
@@ -80,10 +82,10 @@ Menu = function(game,Group,id,posx,posy){
 	this.paper=[]
 	for (var i = 0;i < nu.paper; i++) {
 		this.paper[i]=game.add.sprite(this.posx,this.posy,'sprite_paper')
-		this.paper[i].x=this.posx-50
-		this.paper[i].y=this.posy-150+i*100	
-//		this.paper[i].anchor.x=.5
-		//this.paper[i].anchor.y=.5
+		this.paper[i].x=this.posx
+		this.paper[i].y=this.posy-100+i*100	
+		this.paper[i].anchor.x=.5
+		this.paper[i].anchor.y=.5
 		this.paper[i].width=100
 		this.paper[i].height=100
 		this.sub_group_coupons.add(this.paper[i])
@@ -169,13 +171,14 @@ Menu.prototype.deroll_paper = function() {
 Menu.prototype.stop_turn_roll_paper = function() {
 	this.tween_agite_roll.pause()	
 	this.roll_paper_turn_faster.alpha=0
-	console.log(menuPaper.button_paper_select[2],"ggg");
 }
 
 Menu.prototype.closepanel=function(){
 	if (background.flag_close && menuPaper_opponent.button_play.visible==false){
 		tw.displacement_background_opponent_and_player_close()
 		this.valide_chooce()
+		paper_player.change_frame()
+		console.log("value");
 	}
 }
 
@@ -207,17 +210,17 @@ Menu.prototype.anim_repere = function() {
 //reduire le nombre de coeur en fonction du boutton choisi	
 Menu.prototype.rearrange_table_number_of_sort_paper = function(nombre) {
 	if (this.id=="player"){
-	this.paper[7].frame=nombre
-	this.paper[7].alpha=1
+		this.paper[7].frame=nombre
+		this.paper[7].alpha=1
 		menuPaper_opponent.paper[7].alpha=1
 		menuPaper_opponent.paper[7].frame=this.paper[7].frame
 
-	parameter.number_heart_player=-1*parameter.value_paper_level[nombre]+parameter.value_heart_player_during_operations
-
+		parameter.number_heart_player=-1*parameter.value_paper_level[nombre]+parameter.value_heart_player_during_operations
+		parameter.number_heart_opponent=-1*parameter.value_paper_level[nombre]+parameter.value_heart_opponent_during_operations
+		menuPaper_opponent.amount_of_heart_paper.text=parameter.number_heart_opponent
+		this.init_table_number_of_sort_paper_player()
 	}
-	this.init_table_number_of_sort_paper_player()
 }
-
 
 
 //stock nombre papiers et réinitialisation du nombre de papiers
@@ -226,26 +229,52 @@ Menu.prototype.init_table_number_of_sort_paper_player = function(){
 	parameter.number_of_sort_paper_player=[]
 	for (var i = 1; i < nu.paper; i++) {
 		parameter.number_of_sort_paper_player[i]=Math.floor(parameter.number_heart_player/parameter.value_paper_level[i+1])
+		//pour tester si la valeur ==NaN
+		if (parameter.number_of_sort_paper_player[i] !== parameter.number_of_sort_paper_player[i]){
+			parameter.number_of_sort_paper_player[i]=0
+		}
+		console.log(parameter.number_of_sort_paper_player[i],"paper");
+		this.button_paper_select[i].quantity_paper.text=parameter.number_of_sort_paper_player[i]
+
 	}
 	this.modif_heart_at_top()
 	this.agite_heart()
 }
 
 Menu.prototype.agite_heart = function() {
-	if (this.tween_agite_heart_flag) {
-		this.tween_agite_heart_flag=false
-		this.tween_agite_heart=game.add.tween(this.scale).to({x:this.scale.x+1,y:this.scale.y+1},100,Phaser.Easing.Linear.None,true,0)
-		this.tween_agite_end_coupons=game.add.tween(this.paper[7]).to({x:this.scale.x+1,y:this.scale.y+1},100,Phaser.Easing.Linear.None,true,0)
-		this.tween_agite_end_coupons.yoyo(100,true)
-		this.tween_agite_heart.yoyo(100,true)	
-		this.tween_agite_heart.onComplete.add(this.resetflag_agite_heart,this)
+	if (this.id=="player"){
+		if (this.tween_agite_heart_flag) {
+			this.tween_agite_heart_flag=false
+			this.tween_agite_heart_opponent=game.add.tween(menuPaper_opponent.scale).to({x:this.scale.x+1,y:this.scale.y+1},100,Phaser.Easing.Linear.None,true,0)
+			this.tween_agite_heart=game.add.tween(this.scale).to({x:this.scale.x+1,y:this.scale.y+1},100,Phaser.Easing.Linear.None,true,0)
+			this.tween_agite_end_coupons_opponent=game.add.tween(menuPaper_opponent.paper[7].scale).to({x:1.2,y:1.2},100,Phaser.Easing.Linear.None,true,0)
+			this.tween_agite_end_coupons=game.add.tween(this.paper[7].scale).to({x:1.2,y:1.2},100,Phaser.Easing.Linear.None,true,0)
 
+			this.tween_agite_end_coupons_opponent.yoyo(100,true)
+			this.tween_agite_end_coupons.yoyo(100,true)
+			this.tween_agite_heart.yoyo(100,true)	
+			this.tween_agite_heart_opponent.yoyo(100,true)	
+			this.tween_agite_heart.onComplete.add(this.resetflag_agite_heart,this)
+
+		}
+
+	}else{
+		if (this.tween_agite_heart_flag) {
+			this.tween_agite_heart_flag=false
+			this.tween_agite_heart=game.add.tween(this.scale).to({x:this.scale.x+1,y:this.scale.y+1},100,Phaser.Easing.Linear.None,true,0)
+			console.log("this.paper[7].x",this.paper[7].x);
+			this.tween_agite_end_coupons=game.add.tween(this.paper[7].scale).to({x:1.2,y:1.2},100,Phaser.Easing.Linear.None,true,0)
+
+			this.tween_agite_end_coupons.yoyo(100,true)
+			this.tween_agite_heart.yoyo(100,true)	
+			this.tween_agite_heart.onComplete.add(this.resetflag_agite_heart,this)
+
+		}
 	}
 }
 
-
 Menu.prototype.resetflag_agite_heart = function() {
-this.tween_agite_heart_flag=true	
+	this.tween_agite_heart_flag=true	
 }
 
 
@@ -253,6 +282,8 @@ this.tween_agite_heart_flag=true
 Menu.prototype.modif_heart_at_top = function() {
 	if (this.id=="opponent"){
 		this.amount_of_heart_paper.text=parameter.number_heart_opponent
+		//menuPaper.amount_of_heart_paper.text=parameter.number_heart_player
+
 	} else if(this.id=="player"){
 		this.amount_of_heart_paper.text=parameter.number_heart_player	
 	}

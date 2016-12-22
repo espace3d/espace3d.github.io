@@ -1,3 +1,5 @@
+//TODO:change frame
+
 //////////////////////////////////////////////////////////////////////////////////////////
 //paper.js
 //le papier général qui sert de réception au touch et qui équivaut en hauteur 
@@ -77,32 +79,27 @@ Paper = function(game,group,posx,posy,name_character){
 	this.events.onInputUp.add(this.move,this)
 
 	this.paper=[] 
-	for (var j = 0; j < nu.paper; j++) {
-		this.paper[j] = [] 
-		for (var i = 0; i < 1; i++) {
-			this.paper[j][i] = game.add.sprite(0,0,"sprite_paper")
-			this.paper[j][i].tint=black
+	for (var i = 0; i < nu.paper; i++) {
+		//ombre
+			this.paper[i] = game.add.sprite(0,0,"sprite_paper")
+			this.paper[i].tint=black
+			this.paper[i].alpha=.4
+			this.paper[i].x = 9
+			this.paper[i].y =-840+i*dim.paper 
 
-			this.paper[j][i].alpha=.4
-			this.paper[j][i].fwd = game.add.sprite(0,0,"sprite_paper")
-			//this.paper[j][i].fwd.animations.add('Play')
-			//this.paper[j][i].fwd.animations.play('Play',1,true)
-			this.paper[j][i].fwd.anchor.x = .5
-			this.paper[j][i].fwd.x = 0
-			this.paper[j][i].fwd.y =-840+j*dim.paper 
-			this.paper[j][i].anchor.x = .5
-			this.paper[j][i].x = 9
-			this.paper[j][i].y =-840+j*dim.paper 
-			this.paper[j][i].fwd.alpha=1
-		} 
+		//papier à l'avant plan
+			this.paper[i].fwd = game.add.sprite(0,0,"sprite_paper")
+			this.paper[i].fwd.anchor.x = .5
+			this.paper[i].fwd.x = 0
+			this.paper[i].fwd.y =-840+i*dim.paper 
+			this.paper[i].anchor.x = .5
+			this.paper[i].fwd.alpha=1
 	} 
 
 	//ajout aux groupes
-	for (var j = 0; j < nu.paper; j++) {
-		for (var i = 0; i < 1; i++) {
-			this.addChild(this.paper[j][i])
-			this.addChild(this.paper[j][i].fwd)
-		}
+	for (var i = 0; i < nu.paper; i++) {
+			this.addChild(this.paper[i])
+			this.addChild(this.paper[i].fwd)
 	}
 	//TODO
 	//this.timer=game.time.events.add(delay_paper_fall,resetflag,this)
@@ -142,10 +139,15 @@ Paper = function(game,group,posx,posy,name_character){
 	this.group.pivot.y=840
 
 	this.group.pivot.x=0
+	this.change_frame()
 
 }
 Paper.prototype = Object.create(object_physics.prototype) 
 Paper.prototype.constructor=object_physics
+
+Paper.prototype.change_frame = function() {
+this.paper[7].fwd.frame=menuPaper.paper[7].frame
+}
 
 
 //arreter la chute
