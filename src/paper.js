@@ -146,7 +146,7 @@ Paper.prototype = Object.create(object_physics.prototype)
 Paper.prototype.constructor=object_physics
 
 Paper.prototype.change_frame = function() {
-this.paper[7].fwd.frame=menuPaper.paper[7].frame
+	this.paper[7].fwd.frame=menuPaper.paper[7].frame
 }
 
 

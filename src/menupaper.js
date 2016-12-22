@@ -57,9 +57,6 @@ Menu = function(game,Group,id,posx,posy){
 		Group.add(this.button_paper_select[i].main) 
 	}
 
-	this.action_on_click=function(){
-		console.log(this.button_paper_select.id)
-	}
 	//boutton play
 	this.button_play=game.add.button(this.posx,h*.85,"play_button",this.closepanel,this)
 	this.button_play.anchor.setTo(.5,.5)
@@ -129,9 +126,11 @@ Menu = function(game,Group,id,posx,posy){
 	this.repere_for_end_of_roll.anchor.y=.5
 	this.repere_for_end_of_roll.alpha=0
 
+	//group
 	this.sub_group.add(this.repere_for_end_of_roll)
 	this.Group.add(this.sub_group)
 	this.Group.add(this.white)
+
 	//score à coté du coeur
 	this.amount_of_heart_paper=game.add.bitmapText(this.posx,this.posy+120,'lucky',100,80)
 	this.amount_of_heart_paper.anchor.x=.5
@@ -154,12 +153,6 @@ Menu = function(game,Group,id,posx,posy){
 Menu.prototype = Object.create(Phaser.Sprite.prototype)
 Menu.prototype.constructor = Menu
 
-Menu.prototype.action_on_click = function() {
-	console.log('msg')	
-}
-
-
-
 Menu.prototype.deroll_paper = function() {
 
 	this.tween_agite_roll=game.add.tween(this.roll_paper_turn_faster).to({alpha:1},100,Phaser.Easing.Linear.None,true,0,-1)
@@ -177,6 +170,7 @@ Menu.prototype.closepanel=function(){
 	if (background.flag_close && menuPaper_opponent.button_play.visible==false){
 		tw.displacement_background_opponent_and_player_close()
 		this.valide_chooce()
+		paper_opponent.change_frame()
 		paper_player.change_frame()
 		console.log("value");
 	}
@@ -222,7 +216,6 @@ Menu.prototype.rearrange_table_number_of_sort_paper = function(nombre) {
 	}
 }
 
-
 //stock nombre papiers et réinitialisation du nombre de papiers
 Menu.prototype.init_table_number_of_sort_paper_player = function(){
 	parameter.value_heart_player_during_operations=parameter.value_heart_player
@@ -233,7 +226,6 @@ Menu.prototype.init_table_number_of_sort_paper_player = function(){
 		if (parameter.number_of_sort_paper_player[i] !== parameter.number_of_sort_paper_player[i]){
 			parameter.number_of_sort_paper_player[i]=0
 		}
-		console.log(parameter.number_of_sort_paper_player[i],"paper");
 		this.button_paper_select[i].quantity_paper.text=parameter.number_of_sort_paper_player[i]
 
 	}
@@ -255,7 +247,6 @@ Menu.prototype.agite_heart = function() {
 			this.tween_agite_heart.yoyo(100,true)	
 			this.tween_agite_heart_opponent.yoyo(100,true)	
 			this.tween_agite_heart.onComplete.add(this.resetflag_agite_heart,this)
-
 		}
 
 	}else{
@@ -277,13 +268,10 @@ Menu.prototype.resetflag_agite_heart = function() {
 	this.tween_agite_heart_flag=true	
 }
 
-
 //lorsqu'on valide le choix pour décompter le nombre de coeur
 Menu.prototype.modif_heart_at_top = function() {
 	if (this.id=="opponent"){
 		this.amount_of_heart_paper.text=parameter.number_heart_opponent
-		//menuPaper.amount_of_heart_paper.text=parameter.number_heart_player
-
 	} else if(this.id=="player"){
 		this.amount_of_heart_paper.text=parameter.number_heart_player	
 	}
