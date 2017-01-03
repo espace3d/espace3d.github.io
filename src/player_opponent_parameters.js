@@ -21,7 +21,6 @@ param = function(){
 	this.value_paper_level=[]
 	for (var i = 0; i < nu.paper; i++) {
 		this.value_paper_level[i]=i*10	
-		console.log("thispaper",this.value_paper_level[i]);
 	}
 
 	this.value_paper_level[0]=1

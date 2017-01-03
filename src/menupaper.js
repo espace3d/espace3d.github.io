@@ -1,8 +1,7 @@
 //TODO:this_close_panel
 
 //////////////////////////////////////////////////////////////////////////////////////////
-//menupaper
-var M = M || {}
+//menupapervar M = M || {}
 //////////////////////////////////////////////////////////////////////////////////////////
 
 Menu = function(game,Group,id,posx,posy){
@@ -28,7 +27,8 @@ Menu = function(game,Group,id,posx,posy){
 	this.button_paper_select=[] 
 	for (var i = 0; i < this.row; i++) {
 		//icone grises
-		this.button_paper_select[i] = game.add.button(0,0,'button_paper_select1',(but) => this.rearrange_table_number_of_sort_paper(but.id),this) 
+		this.button_paper_select[i] = game.add.button(0,0,'button_paper_select_sheet',(but) => this.rearrange_table_number_of_sort_paper(but.id),this) 
+		this.button_paper_select[i].frame=i
 		this.button_paper_select[i].x = this.posx-160
 		this.button_paper_select[i].y = this.posy+310+i*this.distance_in_height_between_button
 		this.button_paper_select[i].visible = false
@@ -37,7 +37,7 @@ Menu = function(game,Group,id,posx,posy){
 		this.button_paper_select[i].gray=false
 
 		//icone
-		this.button_paper_select[i].main = game.add.sprite(0,0,'button_paper_select1') 
+		this.button_paper_select[i].main = game.add.sprite(0,0,'button_paper_select_sheet') 
 		this.button_paper_select[i].main.x = this.posx-160
 		this.button_paper_select[i].main.y =this.posy+310+i*this.distance_in_height_between_button
 		this.button_paper_select[i].main.visible = false 
@@ -56,6 +56,10 @@ Menu = function(game,Group,id,posx,posy){
 		Group.add(this.button_paper_select[i]) 
 		Group.add(this.button_paper_select[i].main) 
 	}
+
+
+
+
 
 	//boutton play
 	this.button_play=game.add.button(this.posx,h*.85,"play_button",this.closepanel,this)
@@ -110,7 +114,6 @@ Menu = function(game,Group,id,posx,posy){
 
 	//rouleau de papier
 	this.roll_paper=game.add.sprite(this.posx,this.posy+420,'roll_paper_menu_select')
-	console.log("value",this.roll_paper.x);
 	this.roll_paper.anchor.x=.5
 	this.sub_group.add(this.roll_paper)
 
@@ -253,7 +256,6 @@ Menu.prototype.agite_heart = function() {
 		if (this.tween_agite_heart_flag) {
 			this.tween_agite_heart_flag=false
 			this.tween_agite_heart=game.add.tween(this.scale).to({x:this.scale.x+1,y:this.scale.y+1},100,Phaser.Easing.Linear.None,true,0)
-			console.log("this.paper[7].x",this.paper[7].x);
 			this.tween_agite_end_coupons=game.add.tween(this.paper[7].scale).to({x:1.2,y:1.2},100,Phaser.Easing.Linear.None,true,0)
 
 			this.tween_agite_end_coupons.yoyo(100,true)
@@ -283,4 +285,4 @@ Menu.prototype.valide_chooce = function() {
 	parameter.number_heart_opponent=parameter.value_heart_opponent_during_operations	
 }
 
-M = M || {}
+//M = M || {}

@@ -44,6 +44,7 @@ Paper = function(game,group,posx,posy,name_character){
 	this.text_position.visible=false
 	this.text_position.anchor.x =.5
 	this.text_position.anchor.y =.5
+	this.text_position.y=0
 	game.physics.arcade.enable(this.text_position)
 
 
@@ -232,7 +233,6 @@ Paper.prototype.move=function(){
 
 //arreter d'étendre le curseur permettant de locker la position
 Paper.prototype.stop_expand_cursor_lock=function(){
-	console.log("stop_expand_cursor_lock")
 	this.tween.stop()
 	this.tween2.stop()
 	background.cursor_player.alpha=0
@@ -254,7 +254,6 @@ Paper.prototype.opponentfall=function(_paper_opponent,_background_line_collision
 }
 
 Paper.prototype.opponent_collision=function(obj1,obj2){
-	console.log("gfkifjgfj")
 	obj1.body.velocity.y=400 	
 
 	//TODO renseigner les vrais noms des background
@@ -316,7 +315,9 @@ Paper.prototype.stop_tween_cursor_opponent = function() {
 	background.cursor_opponent.scale.x=1
 }
 
+//test
 //on permet la collision si le flag est à true
+
 Paper.prototype.update = function() {
 	//ligne et chiffre qui tombe
 	this.fall_line()
@@ -333,16 +334,19 @@ Paper.prototype.fall_line=function(){
 		this.line_position.y=this.text_position.y
 		this.text_position.body.allowGravity=true
 		//this.line_position.body.allowGravity=true
-		if(this.text_position.y<h2){
+		if(this.text_position.body.y <= h2){
 			this.text_position.text=Math.round(this.text_position.body.y)
-		}else{
-			this.text_position.text="000"
+		} else if (this.text_position.body.y > h2){
+				this.text_position.text="000"
+			
+				//this.text_position.text=Math.round(this.text_position.body.y)
+				//this.text_position.text="000"
+			}
+			//pour empêcher que le papier ne bouge suite à la collision
+			this.game.physics.arcade.collide(this,this.text_position,this.count_collision)
+			//TODO changer cycle de collide
 		}
-		//pour empêcher que le papier ne bouge suite à la collision
-		this.game.physics.arcade.collide(this,this.text_position,this.count_collision)
-		//TODO changer cycle de collide
 	}
-}
 
 //retardateur de l'update pour ne pas rafraichir toutes les 60 frames 
 Paper.prototype.retardateur_update=function(retardateur_frame,_condition,_fonction){ 

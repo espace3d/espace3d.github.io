@@ -4,6 +4,10 @@ preload.prototype = {
 	preload: function(){ 
 
 		//loadingBar
+		var studio= this.add.sprite(w2,880,'studio')
+		studio.anchor.setTo(.5,.5)
+		var border_progress_bar= this.add.sprite(w2,1078,'border_progress_bar')
+		border_progress_bar.anchor.x=.5
 		var loadingBar = this.add.sprite(w2,h2,"loading");
 		loadingBar.anchor.setTo(0.5,0.5);
 		this.load.setPreloadSprite(loadingBar);
@@ -13,16 +17,20 @@ preload.prototype = {
 		this.game.load.spritesheet("iconpaper","assets/iconpaper.png",65,76,1);
 		this.game.load.spritesheet("sprite_paper_gray","assets/paper_gray.png",210,210,8);
 		this.game.load.spritesheet("sprite_paper","assets/paper.png",210,210,8);
+		this.game.load.spritesheet("button_paper_select_sheet","assets/button_paper_select_sheet.png",100,107,8);
 
 		//script
 		//this.game.load.script('gray', 'https://cdn.rawgit.com/photonstorm/phaser/master/filters/Gray.js')
 
 		//images
+		this.game.load.image("player","assets/player.png");
+		this.game.load.image("opponent","assets/opponent.png");
+		this.game.load.image("player_top","assets/player_top.png");
+		this.game.load.image("opponent_top","assets/opponent_top.png");
 		this.game.load.image("white","assets/white.png");
 		this.game.load.image("heart","assets/heart.png");
 		this.game.load.image("roll_turn_faster","assets/roll_turn_faster.png");
 		this.game.load.image("repere","assets/repere.png");
-		this.game.load.image("button_paper_select1","assets/button_paper_select1.png");
 		this.game.load.image("roll_paper_menu_select","assets/roll_paper_menu_select.png");
 		this.game.load.image("game_title","assets/game_title.png");
 		this.game.load.image("gametitle","assets/gametitle.png");
@@ -57,6 +65,7 @@ preload.prototype = {
 		this.game.load.image("test_line","assets/test_line.png");
 		this.game.load.image('spiral','assets/spiral.png');
 		this.game.load.image('roll_turn','assets/roll_turn.png');
+		this.game.load.image("papermania_heart","assets/papermania_heart.png");
 		this.game.load.image("papermania","assets/papermania.png");
 
 		//font bitmapFont

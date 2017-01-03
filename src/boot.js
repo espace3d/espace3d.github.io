@@ -4,8 +4,12 @@ var boot = function(game){
   
 boot.prototype = {
 	preload: function(){
-		this.game.load.image("loading","assets/loading.png"); 
-	
+		this.stage.backgroundColor = "#3b2c27"
+		// pour uniquement préchargé les icones et la bordures
+		// la loading bar sera chargée dans Preload
+		this.load.image('border_progress_bar','assets/border_progress_bar.png')
+		this.load.image('studio','assets/studio.png')
+		this.load.image("loading","assets/loading.png"); 
 	},
   	create: function(){
 		this.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT

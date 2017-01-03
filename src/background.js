@@ -153,8 +153,14 @@ draw_background = function(game){
 	this.border_opponent_inferieur_white=drawSprite(this.g12,game,"rect",0-epaisseur_fond,h-epaisseur_fond_large,w2,epaisseur_fond_large,0,white,1) 
 
 	//this.background de l'opponent et du player
-	this.opponent=drawSprite(this.g6,game,"rect",0-decalage,0,w2,h+200,0,this.color_opponent,1) 
-	this.player=drawSprite(this.g7,game,"rect",w2+decalage,0,w2,h+200,0,this.color_player,1) 
+	this.opponent=game.add.sprite(0,0,"opponent")
+	this.opponent.height=h
+	this.g6.add(this.opponent)
+	//this.opponent=drawSprite(this.g6,game,"rect",0-decalage,0,w2,h+200,0,this.color_opponent,1) 
+	this.player=game.add.sprite(w2,0,"player")
+	this.player.height=h
+	this.g7.add(this.player)
+	//this.player=drawSprite(this.g7,game,"rect",w2+decalage,0,w2,h+200,0,this.color_player,1) 
 	this.player.inputEnabled=true
 
 
@@ -171,9 +177,12 @@ draw_background = function(game){
 	this.line_opponent_gauche.alpha=0
 
 	//barre supérieure qui masque la chute du papier-- groupe différent pour que le texte et le papier soit recouvert 
-	this.opponent_top=drawSprite(this.g1,game,"rect",0-decalage,0,w2,h*.15,0,this.color_opponent,1) 
-	this.player_top=drawSprite(this.g2,game,"rect",w2+decalage,0,w2,h*.15,0,this.color_player,1) 
-
+	this.opponent_top=game.add.sprite(0,0,'opponent_top')
+	this.g1.add(this.opponent_top)
+	//this.opponent_top=drawSprite(this.g1,game,"rect",0-decalage,0,w2,h*.15,0,this.color_opponent,1) 
+	//this.player_top=drawSprite(this.g2,game,"rect",w2+decalage,0,w2,h*.15,0,this.color_player,1) 
+	this.player_top=game.add.sprite(w2,0,'player_top')
+	this.g2.add(this.player_top)
 
 	//line de collision avec le paper opponent
 	this.line_collision_opponent=[]

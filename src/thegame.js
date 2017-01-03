@@ -1,3 +1,5 @@
+//
+//browser-sync start --server --files "*.html, src/*.js"
 var theGame = function(game){
 	grey_check=null,
 	spriteNumber = null;
@@ -17,7 +19,6 @@ var theGame = function(game){
 	effect= null
 	little_roll_player=null
 	little_roll_opponent=null
-	tw=null
 	//////////////////////////////////////////////////////////////////////////////////////////
 	//GROUP
 	groupnull = null
