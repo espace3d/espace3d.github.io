@@ -91,10 +91,10 @@ gameTitle.prototype = {
 	create: function(){
 		fizzy=new first_screen(game)
 		this.add.existing(fizzy)
-		gui=new dat.GUI()
-		gui.add(fizzy, 'speed')
-		gui.add(fizzy,'num', {LinearNone:0,BackIn:1,BackOut:2,BackInOut:3,BounceIn:3,BounceOut:4,BounceInOut:5,CircularIn:6,CircularOut:7,CircularInOut:8,CubicIn:9,CubicOut:10,CubicInOut:11,ElasticIn:12,ElasticOut:13,ElasticInOut:14,ExponentialIn:15,ExponentialOut:16,ExponentialInOut:17,LinearIn:18,QuadraticIn:19,QuadraticOut:20,QuadraticInOut:21,QuarticIn:22,QuarticOutr:23,QuarticInOut:24,QuinticIn:25,QuinticOut:26,QuinticInOut:27,SinusoidalIn:28,SinusoidalOut:29})
-		gui.add(fizzy, 'activate_tween')
+		//gui=new dat.GUI()
+		//gui.add(fizzy, 'speed')
+		//gui.add(fizzy,'num', {LinearNone:0,BackIn:1,BackOut:2,BackInOut:3,BounceIn:3,BounceOut:4,BounceInOut:5,CircularIn:6,CircularOut:7,CircularInOut:8,CubicIn:9,CubicOut:10,CubicInOut:11,ElasticIn:12,ElasticOut:13,ElasticInOut:14,ExponentialIn:15,ExponentialOut:16,ExponentialInOut:17,LinearIn:18,QuadraticIn:19,QuadraticOut:20,QuadraticInOut:21,QuarticIn:22,QuarticOutr:23,QuarticInOut:24,QuinticIn:25,QuinticOut:26,QuinticInOut:27,SinusoidalIn:28,SinusoidalOut:29})
+		//gui.add(fizzy, 'activate_tween')
 	}
 }
 

@@ -178,10 +178,12 @@ draw_background = function(game){
 
 	//barre supérieure qui masque la chute du papier-- groupe différent pour que le texte et le papier soit recouvert 
 	this.opponent_top=game.add.sprite(0,0,'opponent_top')
+	this.opponent_top.alpha=0
 	this.g1.add(this.opponent_top)
 	//this.opponent_top=drawSprite(this.g1,game,"rect",0-decalage,0,w2,h*.15,0,this.color_opponent,1) 
 	//this.player_top=drawSprite(this.g2,game,"rect",w2+decalage,0,w2,h*.15,0,this.color_player,1) 
 	this.player_top=game.add.sprite(w2,0,'player_top')
+	this.player_top.alpha=0
 	this.g2.add(this.player_top)
 
 	//line de collision avec le paper opponent
@@ -198,7 +200,7 @@ draw_background = function(game){
 	//taille you
 	var taille=w*.05 
 	//taille2 JOJO
-	var taille2=w*.05 
+	var taille2=w*.035 
 	//taille3 LVL 1
 	var taille3=w*.010 
 
@@ -207,47 +209,16 @@ draw_background = function(game){
 	this.text_name_player_shadow = game.add.bitmapText(w4*3+3,py1+3,'lucky','dev', taille) 
 	this.text_name_player_shadow.alpha=.5
 	this.text_name_player_shadow.visible=false
-	this.text_name_player = game.add.bitmapText(w4*3,py1,'lucky','dev', taille) 
-	this.text_level_player = game.add.bitmapText(w4*3,py3,'lucky','lvl ', taille2) 
+	this.text_name_player = game.add.bitmapText(w4*3,py1,'lucky_red','dev', taille) 
+	this.text_level_player = game.add.bitmapText(w4*3,py3,'lucky_red','lvl'+parameter.level_number_player, taille2) 
 	this.text_level_player.alpha=1
-	this.text_level_number_player=game.add.bitmapText(w4*3+80,py3,'lucky',parameter.level_number_player, taille2) 
-	this.text_level_number_player.anchor.x=0
-	this.text_level_number_player.tint=rose
-	this.text_level_number_player.alpha=0
-	//
-	//	//texte + line qui descend et indique la position du papier 
-	//	this.text_position_player = game.add.bitmapText(w4*3,-50,'lucky','', taille) 
-	//	this.text_position_player.visible=false
-	//	this.text_position_player.anchor.x =.5
-	//	this.text_position_player.anchor.y =.5
-	//	this.g2.add(this.text_position_player) 
-	//	this.line_position_player=game.add.sprite(w4*3,0,"line_position") 
-	//	this.g7.add(this.line_position_player)
-	//	this.line_position_player.anchor.y=1
-	//	this.text_position_player.isFalling=false
-	//
-	//	this.text_position_opponent = game.add.bitmapText(w4*3,0,'lucky','', taille) 
-	//	this.text_position_opponent.visible=false
-	//	this.text_position_opponent.anchor.x =.5
-	//	this.text_position_opponent.anchor.y =.5
-	//	this.g2.add(this.text_position_opponent) 
-	//	this.line_position_opponent=game.add.sprite(w4,0,"line_position") 
-	//
-	//	this.g7.add(this.line_position_opponent)
-	//	this.line_position_opponent.anchor.y=1
-	//	this.text_position_opponent.isFalling=false
-
-	this.text_win = game.add.bitmapText(w4*3,h2-taille+taille*.5,'lucky_black','win', taille) 
+	this.text_win = game.add.bitmapText(w4*3,h2-taille+taille*.5,'lucky_black_white','win', taille) 
 	this.text_win.visible=false
 	this.text_win.alpha=0
 	//OPPONENT 
-	this.text_name_opponent = game.add.bitmapText(w4,py1,'lucky','kill the game', taille) 
-	this.text_level_opponent = game.add.bitmapText(w4,py3,'lucky','lvl ', taille2) 
+	this.text_name_opponent = game.add.bitmapText(w4,py1,'lucky_red','kill the game', taille) 
+	this.text_level_opponent = game.add.bitmapText(w4,py3,'lucky_red','lvl'+parameter.level_number_opponent, taille2) 
 	this.text_level_opponent.alpha=1
-	this.text_level_number_opponent=game.add.bitmapText(w4+80,py3,'lucky',parameter.level_number_opponent, taille2) 
-	this.text_level_number_opponent.anchor.x=0
-	this.text_level_number_opponent.tint=rose
-	this.text_level_number_opponent.alpha=1
 
 	//modifications des anchors
 	this.text_name_player.anchor.x=.5
@@ -256,8 +227,6 @@ draw_background = function(game){
 	this.text_name_player_shadow.anchor.y=.5
 	this.text_level_player.anchor.x=.5
 	this.text_level_player.anchor.y=.5
-	this.text_level_number_player.anchor.x=.5
-	this.text_level_number_player.anchor.y=.5
 	this.text_win.anchor.x=.5
 	this.text_win.anchor.y=.5
 
@@ -265,18 +234,14 @@ draw_background = function(game){
 	this.text_name_opponent.anchor.y=.5
 	this.text_level_opponent.anchor.x=.5
 	this.text_level_opponent.anchor.y=.5
-	this.text_level_number_opponent.anchor.x=.5
-	this.text_level_number_opponent.anchor.y=.5
 
 	//ajout des textes aux groupes
 	this.g2.add(this.text_name_player) 
 	this.g2.add(this.text_name_player_shadow) 
 	this.g2.add(this.text_level_player) 
-	this.g2.add(this.text_level_number_player) 
 
 	this.g1.add(this.text_level_opponent) 
 	this.g1.add(this.text_name_opponent) 
-	this.g1.add(this.text_level_number_opponent) 
 
 	//flash pour signifier que la position est lockée
 	this.flash_opponent = game.add.sprite(0,0,"rect")
@@ -309,9 +274,7 @@ draw_background.prototype.tween_begin_game=function(){
 	this.tween_level_and_number_opponent4=game.add.tween(little_roll_opponent).to({alpha:.9},500,Phaser.Easing.Linear.None,true,delay_paper_fall)
 
 	this.tween_level_and_number_player1=game.add.tween(this.text_level_player).to({alpha:1},500,Phaser.Easing.Linear.None,true,delay_paper_fall)
-	this.tween_level_and_number_player2=game.add.tween(this.text_level_number_player).to({alpha:1},500,Phaser.Easing.Linear.None,true,delay_paper_fall)
 	this.tween_level_and_number_opponent1=game.add.tween(this.text_level_opponent).to({alpha:1},500,Phaser.Easing.Linear.None,true,delay_paper_fall)
-	this.tween_level_and_number_opponent2=game.add.tween(this.text_level_number_opponent).to({alpha:1},500,Phaser.Easing.Linear.None,true,delay_paper_fall)
 	this.tween_roll_opponent=game.add.tween(little_roll_opponent).to({alpha:1},500,Phaser.Easing.Linear.None,true,delay_paper_fall-300)
 	this.tween_roll_player=game.add.tween(little_roll_player).to({alpha:1},500,Phaser.Easing.Linear.None,true,delay_paper_fall-300)
 	this.tween_roll_opponent=game.add.tween(little_roll_opponent.heart).to({alpha:1},500,Phaser.Easing.Linear.None,true,delay_paper_fall-300)
@@ -325,6 +288,8 @@ draw_background.prototype.tween_begin_game=function(){
 }
 //animation text looser et winner lorsqu'ils apparaissent
 draw_background.prototype.winner=function(nam_winner){
+
+
 	if (this.winner_flag){
 		this.winner_flag = false
 		console.log("valueloooo");

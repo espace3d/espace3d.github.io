@@ -11,7 +11,7 @@ Timer = function(game,Group){
 	//group
 	this.Group=Group
 	//disque noir du timer 
-	this.time_shadow=drawSprite(this.Group,game,"timer",w2,h2+300,w*.255,w*.255,.5,0,.6)
+	this.time_shadow=drawSprite(this.Group,game,"timer",w2,h2+300,w*.255,w*.255,.5,0,1)
 	this.time_shadow.inputEnabled=true
 	//texte du timer
 	this.timer_text = game.add.bitmapText(w2,h2+300,'lucky',this.timer_value, w*.15)
@@ -145,7 +145,6 @@ Timer.prototype.next_looser = function() {
 
 Timer.prototype.winner=function(){
 	this.winner_flag=true
-	console.log("value");
 	this.tween_eclat_player=game.add.tween(G.contour_playerGroup9).to({alpha:1},this.time_eclat,Phaser.Easing.Bounce.Out,true,200)
 	this.tween_eclat_player.onComplete.add(this.next_winner,this)
 }

@@ -95,7 +95,7 @@ init_transitions.prototype.retardateur=function(){
 	game.time.events.add(time_close_panel_background+time_shadow_up_and_texte_up+1900,this.text_visible,this)
 }
 
-//rendre les textes permettant de mesurer la chute visible
+//rendre visible les textes permettant de mesurer la chute 
 init_transitions.prototype.text_visible=function(){
 	paper_player.text_position.visible=true
 	paper_opponent.text_position.visible=true
@@ -112,8 +112,14 @@ init_transitions.prototype.resetflag=function(){
 
 //symboliser la perspective
 init_transitions.prototype.perspective=function() {
+
+//background_top qui redeviennent visible
+	game.time.events.add(time_shadow_up_and_texte_up,function(){background.player_top.alpha=1,background.opponent_top.alpha=1})
+
+
+
+
 	//texte qui apparaissent
-	console.log("value");
 	background.tween_begin_game()
 	//déplacement de l'ombre
 	displacement_position(game,background.table_opponent,0,h2,0,time_shadow_up_and_texte_up,"Linear.None")

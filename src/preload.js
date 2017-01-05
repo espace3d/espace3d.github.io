@@ -18,6 +18,7 @@ preload.prototype = {
 		this.game.load.spritesheet("sprite_paper_gray","assets/paper_gray.png",210,210,8);
 		this.game.load.spritesheet("sprite_paper","assets/paper.png",210,210,8);
 		this.game.load.spritesheet("button_paper_select_sheet","assets/button_paper_select_sheet.png",100,107,8);
+		this.game.load.spritesheet("paper_shadow_sheet","assets/paper_shadow_sheet.png",226,226,8);
 
 		//script
 		//this.game.load.script('gray', 'https://cdn.rawgit.com/photonstorm/phaser/master/filters/Gray.js')
@@ -69,6 +70,8 @@ preload.prototype = {
 		this.game.load.image("papermania","assets/papermania.png");
 
 		//font bitmapFont
+		this.game.load.bitmapFont('lucky_black_white','fonts/font_black_white.png', 'fonts/font_black_white.fnt');
+		this.game.load.bitmapFont('lucky_red','fonts/font_red.png', 'fonts/font_red.fnt');
 		this.game.load.bitmapFont('lucky_black','fonts/font_black.png', 'fonts/font_black.fnt');
 		this.game.load.bitmapFont('lucky_grey','fonts/font_grey.png', 'fonts/font_grey.fnt');
 		this.game.load.bitmapFont('lucky','fonts/font.png', 'fonts/font.fnt');

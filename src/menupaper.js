@@ -175,7 +175,6 @@ Menu.prototype.closepanel=function(){
 		this.valide_chooce()
 		paper_opponent.change_frame()
 		paper_player.change_frame()
-		console.log("value");
 	}
 }
 
