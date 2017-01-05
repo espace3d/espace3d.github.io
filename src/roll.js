@@ -17,6 +17,7 @@ Roll = function(game,group,posx,posy,id) {
 		this.heart.text=parameter.number_heart_player
 	}else{
 		this.heart.text=parameter.number_heart_opponent
+		console.log(parameter.number_heart_opponent,"dansroll")
 	}	
 	this.group.add(this)	
 	this.group.add(this.heart)
@@ -37,6 +38,7 @@ Roll.prototype.give_heart_animation = function() {
 
 //stop animation lorsque les papiers arrivent sur lui
 Roll.prototype.stop_give_heart_animation = function() {
+	console.log('msgroll')
 	this.tween.pause()	
 	this.scale.setTo(1,1)
 }
@@ -44,10 +46,13 @@ Roll.prototype.stop_give_heart_animation = function() {
 //counter 
 Roll.prototype.update_counter = function(){
 	if (this.id=="player"){
-		parameter.number_heart_player=parameter.number_heart_player+1
+		
+		parameter.number_heart_player=parseInt(parameter.number_heart_player)+1
 		this.heart.text=parameter.number_heart_player
+		parameter.number_heart_opponent=parseInt(parameter.number_heart_opponent)-1
+		little_roll_opponent.heart.text=parameter.number_heart_opponent
 	}else{
-		parameter.number_heart_opponent=parameter.number_heart_opponent+1
+		parameter.number_heart_opponent=parseInt(parameter.number_heart_opponent)+1
 		this.heart.text=parameter.number_heart_opponent
 	}	
 

@@ -17,7 +17,7 @@ preload.prototype = {
 		this.game.load.spritesheet("iconpaper","assets/iconpaper.png",65,76,1);
 		this.game.load.spritesheet("sprite_paper_gray","assets/paper_gray.png",210,210,8);
 		this.game.load.spritesheet("sprite_paper","assets/paper.png",210,210,8);
-		this.game.load.spritesheet("button_paper_select_sheet","assets/button_paper_select_sheet.png",100,107,8);
+		this.game.load.spritesheet("button_paper_select_sheet","assets/button_paper_select_sheet.png",100,107,24);
 		this.game.load.spritesheet("paper_shadow_sheet","assets/paper_shadow_sheet.png",226,226,8);
 
 		//script

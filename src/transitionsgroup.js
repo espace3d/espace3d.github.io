@@ -81,6 +81,11 @@ init_transitions.prototype.action_turn_chooce=function(){
 //|-----||-----|
 init_transitions.prototype.displacement_background_opponent_and_player_close = function(){
 
+
+little_roll_player.heart.text=parameter.number_heart_player
+little_roll_opponent.heart.text=parameter.number_heart_opponent
+		//this.amount_of_heart_paper.text=parameter.number_heart_opponent
+
 	this.retardateur()
 	game.add.tween(this.g6).to({x:0,y:0},time_close_panel_background,Phaser.Easing.Bounce.Out,true,0)
 	game.add.tween(this.g1).to({x:0,y:h2},time_close_panel_background,Phaser.Easing.Bounce.Out,true,0)

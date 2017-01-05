@@ -16,6 +16,8 @@ Paper = function(game,group,posx,posy,name_character){
 	this.flag_winner=false
 	this.flag_flash=true
 	this.group=group
+	//pour animation des papiers lors du score
+	this.flag_tween_anim_paper_for_score=true
 
 	this.flash_grey=true
 	//temps pour que le curseur soit complétement allongé et permettre de stopper les papiers pour de bon
@@ -32,8 +34,9 @@ Paper = function(game,group,posx,posy,name_character){
 	this.isFalling=false
 	this.tint=red
 
-// tween pour animer les papiers vers la fin
+	// tween pour animer les papiers vers la fin
 	this.tween_paper={}
+	this.tween_paper_opponent={}
 
 
 	//texte + line qui descend et indique la position du papier 
@@ -82,7 +85,6 @@ Paper = function(game,group,posx,posy,name_character){
 	for (var i = 0; i < nu.paper; i++) {
 		//ombre
 		this.paper[i] = game.add.sprite(0,0,"paper_shadow_sheet")
-		this.paper[i].tint=black
 		//this.paper[i].alpha=.4
 		this.paper[i].x = 19
 		this.paper[i].y =-840+i*dim.paper 
@@ -198,7 +200,6 @@ Paper.prototype.flash = function() {
 			this.tween_text_locked=game.add.tween(background.flash_player).to({alpha:.9},150,Phaser.Easing.Bounce.Out,true,0)
 			this.tween_text_locked.onComplete.add(this.fade_player,this)
 		}else{
-			console.log("this",this);
 			this.tween_text_locked=game.add.tween(background.flash_opponent).to({alpha:.9},150,Phaser.Easing.Bounce.Out,true,0)
 			this.tween_text_locked.onComplete.add(this.fade_opponent,this)
 		}
@@ -307,7 +308,6 @@ Paper.prototype.cursor_opponent_tween = function(time_tween){
 }
 
 Paper.prototype.stop_tween_cursor_opponent = function() {
-	console.log("stoptween");
 	this.tween_opponent.stop()
 	this.tween2_opponent.stop()
 	background.cursor_opponent_particle.on=false
@@ -370,13 +370,13 @@ Paper.prototype.retardateur_update=function(retardateur_frame,_condition,_foncti
 Paper.prototype.count_collision=function(obj1){
 	obj1.count++
 	if (obj1.count==30){
+		paper_opponent.flag_tween_anim_paper_for_score=false
 		console.log("count_collision")
 		obj1.text_position.is_lached=false
 		//animation pour le vainqueur
 		game.time.events.add(800,obj1.retardateur,obj1)
 		obj1.text_position.body.moves=false
 		obj1.text_position.body.allowGravity=false
-
 	}
 }
 
@@ -402,9 +402,7 @@ Paper.prototype.grey_check = function(obj1,obj2){
 }
 //decide qui gagne
 Paper.prototype.retardateur=function(){
-	if(paper_player.flag_wait_to_design_winner && paper_opponent.flag_wait_to_design_winner){
-		console.log(paper_player.body.y)
-		console.log(paper_opponent.body.y)
+	if(paper_player.flag_wait_to_design_winner && paper_opponent.flag_wait_to_design_winner ){
 		if(paper_player.grey != true && paper_opponent.grey){
 			console.log("winner")
 			this.background_winner("player")
@@ -425,15 +423,20 @@ Paper.prototype.retardateur=function(){
 }
 
 Paper.prototype.background_winner=function(na_winner){
-	effect.disappears_timer(hud.time_shadow,hud.timer_text)
-	background.text_name_player.scale.x=1
-	background.text_name_player.scale.y=1
-	background.text_name_player_shadow.scale.x=1
-	background.text_name_player_shadow.scale.y=1
-	game.time.events.add( 150,() => this.show_text_winner(na_winner),this )
-	this.anim_paper_winner(na_winner)
-}
+	//sinon la fonction anim_paper_winner se lance x fois 
+	if (this.flag_tween_anim_paper_for_score){
+		paper_player.flag_tween_anim_paper_for_score=false
+		paper_opponent.flag_tween_anim_paper_for_score=false
 
+		effect.disappears_timer(hud.time_shadow,hud.timer_text)
+		background.text_name_player.scale.x=1
+		background.text_name_player.scale.y=1
+		background.text_name_player_shadow.scale.x=1
+		background.text_name_player_shadow.scale.y=1
+		game.time.events.add( 150,() => this.show_text_winner(na_winner),this )
+		this.anim_paper_winner(na_winner)
+	}
+}
 Paper.prototype.show_text_winner = function(na_winner) {
 	if(na_winner=="player"){
 		background.winner("player")
@@ -449,8 +452,8 @@ Paper.prototype.show_text_winner = function(na_winner) {
 Paper.prototype.anim_paper_winner = function(na_winner) {
 	switch(na_winner){
 		case 'player':
-			game.time.events.add( 300,this.anim_player_paper,this )
-
+			paper_opponent.flag_tween_anim_paper_for_score=false
+			game.time.events.add(300,this.anim_player_paper,this )
 			break
 		case 'opponent':
 			break
@@ -459,15 +462,19 @@ Paper.prototype.anim_paper_winner = function(na_winner) {
 }
 
 Paper.prototype.anim_player_paper = function() {
-
 	//défintion de la destination finale ...j'ai galéré pour ça ;)
 	this.end_opponent=little_roll_opponent.y-paper_opponent.body.y+paper_opponent.paper[0].y
 	this.end=little_roll_player.y-paper_player.body.y+paper_player.paper[0].y
 
 	for (var i = 0; i < nu.paper; i++) {
+		console.log('i',i)
+
+
 		//mise en avant des groupes de papiers pour passer au dessus
-		game.world.bringToTop(G.opponentPapers4)
-		game.world.bringToTop(G.playerPapers5)
+		game.world.bringToTop(paper_player.paper[i].fwd)
+		game.world.bringToTop(paper_player.paper[i])
+		game.world.bringToTop(paper_opponent.paper[i].fwd)
+		game.world.bringToTop(paper_opponent.paper[i])
 		paper_player.body.moves=false
 		paper_opponent.body.moves=false
 
@@ -478,22 +485,23 @@ Paper.prototype.anim_player_paper = function() {
 		game.add.tween(paper_opponent.paper[i].scale).to({x:.1,y:.1},500,Phaser.Easing.Linear.None,true,i*100)
 
 		//animation alpha vers la fin
-		game.add.tween(paper_player.paper[i]).to({alpha:0},500,Phaser.Easing.Linear.None,true,i*100)
-		game.add.tween(paper_player.paper[i].fwd).to({alpha:0},500,Phaser.Easing.Linear.None,true,i*100)
+		game.add.tween(paper_player.paper[i]).to({alpha:1},500,Phaser.Easing.Linear.None,true,i*100)
+		//game.add.tween(paper_player.paper[i].fwd).to({alpha:1},500,Phaser.Easing.Linear.None,true,i*100)
 		game.add.tween(paper_opponent.paper[i]).to({alpha:0},500,Phaser.Easing.Linear.None,true,i*100)
-		game.add.tween(paper_opponent.paper[i].fwd).to({alpha:0},500,Phaser.Easing.Linear.None,true,i*100)
+		//game.add.tween(paper_opponent.paper[i].fwd).to({alpha:0},500,Phaser.Easing.Linear.None,true,i*100)
 
 		//animations destination finales
-		game.add.tween(paper_opponent.paper[i].fwd).to({x:w2,y:this.end_opponent},500,Phaser.Easing.Linear.None,true,i*100)
+		this.tween_paper_opponent[i]=game.add.tween(paper_opponent.paper[i].fwd).to({x:w2,y:this.end_opponent},500,Phaser.Easing.Linear.None,true,i*100)
 		game.add.tween(paper_opponent.paper[i]).to({x:w2,y:this.end_opponent},500,Phaser.Easing.Linear.None,true,i*100)
 		game.add.tween(paper_player.paper[i]).to({x:0,y:this.end},500,Phaser.Easing.Linear.None,true,i*100)
 		this.tween_paper[i]=game.add.tween(paper_player.paper[i].fwd).to({x:0,y:this.end},500,Phaser.Easing.Linear.None,true,i*100)
+		this.tween_paper[i].onComplete.add(little_roll_player.update_counter,little_roll_player)
+		this.tween_paper_opponent[i].onComplete.add(little_roll_player.update_counter,little_roll_player)
 
 	}
-		this.tween_paper[0].onComplete.add(little_roll_player.give_heart_animation,little_roll_player)
-		this.tween_paper[7].onComplete.add(little_roll_player.stop_give_heart_animation,little_roll_player)
+	this.tween_paper[0].onComplete.add(little_roll_player.give_heart_animation,little_roll_player)
+	this.tween_paper[7].onComplete.add(little_roll_player.stop_give_heart_animation,little_roll_player)
 }
-
 
 
 

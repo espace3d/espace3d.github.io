@@ -210,14 +210,14 @@ draw_background = function(game){
 	this.text_name_player_shadow.alpha=.5
 	this.text_name_player_shadow.visible=false
 	this.text_name_player = game.add.bitmapText(w4*3,py1,'lucky_red','dev', taille) 
-	this.text_level_player = game.add.bitmapText(w4*3,py3,'lucky_red','lvl'+parameter.level_number_player, taille2) 
+	this.text_level_player = game.add.bitmapText(w4*3,py3,'lucky_red','lvl  '+parameter.level_number_player, taille2) 
 	this.text_level_player.alpha=1
 	this.text_win = game.add.bitmapText(w4*3,h2-taille+taille*.5,'lucky_black_white','win', taille) 
 	this.text_win.visible=false
 	this.text_win.alpha=0
 	//OPPONENT 
 	this.text_name_opponent = game.add.bitmapText(w4,py1,'lucky_red','kill the game', taille) 
-	this.text_level_opponent = game.add.bitmapText(w4,py3,'lucky_red','lvl'+parameter.level_number_opponent, taille2) 
+	this.text_level_opponent = game.add.bitmapText(w4,py3,'lucky_red','lvl  '+parameter.level_number_opponent, taille2) 
 	this.text_level_opponent.alpha=1
 
 	//modifications des anchors

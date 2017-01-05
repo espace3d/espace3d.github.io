@@ -13,10 +13,11 @@ var M = M || {}
 
 param = function(){
 	//nombre de coeur
-	this.value_heart_player=500
+	this.value_heart_player=80
 	this.value_heart_opponent=20
 	this.value_heart_player_during_operations=this.value_heart_player
 	this.value_heart_opponent_during_operations=this.value_heart_opponent
+
 	//force des papiers//coupons
 	this.value_paper_level=[]
 	for (var i = 0; i < nu.paper; i++) {
