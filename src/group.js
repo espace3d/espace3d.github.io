@@ -29,6 +29,7 @@ this.cursorGroup3bis=game.add.group()
 this.timerGroup3 = game.add.group()
 this.topPlayerGroup2=game.add.group()
 this.topOpponentGroup1=game.add.group()
+this.menu_select_opponent_Group0=game.add.group()
 this.timerGroup0=game.add.group()
 }
 G = G || {}

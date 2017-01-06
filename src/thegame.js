@@ -19,6 +19,7 @@ var theGame = function(game){
 	effect= null
 	little_roll_player=null
 	little_roll_opponent=null
+	menu_network=null
 	//////////////////////////////////////////////////////////////////////////////////////////
 	//GROUP
 	groupnull = null
@@ -66,6 +67,7 @@ theGame.prototype = {
 		little_roll_player=new Roll(this.game,G.topPlayerGroup2,w4*3,180,"player")
 		little_roll_opponent=new Roll(this.game,G.topOpponentGroup1,w4,180,"opponent")
 		tw=new init_transitions(this.game)
+		menu_network=new Menu_network_opponent(this.game,G.menu_select_opponent_Group0,w2,h2)
 		this.game.stage.backgroundColor=black
 		//DEPLACEMENT DES GROUPES AU DEBUT (TEXTE TOP - TIMER - SHADOW)
 		G.topOpponentGroup1.position.y=h2
@@ -76,7 +78,6 @@ theGame.prototype = {
 		background.table_player.y=h
 
 		//DEPLACEMENT DES BACKGROUND POUR ANIMER LE JEU
-		tw.displacement_background_opponent_and_player()
 		//EFFECT SUR LE TIMER
 		effect.deform_text(hud.timer_text)
 		effect.deform_main(hud.time_shadow)
@@ -97,7 +98,7 @@ theGame.prototype = {
 
 		// ajout d'un boutton au timer pour permettre le plein écran
 		this.game.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;
-
+tw.move_timer_for_network()
 
 
 	},

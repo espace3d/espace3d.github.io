@@ -19,6 +19,23 @@ Timer = function(game,Group){
 	this.flag = false
 	//afficheage de VS
 	this.timer_text.text="Vs"
+	this.tween_for_circle_network={}
+
+	this.circle=[]
+	for (var i = 0; i < 3; i++) {
+		this.circle[i]=game.add.sprite(w2-120+i*100,h2+260,'little_circle_for_network')
+		this.circle[i].alpha=0
+		this.tween_for_circle_network[i]=game.add.tween(this.circle[i]).to({alpha:1},300,Phaser.Easing.Linear.None,true,i*300,-1)
+		this.tween_for_circle_network[i].yoyo(true,300)
+		this.tween_for_circle_network[i].pause()
+		Group.add(this.circle[i])
+	}
+
+
+
+
+	//pour ne pas le voir au début voir transitionsgroup
+	this.timer_text.alpha=0
 	//pour définir quel partie de l'écran va se mettrre en surbrillance pour le choix du joueur
 	this.winner_flag="none"
 	//time pour faire tourner la roulette
@@ -31,7 +48,7 @@ Timer = function(game,Group){
 	//modifications des anchors
 	this.timer_text.anchor.x=.5
 	this.timer_text.anchor.y=.4
-	
+
 	//spirale pour la roulette
 	this.spiral=game.add.sprite(w2,h2+300,'spiral')
 	this.spiral.anchor.x=.5
@@ -61,6 +78,34 @@ Timer = function(game,Group){
 
 Timer.prototype = Object.create(Phaser.Sprite.prototype)
 Timer.prototype.constructor = Timer
+
+//petits cercle qui s'animent pour la recherche de réseau
+Timer.prototype.animate_circle = function() {
+	for (var i = 0; i < 3; i++) {
+		this.tween_for_circle_network[i].resume()
+	}
+
+}
+
+Timer.prototype.pause_animate_circle = function() {
+	for (var i = 0; i < 3; i++) {
+		this.tween_for_circle_network[i].pause()
+		this.circle[i].alpha=1
+	}
+
+}
+
+
+
+
+
+Timer.prototype.stop_animate_circle = function() {
+	for (var i = 0; i < 3; i++) {
+		//this.circle[i].visible=false
+		this.tween_for_circle_network[i].pause()
+	}
+}
+
 
 //décompte du temps
 Timer.prototype.time_decount=function(){
@@ -118,13 +163,13 @@ Timer.prototype.update = function() {
 }
 
 Timer.prototype.light_player = function() {
-menuPaper.white.visible=true	
-menuPaper_opponent.white.visible=false	
+	menuPaper.white.visible=true	
+	menuPaper_opponent.white.visible=false	
 }
 Timer.prototype.light_opponent = function() {
-menuPaper.white.visible=false	
-menuPaper_opponent.white.visible=true	
-	
+	menuPaper.white.visible=false	
+	menuPaper_opponent.white.visible=true	
+
 }
 
 
@@ -155,7 +200,7 @@ Timer.prototype.next_winner = function() {
 	menuPaper.move_roll_paper()
 	menuPaper_opponent.anim_repere()
 }
-	
+
 //retardateur1
 Timer.prototype.retardateur1=function(){
 	this.tween_hide=game.add.tween(this).to({alpha:0},100,Phaser.Easing.Linear.None,true)

@@ -27,6 +27,20 @@ init_transitions = function(game){
 }
 
 
+
+
+
+
+
+
+
+//deplace le timer vers le bas pour afficher le panneau permettant de sélectionner les opponents
+init_transitions.prototype.move_timer_for_network = function() {
+game.add.tween(G.timerGroup0).to({x:0,y:200},1000,Phaser.Easing.Linear.None,true,200)
+	
+}
+
+
 //////////////////////////////////////////////////////////////////////////////////////////
 //DEPLACEMENT DES PANNEAUX DE BACKGROUND ET DES TEXTES SUPERIEURS
 // Les obj symbolise des groupes
@@ -46,6 +60,12 @@ init_transitions = function(game){
 //|     |   |     | 
 //|-----|   |-----|
 
+
+
+
+
+
+
 //ouverture des PANNEAUX
 init_transitions.prototype.displacement_background_opponent_and_player=function(){
 
@@ -53,16 +73,26 @@ init_transitions.prototype.displacement_background_opponent_and_player=function(
 	displacement_position(game,this.g1,-w,h2,delay_open_panel_background,time_open_panel_background,"Bounce.out")
 	displacement_position(game,this.g7,w,0,delay_open_panel_background,time_open_panel_background,"Bounce.out")
 	displacement_position(game,this.g2,w,h2,delay_open_panel_background,time_open_panel_background,"Bounce.out")
-
+	this.tween=game.add.tween(this.g2).to({x:w,y:h2},time_open_panel_background,Phaser.Easing.Bounce.Out,true,delay_open_panel_background)
+	this.tween.onComplete.add(this.move_timer_for_chooce,this)	
 	//deplace le timer du bas vers le milieu et rend la roulette visible et actionne la roulette pour le hasard
 	//declenchemet de la roulette hasard
-	this.move_timer_for_chooce()
+	//this.move_timer_for_chooce()
+}
+init_transitions.prototype.move_timer_after_network=function(){
+	this.tween_move_timer_for_network=game.add.tween(this.g0).to({x:0,y:0},100,Phaser.Easing.Bounce.Out,true,0)
+	this.tween_reveal_vs=game.add.tween(hud.timer_text).to({alpha:1},1000,Phaser.Easing.Linear.None,true,0)
+	for (var i = 0; i < 3; i++) {
+		hud.circle[i].alpha=0
+		hud.tween_for_circle_network[i].pause()
+	}
+		
 }
 
 init_transitions.prototype.move_timer_for_chooce=function(){
 	var delay_for_chooce=delay_open_panel_background+time_open_panel_background
 	//TODO cette transition n'est plus nécessaire seul compte l'action oncomplete
-	this.tween_move_timer_for_chooce=game.add.tween(this.g0).to({x:0,y:0},100,Phaser.Easing.Bounce.Out,true,delay_for_chooce)
+	this.tween_move_timer_for_chooce=game.add.tween(this.g0).to({x:0,y:0},100,Phaser.Easing.Bounce.Out,true,0)
 	this.tween_move_timer_for_chooce.onComplete.add(this.action_turn_chooce,this)
 }
 

@@ -13,12 +13,6 @@ Roll = function(game,group,posx,posy,id) {
 	this.heart = game.add.bitmapText(this.posx,this.posy-60,"lucky",this.taille)
 	this.heart.anchor.x=.5
 	this.heart.anchor.y=.5
-	if (this.id=="player"){
-		this.heart.text=parameter.number_heart_player
-	}else{
-		this.heart.text=parameter.number_heart_opponent
-		console.log(parameter.number_heart_opponent,"dansroll")
-	}	
 	this.group.add(this)	
 	this.group.add(this.heart)
 
@@ -34,6 +28,15 @@ Roll.prototype.constructor = Roll
 //animation lorsque les papiers arrivent sur lui
 Roll.prototype.give_heart_animation = function() {
 	this.tween.resume()
+}
+//initialiser le nombre de coeur
+Roll.prototype.init_heart = function() {
+	if (this.id=="player"){
+		this.heart.text=parameter.number_heart_player
+	}else{
+		this.heart.text=parameter.number_heart_opponent_chooce
+		console.log(parameter.number_heart_opponent,"dansroll")
+	}	
 }
 
 //stop animation lorsque les papiers arrivent sur lui

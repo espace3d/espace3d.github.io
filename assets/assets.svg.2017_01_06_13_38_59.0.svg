@@ -1860,7 +1860,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#linearGradient6366"
-       id="radialGradient9024"
+       id="radialGradient9120"
        gradientUnits="userSpaceOnUse"
        gradientTransform="matrix(0.25444329,-0.1199869,0.25583919,0.54253059,11580.547,-183.86057)"
        cx="218.8875"
@@ -1871,7 +1871,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#linearGradient6366"
-       id="radialGradient9038"
+       id="radialGradient9122"
        gradientUnits="userSpaceOnUse"
        gradientTransform="matrix(0.25444329,-0.1199869,0.25583919,0.54253059,11580.547,-183.86057)"
        cx="218.8875"
@@ -1882,7 +1882,7 @@
     <radialGradient
        inkscape:collect="always"
        xlink:href="#linearGradient6366"
-       id="radialGradient9040"
+       id="radialGradient9124"
        gradientUnits="userSpaceOnUse"
        gradientTransform="matrix(0.25444329,-0.1199869,0.25583919,0.54253059,11580.547,-183.86057)"
        cx="218.8875"
@@ -22496,33 +22496,6 @@
        inkscape:export-xdpi="90.200706"
        inkscape:export-ydpi="90.200706"
        inkscape:export-filename="/home/systeme/Cyber-Orb/img/menu.png" />
-    <text
-       transform="scale(1.0244498,0.97613372)"
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:53.18753815px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="9405.7588"
-       y="6842.0063"
-       id="text7801"
-       sodipodi:linespacing="125%"
-       inkscape:export-xdpi="90.200706"
-       inkscape:export-ydpi="90.200706"
-       inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"><tspan
-         sodipodi:role="line"
-         id="tspan7803"
-         x="9405.7588"
-         y="6842.0063"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#ffffff;fill-opacity:1">kill the game</tspan></text>
-    <rect
-       y="6619.6362"
-       x="9600.7422"
-       height="99.290573"
-       width="449.72791"
-       id="rect7805"
-       style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:4.38046646;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       ry="72.701134"
-       inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"
-       inkscape:export-xdpi="90.200706"
-       inkscape:export-ydpi="90.200706" />
     <rect
        inkscape:export-ydpi="90.200706"
        inkscape:export-xdpi="90.200706"
@@ -22535,22 +22508,6 @@
        rx="2.5180039"
        ry="2.6819284"
        inkscape:export-filename="/home/systeme/Cyber-Orb/img/menu.png" />
-    <text
-       inkscape:export-ydpi="90.200706"
-       inkscape:export-xdpi="90.200706"
-       sodipodi:linespacing="125%"
-       id="text7809"
-       y="6868.9351"
-       x="9465.0205"
-       style="font-style:normal;font-weight:normal;font-size:31.37534332px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"
-       transform="scale(1.0244498,0.97613372)"
-       inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#ffffff;fill-opacity:1"
-         y="6868.9351"
-         x="9465.0205"
-         id="tspan7811"
-         sodipodi:role="line">lvl 1</tspan></text>
     <g
        transform="matrix(0.67741286,0,0,0.67741286,3617.7298,5173.2173)"
        id="g7813"
@@ -22610,39 +22567,6 @@
          inkscape:connector-curvature="0"
          style="fill:#f9f9f9;fill-opacity:1" />
     </g>
-    <g
-       id="g7831"
-       transform="matrix(0.1603094,0,0,0.1603094,7997.528,6710.9117)"
-       inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"
-       inkscape:export-xdpi="90.200706"
-       inkscape:export-ydpi="90.200706">
-      <path
-         style="fill:url(#radialGradient8184);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.79607843"
-         d="m 11630.801,-108.05469 c -0.02,0.44985 -0.137,0.83076 -0.137,1.29297 0,26.170039 61.576,58.144532 61.576,58.144532 0,0 56.792,-30.659609 61.155,-55.222652 a 90,71.5 0 0 1 -2.45,1.70898 90,71.5 0 0 1 -7.318,4.158204 90,71.5 0 0 1 -7.803,3.55664 90,71.5 0 0 1 -8.213,2.919922 90,71.5 0 0 1 -8.537,2.251953 90,71.5 0 0 1 -8.777,1.566407 90,71.5 0 0 1 -8.93,0.861328 90,71.5 0 0 1 -6.367,0.177734 90,71.5 0 0 1 -8.984,-0.355469 90,71.5 0 0 1 -8.897,-1.068359 90,71.5 0 0 1 -8.717,-1.769531 90,71.5 0 0 1 -8.449,-2.449219 90,71.5 0 0 1 -8.101,-3.109375 90,71.5 0 0 1 -7.67,-3.736328 90,71.5 0 0 1 -7.162,-4.324217 90,71.5 0 0 1 -6.219,-4.60352 z"
-         id="path7833"
-         inkscape:connector-curvature="0" />
-      <path
-         style="fill:#ff3939;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="m 11630.801,-108.05469 a 90,71.5 0 0 0 6.219,4.60352 90,71.5 0 0 0 7.162,4.324217 90,71.5 0 0 0 7.67,3.736328 90,71.5 0 0 0 8.101,3.109375 90,71.5 0 0 0 8.449,2.449219 90,71.5 0 0 0 8.717,1.769531 90,71.5 0 0 0 8.897,1.068359 90,71.5 0 0 0 8.984,0.355469 90,71.5 0 0 0 6.367,-0.177734 90,71.5 0 0 0 8.93,-0.861328 90,71.5 0 0 0 8.777,-1.566407 90,71.5 0 0 0 8.537,-2.251953 90,71.5 0 0 0 8.213,-2.919922 90,71.5 0 0 0 7.803,-3.55664 90,71.5 0 0 0 7.318,-4.158204 90,71.5 0 0 0 2.45,-1.70898 c 0.173,-0.97834 0.423,-1.96526 0.423,-2.92188 0,-15.10935 -15.248,-27.36328 -34.054,-27.36328 -11.324,0 -21.33,4.46493 -27.524,11.29883 -6.193,-6.8339 -16.197,-11.29883 -27.523,-11.29883 -18.341,0 -33.192,8.21169 -33.916,26.07031 z"
-         id="path7835"
-         inkscape:connector-curvature="0" />
-    </g>
-    <text
-       inkscape:export-ydpi="90.200706"
-       inkscape:export-xdpi="90.200706"
-       sodipodi:linespacing="125%"
-       id="text7837"
-       y="6870.5195"
-       x="9651.4121"
-       style="font-style:normal;font-weight:normal;font-size:31.37534332px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff5555;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"
-       transform="scale(1.0244498,0.97613372)"
-       inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#ff5555;fill-opacity:1"
-         y="6870.5195"
-         x="9651.4121"
-         id="tspan7839"
-         sodipodi:role="line">5980</tspan></text>
     <rect
        style="opacity:0;fill:#161414;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:13.19999981;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect7841"
@@ -22655,230 +22579,294 @@
        inkscape:export-filename="/home/systeme/Cyber-Orb/img/menu.png"
        inkscape:export-xdpi="90.200706"
        inkscape:export-ydpi="90.200706" />
-    <text
-       transform="scale(1.0244498,0.97613372)"
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:53.18753815px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="9405.7588"
-       y="6842.0063"
-       id="text7843"
-       sodipodi:linespacing="125%"
-       inkscape:export-xdpi="90.200706"
-       inkscape:export-ydpi="90.200706"
-       inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"><tspan
-         sodipodi:role="line"
-         id="tspan7845"
-         x="9405.7588"
+    <g
+       id="g9126"
+       transform="translate(46.982225,0)">
+      <text
+         inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"
+         inkscape:export-ydpi="90.200706"
+         inkscape:export-xdpi="90.200706"
+         sodipodi:linespacing="125%"
+         id="text7801"
          y="6842.0063"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#ffffff;fill-opacity:1">kill the game</tspan></text>
-    <rect
-       y="6619.6362"
-       x="9600.7422"
-       height="99.290573"
-       width="449.72791"
-       id="rect7847"
-       style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:4.38046646;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       ry="72.701134"
-       inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"
-       inkscape:export-xdpi="90.200706"
-       inkscape:export-ydpi="90.200706" />
-    <text
-       inkscape:export-ydpi="90.200706"
-       inkscape:export-xdpi="90.200706"
-       sodipodi:linespacing="125%"
-       id="text7849"
-       y="6868.9351"
-       x="9465.0205"
-       style="font-style:normal;font-weight:normal;font-size:31.37534332px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"
-       transform="scale(1.0244498,0.97613372)"
-       inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#ffffff;fill-opacity:1"
+         x="8995.7871"
+         style="font-style:normal;font-weight:normal;font-size:53.18753815px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"
+         transform="scale(1.0244498,0.97613372)"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#ffffff;fill-opacity:1"
+           y="6842.0063"
+           x="8995.7871"
+           id="tspan7803"
+           sodipodi:role="line">kill the game</tspan></text>
+      <rect
+         inkscape:export-ydpi="90.200706"
+         inkscape:export-xdpi="90.200706"
+         inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"
+         ry="72.701134"
+         style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:4.38046646;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect7805"
+         width="449.72791"
+         height="99.290573"
+         x="9180.7422"
+         y="6619.6362" />
+      <text
+         inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"
+         transform="scale(1.0244498,0.97613372)"
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:31.37534332px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="9055.0488"
          y="6868.9351"
-         x="9465.0205"
-         id="tspan7851"
-         sodipodi:role="line">lvl 1</tspan></text>
-    <g
-       id="g7853"
-       transform="matrix(0.1603094,0,0,0.1603094,7997.528,6710.9117)"
-       inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"
-       inkscape:export-xdpi="90.200706"
-       inkscape:export-ydpi="90.200706">
-      <path
-         style="fill:url(#radialGradient8186);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.79607843"
-         d="m 11630.801,-108.05469 c -0.02,0.44985 -0.137,0.83076 -0.137,1.29297 0,26.170039 61.576,58.144532 61.576,58.144532 0,0 56.792,-30.659609 61.155,-55.222652 a 90,71.5 0 0 1 -2.45,1.70898 90,71.5 0 0 1 -7.318,4.158204 90,71.5 0 0 1 -7.803,3.55664 90,71.5 0 0 1 -8.213,2.919922 90,71.5 0 0 1 -8.537,2.251953 90,71.5 0 0 1 -8.777,1.566407 90,71.5 0 0 1 -8.93,0.861328 90,71.5 0 0 1 -6.367,0.177734 90,71.5 0 0 1 -8.984,-0.355469 90,71.5 0 0 1 -8.897,-1.068359 90,71.5 0 0 1 -8.717,-1.769531 90,71.5 0 0 1 -8.449,-2.449219 90,71.5 0 0 1 -8.101,-3.109375 90,71.5 0 0 1 -7.67,-3.736328 90,71.5 0 0 1 -7.162,-4.324217 90,71.5 0 0 1 -6.219,-4.60352 z"
-         id="path7855"
-         inkscape:connector-curvature="0" />
-      <path
-         style="fill:#ff3939;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="m 11630.801,-108.05469 a 90,71.5 0 0 0 6.219,4.60352 90,71.5 0 0 0 7.162,4.324217 90,71.5 0 0 0 7.67,3.736328 90,71.5 0 0 0 8.101,3.109375 90,71.5 0 0 0 8.449,2.449219 90,71.5 0 0 0 8.717,1.769531 90,71.5 0 0 0 8.897,1.068359 90,71.5 0 0 0 8.984,0.355469 90,71.5 0 0 0 6.367,-0.177734 90,71.5 0 0 0 8.93,-0.861328 90,71.5 0 0 0 8.777,-1.566407 90,71.5 0 0 0 8.537,-2.251953 90,71.5 0 0 0 8.213,-2.919922 90,71.5 0 0 0 7.803,-3.55664 90,71.5 0 0 0 7.318,-4.158204 90,71.5 0 0 0 2.45,-1.70898 c 0.173,-0.97834 0.423,-1.96526 0.423,-2.92188 0,-15.10935 -15.248,-27.36328 -34.054,-27.36328 -11.324,0 -21.33,4.46493 -27.524,11.29883 -6.193,-6.8339 -16.197,-11.29883 -27.523,-11.29883 -18.341,0 -33.192,8.21169 -33.916,26.07031 z"
-         id="path7857"
-         inkscape:connector-curvature="0" />
-    </g>
-    <text
-       inkscape:export-ydpi="90.200706"
-       inkscape:export-xdpi="90.200706"
-       sodipodi:linespacing="125%"
-       id="text7859"
-       y="6870.5195"
-       x="9651.4121"
-       style="font-style:normal;font-weight:normal;font-size:31.37534332px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff5555;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"
-       transform="scale(1.0244498,0.97613372)"
-       inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#ff5555;fill-opacity:1"
+         id="text7809"
+         sodipodi:linespacing="125%"
+         inkscape:export-xdpi="90.200706"
+         inkscape:export-ydpi="90.200706"><tspan
+           sodipodi:role="line"
+           id="tspan7811"
+           x="9055.0488"
+           y="6868.9351"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#ffffff;fill-opacity:1">lvl 1</tspan></text>
+      <g
+         inkscape:export-ydpi="90.200706"
+         inkscape:export-xdpi="90.200706"
+         inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"
+         transform="matrix(0.1603094,0,0,0.1603094,7577.528,6710.9117)"
+         id="g7831">
+        <path
+           inkscape:connector-curvature="0"
+           id="path7833"
+           d="m 11630.801,-108.05469 c -0.02,0.44985 -0.137,0.83076 -0.137,1.29297 0,26.170039 61.576,58.144532 61.576,58.144532 0,0 56.792,-30.659609 61.155,-55.222652 a 90,71.5 0 0 1 -2.45,1.70898 90,71.5 0 0 1 -7.318,4.158204 90,71.5 0 0 1 -7.803,3.55664 90,71.5 0 0 1 -8.213,2.919922 90,71.5 0 0 1 -8.537,2.251953 90,71.5 0 0 1 -8.777,1.566407 90,71.5 0 0 1 -8.93,0.861328 90,71.5 0 0 1 -6.367,0.177734 90,71.5 0 0 1 -8.984,-0.355469 90,71.5 0 0 1 -8.897,-1.068359 90,71.5 0 0 1 -8.717,-1.769531 90,71.5 0 0 1 -8.449,-2.449219 90,71.5 0 0 1 -8.101,-3.109375 90,71.5 0 0 1 -7.67,-3.736328 90,71.5 0 0 1 -7.162,-4.324217 90,71.5 0 0 1 -6.219,-4.60352 z"
+           style="fill:url(#radialGradient8184);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.79607843" />
+        <path
+           inkscape:connector-curvature="0"
+           id="path7835"
+           d="m 11630.801,-108.05469 a 90,71.5 0 0 0 6.219,4.60352 90,71.5 0 0 0 7.162,4.324217 90,71.5 0 0 0 7.67,3.736328 90,71.5 0 0 0 8.101,3.109375 90,71.5 0 0 0 8.449,2.449219 90,71.5 0 0 0 8.717,1.769531 90,71.5 0 0 0 8.897,1.068359 90,71.5 0 0 0 8.984,0.355469 90,71.5 0 0 0 6.367,-0.177734 90,71.5 0 0 0 8.93,-0.861328 90,71.5 0 0 0 8.777,-1.566407 90,71.5 0 0 0 8.537,-2.251953 90,71.5 0 0 0 8.213,-2.919922 90,71.5 0 0 0 7.803,-3.55664 90,71.5 0 0 0 7.318,-4.158204 90,71.5 0 0 0 2.45,-1.70898 c 0.173,-0.97834 0.423,-1.96526 0.423,-2.92188 0,-15.10935 -15.248,-27.36328 -34.054,-27.36328 -11.324,0 -21.33,4.46493 -27.524,11.29883 -6.193,-6.8339 -16.197,-11.29883 -27.523,-11.29883 -18.341,0 -33.192,8.21169 -33.916,26.07031 z"
+           style="fill:#ff3939;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      </g>
+      <text
+         inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"
+         transform="scale(1.0244498,0.97613372)"
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:31.37534332px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff5555;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="9241.4404"
          y="6870.5195"
-         x="9651.4121"
-         id="tspan7861"
-         sodipodi:role="line">5980</tspan></text>
-    <text
-       transform="scale(1.0244498,0.97613372)"
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:53.18753815px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="9405.7588"
-       y="6837.9082"
-       id="text7863"
-       sodipodi:linespacing="125%"
-       inkscape:export-xdpi="90.200706"
-       inkscape:export-ydpi="90.200706"
-       inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"><tspan
-         sodipodi:role="line"
-         id="tspan7865"
-         x="9405.7588"
+         id="text7837"
+         sodipodi:linespacing="125%"
+         inkscape:export-xdpi="90.200706"
+         inkscape:export-ydpi="90.200706"><tspan
+           sodipodi:role="line"
+           id="tspan7839"
+           x="9241.4404"
+           y="6870.5195"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#ff5555;fill-opacity:1">5980</tspan></text>
+      <text
+         inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"
+         inkscape:export-ydpi="90.200706"
+         inkscape:export-xdpi="90.200706"
+         sodipodi:linespacing="125%"
+         id="text7843"
+         y="6842.0063"
+         x="8995.7871"
+         style="font-style:normal;font-weight:normal;font-size:53.18753815px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"
+         transform="scale(1.0244498,0.97613372)"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#ffffff;fill-opacity:1"
+           y="6842.0063"
+           x="8995.7871"
+           id="tspan7845"
+           sodipodi:role="line">kill the game</tspan></text>
+      <rect
+         inkscape:export-ydpi="90.200706"
+         inkscape:export-xdpi="90.200706"
+         inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"
+         ry="72.701134"
+         style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:4.38046646;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect7847"
+         width="449.72791"
+         height="99.290573"
+         x="9180.7422"
+         y="6619.6362" />
+      <text
+         inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"
+         transform="scale(1.0244498,0.97613372)"
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:31.37534332px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="9055.0488"
+         y="6868.9351"
+         id="text7849"
+         sodipodi:linespacing="125%"
+         inkscape:export-xdpi="90.200706"
+         inkscape:export-ydpi="90.200706"><tspan
+           sodipodi:role="line"
+           id="tspan7851"
+           x="9055.0488"
+           y="6868.9351"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#ffffff;fill-opacity:1">lvl 1</tspan></text>
+      <g
+         inkscape:export-ydpi="90.200706"
+         inkscape:export-xdpi="90.200706"
+         inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"
+         transform="matrix(0.1603094,0,0,0.1603094,7577.528,6710.9117)"
+         id="g7853">
+        <path
+           inkscape:connector-curvature="0"
+           id="path7855"
+           d="m 11630.801,-108.05469 c -0.02,0.44985 -0.137,0.83076 -0.137,1.29297 0,26.170039 61.576,58.144532 61.576,58.144532 0,0 56.792,-30.659609 61.155,-55.222652 a 90,71.5 0 0 1 -2.45,1.70898 90,71.5 0 0 1 -7.318,4.158204 90,71.5 0 0 1 -7.803,3.55664 90,71.5 0 0 1 -8.213,2.919922 90,71.5 0 0 1 -8.537,2.251953 90,71.5 0 0 1 -8.777,1.566407 90,71.5 0 0 1 -8.93,0.861328 90,71.5 0 0 1 -6.367,0.177734 90,71.5 0 0 1 -8.984,-0.355469 90,71.5 0 0 1 -8.897,-1.068359 90,71.5 0 0 1 -8.717,-1.769531 90,71.5 0 0 1 -8.449,-2.449219 90,71.5 0 0 1 -8.101,-3.109375 90,71.5 0 0 1 -7.67,-3.736328 90,71.5 0 0 1 -7.162,-4.324217 90,71.5 0 0 1 -6.219,-4.60352 z"
+           style="fill:url(#radialGradient8186);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.79607843" />
+        <path
+           inkscape:connector-curvature="0"
+           id="path7857"
+           d="m 11630.801,-108.05469 a 90,71.5 0 0 0 6.219,4.60352 90,71.5 0 0 0 7.162,4.324217 90,71.5 0 0 0 7.67,3.736328 90,71.5 0 0 0 8.101,3.109375 90,71.5 0 0 0 8.449,2.449219 90,71.5 0 0 0 8.717,1.769531 90,71.5 0 0 0 8.897,1.068359 90,71.5 0 0 0 8.984,0.355469 90,71.5 0 0 0 6.367,-0.177734 90,71.5 0 0 0 8.93,-0.861328 90,71.5 0 0 0 8.777,-1.566407 90,71.5 0 0 0 8.537,-2.251953 90,71.5 0 0 0 8.213,-2.919922 90,71.5 0 0 0 7.803,-3.55664 90,71.5 0 0 0 7.318,-4.158204 90,71.5 0 0 0 2.45,-1.70898 c 0.173,-0.97834 0.423,-1.96526 0.423,-2.92188 0,-15.10935 -15.248,-27.36328 -34.054,-27.36328 -11.324,0 -21.33,4.46493 -27.524,11.29883 -6.193,-6.8339 -16.197,-11.29883 -27.523,-11.29883 -18.341,0 -33.192,8.21169 -33.916,26.07031 z"
+           style="fill:#ff3939;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      </g>
+      <text
+         inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"
+         transform="scale(1.0244498,0.97613372)"
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:31.37534332px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff5555;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="9241.4404"
+         y="6870.5195"
+         id="text7859"
+         sodipodi:linespacing="125%"
+         inkscape:export-xdpi="90.200706"
+         inkscape:export-ydpi="90.200706"><tspan
+           sodipodi:role="line"
+           id="tspan7861"
+           x="9241.4404"
+           y="6870.5195"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#ff5555;fill-opacity:1">5980</tspan></text>
+      <text
+         inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"
+         inkscape:export-ydpi="90.200706"
+         inkscape:export-xdpi="90.200706"
+         sodipodi:linespacing="125%"
+         id="text7863"
          y="6837.9082"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#ffffff;fill-opacity:1">kill the game</tspan></text>
-    <rect
-       y="6615.6362"
-       x="9600.7422"
-       height="99.290573"
-       width="449.72791"
-       id="rect7867"
-       style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:4.38046646;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       ry="72.701134"
-       inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"
-       inkscape:export-xdpi="90.200706"
-       inkscape:export-ydpi="90.200706" />
-    <text
-       inkscape:export-ydpi="90.200706"
-       inkscape:export-xdpi="90.200706"
-       sodipodi:linespacing="125%"
-       id="text7869"
-       y="6864.8364"
-       x="9465.0205"
-       style="font-style:normal;font-weight:normal;font-size:31.37534332px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"
-       transform="scale(1.0244498,0.97613372)"
-       inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#ffffff;fill-opacity:1"
+         x="8995.7871"
+         style="font-style:normal;font-weight:normal;font-size:53.18753815px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"
+         transform="scale(1.0244498,0.97613372)"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#ffffff;fill-opacity:1"
+           y="6837.9082"
+           x="8995.7871"
+           id="tspan7865"
+           sodipodi:role="line">kill the game</tspan></text>
+      <rect
+         inkscape:export-ydpi="90.200706"
+         inkscape:export-xdpi="90.200706"
+         inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"
+         ry="72.701134"
+         style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:4.38046646;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect7867"
+         width="449.72791"
+         height="99.290573"
+         x="9180.7422"
+         y="6615.6362" />
+      <text
+         inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"
+         transform="scale(1.0244498,0.97613372)"
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:31.37534332px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="9055.0488"
          y="6864.8364"
-         x="9465.0205"
-         id="tspan7871"
-         sodipodi:role="line">lvl 1</tspan></text>
-    <g
-       id="g7873"
-       transform="matrix(0.1603094,0,0,0.1603094,7997.528,6706.9117)"
-       inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"
-       inkscape:export-xdpi="90.200706"
-       inkscape:export-ydpi="90.200706">
-      <path
-         style="fill:url(#radialGradient8188);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.79607843"
-         d="m 11630.801,-108.05469 c -0.02,0.44985 -0.137,0.83076 -0.137,1.29297 0,26.170039 61.576,58.144532 61.576,58.144532 0,0 56.792,-30.659609 61.155,-55.222652 a 90,71.5 0 0 1 -2.45,1.70898 90,71.5 0 0 1 -7.318,4.158204 90,71.5 0 0 1 -7.803,3.55664 90,71.5 0 0 1 -8.213,2.919922 90,71.5 0 0 1 -8.537,2.251953 90,71.5 0 0 1 -8.777,1.566407 90,71.5 0 0 1 -8.93,0.861328 90,71.5 0 0 1 -6.367,0.177734 90,71.5 0 0 1 -8.984,-0.355469 90,71.5 0 0 1 -8.897,-1.068359 90,71.5 0 0 1 -8.717,-1.769531 90,71.5 0 0 1 -8.449,-2.449219 90,71.5 0 0 1 -8.101,-3.109375 90,71.5 0 0 1 -7.67,-3.736328 90,71.5 0 0 1 -7.162,-4.324217 90,71.5 0 0 1 -6.219,-4.60352 z"
-         id="path7875"
-         inkscape:connector-curvature="0" />
-      <path
-         style="fill:#ff3939;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="m 11630.801,-108.05469 a 90,71.5 0 0 0 6.219,4.60352 90,71.5 0 0 0 7.162,4.324217 90,71.5 0 0 0 7.67,3.736328 90,71.5 0 0 0 8.101,3.109375 90,71.5 0 0 0 8.449,2.449219 90,71.5 0 0 0 8.717,1.769531 90,71.5 0 0 0 8.897,1.068359 90,71.5 0 0 0 8.984,0.355469 90,71.5 0 0 0 6.367,-0.177734 90,71.5 0 0 0 8.93,-0.861328 90,71.5 0 0 0 8.777,-1.566407 90,71.5 0 0 0 8.537,-2.251953 90,71.5 0 0 0 8.213,-2.919922 90,71.5 0 0 0 7.803,-3.55664 90,71.5 0 0 0 7.318,-4.158204 90,71.5 0 0 0 2.45,-1.70898 c 0.173,-0.97834 0.423,-1.96526 0.423,-2.92188 0,-15.10935 -15.248,-27.36328 -34.054,-27.36328 -11.324,0 -21.33,4.46493 -27.524,11.29883 -6.193,-6.8339 -16.197,-11.29883 -27.523,-11.29883 -18.341,0 -33.192,8.21169 -33.916,26.07031 z"
-         id="path7877"
-         inkscape:connector-curvature="0" />
-    </g>
-    <text
-       inkscape:export-ydpi="90.200706"
-       inkscape:export-xdpi="90.200706"
-       sodipodi:linespacing="125%"
-       id="text7879"
-       y="6866.4209"
-       x="9651.4121"
-       style="font-style:normal;font-weight:normal;font-size:31.37534332px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff5555;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"
-       transform="scale(1.0244498,0.97613372)"
-       inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#ff5555;fill-opacity:1"
+         id="text7869"
+         sodipodi:linespacing="125%"
+         inkscape:export-xdpi="90.200706"
+         inkscape:export-ydpi="90.200706"><tspan
+           sodipodi:role="line"
+           id="tspan7871"
+           x="9055.0488"
+           y="6864.8364"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#ffffff;fill-opacity:1">lvl 1</tspan></text>
+      <g
+         inkscape:export-ydpi="90.200706"
+         inkscape:export-xdpi="90.200706"
+         inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"
+         transform="matrix(0.1603094,0,0,0.1603094,7577.528,6706.9117)"
+         id="g7873">
+        <path
+           inkscape:connector-curvature="0"
+           id="path7875"
+           d="m 11630.801,-108.05469 c -0.02,0.44985 -0.137,0.83076 -0.137,1.29297 0,26.170039 61.576,58.144532 61.576,58.144532 0,0 56.792,-30.659609 61.155,-55.222652 a 90,71.5 0 0 1 -2.45,1.70898 90,71.5 0 0 1 -7.318,4.158204 90,71.5 0 0 1 -7.803,3.55664 90,71.5 0 0 1 -8.213,2.919922 90,71.5 0 0 1 -8.537,2.251953 90,71.5 0 0 1 -8.777,1.566407 90,71.5 0 0 1 -8.93,0.861328 90,71.5 0 0 1 -6.367,0.177734 90,71.5 0 0 1 -8.984,-0.355469 90,71.5 0 0 1 -8.897,-1.068359 90,71.5 0 0 1 -8.717,-1.769531 90,71.5 0 0 1 -8.449,-2.449219 90,71.5 0 0 1 -8.101,-3.109375 90,71.5 0 0 1 -7.67,-3.736328 90,71.5 0 0 1 -7.162,-4.324217 90,71.5 0 0 1 -6.219,-4.60352 z"
+           style="fill:url(#radialGradient8188);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.79607843" />
+        <path
+           inkscape:connector-curvature="0"
+           id="path7877"
+           d="m 11630.801,-108.05469 a 90,71.5 0 0 0 6.219,4.60352 90,71.5 0 0 0 7.162,4.324217 90,71.5 0 0 0 7.67,3.736328 90,71.5 0 0 0 8.101,3.109375 90,71.5 0 0 0 8.449,2.449219 90,71.5 0 0 0 8.717,1.769531 90,71.5 0 0 0 8.897,1.068359 90,71.5 0 0 0 8.984,0.355469 90,71.5 0 0 0 6.367,-0.177734 90,71.5 0 0 0 8.93,-0.861328 90,71.5 0 0 0 8.777,-1.566407 90,71.5 0 0 0 8.537,-2.251953 90,71.5 0 0 0 8.213,-2.919922 90,71.5 0 0 0 7.803,-3.55664 90,71.5 0 0 0 7.318,-4.158204 90,71.5 0 0 0 2.45,-1.70898 c 0.173,-0.97834 0.423,-1.96526 0.423,-2.92188 0,-15.10935 -15.248,-27.36328 -34.054,-27.36328 -11.324,0 -21.33,4.46493 -27.524,11.29883 -6.193,-6.8339 -16.197,-11.29883 -27.523,-11.29883 -18.341,0 -33.192,8.21169 -33.916,26.07031 z"
+           style="fill:#ff3939;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      </g>
+      <text
+         inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"
+         transform="scale(1.0244498,0.97613372)"
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:31.37534332px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff5555;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="9241.4404"
          y="6866.4209"
-         x="9651.4121"
-         id="tspan7881"
-         sodipodi:role="line">5980</tspan></text>
-    <rect
-       ry="72.701134"
-       style="opacity:1;fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.38046646;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect7883"
-       width="449.72791"
-       height="99.290573"
-       x="9600.5117"
-       y="6612.1733"
-       inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"
-       inkscape:export-xdpi="90.200706"
-       inkscape:export-ydpi="90.200706" />
-    <rect
-       y="6593.6362"
-       x="9600.7422"
-       height="99.290573"
-       width="449.72791"
-       id="rect7885"
-       style="opacity:1;fill:#ff5555;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.38046646;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       ry="72.701134"
-       inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"
-       inkscape:export-xdpi="90.200706"
-       inkscape:export-ydpi="90.200706" />
-    <text
-       inkscape:export-ydpi="90.200706"
-       inkscape:export-xdpi="90.200706"
-       sodipodi:linespacing="125%"
-       id="text7891"
-       y="6842.2983"
-       x="9465.0205"
-       style="font-style:normal;font-weight:normal;font-size:31.37534332px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"
-       transform="scale(1.0244498,0.97613372)"
-       inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#000000;fill-opacity:1"
+         id="text7879"
+         sodipodi:linespacing="125%"
+         inkscape:export-xdpi="90.200706"
+         inkscape:export-ydpi="90.200706"><tspan
+           sodipodi:role="line"
+           id="tspan7881"
+           x="9241.4404"
+           y="6866.4209"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#ff5555;fill-opacity:1">5980</tspan></text>
+      <rect
+         inkscape:export-ydpi="90.200706"
+         inkscape:export-xdpi="90.200706"
+         inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"
+         y="6612.1733"
+         x="9180.5117"
+         height="99.290573"
+         width="449.72791"
+         id="rect7883"
+         style="opacity:1;fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.38046646;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         ry="72.701134" />
+      <rect
+         inkscape:export-ydpi="90.200706"
+         inkscape:export-xdpi="90.200706"
+         inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"
+         ry="72.701134"
+         style="opacity:1;fill:#ff5555;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.38046646;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect7885"
+         width="449.72791"
+         height="99.290573"
+         x="9180.7422"
+         y="6593.6362" />
+      <text
+         inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"
+         transform="scale(1.0244498,0.97613372)"
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:31.37534332px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="9055.0488"
          y="6842.2983"
-         x="9465.0205"
-         id="tspan7893"
-         sodipodi:role="line">lvl </tspan></text>
-    <g
-       id="g7895"
-       transform="matrix(0.1603094,0,0,0.1603094,7997.528,6684.9117)"
-       style="fill:#ffffff;fill-opacity:1"
-       inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"
-       inkscape:export-xdpi="90.200706"
-       inkscape:export-ydpi="90.200706">
-      <path
-         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.79607843"
-         d="m 11630.801,-108.05469 c -0.02,0.44985 -0.137,0.83076 -0.137,1.29297 0,26.170039 61.576,58.144532 61.576,58.144532 0,0 56.792,-30.659609 61.155,-55.222652 a 90,71.5 0 0 1 -2.45,1.70898 90,71.5 0 0 1 -7.318,4.158204 90,71.5 0 0 1 -7.803,3.55664 90,71.5 0 0 1 -8.213,2.919922 90,71.5 0 0 1 -8.537,2.251953 90,71.5 0 0 1 -8.777,1.566407 90,71.5 0 0 1 -8.93,0.861328 90,71.5 0 0 1 -6.367,0.177734 90,71.5 0 0 1 -8.984,-0.355469 90,71.5 0 0 1 -8.897,-1.068359 90,71.5 0 0 1 -8.717,-1.769531 90,71.5 0 0 1 -8.449,-2.449219 90,71.5 0 0 1 -8.101,-3.109375 90,71.5 0 0 1 -7.67,-3.736328 90,71.5 0 0 1 -7.162,-4.324217 90,71.5 0 0 1 -6.219,-4.60352 z"
-         id="path7897"
-         inkscape:connector-curvature="0" />
-      <path
-         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="m 11630.801,-108.05469 a 90,71.5 0 0 0 6.219,4.60352 90,71.5 0 0 0 7.162,4.324217 90,71.5 0 0 0 7.67,3.736328 90,71.5 0 0 0 8.101,3.109375 90,71.5 0 0 0 8.449,2.449219 90,71.5 0 0 0 8.717,1.769531 90,71.5 0 0 0 8.897,1.068359 90,71.5 0 0 0 8.984,0.355469 90,71.5 0 0 0 6.367,-0.177734 90,71.5 0 0 0 8.93,-0.861328 90,71.5 0 0 0 8.777,-1.566407 90,71.5 0 0 0 8.537,-2.251953 90,71.5 0 0 0 8.213,-2.919922 90,71.5 0 0 0 7.803,-3.55664 90,71.5 0 0 0 7.318,-4.158204 90,71.5 0 0 0 2.45,-1.70898 c 0.173,-0.97834 0.423,-1.96526 0.423,-2.92188 0,-15.10935 -15.248,-27.36328 -34.054,-27.36328 -11.324,0 -21.33,4.46493 -27.524,11.29883 -6.193,-6.8339 -16.197,-11.29883 -27.523,-11.29883 -18.341,0 -33.192,8.21169 -33.916,26.07031 z"
-         id="path7899"
-         inkscape:connector-curvature="0" />
+         id="text7891"
+         sodipodi:linespacing="125%"
+         inkscape:export-xdpi="90.200706"
+         inkscape:export-ydpi="90.200706"><tspan
+           sodipodi:role="line"
+           id="tspan7893"
+           x="9055.0488"
+           y="6842.2983"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#000000;fill-opacity:1">lvl </tspan></text>
+      <g
+         inkscape:export-ydpi="90.200706"
+         inkscape:export-xdpi="90.200706"
+         inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"
+         style="fill:#ffffff;fill-opacity:1"
+         transform="matrix(0.1603094,0,0,0.1603094,7577.528,6684.9117)"
+         id="g7895">
+        <path
+           inkscape:connector-curvature="0"
+           id="path7897"
+           d="m 11630.801,-108.05469 c -0.02,0.44985 -0.137,0.83076 -0.137,1.29297 0,26.170039 61.576,58.144532 61.576,58.144532 0,0 56.792,-30.659609 61.155,-55.222652 a 90,71.5 0 0 1 -2.45,1.70898 90,71.5 0 0 1 -7.318,4.158204 90,71.5 0 0 1 -7.803,3.55664 90,71.5 0 0 1 -8.213,2.919922 90,71.5 0 0 1 -8.537,2.251953 90,71.5 0 0 1 -8.777,1.566407 90,71.5 0 0 1 -8.93,0.861328 90,71.5 0 0 1 -6.367,0.177734 90,71.5 0 0 1 -8.984,-0.355469 90,71.5 0 0 1 -8.897,-1.068359 90,71.5 0 0 1 -8.717,-1.769531 90,71.5 0 0 1 -8.449,-2.449219 90,71.5 0 0 1 -8.101,-3.109375 90,71.5 0 0 1 -7.67,-3.736328 90,71.5 0 0 1 -7.162,-4.324217 90,71.5 0 0 1 -6.219,-4.60352 z"
+           style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.79607843" />
+        <path
+           inkscape:connector-curvature="0"
+           id="path7899"
+           d="m 11630.801,-108.05469 a 90,71.5 0 0 0 6.219,4.60352 90,71.5 0 0 0 7.162,4.324217 90,71.5 0 0 0 7.67,3.736328 90,71.5 0 0 0 8.101,3.109375 90,71.5 0 0 0 8.449,2.449219 90,71.5 0 0 0 8.717,1.769531 90,71.5 0 0 0 8.897,1.068359 90,71.5 0 0 0 8.984,0.355469 90,71.5 0 0 0 6.367,-0.177734 90,71.5 0 0 0 8.93,-0.861328 90,71.5 0 0 0 8.777,-1.566407 90,71.5 0 0 0 8.537,-2.251953 90,71.5 0 0 0 8.213,-2.919922 90,71.5 0 0 0 7.803,-3.55664 90,71.5 0 0 0 7.318,-4.158204 90,71.5 0 0 0 2.45,-1.70898 c 0.173,-0.97834 0.423,-1.96526 0.423,-2.92188 0,-15.10935 -15.248,-27.36328 -34.054,-27.36328 -11.324,0 -21.33,4.46493 -27.524,11.29883 -6.193,-6.8339 -16.197,-11.29883 -27.523,-11.29883 -18.341,0 -33.192,8.21169 -33.916,26.07031 z"
+           style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      </g>
     </g>
-    <text
-       inkscape:export-ydpi="90.200706"
-       inkscape:export-xdpi="90.200706"
-       sodipodi:linespacing="125%"
-       id="text7901"
-       y="6843.8828"
-       x="9651.4121"
-       style="font-style:normal;font-weight:normal;font-size:31.37534332px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"
-       transform="scale(1.0244498,0.97613372)"
-       inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#ffffff;fill-opacity:1"
-         y="6843.8828"
-         x="9651.4121"
-         id="tspan7903"
-         sodipodi:role="line">5980</tspan></text>
     <g
        id="g7905"
        transform="translate(-235.69077,5824.5063)"
@@ -23970,65 +23958,6 @@
        style="opacity:1;fill:#281f1b;fill-opacity:1;fill-rule:nonzero;stroke:#ff5555;stroke-width:42.88399887;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        inkscape:export-xdpi="90.200729"
        inkscape:export-ydpi="90.200729" />
-    <g
-       inkscape:export-ydpi="90.200729"
-       inkscape:export-xdpi="90.200729"
-       inkscape:export-filename="/home/systeme/Cyber-Orb/img/menu.png"
-       style="fill:#ff5555"
-       id="g8642"
-       transform="matrix(0.67741286,0,0,0.67741286,3617.7298,7013.2173)">
-      <g
-         style="fill:#ff5555"
-         transform="matrix(0.3153147,0,0,0.3153147,7520.2362,2230.3135)"
-         id="g8644">
-        <path
-           inkscape:connector-curvature="0"
-           id="path8646"
-           d="m 11630.801,-108.05469 c -0.02,0.44985 -0.137,0.83076 -0.137,1.29297 0,26.170039 61.576,58.144532 61.576,58.144532 0,0 56.792,-30.659609 61.155,-55.222652 a 90,71.5 0 0 1 -2.45,1.70898 90,71.5 0 0 1 -7.318,4.158204 90,71.5 0 0 1 -7.803,3.55664 90,71.5 0 0 1 -8.213,2.919922 90,71.5 0 0 1 -8.537,2.251953 90,71.5 0 0 1 -8.777,1.566407 90,71.5 0 0 1 -8.93,0.861328 90,71.5 0 0 1 -6.367,0.177734 90,71.5 0 0 1 -8.984,-0.355469 90,71.5 0 0 1 -8.897,-1.068359 90,71.5 0 0 1 -8.717,-1.769531 90,71.5 0 0 1 -8.449,-2.449219 90,71.5 0 0 1 -8.101,-3.109375 90,71.5 0 0 1 -7.67,-3.736328 90,71.5 0 0 1 -7.162,-4.324217 90,71.5 0 0 1 -6.219,-4.60352 z"
-           style="fill:#ff5555;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.79607843" />
-        <path
-           inkscape:connector-curvature="0"
-           id="path8648"
-           d="m 11630.801,-108.05469 a 90,71.5 0 0 0 6.219,4.60352 90,71.5 0 0 0 7.162,4.324217 90,71.5 0 0 0 7.67,3.736328 90,71.5 0 0 0 8.101,3.109375 90,71.5 0 0 0 8.449,2.449219 90,71.5 0 0 0 8.717,1.769531 90,71.5 0 0 0 8.897,1.068359 90,71.5 0 0 0 8.984,0.355469 90,71.5 0 0 0 6.367,-0.177734 90,71.5 0 0 0 8.93,-0.861328 90,71.5 0 0 0 8.777,-1.566407 90,71.5 0 0 0 8.537,-2.251953 90,71.5 0 0 0 8.213,-2.919922 90,71.5 0 0 0 7.803,-3.55664 90,71.5 0 0 0 7.318,-4.158204 90,71.5 0 0 0 2.45,-1.70898 c 0.173,-0.97834 0.423,-1.96526 0.423,-2.92188 0,-15.10935 -15.248,-27.36328 -34.054,-27.36328 -11.324,0 -21.33,4.46493 -27.524,11.29883 -6.193,-6.8339 -16.197,-11.29883 -27.523,-11.29883 -18.341,0 -33.192,8.21169 -33.916,26.07031 z"
-           style="fill:#ff5555;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-      </g>
-      <text
-         transform="scale(1.0244498,0.97613372)"
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:61.71257401px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff5555;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         x="10788.917"
-         y="2274.9434"
-         id="text8650"
-         sodipodi:linespacing="125%"
-         inkscape:export-xdpi="278.33557"
-         inkscape:export-ydpi="278.33557"><tspan
-           sodipodi:role="line"
-           id="tspan8652"
-           x="10788.917"
-           y="2274.9434"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#ff5555;fill-opacity:1">500 </tspan></text>
-    </g>
-    <path
-       inkscape:export-filename="/home/systeme/Cyber-Orb/img/menu.png"
-       inkscape:export-ydpi="90.200729"
-       inkscape:export-xdpi="90.200729"
-       id="path8654"
-       d="m 11441.657,8468.9172 -3.457,0 c 0.282,0 0.51,0.2293 0.51,0.5146 l 0,1.0016 c 0,0.2854 -0.228,0.516 -0.51,0.516 l -5.754,0 c -0.281,0 -0.508,-0.2306 -0.508,-0.516 l 0,-1.0016 c 0,-0.2853 0.227,-0.5146 0.508,-0.5146 l -7.794,0 c 0.282,0 0.51,0.2293 0.51,0.5146 l 0,1.0016 c 0,0.2854 -0.228,0.516 -0.51,0.516 l -5.752,0 c -0.284,0 -0.511,-0.2306 -0.511,-0.516 l 0,-1.0016 c 0,-0.2853 0.227,-0.5146 0.511,-0.5146 l -7.798,0 c 0.283,0 0.512,0.2293 0.512,0.5146 l 0,1.0016 c 0,0.2854 -0.229,0.516 -0.512,0.516 l -5.752,0 c -0.284,0 -0.51,-0.2306 -0.51,-0.516 l 0,-1.0016 c 0,-0.2853 0.226,-0.5146 0.51,-0.5146 l -7.795,0 c 0.282,0 0.51,0.2293 0.51,0.5146 l 0,1.0016 c 0,0.2854 -0.228,0.516 -0.51,0.516 l -5.753,0 c -0.283,0 -0.512,-0.2306 -0.512,-0.516 l 0,-1.0016 c 0,-0.2853 0.229,-0.5146 0.512,-0.5146 l -7.796,0 c 0.284,0 0.51,0.2293 0.51,0.5146 l 0,1.0016 c 0,0.2854 -0.226,0.516 -0.51,0.516 l -5.752,0 c -0.283,0 -0.51,-0.2306 -0.51,-0.516 l 0,-1.0016 c 0,-0.2853 0.227,-0.5146 0.51,-0.5146 l -4.338,0 0,67.7413 4.338,0 c -0.283,0 -0.51,-0.2306 -0.51,-0.516 l 0,-1.0018 c 0,-0.2853 0.227,-0.5146 0.51,-0.5146 l 5.752,0 c 0.284,0 0.51,0.2293 0.51,0.5146 l 0,1.0018 c 0,0.2854 -0.226,0.516 -0.51,0.516 l 7.796,0 c -0.283,0 -0.512,-0.2306 -0.512,-0.516 l 0,-1.0018 c 0,-0.2853 0.229,-0.5146 0.512,-0.5146 l 5.753,0 c 0.282,0 0.51,0.2293 0.51,0.5146 l 0,1.0018 c 0,0.2854 -0.228,0.516 -0.51,0.516 l 7.795,0 c -0.284,0 -0.51,-0.2306 -0.51,-0.516 l 0,-1.0018 c 0,-0.2853 0.226,-0.5146 0.51,-0.5146 l 5.752,0 c 0.283,0 0.512,0.2293 0.512,0.5146 l 0,1.0018 c 0,0.2854 -0.229,0.516 -0.512,0.516 l 7.798,0 c -0.284,0 -0.511,-0.2306 -0.511,-0.516 l 0,-1.0018 c 0,-0.2853 0.227,-0.5146 0.511,-0.5146 l 5.752,0 c 0.282,0 0.51,0.2293 0.51,0.5146 l 0,1.0018 c 0,0.2854 -0.228,0.516 -0.51,0.516 l 7.794,0 c -0.281,0 -0.508,-0.2306 -0.508,-0.516 l 0,-1.0018 c 0,-0.2853 0.227,-0.5146 0.508,-0.5146 l 5.754,0 c 0.282,0 0.51,0.2293 0.51,0.5146 l 0,1.0018 c 0,0.2854 -0.228,0.516 -0.51,0.516 l 3.457,0 0,-67.7413 z"
-       style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.55200005;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       inkscape:connector-curvature="0" />
-    <g
-       inkscape:export-filename="/home/systeme/Cyber-Orb/img/menu.png"
-       transform="matrix(0.05388903,0,0,0.0479115,11398.13,8492.3006)"
-       id="g8656"
-       inkscape:export-xdpi="90.200729"
-       inkscape:export-ydpi="90.200729"
-       style="fill:#f9f9f9;fill-opacity:1">
-      <path
-         style="fill:#f9f9f9;fill-opacity:1"
-         inkscape:connector-curvature="0"
-         d="m 316.722,29.761 c 66.852,0 121.053,54.202 121.053,121.041 0,110.478 -218.893,257.212 -218.893,257.212 C 218.882,408.014 0,266.569 0,150.801 0,67.584 54.202,29.761 121.041,29.761 c 40.262,0 75.827,19.745 97.841,49.976 22.017,-30.231 57.588,-49.976 97.84,-49.976 z"
-         id="path8658" />
-    </g>
     <rect
        inkscape:export-ydpi="90.200729"
        inkscape:export-xdpi="90.200729"
@@ -24083,27 +24012,6 @@
          cx="11321.672"
          cy="1627.641"
          r="25" />
-    </g>
-    <g
-       inkscape:export-ydpi="90.200729"
-       inkscape:export-xdpi="90.200729"
-       inkscape:export-filename="/home/systeme/Cyber-Orb/img/menu.png"
-       transform="matrix(0.36240309,0,0,0.36240309,6981.1952,8569.6914)"
-       id="g8750">
-      <g
-         id="g8752"
-         transform="translate(-6,-89)">
-        <path
-           style="fill:url(#radialGradient9024);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.79607843"
-           d="m 11630.801,-108.05469 c -0.02,0.44985 -0.137,0.83076 -0.137,1.29297 0,26.170039 61.576,58.144532 61.576,58.144532 0,0 56.792,-30.659609 61.155,-55.222652 a 90,71.5 0 0 1 -2.45,1.70898 90,71.5 0 0 1 -7.318,4.158204 90,71.5 0 0 1 -7.803,3.55664 90,71.5 0 0 1 -8.213,2.919922 90,71.5 0 0 1 -8.537,2.251953 90,71.5 0 0 1 -8.777,1.566407 90,71.5 0 0 1 -8.93,0.861328 90,71.5 0 0 1 -6.367,0.177734 90,71.5 0 0 1 -8.984,-0.355469 90,71.5 0 0 1 -8.897,-1.068359 90,71.5 0 0 1 -8.717,-1.769531 90,71.5 0 0 1 -8.449,-2.449219 90,71.5 0 0 1 -8.101,-3.109375 90,71.5 0 0 1 -7.67,-3.736328 90,71.5 0 0 1 -7.162,-4.324217 90,71.5 0 0 1 -6.219,-4.60352 z"
-           id="path8754"
-           inkscape:connector-curvature="0" />
-        <path
-           style="fill:#ff3939;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-           d="m 11630.801,-108.05469 a 90,71.5 0 0 0 6.219,4.60352 90,71.5 0 0 0 7.162,4.324217 90,71.5 0 0 0 7.67,3.736328 90,71.5 0 0 0 8.101,3.109375 90,71.5 0 0 0 8.449,2.449219 90,71.5 0 0 0 8.717,1.769531 90,71.5 0 0 0 8.897,1.068359 90,71.5 0 0 0 8.984,0.355469 90,71.5 0 0 0 6.367,-0.177734 90,71.5 0 0 0 8.93,-0.861328 90,71.5 0 0 0 8.777,-1.566407 90,71.5 0 0 0 8.537,-2.251953 90,71.5 0 0 0 8.213,-2.919922 90,71.5 0 0 0 7.803,-3.55664 90,71.5 0 0 0 7.318,-4.158204 90,71.5 0 0 0 2.45,-1.70898 c 0.173,-0.97834 0.423,-1.96526 0.423,-2.92188 0,-15.10935 -15.248,-27.36328 -34.054,-27.36328 -11.324,0 -21.33,4.46493 -27.524,11.29883 -6.193,-6.8339 -16.197,-11.29883 -27.523,-11.29883 -18.341,0 -33.192,8.21169 -33.916,26.07031 z"
-           id="path8756"
-           inkscape:connector-curvature="0" />
-      </g>
     </g>
     <path
        inkscape:export-ydpi="90.200729"
@@ -24206,197 +24114,128 @@
        style="opacity:1;fill:#ff3939;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:65.15200043;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        d="m 11202.875,8003.5918 c 0.1,-0.4832 0.228,-0.8814 0.309,-1.3926 0.393,-2.4803 0.582,-5.0863 0.582,-5.8398 0,-1.0989 -0.08,-2.3211 -0.25,-3.6192 -0.175,-1.298 -0.449,-2.6712 -0.848,-4.0722 -0.399,-1.4011 -0.924,-2.8304 -1.598,-4.2383 -0.674,-1.4079 -1.497,-2.7947 -2.496,-4.1133 -0.998,-1.3186 -2.171,-2.568 -3.545,-3.7012 -1.373,-1.1332 -2.947,-2.1503 -4.746,-3.0019 -1.799,-0.8516 -3.823,-1.5379 -6.097,-2.0117 -2.275,-0.4739 -4.799,-0.7344 -7.598,-0.7344 -2.768,0 -5.388,0.1557 -7.852,0.4766 -2.463,0.3208 -4.771,0.8055 -6.918,1.4609 -2.146,0.6554 -4.132,1.4826 -5.951,2.4863 -1.818,1.0037 -3.469,2.1851 -4.947,3.5508 -1.478,1.3657 -2.784,2.9148 -3.91,4.6562 -1.127,1.7415 -2.075,3.6757 -2.838,5.8067 -0.763,2.131 -1.341,4.4599 -1.729,6.9941 -0.387,2.5343 -0.582,5.2734 -0.582,8.2246 0,0.9657 0.173,1.9178 0.258,2.8789 a 330.13602,51.30492 0 0 0 60.756,-3.8105 z"
        id="path8951" />
-    <text
-       inkscape:export-filename="/home/systeme/Cyber-Orb/img/menu.png"
-       transform="scale(1.0244498,0.97613372)"
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:41.80489349px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="10844.602"
-       y="8633.6318"
-       id="text8953"
-       sodipodi:linespacing="125%"
-       inkscape:export-xdpi="90.200729"
-       inkscape:export-ydpi="90.200729"><tspan
-         sodipodi:role="line"
-         id="tspan8955"
-         x="10844.602"
-         y="8633.6318"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#ffffff;fill-opacity:1">cost:</tspan></text>
-    <text
-       inkscape:export-filename="/home/systeme/Cyber-Orb/img/menu.png"
-       inkscape:export-ydpi="90.200729"
-       inkscape:export-xdpi="90.200729"
-       sodipodi:linespacing="125%"
-       id="text8957"
-       y="8632.0166"
-       x="11082.382"
-       style="font-style:normal;font-weight:normal;font-size:41.80489349px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"
-       transform="scale(1.0244498,0.97613372)"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#ffffff;fill-opacity:1"
-         y="8632.0166"
-         x="11082.382"
-         id="tspan8959"
-         sodipodi:role="line">best:</tspan></text>
     <g
-       inkscape:export-ydpi="90.200729"
-       inkscape:export-xdpi="90.200729"
-       inkscape:export-filename="/home/systeme/Cyber-Orb/img/menu.png"
-       transform="matrix(0.67741286,0,0,0.67741286,3617.7298,7181.2173)"
-       id="g8961"
-       style="fill:#ff5555">
-      <g
-         id="g8963"
-         transform="matrix(0.3153147,0,0,0.3153147,7520.2362,2230.3135)"
-         style="fill:#ff5555">
-        <path
-           style="fill:#ff5555;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.79607843"
-           d="m 11630.801,-108.05469 c -0.02,0.44985 -0.137,0.83076 -0.137,1.29297 0,26.170039 61.576,58.144532 61.576,58.144532 0,0 56.792,-30.659609 61.155,-55.222652 a 90,71.5 0 0 1 -2.45,1.70898 90,71.5 0 0 1 -7.318,4.158204 90,71.5 0 0 1 -7.803,3.55664 90,71.5 0 0 1 -8.213,2.919922 90,71.5 0 0 1 -8.537,2.251953 90,71.5 0 0 1 -8.777,1.566407 90,71.5 0 0 1 -8.93,0.861328 90,71.5 0 0 1 -6.367,0.177734 90,71.5 0 0 1 -8.984,-0.355469 90,71.5 0 0 1 -8.897,-1.068359 90,71.5 0 0 1 -8.717,-1.769531 90,71.5 0 0 1 -8.449,-2.449219 90,71.5 0 0 1 -8.101,-3.109375 90,71.5 0 0 1 -7.67,-3.736328 90,71.5 0 0 1 -7.162,-4.324217 90,71.5 0 0 1 -6.219,-4.60352 z"
-           id="path8966"
-           inkscape:connector-curvature="0" />
-        <path
-           style="fill:#ff5555;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-           d="m 11630.801,-108.05469 a 90,71.5 0 0 0 6.219,4.60352 90,71.5 0 0 0 7.162,4.324217 90,71.5 0 0 0 7.67,3.736328 90,71.5 0 0 0 8.101,3.109375 90,71.5 0 0 0 8.449,2.449219 90,71.5 0 0 0 8.717,1.769531 90,71.5 0 0 0 8.897,1.068359 90,71.5 0 0 0 8.984,0.355469 90,71.5 0 0 0 6.367,-0.177734 90,71.5 0 0 0 8.93,-0.861328 90,71.5 0 0 0 8.777,-1.566407 90,71.5 0 0 0 8.537,-2.251953 90,71.5 0 0 0 8.213,-2.919922 90,71.5 0 0 0 7.803,-3.55664 90,71.5 0 0 0 7.318,-4.158204 90,71.5 0 0 0 2.45,-1.70898 c 0.173,-0.97834 0.423,-1.96526 0.423,-2.92188 0,-15.10935 -15.248,-27.36328 -34.054,-27.36328 -11.324,0 -21.33,4.46493 -27.524,11.29883 -6.193,-6.8339 -16.197,-11.29883 -27.523,-11.29883 -18.341,0 -33.192,8.21169 -33.916,26.07031 z"
-           id="path8968"
-           inkscape:connector-curvature="0" />
-      </g>
+       id="g9167"
+       transform="translate(41.089857,0)">
+      <rect
+         y="6619.6362"
+         x="9640.7422"
+         height="99.290573"
+         width="449.72791"
+         id="rect9046"
+         style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:4.38046646;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         ry="72.701134"
+         inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"
+         inkscape:export-xdpi="90.200706"
+         inkscape:export-ydpi="90.200706" />
       <text
-         inkscape:export-ydpi="278.33557"
-         inkscape:export-xdpi="278.33557"
+         inkscape:export-ydpi="90.200706"
+         inkscape:export-xdpi="90.200706"
          sodipodi:linespacing="125%"
-         id="text8970"
-         y="2274.9434"
-         x="10788.917"
-         style="font-style:normal;font-weight:normal;font-size:61.71257401px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff5555;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         id="text9048"
+         y="6868.9351"
+         x="9504.0654"
+         style="font-style:normal;font-weight:normal;font-size:31.37534332px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          xml:space="preserve"
-         transform="scale(1.0244498,0.97613372)"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#ff5555;fill-opacity:1"
-           y="2274.9434"
-           x="10788.917"
-           id="tspan8972"
-           sodipodi:role="line">500 </tspan></text>
-    </g>
-    <path
-       inkscape:export-filename="/home/systeme/Cyber-Orb/img/menu.png"
-       inkscape:connector-curvature="0"
-       style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.55200005;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 11441.657,8636.9172 -3.457,0 c 0.282,0 0.51,0.2293 0.51,0.5146 l 0,1.0016 c 0,0.2854 -0.228,0.516 -0.51,0.516 l -5.754,0 c -0.281,0 -0.508,-0.2306 -0.508,-0.516 l 0,-1.0016 c 0,-0.2853 0.227,-0.5146 0.508,-0.5146 l -7.794,0 c 0.282,0 0.51,0.2293 0.51,0.5146 l 0,1.0016 c 0,0.2854 -0.228,0.516 -0.51,0.516 l -5.752,0 c -0.284,0 -0.511,-0.2306 -0.511,-0.516 l 0,-1.0016 c 0,-0.2853 0.227,-0.5146 0.511,-0.5146 l -7.798,0 c 0.283,0 0.512,0.2293 0.512,0.5146 l 0,1.0016 c 0,0.2854 -0.229,0.516 -0.512,0.516 l -5.752,0 c -0.284,0 -0.51,-0.2306 -0.51,-0.516 l 0,-1.0016 c 0,-0.2853 0.226,-0.5146 0.51,-0.5146 l -7.795,0 c 0.282,0 0.51,0.2293 0.51,0.5146 l 0,1.0016 c 0,0.2854 -0.228,0.516 -0.51,0.516 l -5.753,0 c -0.283,0 -0.512,-0.2306 -0.512,-0.516 l 0,-1.0016 c 0,-0.2853 0.229,-0.5146 0.512,-0.5146 l -7.796,0 c 0.284,0 0.51,0.2293 0.51,0.5146 l 0,1.0016 c 0,0.2854 -0.226,0.516 -0.51,0.516 l -5.752,0 c -0.283,0 -0.51,-0.2306 -0.51,-0.516 l 0,-1.0016 c 0,-0.2853 0.227,-0.5146 0.51,-0.5146 l -4.338,0 0,67.7413 4.338,0 c -0.283,0 -0.51,-0.2306 -0.51,-0.516 l 0,-1.0018 c 0,-0.2853 0.227,-0.5146 0.51,-0.5146 l 5.752,0 c 0.284,0 0.51,0.2293 0.51,0.5146 l 0,1.0018 c 0,0.2854 -0.226,0.516 -0.51,0.516 l 7.796,0 c -0.283,0 -0.512,-0.2306 -0.512,-0.516 l 0,-1.0018 c 0,-0.2853 0.229,-0.5146 0.512,-0.5146 l 5.753,0 c 0.282,0 0.51,0.2293 0.51,0.5146 l 0,1.0018 c 0,0.2854 -0.228,0.516 -0.51,0.516 l 7.795,0 c -0.284,0 -0.51,-0.2306 -0.51,-0.516 l 0,-1.0018 c 0,-0.2853 0.226,-0.5146 0.51,-0.5146 l 5.752,0 c 0.283,0 0.512,0.2293 0.512,0.5146 l 0,1.0018 c 0,0.2854 -0.229,0.516 -0.512,0.516 l 7.798,0 c -0.284,0 -0.511,-0.2306 -0.511,-0.516 l 0,-1.0018 c 0,-0.2853 0.227,-0.5146 0.511,-0.5146 l 5.752,0 c 0.282,0 0.51,0.2293 0.51,0.5146 l 0,1.0018 c 0,0.2854 -0.228,0.516 -0.51,0.516 l 7.794,0 c -0.281,0 -0.508,-0.2306 -0.508,-0.516 l 0,-1.0018 c 0,-0.2853 0.227,-0.5146 0.508,-0.5146 l 5.754,0 c 0.282,0 0.51,0.2293 0.51,0.5146 l 0,1.0018 c 0,0.2854 -0.228,0.516 -0.51,0.516 l 3.457,0 0,-67.7413 z"
-       id="path8974"
-       inkscape:export-xdpi="90.200729"
-       inkscape:export-ydpi="90.200729" />
-    <g
-       inkscape:export-filename="/home/systeme/Cyber-Orb/img/menu.png"
-       style="fill:#f9f9f9;fill-opacity:1"
-       inkscape:export-ydpi="90.200729"
-       inkscape:export-xdpi="90.200729"
-       id="g8976"
-       transform="matrix(0.05388903,0,0,0.0479115,11398.13,8660.3006)">
-      <path
-         id="path8978"
-         d="m 316.722,29.761 c 66.852,0 121.053,54.202 121.053,121.041 0,110.478 -218.893,257.212 -218.893,257.212 C 218.882,408.014 0,266.569 0,150.801 0,67.584 54.202,29.761 121.041,29.761 c 40.262,0 75.827,19.745 97.841,49.976 22.017,-30.231 57.588,-49.976 97.84,-49.976 z"
-         inkscape:connector-curvature="0"
-         style="fill:#f9f9f9;fill-opacity:1" />
-    </g>
-    <g
-       inkscape:export-ydpi="90.200729"
-       inkscape:export-xdpi="90.200729"
-       inkscape:export-filename="/home/systeme/Cyber-Orb/img/menu.png"
-       id="g8980"
-       transform="matrix(0.36240309,0,0,0.36240309,6981.1952,8737.6914)">
-      <g
-         transform="translate(-6,-89)"
-         id="g8982">
-        <path
-           inkscape:connector-curvature="0"
-           id="path8984"
-           d="m 11630.801,-108.05469 c -0.02,0.44985 -0.137,0.83076 -0.137,1.29297 0,26.170039 61.576,58.144532 61.576,58.144532 0,0 56.792,-30.659609 61.155,-55.222652 a 90,71.5 0 0 1 -2.45,1.70898 90,71.5 0 0 1 -7.318,4.158204 90,71.5 0 0 1 -7.803,3.55664 90,71.5 0 0 1 -8.213,2.919922 90,71.5 0 0 1 -8.537,2.251953 90,71.5 0 0 1 -8.777,1.566407 90,71.5 0 0 1 -8.93,0.861328 90,71.5 0 0 1 -6.367,0.177734 90,71.5 0 0 1 -8.984,-0.355469 90,71.5 0 0 1 -8.897,-1.068359 90,71.5 0 0 1 -8.717,-1.769531 90,71.5 0 0 1 -8.449,-2.449219 90,71.5 0 0 1 -8.101,-3.109375 90,71.5 0 0 1 -7.67,-3.736328 90,71.5 0 0 1 -7.162,-4.324217 90,71.5 0 0 1 -6.219,-4.60352 z"
-           style="fill:url(#radialGradient9038);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.79607843" />
-        <path
-           inkscape:connector-curvature="0"
-           id="path8986"
-           d="m 11630.801,-108.05469 a 90,71.5 0 0 0 6.219,4.60352 90,71.5 0 0 0 7.162,4.324217 90,71.5 0 0 0 7.67,3.736328 90,71.5 0 0 0 8.101,3.109375 90,71.5 0 0 0 8.449,2.449219 90,71.5 0 0 0 8.717,1.769531 90,71.5 0 0 0 8.897,1.068359 90,71.5 0 0 0 8.984,0.355469 90,71.5 0 0 0 6.367,-0.177734 90,71.5 0 0 0 8.93,-0.861328 90,71.5 0 0 0 8.777,-1.566407 90,71.5 0 0 0 8.537,-2.251953 90,71.5 0 0 0 8.213,-2.919922 90,71.5 0 0 0 7.803,-3.55664 90,71.5 0 0 0 7.318,-4.158204 90,71.5 0 0 0 2.45,-1.70898 c 0.173,-0.97834 0.423,-1.96526 0.423,-2.92188 0,-15.10935 -15.248,-27.36328 -34.054,-27.36328 -11.324,0 -21.33,4.46493 -27.524,11.29883 -6.193,-6.8339 -16.197,-11.29883 -27.523,-11.29883 -18.341,0 -33.192,8.21169 -33.916,26.07031 z"
-           style="fill:#ff3939;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-      </g>
-    </g>
-    <g
-       inkscape:export-ydpi="90.200729"
-       inkscape:export-xdpi="90.200729"
-       inkscape:export-filename="/home/systeme/Cyber-Orb/img/menu.png"
-       style="fill:#ff5555"
-       id="g8988"
-       transform="matrix(0.67741286,0,0,0.67741286,3617.7298,7379.2173)">
-      <g
-         style="fill:#ff5555"
-         transform="matrix(0.3153147,0,0,0.3153147,7520.2362,2230.3135)"
-         id="g8990">
-        <path
-           inkscape:connector-curvature="0"
-           id="path8992"
-           d="m 11630.801,-108.05469 c -0.02,0.44985 -0.137,0.83076 -0.137,1.29297 0,26.170039 61.576,58.144532 61.576,58.144532 0,0 56.792,-30.659609 61.155,-55.222652 a 90,71.5 0 0 1 -2.45,1.70898 90,71.5 0 0 1 -7.318,4.158204 90,71.5 0 0 1 -7.803,3.55664 90,71.5 0 0 1 -8.213,2.919922 90,71.5 0 0 1 -8.537,2.251953 90,71.5 0 0 1 -8.777,1.566407 90,71.5 0 0 1 -8.93,0.861328 90,71.5 0 0 1 -6.367,0.177734 90,71.5 0 0 1 -8.984,-0.355469 90,71.5 0 0 1 -8.897,-1.068359 90,71.5 0 0 1 -8.717,-1.769531 90,71.5 0 0 1 -8.449,-2.449219 90,71.5 0 0 1 -8.101,-3.109375 90,71.5 0 0 1 -7.67,-3.736328 90,71.5 0 0 1 -7.162,-4.324217 90,71.5 0 0 1 -6.219,-4.60352 z"
-           style="fill:#ff5555;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.79607843" />
-        <path
-           inkscape:connector-curvature="0"
-           id="path8994"
-           d="m 11630.801,-108.05469 a 90,71.5 0 0 0 6.219,4.60352 90,71.5 0 0 0 7.162,4.324217 90,71.5 0 0 0 7.67,3.736328 90,71.5 0 0 0 8.101,3.109375 90,71.5 0 0 0 8.449,2.449219 90,71.5 0 0 0 8.717,1.769531 90,71.5 0 0 0 8.897,1.068359 90,71.5 0 0 0 8.984,0.355469 90,71.5 0 0 0 6.367,-0.177734 90,71.5 0 0 0 8.93,-0.861328 90,71.5 0 0 0 8.777,-1.566407 90,71.5 0 0 0 8.537,-2.251953 90,71.5 0 0 0 8.213,-2.919922 90,71.5 0 0 0 7.803,-3.55664 90,71.5 0 0 0 7.318,-4.158204 90,71.5 0 0 0 2.45,-1.70898 c 0.173,-0.97834 0.423,-1.96526 0.423,-2.92188 0,-15.10935 -15.248,-27.36328 -34.054,-27.36328 -11.324,0 -21.33,4.46493 -27.524,11.29883 -6.193,-6.8339 -16.197,-11.29883 -27.523,-11.29883 -18.341,0 -33.192,8.21169 -33.916,26.07031 z"
-           style="fill:#ff5555;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-      </g>
-      <text
          transform="scale(1.0244498,0.97613372)"
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:61.71257401px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff5555;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         x="10788.917"
-         y="2274.9434"
-         id="text8996"
-         sodipodi:linespacing="125%"
-         inkscape:export-xdpi="278.33557"
-         inkscape:export-ydpi="278.33557"><tspan
-           sodipodi:role="line"
-           id="tspan8998"
-           x="10788.917"
-           y="2274.9434"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#ff5555;fill-opacity:1">500 </tspan></text>
-    </g>
-    <path
-       inkscape:export-filename="/home/systeme/Cyber-Orb/img/menu.png"
-       inkscape:export-ydpi="90.200729"
-       inkscape:export-xdpi="90.200729"
-       id="path9000"
-       d="m 11441.657,8834.9172 -3.457,0 c 0.282,0 0.51,0.2293 0.51,0.5146 l 0,1.0016 c 0,0.2854 -0.228,0.516 -0.51,0.516 l -5.754,0 c -0.281,0 -0.508,-0.2306 -0.508,-0.516 l 0,-1.0016 c 0,-0.2853 0.227,-0.5146 0.508,-0.5146 l -7.794,0 c 0.282,0 0.51,0.2293 0.51,0.5146 l 0,1.0016 c 0,0.2854 -0.228,0.516 -0.51,0.516 l -5.752,0 c -0.284,0 -0.511,-0.2306 -0.511,-0.516 l 0,-1.0016 c 0,-0.2853 0.227,-0.5146 0.511,-0.5146 l -7.798,0 c 0.283,0 0.512,0.2293 0.512,0.5146 l 0,1.0016 c 0,0.2854 -0.229,0.516 -0.512,0.516 l -5.752,0 c -0.284,0 -0.51,-0.2306 -0.51,-0.516 l 0,-1.0016 c 0,-0.2853 0.226,-0.5146 0.51,-0.5146 l -7.795,0 c 0.282,0 0.51,0.2293 0.51,0.5146 l 0,1.0016 c 0,0.2854 -0.228,0.516 -0.51,0.516 l -5.753,0 c -0.283,0 -0.512,-0.2306 -0.512,-0.516 l 0,-1.0016 c 0,-0.2853 0.229,-0.5146 0.512,-0.5146 l -7.796,0 c 0.284,0 0.51,0.2293 0.51,0.5146 l 0,1.0016 c 0,0.2854 -0.226,0.516 -0.51,0.516 l -5.752,0 c -0.283,0 -0.51,-0.2306 -0.51,-0.516 l 0,-1.0016 c 0,-0.2853 0.227,-0.5146 0.51,-0.5146 l -4.338,0 0,67.7413 4.338,0 c -0.283,0 -0.51,-0.2306 -0.51,-0.516 l 0,-1.0018 c 0,-0.2853 0.227,-0.5146 0.51,-0.5146 l 5.752,0 c 0.284,0 0.51,0.2293 0.51,0.5146 l 0,1.0018 c 0,0.2854 -0.226,0.516 -0.51,0.516 l 7.796,0 c -0.283,0 -0.512,-0.2306 -0.512,-0.516 l 0,-1.0018 c 0,-0.2853 0.229,-0.5146 0.512,-0.5146 l 5.753,0 c 0.282,0 0.51,0.2293 0.51,0.5146 l 0,1.0018 c 0,0.2854 -0.228,0.516 -0.51,0.516 l 7.795,0 c -0.284,0 -0.51,-0.2306 -0.51,-0.516 l 0,-1.0018 c 0,-0.2853 0.226,-0.5146 0.51,-0.5146 l 5.752,0 c 0.283,0 0.512,0.2293 0.512,0.5146 l 0,1.0018 c 0,0.2854 -0.229,0.516 -0.512,0.516 l 7.798,0 c -0.284,0 -0.511,-0.2306 -0.511,-0.516 l 0,-1.0018 c 0,-0.2853 0.227,-0.5146 0.511,-0.5146 l 5.752,0 c 0.282,0 0.51,0.2293 0.51,0.5146 l 0,1.0018 c 0,0.2854 -0.228,0.516 -0.51,0.516 l 7.794,0 c -0.281,0 -0.508,-0.2306 -0.508,-0.516 l 0,-1.0018 c 0,-0.2853 0.227,-0.5146 0.508,-0.5146 l 5.754,0 c 0.282,0 0.51,0.2293 0.51,0.5146 l 0,1.0018 c 0,0.2854 -0.228,0.516 -0.51,0.516 l 3.457,0 0,-67.7413 z"
-       style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.55200005;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       inkscape:connector-curvature="0" />
-    <g
-       inkscape:export-filename="/home/systeme/Cyber-Orb/img/menu.png"
-       transform="matrix(0.05388903,0,0,0.0479115,11398.13,8858.3006)"
-       id="g9002"
-       inkscape:export-xdpi="90.200729"
-       inkscape:export-ydpi="90.200729"
-       style="fill:#f9f9f9;fill-opacity:1">
-      <path
-         style="fill:#f9f9f9;fill-opacity:1"
-         inkscape:connector-curvature="0"
-         d="m 316.722,29.761 c 66.852,0 121.053,54.202 121.053,121.041 0,110.478 -218.893,257.212 -218.893,257.212 C 218.882,408.014 0,266.569 0,150.801 0,67.584 54.202,29.761 121.041,29.761 c 40.262,0 75.827,19.745 97.841,49.976 22.017,-30.231 57.588,-49.976 97.84,-49.976 z"
-         id="path9004" />
-    </g>
-    <g
-       inkscape:export-ydpi="90.200729"
-       inkscape:export-xdpi="90.200729"
-       inkscape:export-filename="/home/systeme/Cyber-Orb/img/menu.png"
-       transform="matrix(0.36240309,0,0,0.36240309,6981.1952,8935.6914)"
-       id="g9006">
+         inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#ffffff;fill-opacity:1"
+           y="6868.9351"
+           x="9504.0654"
+           id="tspan9050"
+           sodipodi:role="line">lvl 1</tspan></text>
       <g
-         id="g9008"
-         transform="translate(-6,-89)">
+         id="g9052"
+         transform="matrix(0.1603094,0,0,0.1603094,8037.528,6710.9117)"
+         inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"
+         inkscape:export-xdpi="90.200706"
+         inkscape:export-ydpi="90.200706">
         <path
-           style="fill:url(#radialGradient9040);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.79607843"
+           style="fill:url(#radialGradient9120);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.79607843"
            d="m 11630.801,-108.05469 c -0.02,0.44985 -0.137,0.83076 -0.137,1.29297 0,26.170039 61.576,58.144532 61.576,58.144532 0,0 56.792,-30.659609 61.155,-55.222652 a 90,71.5 0 0 1 -2.45,1.70898 90,71.5 0 0 1 -7.318,4.158204 90,71.5 0 0 1 -7.803,3.55664 90,71.5 0 0 1 -8.213,2.919922 90,71.5 0 0 1 -8.537,2.251953 90,71.5 0 0 1 -8.777,1.566407 90,71.5 0 0 1 -8.93,0.861328 90,71.5 0 0 1 -6.367,0.177734 90,71.5 0 0 1 -8.984,-0.355469 90,71.5 0 0 1 -8.897,-1.068359 90,71.5 0 0 1 -8.717,-1.769531 90,71.5 0 0 1 -8.449,-2.449219 90,71.5 0 0 1 -8.101,-3.109375 90,71.5 0 0 1 -7.67,-3.736328 90,71.5 0 0 1 -7.162,-4.324217 90,71.5 0 0 1 -6.219,-4.60352 z"
-           id="path9010"
+           id="path9054"
            inkscape:connector-curvature="0" />
         <path
            style="fill:#ff3939;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
            d="m 11630.801,-108.05469 a 90,71.5 0 0 0 6.219,4.60352 90,71.5 0 0 0 7.162,4.324217 90,71.5 0 0 0 7.67,3.736328 90,71.5 0 0 0 8.101,3.109375 90,71.5 0 0 0 8.449,2.449219 90,71.5 0 0 0 8.717,1.769531 90,71.5 0 0 0 8.897,1.068359 90,71.5 0 0 0 8.984,0.355469 90,71.5 0 0 0 6.367,-0.177734 90,71.5 0 0 0 8.93,-0.861328 90,71.5 0 0 0 8.777,-1.566407 90,71.5 0 0 0 8.537,-2.251953 90,71.5 0 0 0 8.213,-2.919922 90,71.5 0 0 0 7.803,-3.55664 90,71.5 0 0 0 7.318,-4.158204 90,71.5 0 0 0 2.45,-1.70898 c 0.173,-0.97834 0.423,-1.96526 0.423,-2.92188 0,-15.10935 -15.248,-27.36328 -34.054,-27.36328 -11.324,0 -21.33,4.46493 -27.524,11.29883 -6.193,-6.8339 -16.197,-11.29883 -27.523,-11.29883 -18.341,0 -33.192,8.21169 -33.916,26.07031 z"
-           id="path9012"
+           id="path9056"
+           inkscape:connector-curvature="0" />
+      </g>
+      <text
+         inkscape:export-ydpi="90.200706"
+         inkscape:export-xdpi="90.200706"
+         sodipodi:linespacing="125%"
+         id="text9068"
+         y="6868.9351"
+         x="9504.0654"
+         style="font-style:normal;font-weight:normal;font-size:31.37534332px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"
+         transform="scale(1.0244498,0.97613372)"
+         inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#ffffff;fill-opacity:1"
+           y="6868.9351"
+           x="9504.0654"
+           id="tspan9070"
+           sodipodi:role="line">lvl 1</tspan></text>
+      <g
+         id="g9072"
+         transform="matrix(0.1603094,0,0,0.1603094,8037.528,6710.9117)"
+         inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"
+         inkscape:export-xdpi="90.200706"
+         inkscape:export-ydpi="90.200706">
+        <path
+           style="fill:url(#radialGradient9122);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.79607843"
+           d="m 11630.801,-108.05469 c -0.02,0.44985 -0.137,0.83076 -0.137,1.29297 0,26.170039 61.576,58.144532 61.576,58.144532 0,0 56.792,-30.659609 61.155,-55.222652 a 90,71.5 0 0 1 -2.45,1.70898 90,71.5 0 0 1 -7.318,4.158204 90,71.5 0 0 1 -7.803,3.55664 90,71.5 0 0 1 -8.213,2.919922 90,71.5 0 0 1 -8.537,2.251953 90,71.5 0 0 1 -8.777,1.566407 90,71.5 0 0 1 -8.93,0.861328 90,71.5 0 0 1 -6.367,0.177734 90,71.5 0 0 1 -8.984,-0.355469 90,71.5 0 0 1 -8.897,-1.068359 90,71.5 0 0 1 -8.717,-1.769531 90,71.5 0 0 1 -8.449,-2.449219 90,71.5 0 0 1 -8.101,-3.109375 90,71.5 0 0 1 -7.67,-3.736328 90,71.5 0 0 1 -7.162,-4.324217 90,71.5 0 0 1 -6.219,-4.60352 z"
+           id="path9074"
+           inkscape:connector-curvature="0" />
+        <path
+           style="fill:#ff3939;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           d="m 11630.801,-108.05469 a 90,71.5 0 0 0 6.219,4.60352 90,71.5 0 0 0 7.162,4.324217 90,71.5 0 0 0 7.67,3.736328 90,71.5 0 0 0 8.101,3.109375 90,71.5 0 0 0 8.449,2.449219 90,71.5 0 0 0 8.717,1.769531 90,71.5 0 0 0 8.897,1.068359 90,71.5 0 0 0 8.984,0.355469 90,71.5 0 0 0 6.367,-0.177734 90,71.5 0 0 0 8.93,-0.861328 90,71.5 0 0 0 8.777,-1.566407 90,71.5 0 0 0 8.537,-2.251953 90,71.5 0 0 0 8.213,-2.919922 90,71.5 0 0 0 7.803,-3.55664 90,71.5 0 0 0 7.318,-4.158204 90,71.5 0 0 0 2.45,-1.70898 c 0.173,-0.97834 0.423,-1.96526 0.423,-2.92188 0,-15.10935 -15.248,-27.36328 -34.054,-27.36328 -11.324,0 -21.33,4.46493 -27.524,11.29883 -6.193,-6.8339 -16.197,-11.29883 -27.523,-11.29883 -18.341,0 -33.192,8.21169 -33.916,26.07031 z"
+           id="path9076"
+           inkscape:connector-curvature="0" />
+      </g>
+      <text
+         inkscape:export-ydpi="90.200706"
+         inkscape:export-xdpi="90.200706"
+         sodipodi:linespacing="125%"
+         id="text9088"
+         y="6864.8364"
+         x="9504.0654"
+         style="font-style:normal;font-weight:normal;font-size:31.37534332px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"
+         transform="scale(1.0244498,0.97613372)"
+         inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy';fill:#ffffff;fill-opacity:1"
+           y="6864.8364"
+           x="9504.0654"
+           id="tspan9090"
+           sodipodi:role="line">lvl 1</tspan></text>
+      <g
+         id="g9093"
+         transform="matrix(0.1603094,0,0,0.1603094,8037.528,6706.9117)"
+         inkscape:export-filename="/home/systeme/espace3d.github.io/assets/button_network_opponent.png"
+         inkscape:export-xdpi="90.200706"
+         inkscape:export-ydpi="90.200706">
+        <path
+           style="fill:url(#radialGradient9124);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.79607843"
+           d="m 11630.801,-108.05469 c -0.02,0.44985 -0.137,0.83076 -0.137,1.29297 0,26.170039 61.576,58.144532 61.576,58.144532 0,0 56.792,-30.659609 61.155,-55.222652 a 90,71.5 0 0 1 -2.45,1.70898 90,71.5 0 0 1 -7.318,4.158204 90,71.5 0 0 1 -7.803,3.55664 90,71.5 0 0 1 -8.213,2.919922 90,71.5 0 0 1 -8.537,2.251953 90,71.5 0 0 1 -8.777,1.566407 90,71.5 0 0 1 -8.93,0.861328 90,71.5 0 0 1 -6.367,0.177734 90,71.5 0 0 1 -8.984,-0.355469 90,71.5 0 0 1 -8.897,-1.068359 90,71.5 0 0 1 -8.717,-1.769531 90,71.5 0 0 1 -8.449,-2.449219 90,71.5 0 0 1 -8.101,-3.109375 90,71.5 0 0 1 -7.67,-3.736328 90,71.5 0 0 1 -7.162,-4.324217 90,71.5 0 0 1 -6.219,-4.60352 z"
+           id="path9097"
+           inkscape:connector-curvature="0" />
+        <path
+           style="fill:#ff3939;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           d="m 11630.801,-108.05469 a 90,71.5 0 0 0 6.219,4.60352 90,71.5 0 0 0 7.162,4.324217 90,71.5 0 0 0 7.67,3.736328 90,71.5 0 0 0 8.101,3.109375 90,71.5 0 0 0 8.449,2.449219 90,71.5 0 0 0 8.717,1.769531 90,71.5 0 0 0 8.897,1.068359 90,71.5 0 0 0 8.984,0.355469 90,71.5 0 0 0 6.367,-0.177734 90,71.5 0 0 0 8.93,-0.861328 90,71.5 0 0 0 8.777,-1.566407 90,71.5 0 0 0 8.537,-2.251953 90,71.5 0 0 0 8.213,-2.919922 90,71.5 0 0 0 7.803,-3.55664 90,71.5 0 0 0 7.318,-4.158204 90,71.5 0 0 0 2.45,-1.70898 c 0.173,-0.97834 0.423,-1.96526 0.423,-2.92188 0,-15.10935 -15.248,-27.36328 -34.054,-27.36328 -11.324,0 -21.33,4.46493 -27.524,11.29883 -6.193,-6.8339 -16.197,-11.29883 -27.523,-11.29883 -18.341,0 -33.192,8.21169 -33.916,26.07031 z"
+           id="path9099"
            inkscape:connector-curvature="0" />
       </g>
     </g>
+    <rect
+       style="opacity:1;fill:#5ececb;fill-opacity:0.97756407;fill-rule:nonzero;stroke:none;stroke-width:9.90799999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect9165"
+       width="908.216"
+       height="98.332039"
+       x="9225.5342"
+       y="6389.9136"
+       rx="2.5179999"
+       ry="2.6819301" />
   </g>
 </svg>

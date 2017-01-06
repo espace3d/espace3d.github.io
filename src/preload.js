@@ -24,6 +24,11 @@ preload.prototype = {
 		//this.game.load.script('gray', 'https://cdn.rawgit.com/photonstorm/phaser/master/filters/Gray.js')
 
 		//images
+		this.game.load.image("little_circle_for_network","assets/little_circle_for_network.png");
+		this.game.load.image("heart_menu_opponent","assets/heart_menu_opponent.png");
+		this.game.load.image("menu","assets/menu.png");
+		this.game.load.image("button_network_opponent","assets/button_network_opponent.png");
+		this.game.load.image("heart_power","assets/heart_power.png");
 		this.game.load.image("player","assets/player.png");
 		this.game.load.image("opponent","assets/opponent.png");
 		this.game.load.image("player_top","assets/player_top.png");
@@ -70,6 +75,7 @@ preload.prototype = {
 		this.game.load.image("papermania","assets/papermania.png");
 
 		//font bitmapFont
+		this.game.load.bitmapFont('lucky_rose','fonts/font_rose.png', 'fonts/font_rose.fnt');
 		this.game.load.bitmapFont('lucky_black_white','fonts/font_black_white.png', 'fonts/font_black_white.fnt');
 		this.game.load.bitmapFont('lucky_red','fonts/font_red.png', 'fonts/font_red.fnt');
 		this.game.load.bitmapFont('lucky_black','fonts/font_black.png', 'fonts/font_black.fnt');
