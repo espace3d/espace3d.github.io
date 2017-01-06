@@ -374,7 +374,7 @@ Paper.prototype.count_collision=function(obj1){
 		console.log("count_collision")
 		obj1.text_position.is_lached=false
 		//animation pour le vainqueur
-		game.time.events.add(800,obj1.retardateur,obj1)
+		game.time.events.add(2000,obj1.retardateur,obj1)
 		obj1.text_position.body.moves=false
 		obj1.text_position.body.allowGravity=false
 	}

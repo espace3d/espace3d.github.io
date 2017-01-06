@@ -101,7 +101,7 @@ Timer.prototype.pause_animate_circle = function() {
 
 Timer.prototype.stop_animate_circle = function() {
 	for (var i = 0; i < 3; i++) {
-		//this.circle[i].visible=false
+		this.circle[i].visible=false
 		this.tween_for_circle_network[i].pause()
 	}
 }

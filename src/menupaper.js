@@ -24,6 +24,10 @@ Menu = function(game,Group,id,posx,posy){
 	this.anchor.y=.5
 	this.sub_group_fwd.add(this)
 	this.tween_agite_heart_flag=true
+
+
+
+
 	//boutton pour sélectionner le paper
 	this.button_paper_select=[] 
 	for (var i = 0; i < this.row; i++) {
@@ -45,7 +49,7 @@ Menu = function(game,Group,id,posx,posy){
 		this.button_paper_select[i].quantity_paper.alpha=.5
 		this.button_paper_select[i].quantity_paper.visible=false
 
-		//à titre informatif le nombre de papiers à disposition dans chaque catégorie
+		//la puissance des papiers
 		this.button_paper_select[i].power_paper_text = game.add.bitmapText(this.posx-200,this.posy+360+i*this.distance_in_height_between_button,'lucky',"",40)
 		this.button_paper_select[i].power_paper_text.text=parameter.value_paper_level[i]
 		this.button_paper_select[i].power_paper_text.anchor.x=.5
@@ -140,6 +144,11 @@ Menu = function(game,Group,id,posx,posy){
 	this.amount_of_heart_paper=game.add.bitmapText(this.posx+100,this.posy+120,'lucky',100,80)
 	this.amount_of_heart_paper.anchor.x=.5
 
+	//text négatif
+	this.text_negative=game.add.bitmapText(this.amount_of_heart_paper.x-20,this.amount_of_heart_paper.y-50,'lucky_rose',"",40)
+	this.text_negative.alpha=1
+
+	this.sub_group_fwd.add(this.text_negative)
 	this.sub_group_fwd.add(this.amount_of_heart_paper)
 
 	//group
@@ -231,6 +240,7 @@ Menu.prototype.rearrange_table_number_of_sort_paper = function(nombre) {
 		//}
 		if(parameter.number_of_sort_paper_player[i]!== 0){
 			this.button_paper_select[nombre].frame=nombre+8
+			this.show_negative_value_above_score(nombre)
 		}
 
 		this.paper[7].frame=nombre
@@ -244,6 +254,18 @@ Menu.prototype.rearrange_table_number_of_sort_paper = function(nombre) {
 		this.init_table_number_of_sort_paper_player()
 	}
 }
+
+
+Menu.prototype.show_negative_value_above_score = function(nombre) {
+	this.text_negative.alpha=1
+	this.text_negative.y=this.amount_of_heart_paper.y-30
+	this.text_negative.text=parameter.value_paper_level[nombre]
+this.tween_negative_value=game.add.tween(this.text_negative).to({y:this.text_negative.y-120},time,Phaser.Easing.Linear.None,true,0)
+this.tween_negative_value=game.add.tween(this.text_negative).to({alpha:0},time,Phaser.Easing.Linear.None,true,0)
+	
+}
+
+
 
 //stock nombre papiers et réinitialisation du nombre de papiers
 Menu.prototype.init_table_number_of_sort_paper_player = function(){

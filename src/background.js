@@ -293,13 +293,13 @@ draw_background.prototype.winner=function(nam_winner){
 	if (this.winner_flag){
 		this.winner_flag = false
 		console.log("valueloooo");
-
+paper_player.text_position.visible=false
+paper_player.line_position.visible=false
 		this.text_win.visible=true
 		this.cursor_player.visible=false
 		this.cursor_palpitant.visible=false
 		this.cursor_opponent.visible=false
 		this.cursor_palpitant_opponent.visible=false
-
 		if (nam_winner=="player"){
 			this.text_win.x=w4*3
 			game.time.events.add(1200,this.particle_winner,this)
