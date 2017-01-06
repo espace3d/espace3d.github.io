@@ -53,11 +53,7 @@ first_screen = function(game){
 
 	this.rank_button = this.game.add.button(w2,h2+255,"rank",this.playTheGame,this);
 	this.rank_button.anchor.setTo(0.5,0.5)
-	//this.game.add.tween(this.rank_button.scale).to({x:0.9, y:0.9},450,Phaser.Easing.Sinusoidal.In,true,0,-1,true)
-
-
-	//pseudoAnchorX(textTitleGame)
-	//pseudoAnchorY(textTitleGame)
+	this.activate_tween()
 }
 
 first_screen.prototype = Object.create(Phaser.Sprite.prototype)
@@ -73,11 +69,16 @@ first_screen.prototype.playTheGame=function(){
 first_screen.prototype.activate_tween = function() {
 	this.scale.setTo(1,1)
 	this.angle=-5
-
-	this.tween=game.add.tween(this).to({angle:5},this.speed,this.tween_easing[this.num],true,0,-1)
-	//this.tween=game.add.tween(this.scale).to({x:1.2, y:1.2},this.speed,this.tween_easing[this.num],true,0,-1)
+this.posx_t=w*.0578125
+	this.tween_move_papermania=game.add.tween(this.logo).to({x:this.posx_t,y:h2+20},2000,Phaser.Easing.Linear.None,true,0,-1)
+	this.tween_move_papermania2=game.add.tween(this).to({x:w*.7695313,y:h*.432+20},2000,Phaser.Easing.Linear.None,true,0,-1)
+this.tween_move_papermania.yoyo(2000,true)
+this.tween_move_papermania2.yoyo(2000,true)
+	//this.tween=game.add.tween(this).to({angle:5},this.speed,this.tween_easing[this.num],true,0,-1)
+	this.tween=game.add.tween(this.scale).to({x:1.2, y:1.2},this.speed,this.tween_easing[this.num],true,0,-1)
 	this.tween.yoyo(this.speed,true)
-	//this.game.add.tween(this.play_button.scale).to({x:1.2, y:1.2},this.speed,Phaser.Easing.Sinusoidal.In,true,0,-1)
+	this.tween_play=game.add.tween(this.play_button.scale).to({x:1.2, y:1.2},this.speed,Phaser.Easing.Sinusoidal.In,true,0,-1)
+	this.tween_play.yoyo(this.speed,true)
 
 }
 

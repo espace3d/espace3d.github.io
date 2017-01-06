@@ -44,7 +44,7 @@ nu.paper="8"
 //|     |   |     | 
 //|-----|   |-----|
 var time_open_panel_background=500
-var delay_open_panel_background=900
+var delay_open_panel_background=1200
 
 //délai pour que les panneaux se referment
 //|-----||-----|
