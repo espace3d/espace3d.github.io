@@ -45,6 +45,7 @@ first_screen = function(game){
 	this.flag=true
 	this.num=0
 	this.play_button = this.game.add.button(w2,h2+145,"play",this.playTheGame,this);
+	this.play_button.inputEnabled=true
 	this.tween_easing=[Phaser.Easing.Linear.None,Phaser.Easing.Back.In,Phaser.Easing.Back.Out,Phaser.Easing.Back.InOut,Phaser.Easing.Bounce.In,Phaser.Easing.Bounce.Out,Phaser.Easing.Bounce.InOut,Phaser.Easing.Circular.In,Phaser.Easing.Circular.Out,Phaser.Easing.Circular.InOut,Phaser.Easing.Cubic.In,Phaser.Easing.Cubic.Out,Phaser.Easing.Cubic.InOut,Phaser.Easing.Elastic.In,Phaser.Easing.Elastic.Out,Phaser.Easing.Elastic.InOut,Phaser.Easing.Exponential.In,Phaser.Easing.Exponential.Out,Phaser.Easing.Exponential.InOut,Phaser.Easing.Linear.In,Phaser.Easing.Quadratic.In,Phaser.Easing.Quadratic.Out,Phaser.Easing.Quadratic.InOut,Phaser.Easing.Quartic.In,Phaser.Easing.Quartic.Out,Phaser.Easing.Quartic.InOut,Phaser.Easing.Quintic.In,Phaser.Easing.Quintic.Out,Phaser.Easing.Quintic.InOut,Phaser.Easing.Sinusoidal.In,Phaser.Easing.Sinusoidal.Out]
 
 
@@ -70,8 +71,8 @@ first_screen.prototype.activate_tween = function() {
 	this.scale.setTo(1,1)
 	this.angle=-5
 this.posx_t=w*.0578125
-	this.tween_move_papermania=game.add.tween(this.logo).to({x:this.posx_t,y:h2+20},2000,Phaser.Easing.Linear.None,true,0,-1)
-	this.tween_move_papermania2=game.add.tween(this).to({x:w*.7695313,y:h*.432+20},2000,Phaser.Easing.Linear.None,true,0,-1)
+	this.tween_move_papermania=game.add.tween(this.logo).to({x:this.posx_t,y:h2+40},2000,Phaser.Easing.Linear.None,true,0,-1)
+	this.tween_move_papermania2=game.add.tween(this).to({x:w*.7695313,y:h*.432+40},2000,Phaser.Easing.Linear.None,true,0,-1)
 this.tween_move_papermania.yoyo(2000,true)
 this.tween_move_papermania2.yoyo(2000,true)
 	//this.tween=game.add.tween(this).to({angle:5},this.speed,this.tween_easing[this.num],true,0,-1)
@@ -96,7 +97,21 @@ gameTitle.prototype = {
 		//gui.add(fizzy, 'speed')
 		//gui.add(fizzy,'num', {LinearNone:0,BackIn:1,BackOut:2,BackInOut:3,BounceIn:3,BounceOut:4,BounceInOut:5,CircularIn:6,CircularOut:7,CircularInOut:8,CubicIn:9,CubicOut:10,CubicInOut:11,ElasticIn:12,ElasticOut:13,ElasticInOut:14,ExponentialIn:15,ExponentialOut:16,ExponentialInOut:17,LinearIn:18,QuadraticIn:19,QuadraticOut:20,QuadraticInOut:21,QuarticIn:22,QuarticOutr:23,QuarticInOut:24,QuinticIn:25,QuinticOut:26,QuinticInOut:27,SinusoidalIn:28,SinusoidalOut:29})
 		//gui.add(fizzy, 'activate_tween')
+	},
+
+	update: function(){
+		fizzy.play_button.events.onInputDown.add(gofull,this);
+
+		function gofull(){
+
+			if (this.game.scale.isFullScreen) {
+				this.game.scale.stopFullScreen();
+			} else {
+				this.game.scale.startFullScreen(false);
+			}
+		}
 	}
+
 }
 
 

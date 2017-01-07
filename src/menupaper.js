@@ -141,8 +141,8 @@ Menu = function(game,Group,id,posx,posy){
 	this.repere_for_end_of_roll.alpha=0
 
 	//score à coté du coeur
-	this.amount_of_heart_paper=game.add.bitmapText(this.posx+100,this.posy+120,'lucky',100,80)
-	this.amount_of_heart_paper.anchor.x=.5
+	this.amount_of_heart_paper=game.add.bitmapText(this.posx+50,this.posy+120,'lucky',100,80)
+	this.amount_of_heart_paper.anchor.x=0
 
 	//text négatif
 	this.text_negative=game.add.bitmapText(this.amount_of_heart_paper.x-20,this.amount_of_heart_paper.y-50,'lucky_rose',"",40)

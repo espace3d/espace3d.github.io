@@ -246,6 +246,10 @@ Timer.prototype.reveal_text = function() {
 	this.timer_text.text=this.timer_value
 }
 
+//TODO:mettre ici foinction pour afficher clic lanceable uniqueement lorsque flag est bon
+Timer.prototype.update = function() {
+	
+}
 
 
 

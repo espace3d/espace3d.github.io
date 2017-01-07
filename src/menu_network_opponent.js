@@ -151,15 +151,17 @@ Menu_network_opponent.prototype.hide = function() {
 //to simulate network
 Menu_network_opponent.prototype.show_progressively_opponent = function() {
 	this.number_of_i=this.row-1
+	this.time_progressively=this.game.rnd.integerInRange(1000,4000)
+	console.log('this.time_progressively',this.time_progressively)
 	for (var i = 0; i < this.row; i++) {
 		hud.animate_circle()
-		this.tween_appears[i]=game.add.tween(this.button[i]).to({alpha:1},500,Phaser.Easing.Linear.None,true,1000*i)
-		this.tween_appears[i]=game.add.tween(this.button[i].name).to({alpha:1},500,Phaser.Easing.Linear.None,true,1000*i)
-		this.tween_appears[i]=game.add.tween(this.button[i].cost).to({alpha:1},500,Phaser.Easing.Linear.None,true,1000*i)
-		this.tween_appears[i]=game.add.tween(this.button[i].heart).to({alpha:1},500,Phaser.Easing.Linear.None,true,1000*i)
-		this.tween_appears[i]=game.add.tween(this.button[i].best).to({alpha:1},500,Phaser.Easing.Linear.None,true,1000*i)
-		this.tween_appears[i]=game.add.tween(this.button[i].lvl).to({alpha:1},500,Phaser.Easing.Linear.None,true,1000*i)
-		this.tween_appears[i]=game.add.tween(this.button[i].number_heart_opponent).to({alpha:1},500,Phaser.Easing.Linear.None,true,1000*i)
+		this.tween_appears[i]=game.add.tween(this.button[i]).to({alpha:1},500,Phaser.Easing.Linear.None,true,this.time_progressively*i)
+		this.tween_appears[i]=game.add.tween(this.button[i].name).to({alpha:1},500,Phaser.Easing.Linear.None,true,this.time_progressively*i)
+		this.tween_appears[i]=game.add.tween(this.button[i].cost).to({alpha:1},500,Phaser.Easing.Linear.None,true,this.time_progressively*i)
+		this.tween_appears[i]=game.add.tween(this.button[i].heart).to({alpha:1},500,Phaser.Easing.Linear.None,true,this.time_progressively*i)
+		this.tween_appears[i]=game.add.tween(this.button[i].best).to({alpha:1},500,Phaser.Easing.Linear.None,true,this.time_progressively*i)
+		this.tween_appears[i]=game.add.tween(this.button[i].lvl).to({alpha:1},500,Phaser.Easing.Linear.None,true,this.time_progressively*i)
+		this.tween_appears[i]=game.add.tween(this.button[i].number_heart_opponent).to({alpha:1},500,Phaser.Easing.Linear.None,true,this.time_progressively*i)
 			
 	}
 	this.tween_appears[this.number_of_i].onComplete.add(hud.pause_animate_circle,hud)

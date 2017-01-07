@@ -125,7 +125,7 @@ tw.move_timer_for_network()
 		background.cursor_opponent.y=background.cursor_palpitant_opponent.y
 		background.cursor_opponent_particle.y=background.cursor_palpitant_opponent.y
 		//plein écran
-		hud.time_shadow.events.onInputDown.add(gofull, this);
+		//hud.time_shadow.events.onInputDown.add(gofull, this);
 
 //		function grey_check(obj1,obj2){
 //			console.log("colldide")
@@ -149,14 +149,14 @@ tw.move_timer_for_network()
 //			//effect.disappears_timer(hud.time_shadow,hud.timer)
 //		}
 
-		function gofull(){
+		//function gofull(){
 
-			if (this.game.scale.isFullScreen) {
-				this.game.scale.stopFullScreen();
-			} else {
-				this.game.scale.startFullScreen(false);
-			}
-		}
+		//	if (this.game.scale.isFullScreen) {
+		//		this.game.scale.stopFullScreen();
+		//	} else {
+		//		this.game.scale.startFullScreen(false);
+		//	}
+		//}
 
 		// temps écoulé
 		//time_elapsed(this.game)
