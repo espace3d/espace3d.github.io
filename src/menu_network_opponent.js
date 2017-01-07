@@ -151,8 +151,10 @@ Menu_network_opponent.prototype.hide = function() {
 //to simulate network
 Menu_network_opponent.prototype.show_progressively_opponent = function() {
 	this.number_of_i=this.row-1
+	console.log('this.number_of_i',this.number_of_i)
 	this.time_progressively=this.game.rnd.integerInRange(1000,4000)
 	console.log('this.time_progressively',this.time_progressively)
+	console.log('i',i)
 	for (var i = 0; i < this.row; i++) {
 		hud.animate_circle()
 		this.tween_appears[i]=game.add.tween(this.button[i]).to({alpha:1},500,Phaser.Easing.Linear.None,true,this.time_progressively*i)
