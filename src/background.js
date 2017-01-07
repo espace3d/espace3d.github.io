@@ -206,6 +206,11 @@ draw_background = function(game){
 
 	//texte symbolisant l'ombre sous le player et dont la visibilité apparait dans update via the Game.js
 	//player
+	this.text_name_player_you_are_here = game.add.bitmapText(w4*3+3,py1-80,'lucky','you are here', taille) 
+	this.text_name_player_you_are_here.anchor.setTo(.5,.5)
+	this.tween_you_are_here=game.add.tween(this.text_name_player_you_are_here.scale).to({x:1.2,y:1.2},500,Phaser.Easing.Linear.None,true,0,-1)
+	this.tween_you_are_here.yoyo(500,true)
+
 	this.text_name_player_shadow = game.add.bitmapText(w4*3+3,py1+3,'lucky','dev', taille) 
 	this.text_name_player_shadow.alpha=.5
 	this.text_name_player_shadow.visible=false
@@ -238,6 +243,7 @@ draw_background = function(game){
 
 	//ajout des textes aux groupes
 	this.g2.add(this.text_name_player) 
+	this.g2.add(this.text_name_player_you_are_here) 
 	this.g2.add(this.text_name_player_shadow) 
 	this.g2.add(this.text_level_player) 
 
@@ -326,6 +332,13 @@ paper_player.line_position.visible=false
 		this.tween_looser=game.add.tween(this.text_win.scale).to({x:2.5, y:2.5},1800,Phaser.Easing.Elastic.Out,true,900)
 	}
 }
+
+
+draw_background.prototype.hide_you_are_here = function() {
+this.tween_you_are_here.pause()	
+this.text_name_player_you_are_here.visible=false
+}
+
 
 draw_background.prototype.particle_winner = function() {
 	this.cursor_winner_particle.on=true

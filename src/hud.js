@@ -26,6 +26,7 @@ Timer = function(game,Group){
 	this.dot_for_clic.visible=false
 	this.dot_for_clic.inputEnabled=true
 	this.tween_for_dot_clic=game.add.tween(this.dot_for_clic.scale).to({x:3,y:3},500,Phaser.Easing.Bounce.Out,true,0,-1)
+	this.tween_for_dot_clic=game.add.tween(this.dot_for_clic).to({alpha:.5},500,Phaser.Easing.Bounce.Out,true,0,-1)
 	this.tween_for_dot_clic.yoyo(500,true)	
 	this.tween_for_dot_clic.pause()
 	Group.add(this.dot_for_clic)
@@ -269,7 +270,7 @@ Timer.prototype.show_dot_for_clic = function() {
 
 //cache dot_for_clic et lance hd visible avec décompte du temps + ouverture des PANNEAUX du background
 Timer.prototype.hide_dot_for_clic = function() {
-	console.log('eiueeiu')
+	background.hide_you_are_here()
 	this.dot_for_clic.visible=false	
 	this.tween_for_dot_clic.pause()
 	this.flag=true
