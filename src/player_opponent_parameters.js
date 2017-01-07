@@ -41,7 +41,7 @@ param = function(){
 	//this.pourcentage_player=
 	//this.pourcentage_opponent=
 	this.number_of_opponent=3
-	this.name_opponent=["Albert","Luc","Gerard"]
+	this.name_opponent=["Albert","Luc","Gerard","Rkill","killthegame","No225","unreal"]
 	this.cost_opponent=[500,100,50]
 	//pour indiquer quelle est le meilleur papier à disposition de l'opponent
 	this.best_opponent=[1,5,7]

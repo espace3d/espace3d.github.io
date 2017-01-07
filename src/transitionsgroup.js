@@ -81,7 +81,7 @@ init_transitions.prototype.displacement_background_opponent_and_player=function(
 }
 init_transitions.prototype.move_timer_after_network=function(){
 	this.tween_move_timer_for_network=game.add.tween(this.g0).to({x:0,y:0},100,Phaser.Easing.Bounce.Out,true,0)
-	this.tween_reveal_vs=game.add.tween(hud.timer_text).to({alpha:1},1000,Phaser.Easing.Linear.None,true,0)
+	hud.flag_clic=true
 	for (var i = 0; i < 3; i++) {
 		hud.circle[i].alpha=0
 		hud.tween_for_circle_network[i].pause()

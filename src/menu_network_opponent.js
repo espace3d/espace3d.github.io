@@ -39,7 +39,8 @@ Menu_network_opponent = function(game,Group,posx,posy){
 
 		//texte indiquant le nom de l'opponent
 		this.button[i].name = game.add.bitmapText(0,0,'lucky_black',"namere",50) 
-		this.button[i].name.text = parameter.name_opponent[i]
+		this.button[i].number_parameter_name_opponent=game.rnd.integerInRange(0,parameter.name_opponent.length)
+		this.button[i].name.text = parameter.name_opponent[this.button[i].number_parameter_name_opponent]
 		this.button[i].name.x = this.button[i].width*.5+this.button[i].x
 		this.button[i].name.y = this.posy-310+i*this.distance_in_height_between_button
 		this.button[i].name.anchor.setTo(.5,0)
@@ -126,6 +127,7 @@ Menu_network_opponent.prototype.rearrange_table_number_of_sort_paper = function(
 		little_roll_player.init_heart()
 		little_roll_opponent.init_heart()
 		this.init_first_transition()
+		background.init_name_opponent(this.button[nombre].number_parameter_name_opponent)
 	}
 }
 
@@ -176,6 +178,7 @@ Menu_network_opponent.prototype.init_first_transition = function() {
 	tw.move_timer_after_network()
 	hud.stop_animate_circle()
 	this.hide()
+	hud.flag_clic=true
 }
 
 

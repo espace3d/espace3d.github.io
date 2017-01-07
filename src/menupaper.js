@@ -145,7 +145,7 @@ Menu = function(game,Group,id,posx,posy){
 	this.amount_of_heart_paper.anchor.x=0
 
 	//text négatif
-	this.text_negative=game.add.bitmapText(this.amount_of_heart_paper.x-20,this.amount_of_heart_paper.y-50,'lucky_rose',"",40)
+	this.text_negative=game.add.bitmapText(this.amount_of_heart_paper.x,this.amount_of_heart_paper.y-50,'lucky_rose',"",40)
 	this.text_negative.alpha=1
 
 	this.sub_group_fwd.add(this.text_negative)
@@ -225,19 +225,13 @@ Menu.prototype.anim_repere = function() {
 
 //reduire le nombre de coeur en fonction du boutton choisi	
 Menu.prototype.rearrange_table_number_of_sort_paper = function(nombre) {
-	if (this.id=="player" && nombre <= 7){
+	if (this.id=="player" && this.button_paper_select[nombre].frame <= 7){
 		this.button_play.visible=true
 		//pour remettre les bouttons à leur état initial
 		for (var i = 0; i < this.row; i++) {
 			this.button_paper_select[i].frame=i
 
 		}		
-		//if (parameter.number_of_sort_paper_player[i] !== parameter.number_of_sort_paper_player[i]){
-		//parameter.number_of_sort_paper_player[i]=0
-		//console.log(this.button_paper_select[i],this.button_paper_select[i].frame,"frame")
-		//this.button_paper_select[i].frame=i+8
-
-		//}
 		if(parameter.number_of_sort_paper_player[i]!== 0){
 			this.button_paper_select[nombre].frame=nombre+8
 			this.show_negative_value_above_score(nombre)

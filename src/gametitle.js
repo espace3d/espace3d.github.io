@@ -46,6 +46,11 @@ first_screen = function(game){
 	this.num=0
 	this.play_button = this.game.add.button(w2,h2+145,"play",this.playTheGame,this);
 	this.play_button.inputEnabled=true
+
+	this.how_to_play=game.add.bitmapText(w2,h-500,"lucky","how_to_play",70)
+	this.how_to_play.anchor.setTo(.5,.5)
+
+
 	this.tween_easing=[Phaser.Easing.Linear.None,Phaser.Easing.Back.In,Phaser.Easing.Back.Out,Phaser.Easing.Back.InOut,Phaser.Easing.Bounce.In,Phaser.Easing.Bounce.Out,Phaser.Easing.Bounce.InOut,Phaser.Easing.Circular.In,Phaser.Easing.Circular.Out,Phaser.Easing.Circular.InOut,Phaser.Easing.Cubic.In,Phaser.Easing.Cubic.Out,Phaser.Easing.Cubic.InOut,Phaser.Easing.Elastic.In,Phaser.Easing.Elastic.Out,Phaser.Easing.Elastic.InOut,Phaser.Easing.Exponential.In,Phaser.Easing.Exponential.Out,Phaser.Easing.Exponential.InOut,Phaser.Easing.Linear.In,Phaser.Easing.Quadratic.In,Phaser.Easing.Quadratic.Out,Phaser.Easing.Quadratic.InOut,Phaser.Easing.Quartic.In,Phaser.Easing.Quartic.Out,Phaser.Easing.Quartic.InOut,Phaser.Easing.Quintic.In,Phaser.Easing.Quintic.Out,Phaser.Easing.Quintic.InOut,Phaser.Easing.Sinusoidal.In,Phaser.Easing.Sinusoidal.Out]
 
 

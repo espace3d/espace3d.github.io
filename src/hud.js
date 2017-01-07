@@ -8,6 +8,7 @@ Timer = function(game,Group){
 	this.timer_value="40"
 	//temps pour que la hachure fasse un éclat brillant
 	this.time_eclat=400
+	this.flag_clic=false
 	//group
 	this.Group=Group
 	//disque noir du timer 
@@ -20,6 +21,14 @@ Timer = function(game,Group){
 	//afficheage de VS
 	this.timer_text.text="Vs"
 	this.tween_for_circle_network={}
+	this.dot_for_clic=game.add.sprite(w2,h2+300,'little_circle_for_network')
+	this.dot_for_clic.anchor.setTo(.5,.5)
+	this.dot_for_clic.visible=false
+	this.tween_for_dot_clic=game.add.tween(this.dot_for_clic.scale).to({x:3,y:3},500,Phaser.Easing.Linear.None,true,0,1)
+	this.tween_for_dot_clic.yoyo(500,true)	
+	this.tween_for_dot_clic.pause()
+	Group.add(this.dot_for_clic)
+
 
 	this.circle=[]
 	for (var i = 0; i < 3; i++) {
@@ -248,9 +257,17 @@ Timer.prototype.reveal_text = function() {
 
 //TODO:mettre ici foinction pour afficher clic lanceable uniqueement lorsque flag est bon
 Timer.prototype.update = function() {
-	
+if (this.flag_clic) {
+	this.flag_clic=false
+	this.dot_for_clic.visible=true
+this.tween_for_dot_clic.resume()	
+}	
 }
 
+Timer.prototype.hide_dot_for_clic = function() {
+	this.tween_reveal_vs=game.add.tween(this.timer_text).to({alpha:1},1000,Phaser.Easing.Linear.None,true,0)
+	this.dot_for_clic.visible=false	
+}
 
 
 
