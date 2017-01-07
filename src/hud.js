@@ -5,7 +5,7 @@
 Timer = function(game,Group){
 	this.flag_for_update_check_white_side=false
 	//variable pour stocker le temps
-	this.timer_value="40"
+	this.timer_value=parameter.time_value
 	//temps pour que la hachure fasse un éclat brillant
 	this.time_eclat=400
 	this.flag_clic=false
@@ -15,16 +15,17 @@ Timer = function(game,Group){
 	this.time_shadow=drawSprite(this.Group,game,"timer",w2,h2+300,w*.255,w*.255,.5,0,1)
 	this.time_shadow.inputEnabled=true
 	//texte du timer
-	this.timer_text = game.add.bitmapText(w2,h2+300,'lucky',this.timer_value, w*.15)
+	this.timer_text = game.add.bitmapText(w2,h2+300,'lucky',parameter.time_value, w*.15)
 	//pour lancer ou non la function time_decount
 	this.flag = false
 	//afficheage de VS
 	this.timer_text.text="Vs"
 	this.tween_for_circle_network={}
-	this.dot_for_clic=game.add.sprite(w2,h2+300,'little_circle_for_network')
+	this.dot_for_clic=game.add.button(w2,h2+300,'little_circle_for_network',this.hide_dot_for_clic,this)
 	this.dot_for_clic.anchor.setTo(.5,.5)
 	this.dot_for_clic.visible=false
-	this.tween_for_dot_clic=game.add.tween(this.dot_for_clic.scale).to({x:3,y:3},500,Phaser.Easing.Linear.None,true,0,1)
+	this.dot_for_clic.inputEnabled=true
+	this.tween_for_dot_clic=game.add.tween(this.dot_for_clic.scale).to({x:3,y:3},500,Phaser.Easing.Bounce.Out,true,0,-1)
 	this.tween_for_dot_clic.yoyo(500,true)	
 	this.tween_for_dot_clic.pause()
 	Group.add(this.dot_for_clic)
@@ -101,7 +102,6 @@ Timer.prototype.pause_animate_circle = function() {
 		this.tween_for_circle_network[i].pause()
 		this.circle[i].alpha=1
 	}
-
 }
 
 
@@ -255,22 +255,28 @@ Timer.prototype.reveal_text = function() {
 	this.timer_text.text=this.timer_value
 }
 
-//TODO:mettre ici foinction pour afficher clic lanceable uniqueement lorsque flag est bon
-Timer.prototype.update = function() {
-if (this.flag_clic) {
-	this.flag_clic=false
-	this.dot_for_clic.visible=true
-this.tween_for_dot_clic.resume()	
-}	
-}
-
-Timer.prototype.hide_dot_for_clic = function() {
+Timer.prototype.reveal_vs = function() {
 	this.tween_reveal_vs=game.add.tween(this.timer_text).to({alpha:1},1000,Phaser.Easing.Linear.None,true,0)
-	this.dot_for_clic.visible=false	
+	this.tween_hide_vs=game.add.tween(this.timer_text).to({alpha:0},100,Phaser.Easing.Linear.None,true,1000)
+this.tween_hide_vs.onComplete.add(this.show_dot_for_clic,this)
 }
 
+//afficher dot_for_clic
+Timer.prototype.show_dot_for_clic = function() {
+	this.dot_for_clic.visible=true
+	this.tween_for_dot_clic.resume()	
+}
 
-
+//cache dot_for_clic et lance hd visible avec décompte du temps + ouverture des PANNEAUX du background
+Timer.prototype.hide_dot_for_clic = function() {
+	console.log('eiueeiu')
+	this.dot_for_clic.visible=false	
+	this.tween_for_dot_clic.pause()
+	this.flag=true
+	this.timer_text.text=parameter.time_value
+	this.timer_text.alpha=1
+	tw.displacement_background_opponent_and_player()
+}
 
 
 

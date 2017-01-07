@@ -12,6 +12,8 @@ var M = M || {}
 
 
 param = function(){
+	//temps alloué pour la partie
+	this.time_value=20
 	this.number_heart_opponent=[1000,200,9000]
 	//nombre de coeur
 	this.value_heart_player=40

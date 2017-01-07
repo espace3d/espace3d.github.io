@@ -120,6 +120,7 @@ Menu_network_opponent.prototype.rearrange_table_number_of_sort_paper = function(
 	console.log('msg')
 	if (this.button[nombre].alpha==1) {
 	hud.stop_animate_circle()
+hud.reveal_vs()
 		parameter.number_heart_opponent_chooce=parseInt(this.button[nombre].number_heart_opponent.text)
 		//pour actualiser le nombre de coeurs
 		menuPaper.init_heart()
@@ -174,7 +175,7 @@ Menu_network_opponent.prototype.show_progressively_opponent = function() {
 
 
 Menu_network_opponent.prototype.init_first_transition = function() {
-	tw.displacement_background_opponent_and_player()
+	//tw.displacement_background_opponent_and_player()
 	tw.move_timer_after_network()
 	hud.stop_animate_circle()
 	this.hide()
