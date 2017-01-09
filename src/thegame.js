@@ -104,6 +104,10 @@ tw.move_timer_for_network()
 	},
 
 	update: function(){
+
+console.log('X:' + this.input.activePointer.x);
+
+console.log('Y:' + this.input.activePointer.y);
 		//TODO
 		// test texte qui descend
 		//background.line_fall(background.check_fall_end,background.line_position_player,background.text_position_player,paper_player) 
